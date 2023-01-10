@@ -14,7 +14,7 @@ const Navbar = () => {
       "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     ];
     let strTime =
-      monthNames[date.getMonth()] + "/" + dd + "/" + yyyy;
+      dd + "/" + monthNames[date.getMonth()] + "/" + yyyy;
     return strTime;
   }
   const currentDate = formatDate(new Date());
@@ -82,7 +82,7 @@ const Navbar = () => {
               <input className="p-1 rounded-2xl pl-3  bg-[#f0f2f5] " type="search" placeholder="Search" />
             </div>
             <div>
-              user logo 
+              user logo
             </div>
           </div>
         </div>
