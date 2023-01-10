@@ -43,7 +43,7 @@ const SignUp = () => {
           image: imageData.data.display_url,
           role,
         };
-        // console.log(userData);
+        console.log(userData);
 
         // Create User
         createUser(email, password)
@@ -146,23 +146,23 @@ const SignUp = () => {
                 <input
                   type="radio"
                   name="radio-5"
-                  id="user"
+                  id="reader"
                   className="radio radio-success mr-2"
-                  onChange={() => setRole("user")}
+                  onChange={() => setRole("reader")}
                   required
                 />
-                I am a customer
+                I am a Reader
               </div>
               <div className="flex">
                 <input
                   type="radio"
                   name="radio-5"
-                  id="host"
+                  id="writer"
                   className="radio radio-success mr-2"
-                  onChange={() => setRole("host")}
+                  onChange={() => setRole("writer")}
                   required
                 />
-                I am a vendor
+                I am a Writer
               </div>
             </div>
           </div>

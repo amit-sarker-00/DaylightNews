@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiOutlineBars } from "react-icons/ai";
 import { FaFacebookF, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const Navbar = () => {
   // function formatDate(date) {
@@ -27,6 +28,8 @@ const Navbar = () => {
   };
   const currentDate = date.toLocaleDateString("en-US", options);
 
+  const { user, logout } = useContext(AuthContext);
+  // console.log(user);
   return (
     <main>
       <section className="bg-[#f0f2f5] pb-5">
@@ -113,7 +116,17 @@ const Navbar = () => {
                 placeholder="Search"
               />
             </div>
-            <div>user logo</div>
+            <div>
+              {user?.email ? (
+                <>
+                  <button onClick={logout}>log out</button>
+                </>
+              ) : (
+                <>
+                  <Link to="/login">login</Link>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </section>

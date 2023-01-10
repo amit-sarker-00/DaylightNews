@@ -6,7 +6,7 @@ import PrimaryButton from "../../Components/Button/PrimaryButton";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 const SignIn = () => {
   const [userEmail, setUserEmail] = useState("");
-  const { signin, loading, setLoading, signInWithGoogle, resetPassword } =
+  const { signin, setLoading, signInWithGoogle, resetPassword } =
     useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
