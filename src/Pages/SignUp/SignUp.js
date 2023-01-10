@@ -52,9 +52,11 @@ const SignUp = () => {
             // console.log(result.user);
             updateUserProfile(name, imageData.data.display_url)
               .then(() => {
-                addWriter(userData).then((data) => {
-                  console.log(data);
-                });
+                if (userData.role === "writer") {
+                  addWriter(userData).then((data) => {
+                    console.log(data);
+                  });
+                }
                 if (userData.role === "writer") {
                   makeWriter(userData);
                 }
