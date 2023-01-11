@@ -39,7 +39,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="w-11/12 mx-auto items-center flex justify-between">
+          <div className="w-11/12 mx-auto items-center sm:flex-row flex flex-col justify-between">
             <div>
               <ul className="flex gap-3">
                 <Link className="rounded-full" href="#">
@@ -77,7 +77,7 @@ const Navbar = () => {
       <section className="my-2">
         <div className="flex justify-between max-w-[1440px] mx-auto">
           <div>
-            <ul className="flex gap-3">
+            <ul className=" gap-3 hidden lg:flex">
               <li>
                 <Link>Home</Link>
               </li>
