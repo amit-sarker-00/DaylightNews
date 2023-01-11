@@ -9,8 +9,8 @@ import car3 from '../../assest/Footer img/car 4.jfif'
 
 const Footer = () => {
   return (
-    <div className=" pb-8 w-full">
-      <footer className="footer p-10   text-base-content">
+    <div className=" w-11/12 mx-auto ">
+      <footer className="footer pt-10  text-base-content">
         {/* ---------------------about us --------------------  */}
         <div>
           <span className=" font-bold text-lg pb-6">ABOUT US</span>

@@ -5,7 +5,7 @@ const Drawer = () => {
     return (
         <section>
 
-            <div id="drawer-navigation" className="fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800" tabIndex="-1" aria-labelledby="drawer-navigation-label">
+            <div id="drawer-navigation" className="fixed z-40 h-screen p-4 overflow-y- w-80 bg-gray-800" tabIndex="-1" aria-labelledby="drawer-navigation-label">
                 <div className='flex justify-between'>
                     <h5 id="drawer-navigation-label" className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
 
