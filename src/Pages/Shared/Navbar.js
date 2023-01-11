@@ -5,18 +5,6 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const Navbar = () => {
-  // function formatDate(date) {
-  //   const yyyy = date.getFullYear();
-  //   let dd = date.getDate() + 1;
-  //   if (dd < 10) dd = "0" + dd;
-  //   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  //     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-  //   ];
-  //   let strTime =
-  //     monthNames[date.getMonth()] + "/" + dd + "/" + yyyy;
-  //   return strTime;
-  // }
-  // const currentDate = formatDate(new Date());
 
   // date
   const date = new Date();
@@ -35,7 +23,7 @@ const Navbar = () => {
     <main>
       <section className="bg-[#f0f2f5] pb-5">
         <div className="max-w-[1440px] mx-auto">
-          <div className="w-11/12 mx-auto flex  justify-between py-1">
+          <div className="w-5/6 mx-auto flex  justify-between py-1">
             <div>
               <label
                 htmlFor="my-drawer"
@@ -51,7 +39,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="w-11/12 mx-auto items-center flex justify-between">
+          <div className="w-5/6 mx-auto items-center sm:flex-row flex flex-col justify-between">
             <div>
               <ul className="flex gap-3">
                 <Link className="rounded-full" href="#">
@@ -77,9 +65,7 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
-              <Link to={"/"} className="btn ">
-                DayLight-News
-              </Link>
+              <h1 className="text-xl font-bold italic "><a href="/">DayLight-News</a></h1>
             </div>
             <div>
               <h1 className="text-sm font-semibold">{currentDate}</h1>
@@ -88,10 +74,10 @@ const Navbar = () => {
         </div>
       </section>
 
-      <section className="my-2">
+      <section className="my-2 w-5/6 mx-auto ">
         <div className="flex justify-between max-w-[1440px] mx-auto">
           <div>
-            <ul className="flex gap-3">
+            <ul className=" gap-3 hidden lg:flex">
               <li>
                 <Link>Home</Link>
               </li>

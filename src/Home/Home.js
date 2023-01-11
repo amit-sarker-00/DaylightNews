@@ -1,11 +1,16 @@
 import React from "react";
 import Category from "../Pages/Categoris/Category";
+import Banner from "./Banner/Banner";
+import HomePageArticalAndPost from "./HomepageArticalAndPost/HomePageArticalAndPost";
+import TrendingNews from "./TrendingNews/TrendingNews";
 
 const Home = () => {
   return (
-    <div className="max-w-[1440px] mx-auto">
-      <Category />
-      <h1>this is home and main branch</h1>
+    <div>
+      <Category/>
+      <Banner />
+      <TrendingNews />
+      <HomePageArticalAndPost/>
     </div>
   );
 };

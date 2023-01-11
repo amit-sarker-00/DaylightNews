@@ -11,7 +11,7 @@ const Main = () => {
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
 
         <div className="drawer-content">
-          <Navbar />
+            <Navbar />
           <div className="w-5/6 mx-auto">
             <Outlet />
           </div>
