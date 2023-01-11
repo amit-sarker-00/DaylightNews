@@ -1,13 +1,4 @@
-import {
-  AdjustmentsHorizontalIcon,
-  ChatBubbleOvalLeftEllipsisIcon,
-  ChatBubbleOvalLeftIcon,
-  HeartIcon,
-  MapPinIcon,
-  ShoppingBagIcon,
-  ShoppingCartIcon,
-  UserIcon,
-} from "@heroicons/react/24/solid";
+import { ChatBubbleOvalLeftIcon, HeartIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { NavLink } from "react-router-dom";
 

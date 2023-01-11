@@ -9,7 +9,7 @@ const WriterMenu = () => {
   return (
     <div>
       <NavLink
-        to="/account/shop"
+        to="/account/writer/profile"
         className={({ isActive }) =>
           `flex items-center px-6 py-4 border rounded-lg   transition-colors duration-300 transform  hover:bg-[#3BB77E]   hover:text-white ${
             isActive ? "bg-[#3BB77E]  text-white" : "text-gray-600"
@@ -21,7 +21,7 @@ const WriterMenu = () => {
         <span className="mx-4 font-medium">Profile</span>
       </NavLink>
       <NavLink
-        to="/account/addproduct"
+        to="/account/addnews"
         className={({ isActive }) =>
           `flex items-center px-6 py-4 border rounded-lg mt-5  transition-colors duration-300 transform  hover:bg-[#3BB77E]   hover:text-white ${
             isActive ? "bg-[#3BB77E]  text-white" : "text-gray-600"
@@ -33,7 +33,7 @@ const WriterMenu = () => {
         <span className="mx-4 font-medium">Add News</span>
       </NavLink>
       <NavLink
-        to="/account/updateproduct"
+        to="/account/updateNews"
         className={({ isActive }) =>
           `flex items-center px-6 py-4 border rounded-lg mt-5  transition-colors duration-300 transform  hover:bg-[#3BB77E]   hover:text-white ${
             isActive ? "bg-[#3BB77E]  text-white" : "text-gray-600"

@@ -6,7 +6,7 @@ const AdminMenu = () => {
   return (
     <>
       <NavLink
-        to="/account/profile"
+        to="/account/admin/profile"
         className={({ isActive }) =>
           `flex items-center pl-6 py-4 border rounded-lg mt-5  transition-colors duration-300 transform  hover:bg-[#3BB77E]   hover:text-white ${
             isActive ? "bg-[#3BB77E]  text-white" : "text-gray-600"

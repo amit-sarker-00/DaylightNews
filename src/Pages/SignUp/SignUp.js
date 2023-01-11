@@ -48,7 +48,11 @@ const SignUp = () => {
           role,
         };
         console.log(userData);
-
+        // if (userData.role === "reader") {
+        //   makeReader(userData).then((data) => {
+        //     console.log(data);
+        //   });
+        // }
         // Create User
         createUser(email, password)
           .then((result) => {
@@ -56,11 +60,6 @@ const SignUp = () => {
             // console.log(result.user);
             updateUserProfile(name, imageData.data.display_url)
               .then(() => {
-                if (userData.role === "reader") {
-                  makeReader(userData).then((data) => {
-                    console.log(data);
-                  });
-                }
                 if (userData.role === "writer") {
                   addWriter(userData).then((data) => {
                     console.log(data);
