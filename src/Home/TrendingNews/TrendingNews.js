@@ -12,10 +12,10 @@ const TrendingNews = () => {
   }, []);
   return (
     <div className=" mb-4 sm:mb-10 ">
-      <div className="mx-3 sm:mx-10 md:mx-16 lg:mx-24 my-3">
+      <div className="mx-3  my-3">
         <h1 className=" font-bold text-2xl text-red-500">WHAT'S TRENDING</h1>
       </div>
-      <div className="mx-3 sm:mx-10 md:mx-16 lg:mx-24 ">
+      <div className="mx-3  ">
         <Splide
           className=" "
           aria-label=""
@@ -43,7 +43,7 @@ const TrendingNews = () => {
               <div className=" h-80 shadow hover:shadow-2xl border hover:border-gray-300 ">
                 <div className="overflow-hidden">
                   <img
-                    className="w-full h-44 transition transform hover:scale-125"
+                    className="w-full h-44 ease-in-out duration-500 transform hover:scale-125"
                     src={trending.image}
                     alt=""
                   />
