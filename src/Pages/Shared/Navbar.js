@@ -18,24 +18,26 @@ const Navbar = () => {
 
   const { user, logout } = useContext(AuthContext);
   // console.log(user);
+  //max-w-[1440px] mx-auto
   return (
     <main>
       <section className="bg-[#f0f2f5] pb-5">
-        <div className="w-11/12 mx-auto flex  justify-between py-1">
-          <div>
-            <label
-              htmlFor="my-drawer"
-              className=" cursor-pointer drawer-button"
-            >
-              {" "}
-              <AiOutlineBars />
-            </label>
-          </div>
+        <div className="max-w-[1440px] mx-auto">
+          <div className="w-11/12 mx-auto flex  justify-between py-1">
+            <div>
+              <label
+                htmlFor="my-drawer"
+                className=" cursor-pointer drawer-button"
+              >
+                {" "}
+                <AiOutlineBars />
+              </label>
+            </div>
 
-          <div>
-            <h1>Tempareture </h1>
+            <div>
+              <h1>Tempareture </h1>
+            </div>
           </div>
-        </div>
 
         <div className="w-11/12 mx-auto items-center flex justify-between">
           <div>
@@ -63,7 +65,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div>
-            <h1 className="text-xl italic font-bold "><a href="/">DayLight-News</a></h1>
+            <h1 className="btn ">DayLight-News</h1>
           </div>
           <div>
             <h1 className="text-sm font-semibold">{currentDate}</h1>
@@ -72,7 +74,7 @@ const Navbar = () => {
       </section>
 
       <section className="my-2">
-        <div className="flex justify-between w-11/12 mx-auto">
+        <div className="flex justify-between max-w-[1440px] mx-auto">
           <div>
             <ul className="flex gap-3">
               <li>
@@ -107,7 +109,12 @@ const Navbar = () => {
             <div>
               {user?.email ? (
                 <>
-                  <button onClick={logout}>log out</button>
+                  <div>
+                    <button onClick={logout}>log out</button>
+                    <Link className="px-2" to="/account">
+                      Account
+                    </Link>
+                  </div>
                 </>
               ) : (
                 <>
