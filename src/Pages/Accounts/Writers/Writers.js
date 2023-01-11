@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import SmallSpinner from "../../../Components/Spinner/SmallSpinner";
+import WriterProfile from "./WriterProfile";
 
 const Writers = () => {
+  const [loading, setLoading] = useState(true);
+  setInterval(() => {
+    setLoading(false);
+  }, 5000);
+
   return (
     <div>
-      <h1>this is writer</h1>
+      <div>{loading ? <SmallSpinner /> : <WriterProfile />}</div>
     </div>
   );
 };

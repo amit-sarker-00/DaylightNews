@@ -38,37 +38,38 @@ const Navbar = () => {
               <h1>Tempareture </h1>
             </div>
           </div>
-        </div>
-        <div className="w-11/12 mx-auto items-center flex justify-between">
-          <div>
-            <ul className="flex gap-3">
-              <Link className="rounded-full" href="#">
-                <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
-                  <FaFacebookF className="text-lg" />
-                </li>
-              </Link>
-              <Link className="rounded-full" href="#">
-                <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
-                  <FaGoogle className="text-lg" />
-                </li>
-              </Link>
-              <Link className="rounded-full" href="#">
-                <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
-                  <FaGithub className="text-lg" />
-                </li>
-              </Link>
-              <Link className="rounded-full" href="#">
-                <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
-                  <FaLinkedinIn className="text-lg" />
-                </li>
-              </Link>
-            </ul>
-          </div>
-          <div>
-            <h1 className="btn ">DayLight-News</h1>
-          </div>
-          <div>
-            <h1 className="text-sm font-semibold">{currentDate}</h1>
+
+          <div className="w-11/12 mx-auto items-center flex justify-between">
+            <div>
+              <ul className="flex gap-3">
+                <Link className="rounded-full" href="#">
+                  <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
+                    <FaFacebookF className="text-lg" />
+                  </li>
+                </Link>
+                <Link className="rounded-full" href="#">
+                  <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
+                    <FaGoogle className="text-lg" />
+                  </li>
+                </Link>
+                <Link className="rounded-full" href="#">
+                  <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
+                    <FaGithub className="text-lg" />
+                  </li>
+                </Link>
+                <Link className="rounded-full" href="#">
+                  <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
+                    <FaLinkedinIn className="text-lg" />
+                  </li>
+                </Link>
+              </ul>
+            </div>
+            <div>
+              <h1 className="btn ">DayLight-News</h1>
+            </div>
+            <div>
+              <h1 className="text-sm font-semibold">{currentDate}</h1>
+            </div>
           </div>
         </div>
       </section>

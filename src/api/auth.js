@@ -32,6 +32,8 @@ export const getUser = async (email) => {
   const data = await response.json();
   return data;
 };
+
+// make a writer
 export const makeWriter = async (user) => {
   delete user._id;
   const response = await fetch(`http://localhost:5000/user/${user?.email}`, {
@@ -46,6 +48,8 @@ export const makeWriter = async (user) => {
 
   return users;
 };
+
+//make a reader
 export const makeReader = async (user) => {
   delete user._id;
   const response = await fetch(`http://localhost:5000/user/${user?.email}`, {
@@ -61,6 +65,7 @@ export const makeReader = async (user) => {
   return users;
 };
 
+// get role
 export const getRole = async (email) => {
   const response = await fetch(`http://localhost:5000/user/${email}`, {
     method: "GET",
