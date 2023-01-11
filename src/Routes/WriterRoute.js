@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { getRole } from "../api/User";
-import Spinner from "../components/Spinner/Spinner";
-import { AuthContext } from "../contexts/AuthProvider";
+import { getRole } from "../api/auth";
+import Spinner from "../Components/Spinner/Spinner";
+import { AuthContext } from "../Contexts/AuthProvider/AuthProvider";
 
 const WriterRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
