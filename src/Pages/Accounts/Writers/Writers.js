@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SmallSpinner from "../../../Components/Spinner/SmallSpinner";
+import Spinner from "../../../Components/Spinner/Spinner";
 import WriterProfile from "./WriterProfile";
 
 const Writers = () => {
@@ -10,7 +10,7 @@ const Writers = () => {
 
   return (
     <div>
-      <div>{loading ? <SmallSpinner /> : <WriterProfile />}</div>
+      <div>{loading ? <Spinner /> : <WriterProfile />}</div>
     </div>
   );
 };
