@@ -23,7 +23,7 @@ const SignUp = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
- 
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -248,7 +248,7 @@ const SignUp = () => {
               </svg>
             </button>
           </div>
-          <label htmlFor="my-modal-3" >hi</label>
+
           <p className="px-6 text-sm text-center text-gray-400">
             Already have an account yet?
             <Link to="/login" className="hover:underline text-gray-600">

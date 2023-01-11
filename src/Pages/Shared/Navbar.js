@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const Navbar = () => {
- 
+
   // date
   const date = new Date();
   const options = {
@@ -38,7 +38,7 @@ const Navbar = () => {
               <h1>Tempareture </h1>
             </div>
           </div>
-
+        </div>
         <div className="w-11/12 mx-auto items-center flex justify-between">
           <div>
             <ul className="flex gap-3">
