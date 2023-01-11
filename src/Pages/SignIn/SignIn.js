@@ -54,11 +54,12 @@ const SignIn = () => {
       });
   };
   return (
-    <div className="card lg:card-side md:card-side lg:pl-20 py-20">
-      <div className="card-body">
-        <div className="flex flex-col max-w-md  rounded-md sm:p-10  text-gray-900">
+    <div className="">
+      <h1 className="py-5 text-center text-4xl font-bold animate-pulse italic"><Link to='/'>DaiLight-News</Link></h1>
+      <div className=" px-6 ">
+        <div className="flex flex-col sm:w-96   mx-auto rounded-md sm:p-5 py-8 text-gray-900">
           <div className="mb-8 text-center">
-            <h1 className="my-3 text-4xl font-bold">Login</h1>
+            <h1 className="my-3 text-4xl font-semibold">Login</h1>
             <p className="text-sm text-gray-400">
               Sign in to access your account
             </p>
@@ -119,13 +120,9 @@ const SignIn = () => {
               Forgot password?
             </button>
           </div>
-          <div className="flex items-center pt-4 space-x-1">
-            <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-            <p className="px-3 text-sm dark:text-gray-400">
-              Login with social accounts
-            </p>
-            <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-          </div>
+          <p className="px-3 text-sm text-center divider dark:text-gray-500 divide-black">
+            Login with social accounts
+          </p>
           <div className="flex justify-center space-x-4">
             <button
               onClick={handleGoogleSignin}
