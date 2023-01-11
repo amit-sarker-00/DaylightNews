@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "author": {
+      "author_name": "Jillu",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "name": "NEWSLETTER",
+    "title": "Russia's war in Ukraine",
+    "description": "Fighting continues after Ukraine dismissed Putin's call for a temporary ceasefire over Orthodox Christmas as a cynical ploy. The 36-hour Russian-proposed ceasefire ended at midnight local time on Saturday.",
+    "image": "https://i.ibb.co/HXkhJq2/1200x-1.jpg",
+    "category": "Newsletter"
+  },
+  {
+    "id": 2,
+    "author": {
+      "author_name": "abdul",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "This article is about the BasketBall.",
+    "category": "games",
+    "name": "BASKETBALL",
+    "description": "Two teams of five players each try to score by shooting a ball through a hoop elevated 10 feet above the ground. The game is played on a rectangular floor called the court, and there is a hoop at each end. The court is divided into two main sections by the mid-court line.",
+    "image": "https://i.ibb.co/L9b21rv/09nba-playoffs-ballhandlers-mobile-Master-At3x.jpg"
+  },
+  {
+    "id": 3,
+    "author": {
+      "author_name": "amit",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "The last game of boxing hot news",
+    "category": "games",
+    "name": "BOXING",
+    "description": "The terms pugilism and prizefighting in modern usage are practically synonymous with boxing, although the first term indicates the ancient origins of the sport in its derivation from the Latin pugil, “a boxer,” related to the Latin pugnus, “fist,” and derived in turn from the Greek pyx, “with clenched fist.” The term.",
+    "image": "https://i.ibb.co/sKYpGWC/59131461-605.jpg"
+  }
+]

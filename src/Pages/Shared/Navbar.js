@@ -23,7 +23,7 @@ const Navbar = () => {
     <main>
       <section className="bg-[#f0f2f5] pb-5">
         <div className="max-w-[1440px] mx-auto">
-          <div className="w-11/12 mx-auto flex  justify-between py-1">
+          <div className="w-5/6 mx-auto flex  justify-between py-1">
             <div>
               <label
                 htmlFor="my-drawer"
@@ -39,7 +39,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="w-11/12 mx-auto items-center sm:flex-row flex flex-col justify-between">
+          <div className="w-5/6 mx-auto items-center sm:flex-row flex flex-col justify-between">
             <div>
               <ul className="flex gap-3">
                 <Link className="rounded-full" href="#">
