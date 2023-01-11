@@ -9,11 +9,11 @@ import car3 from '../../assest/Footer img/car 4.jfif'
 
 const Footer = () => {
   return (
-    <div className="bg-black pb-8 w-full">
+    <div className=" pb-8 w-full">
       <footer className="footer p-10   text-base-content">
         {/* ---------------------about us --------------------  */}
         <div>
-          <span className=" font-bold text-lg text-white pb-6">ABOUT US</span>
+          <span className=" font-bold text-lg pb-6">ABOUT US</span>
           <div className="">
             <h2>Lorem Ipsum is simply dummy text of the  printing and typesetting industry.<br /> Lorem Ipsum  has been the industry's standard  dummy text since has five...</h2>
             <p className="link link-hover flex  items-center gap-2 py-3 mt-5">
@@ -29,18 +29,18 @@ const Footer = () => {
               mail@example.com
             </p>
             <div className="flex gap-3 py-2">
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white text-white hover:text-red-600 "><IoLogoFacebook className=" sm:text-xl text-lg " ></IoLogoFacebook></span>
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white text-white hover:text-red-600"><IoLogoTwitter className="sm:text-xl text-lg "></IoLogoTwitter></span>
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white text-white hover:text-red-600"><IoLogoGoogle className="sm:text-xl text-lg  " ></IoLogoGoogle>  </span>
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white text-white hover:text-red-600"><IoLogoLinkedin className="sm:text-xl text-lg   "></IoLogoLinkedin> </span>
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white text-white hover:text-red-600"><IoLogoInstagram className="sm:text-xl text-lg  "></IoLogoInstagram></span>
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white text-white hover:text-red-600"> <IoLogoSkype className="sm:text-xl text-lg"></IoLogoSkype></span>
+              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600 "><IoLogoFacebook className=" sm:text-xl text-lg " ></IoLogoFacebook></span>
+              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600"><IoLogoTwitter className="sm:text-xl text-lg "></IoLogoTwitter></span>
+              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600"><IoLogoGoogle className="sm:text-xl text-lg  " ></IoLogoGoogle>  </span>
+              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600"><IoLogoLinkedin className="sm:text-xl text-lg   "></IoLogoLinkedin> </span>
+              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600"><IoLogoInstagram className="sm:text-xl text-lg  "></IoLogoInstagram></span>
+              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600"> <IoLogoSkype className="sm:text-xl text-lg"></IoLogoSkype></span>
             </div>
           </div>
         </div>
         {/*  ------------------------------------ popular CATEGORIES--------------------------*/}
         <div>
-          <span className="font-bold text-lg text-white pb-6">POPULAR CATEGORIES</span>
+          <span className="font-bold text-lg pb-6">POPULAR CATEGORIES</span>
           <div >
             <Link>
               <div className="flex justify-between py-3 hover:text-red-600">
@@ -112,14 +112,14 @@ const Footer = () => {
         </div>
         {/*--------------------------------popular post --------------------- */}
         <div>
-          <span className="font-bold text-lg text-white pb-6">POPULAR POST</span>
+          <span className="font-bold text-lg pb-6">POPULAR POST</span>
           <div className="">
             <div className="flex gap-3 p-2">
               <img src={car1} alt="" className="w-16 rounded-lg" />
               <div>
                 <p>Santino loganne legan <br /> an year old resident...</p>
                 <p className="flex items-center gap-2 p-2">
-                  <span className="  rounded-full"><IoTimeSharp className="shadow-lg  text-lg bg-red-600 text-white rounded-lg"></IoTimeSharp></span>
+                  <span className="  rounded-full"><IoTimeSharp className="shadow-lg  text-lg bg-red-600 rounded-lg"></IoTimeSharp></span>
                   <p className="">25 jan 2022</p>
                 </p>
               </div>
@@ -129,7 +129,7 @@ const Footer = () => {
               <div>
                 <p>Santino loganne legan <br /> an year old resident...</p>
                 <p className="flex items-center gap-2 p-2">
-                  <span className="  rounded-full"><IoTimeSharp className="shadow-lg  text-lg bg-red-600 text-white rounded-lg"></IoTimeSharp></span>
+                  <span className="  rounded-full"><IoTimeSharp className="shadow-lg  text-lg bg-red-600 rounded-lg"></IoTimeSharp></span>
                   <p className="">25 jan 2022</p>
                 </p>
               </div>
@@ -139,7 +139,7 @@ const Footer = () => {
               <div>
                 <p>Santino loganne legan <br /> an year old resident...</p>
                 <p className="flex items-center gap-2 p-2">
-                  <span className="  rounded-full"><IoTimeSharp className="shadow-lg  text-lg bg-red-600 text-white rounded-lg"></IoTimeSharp></span>
+                  <span className="  rounded-full"><IoTimeSharp className="shadow-lg  text-lg bg-red-600 rounded-lg"></IoTimeSharp></span>
                   <p className="">25 jan 2022</p>
                 </p>
               </div>
@@ -147,7 +147,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="text-center text-white">
+      <div className="text-center">
         <p>Copyright © 2022 All Rights Reserved.</p>
       </div>
 
