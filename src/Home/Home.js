@@ -1,9 +1,12 @@
 import React from "react";
+import Banner from "./Banner/Banner";
+import TrendingNews from "./TrendingNews/TrendingNews";
 
 const Home = () => {
   return (
     <div>
-      <h1>this is home </h1>
+      <Banner></Banner>
+      <TrendingNews></TrendingNews>
     </div>
   );
 };
