@@ -14,7 +14,7 @@ const Accounts = () => {
       setRole(data);
       setLoading(false);
     });
-  }, [user]);
+  }, [user, loading]);
   console.log(role);
   return (
     <div>

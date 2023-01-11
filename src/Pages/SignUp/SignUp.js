@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { makeWriter, setAuthToken } from "../../api/auth";
-import { GrGallery } from 'react-icons/gr';
+import { makeReader, makeWriter, setAuthToken } from "../../api/auth";
+import { GrGallery } from "react-icons/gr";
 import { addWriter } from "../../api/services";
 import PrimaryButton from "../../Components/Button/PrimaryButton";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
-import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const SignUp = () => {
   const [role, setRole] = useState(null);
@@ -22,7 +22,6 @@ const SignUp = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -57,6 +56,11 @@ const SignUp = () => {
             // console.log(result.user);
             updateUserProfile(name, imageData.data.display_url)
               .then(() => {
+                if (userData.role === "reader") {
+                  makeReader(userData).then((data) => {
+                    console.log(data);
+                  });
+                }
                 if (userData.role === "writer") {
                   addWriter(userData).then((data) => {
                     console.log(data);
@@ -90,14 +94,16 @@ const SignUp = () => {
       navigate(from, { replace: true });
     });
   };
-  const imageChange = e => {
+  const imageChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
-      setSelectedImage(e.target.files[0])
+      setSelectedImage(e.target.files[0]);
     }
-  }
+  };
   return (
     <div>
-      <h1 className="py-5 text-center text-4xl font-bold animate-pulse italic"><Link to='/'>DaiLight-News</Link></h1>
+      <h1 className="py-5 text-center text-4xl font-bold animate-pulse italic">
+        <Link to="/">DaiLight-News</Link>
+      </h1>
       <div className="flex justify-center items-center">
         <div className="flex flex-col max-w-md p-6 rounded-md    text-gray-900">
           <div className="mb-8 text-center">
@@ -120,30 +126,49 @@ const SignUp = () => {
                   data-temp-mail-org="0"
                 />
               </div>
-              <div className='mt-3'>
-                {selectedImage ? <div className='h-52 overflow-y-scroll'>
-                  <p className='text-center'>
-                    <label className="btn btn-sm" htmlFor='uploadImage'>
-                      Upload new
-                    </label>
-                  </p>
+              <div className="mt-3">
+                {selectedImage ? (
+                  <div className="h-52 overflow-y-scroll">
+                    <p className="text-center">
+                      <label className="btn btn-sm" htmlFor="uploadImage">
+                        Upload new
+                      </label>
+                    </p>
 
-                  <div className='flex justify-center '>
-                    <PhotoProvider>
-                      <PhotoView src={URL.createObjectURL(selectedImage)} >
-                        <img className="w-48 h-48" src={URL.createObjectURL(selectedImage)} alt="" />
-                      </PhotoView>
-                    </PhotoProvider>
+                    <div className="flex justify-center ">
+                      <PhotoProvider>
+                        <PhotoView src={URL.createObjectURL(selectedImage)}>
+                          <img
+                            className="w-48 h-48"
+                            src={URL.createObjectURL(selectedImage)}
+                            alt=""
+                          />
+                        </PhotoView>
+                      </PhotoProvider>
+                    </div>
                   </div>
-                </div> : <label htmlFor='uploadImage' className="flex flex-col w-full border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
-                  <div className="flex flex-col py-2 items-center justify-center">
-                    <GrGallery className='w-8 h-8' />
-                    <p className="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
-                      Select a photo</p>
-                  </div>
-                </label>
-                }
-                <input required id='uploadImage' onChange={imageChange} accept='image/*' hidden type="file" className="opacity-0" />
+                ) : (
+                  <label
+                    htmlFor="uploadImage"
+                    className="flex flex-col w-full border-4 border-dashed hover:bg-gray-100 hover:border-gray-300"
+                  >
+                    <div className="flex flex-col py-2 items-center justify-center">
+                      <GrGallery className="w-8 h-8" />
+                      <p className="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                        Select a photo
+                      </p>
+                    </div>
+                  </label>
+                )}
+                <input
+                  required
+                  id="uploadImage"
+                  onChange={imageChange}
+                  accept="image/*"
+                  hidden
+                  type="file"
+                  className="opacity-0"
+                />
               </div>
               <div>
                 <input
@@ -191,9 +216,7 @@ const SignUp = () => {
                     onChange={() => setRole("writer")}
                     required
                   />
-                  <label htmlFor="writer">
-                    I am a Writer
-                  </label>
+                  <label htmlFor="writer">I am a Writer</label>
                 </div>
               </div>
             </div>

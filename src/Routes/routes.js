@@ -5,6 +5,8 @@ import Main from "../Layout/Main";
 import Accounts from "../Pages/Accounts/Accounts";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
+import Welcome from "../Pages/Welcome/Welcome";
+import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -14,12 +16,15 @@ export const router = createBrowserRouter([
 
       {
         path: "/account",
-        element: <DashboardLayout />,
+        element: (
+          <PrivateRoute>
+            <DashboardLayout />
+          </PrivateRoute>
+        ),
         children: [
           {
-            path: "/account",
-            element: <Accounts />,
-
+            path: "",
+            element: <Welcome />,
           },
         ],
       },
