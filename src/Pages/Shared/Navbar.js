@@ -5,18 +5,6 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const Navbar = () => {
-  // function formatDate(date) {
-  //   const yyyy = date.getFullYear();
-  //   let dd = date.getDate() + 1;
-  //   if (dd < 10) dd = "0" + dd;
-  //   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  //     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-  //   ];
-  //   let strTime =
-  //     monthNames[date.getMonth()] + "/" + dd + "/" + yyyy;
-  //   return strTime;
-  // }
-  // const currentDate = formatDate(new Date());
 
   // date
   const date = new Date();
@@ -77,9 +65,7 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
-              <Link to={"/"} className="btn ">
-                DayLight-News
-              </Link>
+              <h1 className="btn ">DayLight-News</h1>
             </div>
             <div>
               <h1 className="text-sm font-semibold">{currentDate}</h1>
