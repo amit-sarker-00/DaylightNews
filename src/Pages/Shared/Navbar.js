@@ -77,7 +77,9 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
-              <h1 className="btn ">DayLight-News</h1>
+              <Link to={"/"} className="btn ">
+                DayLight-News
+              </Link>
             </div>
             <div>
               <h1 className="text-sm font-semibold">{currentDate}</h1>
