@@ -24,7 +24,7 @@ import car3 from "../../assest/Footer img/car 4.jfif";
 const Footer = () => {
   return (
     <div className=" bg-black">
-      <footer className="footer pt-10 max-w-[1440px] mx-auto  text-white ">
+      <footer className="footer pt-10 lg:px-8 px-3 mx-auto  text-white ">
         {/* ---------------------about us --------------------  */}
         <div>
           <span className=" font-bold text-lg pb-6">ABOUT US</span>
@@ -190,7 +190,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="text-center">
+      <div className="text-center py-2 text-gray-300 border-t border-gray-800 ">
         <p>Copyright © 2022 All Rights Reserved.</p>
       </div>
     </div>
