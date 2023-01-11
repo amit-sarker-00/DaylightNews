@@ -5,7 +5,6 @@ import Main from "../Layout/Main";
 import Accounts from "../Pages/Accounts/Accounts";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
-import Welcome from "../Pages/Welcome/Welcome";
 export const router = createBrowserRouter([
   {
     path: "/",
