@@ -1,12 +1,13 @@
 import React from "react";
 import Category from "../Pages/Categoris/Category";
-import HomeLetestSection from "./HomeLetestSection/HomeLetestSection";
+import HomePageArticalAndPost from "./HomepageArticalAndPost/HomePageArticalAndPost";
 
 const Home = () => {
   return (
     <div className="max-w-[1440px] mx-auto">
       <Category />
-      <HomeLetestSection />
+      {/* <HomeLetestSection /> */}
+      <HomePageArticalAndPost />
     </div>
   );
 };

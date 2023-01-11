@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../Home/Home";
+import HomeLatestSectionLifeStyle from "../Home/HomeLetestSection/HomeLetestSectionLifeStyle/HomeLatestSectionLifeStyle";
+import HomeDomesticSection from "../Home/HomeLetestSection/HomeLletestDomesticSection/HomeDomesticSection";
 import DashboardLayout from "../Layout/DashboardLayout";
+import HomePageLetestNewsSectionMain from "../Layout/HomePageLetestNewsSectionMain";
 import Main from "../Layout/Main";
 import Accounts from "../Pages/Accounts/Accounts";
 import SignIn from "../Pages/SignIn/SignIn";
@@ -21,6 +24,14 @@ export const router = createBrowserRouter([
             path: "",
             element: <Accounts />,
           },
+        ],
+      },
+      {
+        path: "/",
+        element: <HomePageLetestNewsSectionMain />,
+        children: [
+          { path: "/life&style", element: <HomeLatestSectionLifeStyle /> },
+          { path: "/Domestic", element: <HomeDomesticSection /> },
         ],
       },
     ],
