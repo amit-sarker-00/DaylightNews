@@ -18,7 +18,7 @@ const WriterMenu = () => {
       >
         <BuildingStorefrontIcon className="w-6 h-6" />
 
-        <span className="mx-4 font-medium">My Shop</span>
+        <span className="mx-4 font-medium">Profile</span>
       </NavLink>
       <NavLink
         to="/account/addproduct"
@@ -30,7 +30,7 @@ const WriterMenu = () => {
       >
         <PlusCircleIcon className="w-6 h-6" />
 
-        <span className="mx-4 font-medium">Add Products</span>
+        <span className="mx-4 font-medium">Add News</span>
       </NavLink>
       <NavLink
         to="/account/updateproduct"
@@ -42,7 +42,7 @@ const WriterMenu = () => {
       >
         <ArrowPathRoundedSquareIcon className="w-6 h-6 " />
 
-        <span className="mx-4 font-medium">Update Products</span>
+        <span className="mx-4 font-medium">Update News</span>
       </NavLink>
     </div>
   );
