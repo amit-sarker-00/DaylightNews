@@ -74,7 +74,7 @@ const Navbar = () => {
         </div>
       </section>
 
-      <section className="my-2 w-11/12 mx-auto">
+      <section className="my-2 w-5/6 mx-auto ">
         <div className="flex justify-between max-w-[1440px] mx-auto">
           <div>
             <ul className=" gap-3 hidden lg:flex">
