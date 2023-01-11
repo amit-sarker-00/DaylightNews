@@ -46,6 +46,20 @@ export const makeWriter = async (user) => {
 
   return users;
 };
+export const makeReader = async (user) => {
+  delete user._id;
+  const response = await fetch(`http://localhost:5000/user/${user?.email}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("news-token")}`,
+    },
+    body: JSON.stringify({ ...user, role: "reader" }),
+  });
+  const users = await response.json();
+
+  return users;
+};
 
 export const getRole = async (email) => {
   const response = await fetch(`http://localhost:5000/user/${email}`, {

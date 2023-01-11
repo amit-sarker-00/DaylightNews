@@ -30,61 +30,64 @@ const Navbar = () => {
 
   const { user, logout } = useContext(AuthContext);
   // console.log(user);
+  //max-w-[1440px] mx-auto
   return (
     <main>
       <section className="bg-[#f0f2f5] pb-5">
-        <div className="w-11/12 mx-auto flex  justify-between py-1">
-          <div>
-            <label
-              htmlFor="my-drawer"
-              className=" cursor-pointer drawer-button"
-            >
-              {" "}
-              <AiOutlineBars />
-            </label>
+        <div className="max-w-[1440px] mx-auto">
+          <div className="w-11/12 mx-auto flex  justify-between py-1">
+            <div>
+              <label
+                htmlFor="my-drawer"
+                className=" cursor-pointer drawer-button"
+              >
+                {" "}
+                <AiOutlineBars />
+              </label>
+            </div>
+
+            <div>
+              <h1>Tempareture </h1>
+            </div>
           </div>
 
-          <div>
-            <h1>Tempareture </h1>
-          </div>
-        </div>
-
-        <div className="w-11/12 mx-auto items-center flex justify-between">
-          <div>
-            <ul className="flex gap-3">
-              <Link className="rounded-full" href="#">
-                <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
-                  <FaFacebookF className="text-lg" />
-                </li>
-              </Link>
-              <Link className="rounded-full" href="#">
-                <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
-                  <FaGoogle className="text-lg" />
-                </li>
-              </Link>
-              <Link className="rounded-full" href="#">
-                <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
-                  <FaGithub className="text-lg" />
-                </li>
-              </Link>
-              <Link className="rounded-full" href="#">
-                <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
-                  <FaLinkedinIn className="text-lg" />
-                </li>
-              </Link>
-            </ul>
-          </div>
-          <div>
-            <h1 className="btn ">DayLight-News</h1>
-          </div>
-          <div>
-            <h1 className="text-sm font-semibold">{currentDate}</h1>
+          <div className="w-11/12 mx-auto items-center flex justify-between">
+            <div>
+              <ul className="flex gap-3">
+                <Link className="rounded-full" href="#">
+                  <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
+                    <FaFacebookF className="text-lg" />
+                  </li>
+                </Link>
+                <Link className="rounded-full" href="#">
+                  <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
+                    <FaGoogle className="text-lg" />
+                  </li>
+                </Link>
+                <Link className="rounded-full" href="#">
+                  <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
+                    <FaGithub className="text-lg" />
+                  </li>
+                </Link>
+                <Link className="rounded-full" href="#">
+                  <li className="bg-white rounded-full hover:bg-blue-500 transition-all p-2 hover:text-white">
+                    <FaLinkedinIn className="text-lg" />
+                  </li>
+                </Link>
+              </ul>
+            </div>
+            <div>
+              <h1 className="btn ">DayLight-News</h1>
+            </div>
+            <div>
+              <h1 className="text-sm font-semibold">{currentDate}</h1>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="my-2">
-        <div className="flex justify-between w-11/12 mx-auto">
+        <div className="flex justify-between max-w-[1440px] mx-auto">
           <div>
             <ul className="flex gap-3">
               <li>
@@ -119,7 +122,12 @@ const Navbar = () => {
             <div>
               {user?.email ? (
                 <>
-                  <button onClick={logout}>log out</button>
+                  <div>
+                    <button onClick={logout}>log out</button>
+                    <Link className="px-2" to="/account">
+                      Account
+                    </Link>
+                  </div>
                 </>
               ) : (
                 <>

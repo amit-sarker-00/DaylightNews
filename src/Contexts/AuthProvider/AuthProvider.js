@@ -53,7 +53,8 @@ const AuthProvider = ({ children }) => {
   // 5. Logout
   const logout = () => {
     setLoading(true);
-    localStorage.removeItem("nest-token");
+    localStorage.removeItem("news-token");
+
     return signOut(auth);
   };
 
