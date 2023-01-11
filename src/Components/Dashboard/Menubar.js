@@ -1,10 +1,10 @@
 import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid";
 import React, { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthProvider";
+import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import PrimaryButton from "../Button/PrimaryButton";
 import AdminMenu from "./AdminMenu";
-import HostMenu from "./HostMenu";
-import UserMenu from "./UserMenus";
+import UserMenu from "./UserMenu";
+import WriterMenu from "./WriterMenu";
 
 const Menubar = ({ role }) => {
   // console.log(role);
@@ -14,7 +14,7 @@ const Menubar = ({ role }) => {
       <div className="flex flex-col justify-between flex-1 mt-6">
         <nav>
           {role && role !== "requested" ? (
-            <>{role === "admin" ? <AdminMenu /> : <HostMenu />} </>
+            <>{role === "admin" ? <AdminMenu /> : <WriterMenu />} </>
           ) : (
             <UserMenu />
           )}
