@@ -7,8 +7,11 @@ import { addWriter } from "../../api/services";
 import PrimaryButton from "../../Components/Button/PrimaryButton";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import useTitle from "../../Hooks/useTitle";
 
 const SignUp = () => {
+  useTitle('SignUp Page')
+
   const [role, setRole] = useState(null);
   const [selectedImage, setSelectedImage] = useState();
   const {
