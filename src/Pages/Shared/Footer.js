@@ -24,10 +24,10 @@ import car3 from "../../assest/Footer img/car 4.jfif";
 const Footer = () => {
   return (
     <div className=" bg-black">
-      <footer className="footer pt-10 lg:px-8 px-3 mx-auto  text-white ">
+      <footer className="footer pt-10 w-5/6 mx-auto flex px-3  text-white ">
         {/* ---------------------about us --------------------  */}
         <div>
-          <Link className=" font-bold text-lg pb-6">ABOUT US</Link>
+          <Link className=" font-bold  text-lg pb-6">ABOUT US</Link>
           <div className="">
             <h2>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -47,7 +47,7 @@ const Footer = () => {
               <HiEnvelope className="text-lg text-red-600"></HiEnvelope>
               mail@example.com
             </p>
-            <div className="flex gap-3 py-2">
+            <div className="flex  gap-3 py-2">
               <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600 ">
                 <IoLogoFacebook className=" sm:text-xl text-lg " />
               </Link>

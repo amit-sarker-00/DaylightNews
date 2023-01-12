@@ -1,0 +1,74 @@
+[
+	{
+		"id": 1,
+		"author": {
+			"name": "Licks lord",
+			"published_date": "06 june,2018",
+			"img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+		},
+		"title": "Paron Lake,Peru for gadgets slows",
+		"description": "Through photography, the beauty of Mother Nature can be frozen in time. This category celebrates the magic of our planet and beyond — from the immensity of the great outdoors, to miraculous moments in your own backyard. major technology company to reveal how weakness in the global economy is impacting its business Sales have also slowed after demand boomed during the pandemic when customers at home spent a lot online",
+		"picture": "https://images.unsplash.com/photo-1528255915607-9012fda0f838?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80",
+		"category": "travel-news"
+	},
+	{
+		"id": 2,
+		"author": {
+			"name": "Lana Rose",
+			"published_date": "12 june,2018",
+			"img": "https://s2982.pcdn.co/wp-content/uploads/2022/01/photographer.png.webp"
+		},
+		"title": "Machu Picchu THOMAS SBAMPATO",
+		"description": "Another of the world’s manmade wonders, Machu Picchu, located in Peru, is believed to have been a royal estate or sacred religious site for Inca leaders, according to History.com. After the Incan civilization was destroyed by the Spanish in the 1500s, Machu Picchu lay undiscovered and unknown except by locals until 1911, despite that this monument to ancient life in Peru stretches over five miles and features more than 3,000 stone steps. Some say it’s “overrated,” but we’re guessing it’s worth your time, and here are. business Sales have also slowed after demand boomed during the pandemic when customers at home spent a lot online",
+		"picture": "https://images.unsplash.com/photo-1528255915607-9012fda0f838?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80",
+		"category": "travel-news"
+	},
+	{
+		"id": 3,
+		"author": {
+			"name": "Lana Rose",
+			"published_date": "18 june,2018",
+			"img": "https://s2982.pcdn.co/wp-content/uploads/2022/01/photographer.png.webp"
+		},
+		"title": "The Roman Colosseum THE TRAVEL",
+		"description": "Another of the world’s manmade wonders, Machu Picchu, located in Peru, is believed to have been a royal estate or sacred religious site for Inca leaders, according to History.com. After the Incan civilization was destroyed by the Spanish in the 1500s, Machu Picchu lay undiscovered and unknown except by locals until 1911, despite that this monument to ancient life in Peru stretches over five miles and features more than 3,000 stone steps. Some say it’s “overrated,” but we’re guessing it’s worth your time, and here are. business Sales have also slowed after demand boomed during the pandemic when customers at home spent a lot online",
+		"picture": "https://www.rd.com/wp-content/uploads/2019/06/595949a-scaled.jpg?resize=700,466",
+		"category": "travel-news"
+	},
+	{
+		"id": 4,
+		"author": {
+			"name": "lorodcoz",
+			"published_date": "25 jul,2019",
+			"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiD0y3Y6hURQ5_GTfmmT4XQ3d5-RVZbt24NQ&usqp=CAU"
+		},
+		"title": "Citadel of Qaitbay the lighthouse ",
+		"description": "The Citadel of Qaitbay is a fort that was built to protect from invasion by the Sultan Qaitbay in the late 15th century in Alexandria, Egypt. It’s adjacent to the lighthouse of Alexandria, another wonder of the ancient world. Buried beneath the sea nearby is the sunken palace of Cleopatra,s worth your time, and here are. business Sales have also slowed after demand boomed during the pandemic when customers at home spent a lot online",
+		"picture": "https://www.rd.com/wp-content/uploads/2019/06/daily-life-in-alexandria-egypt-23-jul-2018-scaled.jpg?resize=700,466",
+		"category": "travel-news"
+	},
+	{
+		"id": 5,
+		"author": {
+			"name": "lorodcoz bill",
+			"published_date": "25 jul,2019",
+			"img": "https://miro.medium.com/max/800/0*Ty1Vn1voczy6UdeT.png"
+		},
+		"title": "The Western Wall of Jerusalem",
+		"description": "The Western Wall, located in Jerusalem, is also known as the Wailing Wall and is one of the last remaining walls of the ancient Jewish Temple, which was destroyed in 70 A.D. by the Romans. Although the wall itself wasn’t originally a particularly important part of the temple, it’s now considered a holy place by Jews and non-Jews alike, who come from all over the world to pray, meditate, and leave handwritten prayers in crevices of the wall. after demand boomed during the pandemic when customers at home spent a lot online",
+		"picture": "https://www.rd.com/wp-content/uploads/2019/06/jerusalem-israel-2014-scaled.jpg?resize=700,466",
+		"category": "travel-news"
+	},
+	{
+		"id": 6,
+		"author": {
+			"name": "lorodcoz bill",
+			"published_date": "25 jul,2019",
+			"img": "https://miro.medium.com/max/800/0*Ty1Vn1voczy6UdeT.png"
+		},
+		"title": "Hazrat Sultan Mosque, Kazakhstan",
+		"description": "The Hazrat Sultan Mosque is the second largest mosque in all of East Asia. It was completed in 2012 and is designed in classic Islamic style with traditional Kazakh ornaments and decorative elements. it’s now considered a holy place by Jews and non-Jews alike, who come from all over the world to pray, meditate, and leave handwritten prayers in crevices of the wall. after demand boomed during the pandemic when customers at home spent a lot online",
+		"picture": "https://www.rd.com/wp-content/uploads/2019/06/6874931a-scaled.jpg?resize=700,466",
+		"category": "travel-news"
+	}
+]

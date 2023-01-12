@@ -6,10 +6,10 @@ const HomePageArticleAndPostCard = ({ data }) => {
   console.log(data);
   const { author, category, description, picture, title } = data;
   return (
-    <Link to={`/details/`} className="p-5  overflow-hidden shadow ">
-      <div className="overflow-hidden w-62 h-36">
+    <Link to={`/details/`} className="p-2  overflow-hidden shadow ">
+      <div className="overflow-hidden w-70 md:h-36 sm:h-40">
         <img
-          className="transition transform hover:scale-125 object-cover w-full h-36"
+          className="transition transform ease-in-out duration-500 hover:scale-125 object-cover w-full sm:h-40 h-full"
           src={picture}
           alt="/"
         />
@@ -17,7 +17,7 @@ const HomePageArticleAndPostCard = ({ data }) => {
       <div>
         <div className="flex items-center py-2">
           <div className="w-1 h-5 bg-red-600 "></div>
-          <p className="pl-5 text-xl p">{category}</p>
+          <p className="pl-5 text-xl ">{category}</p>
         </div>
         <h1 className="text-sm sm:text-xl font-semibold ">
           {title.slice(0, 20) + "..."}
@@ -34,7 +34,7 @@ const HomePageArticleAndPostCard = ({ data }) => {
         </div>
         <div className="flex items-center gap-1 ">
           <RxCalendar></RxCalendar>
-          <p className="text-[12px] text-slate-400">{author?.published_date}</p>
+          <p className="text-[14px] text-slate-400">{author?.published_date}</p>
         </div>
       </div>
     </Link>

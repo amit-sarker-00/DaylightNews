@@ -12,17 +12,20 @@ const HomePageArticalAndPost = () => {
 
   console.log(articleData);
   return (
-    <div className=" bg-white my-5">
-      <h1 className="py-8 text-3xl mx-3">Recent Articles & Post</h1>
+    <div className=" bg-white py-16 ">
+      <div className=" items-center flex justify-between">
+        <h1 className="pb-3 text-3xl pl-4 w-full lg:w-[1050px]"> Articles & Post</h1>
+        <h1 className="text-3xl lg:w-[500px] pl-3 w-full">Recent Post</h1>
+      </div>
       <div className="flex lg:flex-row flex-col">
-        <div className="w-full lg:w-[900px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  lg:mx-3 ">
+        <div className="w-full lg:w-[1050px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  lg:mx-3 ">
           {articleData &&
             articleData.map((data) => (
               <HomePageArticleAndPostCard data={data} key={data._id} />
             ))}
         </div>
-        <div className="lg:w-[500px] w-full text-center py-5">
-          <h1 className="text-2xl font-semibold">Recent Work</h1>
+        <div className="lg:w-[500px] w-full text-center pb-5">
+
           <div className="w-full">
             {articleData &&
               articleData.map((data) => (

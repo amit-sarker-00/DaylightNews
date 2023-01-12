@@ -18,11 +18,11 @@ const Navbar = () => {
 
   const { user, logout } = useContext(AuthContext);
   // console.log(user);
-  //max-w-[1440px] mx-auto
+  // mx-auto
   return (
     <main>
       <section className="bg-[#f0f2f5] pb-5">
-        <div className="max-w-[1440px] mx-auto">
+        <div className="">
           <div className="w-5/6 mx-auto flex  justify-between py-1">
             <div>
               <label
@@ -75,7 +75,7 @@ const Navbar = () => {
       </section>
 
       <section className="my-2 w-5/6 mx-auto ">
-        <div className="flex justify-between max-w-[1440px] mx-auto">
+        <div className="flex justify-between">
           <div>
             <ul className=" gap-3 hidden lg:flex">
               <li>
