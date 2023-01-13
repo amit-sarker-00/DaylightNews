@@ -55,10 +55,10 @@ const Banner = () => {
                 />
                 <div className=" absolute bottom-10 px-5 text-cyan-500  z-50">
                   <div className="  ">
-                    <button className="font-bold py-1 mb-2 px-2 bg-red-600 hover:bg-red-700 text-white">
+                    <button className="font-bold sm:py-1 mb-2 px-2 bg-red-600 hover:bg-red-700 text-white ">
                       {banner.name}
                     </button>
-                    <h3 className="sm:text-2xl text-xl text-white">
+                    <h3 className="sm:text-2xl text-md text-white">
                       {banner.title}
                     </h3>
                     <div className="sm:flex hidden gap-2 items-center mt-3">
@@ -93,10 +93,12 @@ const Banner = () => {
               />
               <div className=" absolute bottom-2 pl-3 text-cyan-500  z-50">
                 <div className="  ">
-                  <button className="font-bold py-1 mb-2 px-2 bg-red-600 hover:bg-red-700 rounded-sm text-white">
-                    {banner.category}
+                  <button className="font-bold sm:py-1 mb-2 px-2 bg-red-600 hover:bg-red-700 rounded-sm text-white">
+                    {banner.name}
                   </button>
-                  <h3 className="text-sm text-white">{banner.title}</h3>
+                  <h3 className="text-sm text-white hover:underline  hero-overlay">
+                    {banner.title}
+                  </h3>
                   <div className="sm:flex hidden gap-2 items-center mt-3 text-xs flex-wrap">
                     <div className="flex items-center gap-1 font-bold py-1   px-2 bg-white text-red-500">
                       <img
