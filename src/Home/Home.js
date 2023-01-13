@@ -16,7 +16,10 @@ const Home = () => {
       <Category />
       <Banner />
       <TrendingNews />
+      <HomePageLetestNews />
       <HomePageArticalAndPost />
+      <News />
+      <Culture />
     </div>
   );
 };
