@@ -16,6 +16,7 @@ const Home = () => {
       <Banner />
       <TrendingNews />
       <HomePageArticalAndPost />
+      <Culture></Culture>
     </div>
   );
 };

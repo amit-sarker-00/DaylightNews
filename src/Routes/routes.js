@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import BannerDetails from "../Home/BannerDetails/BannerDetails";
 import Home from "../Home/Home";
 import Fashion from "../Home/HomePageLetestNews/Fashion";
 import Health from "../Home/HomePageLetestNews/Health";
@@ -16,14 +17,16 @@ export const router = createBrowserRouter([
     element: <Main />,
     children: [
       {
-        path: "/", element: <Home />, children: [
-          { path: '/', element: <Travel /> },
-          { path: '/fashion', element: <Fashion /> },
-          { path: '/health', element: <Health /> },
-          { path: '/nuture', element: <Nuture /> },
-        ]
+        path: "/",
+        element: <Home />,
+        children: [
+          { path: "/", element: <Travel /> },
+          { path: "/fashion", element: <Fashion /> },
+          { path: "/health", element: <Health /> },
+          { path: "/nuture", element: <Nuture /> },
+        ],
       },
-      { path: "/account", element: <Accounts /> }
+      { path: "/account", element: <Accounts /> },
     ],
   },
   { path: "signup", element: <SignUp /> },
