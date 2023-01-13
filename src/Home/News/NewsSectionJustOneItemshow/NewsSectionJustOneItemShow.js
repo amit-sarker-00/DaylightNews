@@ -11,7 +11,7 @@ const NewsSectionJustOneItemShow = ({ data }) => {
     return (
         <div className='  flex items-center  rounded-xl my-3 gap-4 '>
             <div className='relative overflow-hidden rounded-md '>
-                <img className='work rounded-xl  object-cover md:h-[300px] w-full transition transform hover:scale-125' src={picture} alt='' />
+                <img className='work rounded-xl ease-in-out duration-500 object-cover md:h-[300px] w-full transition transform hover:scale-125' src={picture} alt='' />
                 <div className='absolute sm:bottom-10 bottom-2 text-white font-semibold left-3'>
                     <Link className='bg-black py-1 px-3 rounded-md lg:text-md xl:text-xl'>{title.slice(0, 30)}</Link>
                     <div className="flex items-center gap-5 pt-3">

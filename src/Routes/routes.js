@@ -1,104 +1,29 @@
 import { createBrowserRouter } from "react-router-dom";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
-import DashboardLayout from "../Layout/DashboardLayout";
+import Fashion from "../Home/HomePageLetestNews/Fashion";
+import Health from "../Home/HomePageLetestNews/Health";
+import Nuture from "../Home/HomePageLetestNews/Nuture";
+import Travel from "../Home/HomePageLetestNews/Travel";
 import Main from "../Layout/Main";
-import AdminAccount from "../Pages/Accounts/Admin/AdminAccount";
-import AllReaders from "../Pages/Accounts/Admin/AllReaders";
-import AllWriters from "../Pages/Accounts/Admin/AllWriters";
-import Comments from "../Pages/Accounts/UserAccount/Comments";
-import UserProfile from "../Pages/Accounts/UserAccount/UserProfile";
-import Wishlist from "../Pages/Accounts/UserAccount/Wishlist";
-import AddNews from "../Pages/Accounts/Writers/AddNews";
-import UpdateNews from "../Pages/Accounts/Writers/UpdateNews";
-import WriterProfile from "../Pages/Accounts/Writers/WriterProfile";
+import Accounts from "../Pages/Accounts/Accounts";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
-import Welcome from "../Pages/Welcome/Welcome";
-import AdminRoute from "./AdminRoute";
-import PrivateRoute from "./PrivateRoute";
-import WriterRoute from "./WriterRoute";
 export const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage />,
     element: <Main />,
     children: [
-      { path: "/", element: <Home /> },
-
       {
-        path: "/account",
-        element: (
-          <PrivateRoute>
-            <DashboardLayout />
-          </PrivateRoute>
-        ),
-        children: [
-          {
-            path: "",
-            element: <Welcome />,
-          },
-          {
-            path: "admin/profile",
-            element: (
-              <AdminRoute>
-                <AdminAccount />
-              </AdminRoute>
-            ),
-          },
-          {
-            path: "writers",
-            element: (
-              <AdminRoute>
-                {" "}
-                <AllWriters />
-              </AdminRoute>
-            ),
-          },
-          {
-            path: "readers",
-            element: (
-              <AdminRoute>
-                <AllReaders />
-              </AdminRoute>
-            ),
-          },
-          {
-            path: "writer/profile",
-            element: (
-              <WriterRoute>
-                <WriterProfile />
-              </WriterRoute>
-            ),
-          },
-          {
-            path: "addnews",
-            element: (
-              <WriterRoute>
-                <AddNews />
-              </WriterRoute>
-            ),
-          },
-          {
-            path: "updateNews",
-            element: (
-              <WriterRoute>
-                <UpdateNews />
-              </WriterRoute>
-            ),
-          },
-          {
-            path: "reader/profile",
-            element: <UserProfile />,
-          },
-          {
-            path: "wishlist",
-            element: <Wishlist />,
-          },
-          {
-            path: "comments",
-            element: <Comments />,
-          },
-        ],
+        path: "/", element: <Home />, children: [
+          { path: '/', element: <Travel /> },
+          { path: '/fashion', element: <Fashion /> },
+          { path: '/health', element: <Health /> },
+          { path: '/nuture', element: <Nuture /> },
+        ]
       },
+      { path: "/account", element: <Accounts /> }
     ],
   },
   { path: "signup", element: <SignUp /> },

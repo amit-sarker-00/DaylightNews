@@ -14,15 +14,14 @@ const WriterProfile = () => {
 
   const fetchProfile = () =>
     getUser(user?.email).then((data) => {
-      console.log(data);
       setProfile(data);
       setLoading(!loading);
     });
 
   useEffect(() => {
     fetchProfile();
-  }, [user]);
-  console.log(profile);
+  }, [user, loading]);
+
   const handelUpdateProfile = (event) => {
     event.preventDefault();
     const shopname = event.target.shopname.value;
