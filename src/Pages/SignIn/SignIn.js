@@ -4,7 +4,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { setAuthToken } from "../../api/auth";
 import PrimaryButton from "../../Components/Button/PrimaryButton";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
 const SignIn = () => {
+  useTitle('SignIn Page')
   const [userEmail, setUserEmail] = useState("");
   const { signin, setLoading, signInWithGoogle, resetPassword } =
     useContext(AuthContext);

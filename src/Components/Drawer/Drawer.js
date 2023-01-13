@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import { IoIosArrowDropdown } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
 const Drawer = () => {
+    const [categories, setCategories] = useState([]);
+    // categories 
+    useEffect(() => {
+        fetch("NewsData.json")
+            .then((res) => res.json())
+            .then((data) => setCategories(data));
+    }, []);
+    // console.log(News);
+
+    // all category in news
+    const allCategory = categories.map((news) => news.category);
+    // console.log(allCategory);
+    // unique category
+    const uniqueCategory = [...new Set(allCategory)];
+
     return (
         <section>
 
@@ -14,24 +30,42 @@ const Drawer = () => {
                 </div>
 
                 <div>
-                    <ul className=" text-white gap-1 flex flex-col">
-                        <li className='w-full hover:bg-gray-500 transition-all '>
-                            <Link className='py-2 pl-3 block'>Home</Link>
+                    <ul className=" gap-3 flex-col text-white">
+                        <li className='w-full '>
+                            <Link className='block py-1 hover:bg-red-500 ease-in-out duration-300 pl-2 hover:pl-8'>Home</Link>
                         </li>
-                        <li className='w-full hover:bg-gray-500 transition-all '>
-                            <Link className='py-2 pl-3 block'>Posts</Link>
+                        <li className='w-full '>
+                            <Link className='block py-1 hover:bg-red-500 ease-in-out duration-300 pl-2 hover:pl-8'>News</Link>
                         </li>
-                        <li className='w-full hover:bg-gray-500 transition-all '>
-                            <Link className='py-2 pl-3 block'>MegaMenu</Link>
+                        <li className='w-full '>
+                            <Link className='block py-1 hover:bg-red-500 ease-in-out duration-300 pl-2 hover:pl-8'>Sports</Link>
                         </li>
-                        <li className='w-full hover:bg-gray-500 transition-all '>
-                            <Link className='py-2 pl-3 block'>Pages</Link>
+                        <li className='w-full '>
+                            <Link className='block py-1 hover:bg-red-500 ease-in-out duration-300 pl-2 hover:pl-8'>Pages</Link>
                         </li>
-                        <li className='w-full hover:bg-gray-500 transition-all '>
-                            <Link className='py-2 pl-3 block'>LifeStyle</Link>
+                        <li className='w-full '>
+                            <Link className='block py-1 hover:bg-red-500 ease-in-out duration-300 pl-2 hover:pl-8'>Travel</Link>
                         </li>
-                        <li className='w-full hover:bg-gray-500 transition-all '>
-                            <Link className='py-2 pl-3 block'>Gadgets</Link>
+                        <li className='w-full '>
+                            <Link className='block py-1 hover:bg-red-500 ease-in-out duration-300 pl-2 hover:pl-8'>Future </Link>
+                        </li>
+                        <li className='w-full '>
+                            <Link className='block py-1 hover:bg-red-500 ease-in-out duration-300 pl-2 hover:pl-8'>Culture</Link>
+                        </li>
+                        <li className='w-full pl-2  hover:bg-red-500 ease-in-out duration-300 py-1 hover:pl-8' >
+                            <div className="dropdown w-full ">
+                                <Link tabIndex={1} className="flex items-center gap-1 "><span>Categories</span> <IoIosArrowDropdown className="mt-1" /></Link>
+                                <ul tabIndex={1} className="dropdown-content sm:w-60 w-20 z-50 rounded-md text-black font-semibold  shadow bg-gray-200 ">
+                                    {
+                                        uniqueCategory.map((category, i) => <li className="w-full">
+                                            <Link to={`/category/${category}`} className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500" key={i}>{category}</Link>
+                                        </li>)
+                                    }
+                                </ul>
+                            </div>
+                        </li>
+                        <li className='w-full '>
+                            <Link className='block py-1 hover:bg-red-500 ease-in-out duration-300 pl-2 hover:pl-8'>Gadgets</Link>
                         </li>
                     </ul>
                 </div>

@@ -55,7 +55,7 @@ const Banner = () => {
                 />
                 <div className=" absolute bottom-10 px-5 text-cyan-500  z-50">
                   <div className="  ">
-                    <button className="font-bold sm:py-1 mb-2 px-2 bg-red-600 hover:bg-red-700 text-white ">
+                    <button className="font-bold py-1 mb-2 px-2 bg-red-600 hover:bg-red-700 text-white">
                       {banner.name}
                     </button>
                     <h3 className="sm:text-2xl text-md text-white">
@@ -91,7 +91,7 @@ const Banner = () => {
                 src={banner.img}
                 alt=""
               />
-              <div className=" absolute bottom-2 pl-3 text-cyan-500  z-50">
+              <div className=" absolute bottom-2 pl-3 text-cyan-500  z-40">
                 <div className="  ">
                   <button className="font-bold sm:py-1 mb-2 px-2 bg-red-600 hover:bg-red-700 rounded-sm text-white">
                     {banner.name}

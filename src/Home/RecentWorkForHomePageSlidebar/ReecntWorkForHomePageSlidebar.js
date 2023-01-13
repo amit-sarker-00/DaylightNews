@@ -11,7 +11,7 @@ const ReecntWorkForHomePageSlidebar = ({ data }) => {
     >
       <div className="overflow-hidden m-2">
         <img
-          className="w-36 h-20  transition transform hover:scale-125 object-cover"
+          className="w-36 h-20 ease-in-out duration-500 transform hover:scale-125 object-cover"
           src={picture}
           alt=""
         />

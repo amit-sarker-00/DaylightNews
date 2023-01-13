@@ -44,32 +44,27 @@ const TrendingNews = () => {
           {trendingNews?.map((trending) => (
             <SplideSlide key={trending._id}>
               <div className=" h-80 shadow hover:shadow-2xl border hover:border-gray-300 ">
-                <Link
-                  to={`bannerDetails/${trending._id}`}
-                  className="cursor-pointer"
-                >
-                  <div className="overflow-hidden">
-                    <img
-                      className="w-full h-44 ease-in-out duration-500 transform hover:scale-125"
-                      src={trending.image}
-                      alt=""
-                    />
-                  </div>
-                  <div className="mx-2">
-                    <div className="flex gap-2 my-2 items-center flex-wrap justify-between">
-                      <button className="px-2 bg-red-600 hover:bg-red-700 rounded-sm text-white font-semibold">
-                        {trending.category}
-                      </button>
-                      <div className="sm:flex gap-1 items-center hidden">
-                        <RxCalendar></RxCalendar>
-                        <p className="flex">{trending.author.date}</p>
-                      </div>
+                <div className="overflow-hidden">
+                  <img
+                    className="w-full h-44 ease-in-out duration-500 transform hover:scale-125"
+                    src={trending.image}
+                    alt=""
+                  />
+                </div>
+                <div className="mx-2">
+                  <div className="flex gap-2 my-2 items-center flex-wrap justify-between">
+                    <button className="px-2 bg-red-600 hover:bg-red-700 rounded-sm text-white font-semibold">
+                      {trending.category}
+                    </button>
+                    <div className="sm:flex gap-1 items-center hidden">
+                      <RxCalendar></RxCalendar>
+                      <p className="flex">{trending.author.date}</p>
                     </div>
-                    <h3 className="sm:text-xl text-md font-bold link-hover">
-                      {trending.title}
-                    </h3>
                   </div>
-                </Link>
+                  <h3 className="sm:text-xl text-md font-bold">
+                    {trending.title}
+                  </h3>
+                </div>
               </div>
             </SplideSlide>
           ))}
