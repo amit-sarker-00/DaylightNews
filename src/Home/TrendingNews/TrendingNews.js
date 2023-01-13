@@ -60,9 +60,11 @@ const TrendingNews = () => {
                         <p className="flex">{trending.author.date}</p>
                       </div>
                     </div>
-                    <h3 className="sm:text-xl text-md font-bold">
+
+                    <h3 className="sm:text-xl hover:text-red-500 transition-all text-md font-bold">
                       {trending.title}
                     </h3>
+
                   </div>
                 </div>
               </Link>

@@ -12,7 +12,7 @@ const Travel = () => {
     return (
         <section className='sm:grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-5 sm:gap-y-10 gap-y-5 '>
             {
-                travels.map(travel => <LetestNewsCard news={travel} key={travel?.id} />)
+                travels.map(travel => <LetestNewsCard news={travel} key={travel?.id} length={travels?.length} />)
             }
         </section>
     );

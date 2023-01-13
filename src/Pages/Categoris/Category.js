@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { HiChevronDoubleRight } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 
 const Category = () => {
@@ -17,7 +18,7 @@ const Category = () => {
   const uniqueCategory = [...new Set(allCategory)];
   // console.log(uniqueCategory);
   return (
-    <div className="flex flex-wrap gap-x-6">
+    <div className="flex gap-6">
       {uniqueCategory.map((category, uxi) => (
         <Link key={uxi} to={`/category/${category}`}>
           <p>{category}</p>
