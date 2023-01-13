@@ -143,7 +143,7 @@ const Navbar = () => {
                 <>
                   <div>
                     <button onClick={logout}>log out</button>
-                    <Link className="px-2" to="/account">
+                    <Link className="sm:px-2" to="/account">
                       Account
                     </Link>
                   </div>
