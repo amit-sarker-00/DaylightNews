@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AiOutlineBars } from "react-icons/ai";
+import { IoIosArrowDropdown } from "react-icons/io";
 import { FaFacebookF, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logout } = useContext(AuthContext);
+  const [categories, setCategories] = useState([]);
 
   // date
   const date = new Date();
@@ -15,10 +18,20 @@ const Navbar = () => {
     day: "numeric",
   };
   const currentDate = date.toLocaleDateString("en-US", options);
+  // categories 
+  useEffect(() => {
+    fetch("NewsData.json")
+      .then((res) => res.json())
+      .then((data) => setCategories(data));
+  }, []);
+  // console.log(News);
 
-  const { user, logout } = useContext(AuthContext);
-  // console.log(user);
-  // mx-auto
+  // all category in news
+  const allCategory = categories.map((news) => news.category);
+  // console.log(allCategory);
+  // unique category
+  const uniqueCategory = [...new Set(allCategory)];
+
   return (
     <main>
       <section className="bg-[#f0f2f5] pb-5">
@@ -82,16 +95,34 @@ const Navbar = () => {
                 <Link>Home</Link>
               </li>
               <li>
-                <Link>Posts</Link>
+                <Link>News</Link>
               </li>
               <li>
-                <Link>MegaMenu</Link>
+                <Link>Sports</Link>
               </li>
               <li>
                 <Link>Pages</Link>
               </li>
               <li>
-                <Link>LifeStyle</Link>
+                <Link>Travel</Link>
+              </li>
+              <li>
+                <Link>Future </Link>
+              </li>
+              <li>
+                <Link>Culture</Link>
+              </li>
+              <li >
+                <div className="dropdown dropdown-hover">
+                  <Link tabIndex={1} className="flex items-center gap-1 "><span>Categories</span> <IoIosArrowDropdown className="mt-1" /></Link>
+                  <ul tabIndex={1} className="dropdown-content sm:w-60 w-20 z-50 rounded-md  shadow bg-gray-200 ">
+                    {
+                      uniqueCategory.map((category, i) => <li className="w-full">
+                        <Link to={`/category/${category}`} className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500" key={i}>{category}</Link>
+                      </li>)
+                    }
+                  </ul>
+                </div>
               </li>
               <li>
                 <Link>Gadgets</Link>
