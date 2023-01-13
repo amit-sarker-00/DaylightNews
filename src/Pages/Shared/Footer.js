@@ -62,7 +62,6 @@ const Footer = () => {
     },
 
   ]
-
   return (
     <div className=" bg-black">
       <footer className="footer pt-10 lg:px-8 px-3 mx-auto  text-white ">
@@ -202,7 +201,6 @@ const Footer = () => {
                 </div>
               </div>)
             }
-
           </div>
         </div>
       </footer>
