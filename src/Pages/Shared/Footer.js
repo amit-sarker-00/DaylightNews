@@ -4,7 +4,6 @@ import {
   HiEnvelope,
   HiHome,
   HiPhone,
-  IconName,
 } from "react-icons/hi2";
 import {
   IoLogoFacebook,
@@ -64,55 +63,56 @@ const Footer = () => {
   ]
   return (
     <div className=" bg-black">
-      <footer className="footer pt-10 lg:px-8 px-3 mx-auto  text-white ">
+      <footer className="footer pt-10 w-5/6 mx-auto flex px-3 lg:justify-between lg:flex-row flex-wrap justify-center  text-white ">
         {/* ---------------------about us --------------------  */}
         <div>
-          <span className=" font-bold text-lg pb-6">ABOUT US</span>
+          <h1 className=" font-bold md:text-start text-center w-full text-lg pb-6">ABOUT US</h1>
           <div className="">
             <h2>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
               <br /> Lorem Ipsum has been the industry's standard dummy text
-              since has five...
+              since has five.
             </h2>
-            <p className="link link-hover flex  items-center gap-2 py-3 mt-5">
+            <p className=" flex  items-center gap-2 py-3 mt-5">
               <HiHome className="text-lg text-red-600"></HiHome>
-              15 Cliff St, New York NY 10038, USA
+              <Link className="hover:link"> 15 Cliff St, New York NY 10038, USA</Link>
             </p>
-            <p className="link link-hover flex  items-center gap-2 ">
+            <p className=" flex  items-center gap-2 ">
               <HiPhone className=" text-lg text-red-600"></HiPhone>
-              +91 234 567 8765
+
+              <Link className="hover:link">+91 234 567 8765</Link>
             </p>
-            <p className="link link-hover flex  items-center gap-2 py-3">
+            <p className=" flex  items-center gap-2 py-3">
               <HiEnvelope className="text-lg text-red-600"></HiEnvelope>
-              mail@example.com
+              <Link className="hover:link">friendlywarriors@gmail.com</Link>
             </p>
-            <div className="flex gap-3 py-2">
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600 ">
-                <IoLogoFacebook className=" sm:text-xl text-lg "></IoLogoFacebook>
-              </span>
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600">
-                <IoLogoTwitter className="sm:text-xl text-lg "></IoLogoTwitter>
-              </span>
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600">
-                <IoLogoGoogle className="sm:text-xl text-lg  "></IoLogoGoogle>{" "}
-              </span>
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600">
-                <IoLogoLinkedin className="sm:text-xl text-lg   "></IoLogoLinkedin>{" "}
-              </span>
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600">
-                <IoLogoInstagram className="sm:text-xl text-lg  "></IoLogoInstagram>
-              </span>
-              <span className="rounded-full bg-red-600 p-2 hover:bg-white hover:text-red-600">
+            <div className="flex justify-center md:justify-start gap-3 py-2">
+              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600 ">
+                <IoLogoFacebook className=" sm:text-xl text-lg " />
+              </Link>
+              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
+                <IoLogoTwitter className="sm:text-xl text-lg " />
+              </Link>
+              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
+                <IoLogoGoogle className="sm:text-xl text-lg  " />
+              </Link>
+              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
+                <IoLogoLinkedin className="sm:text-xl text-lg   " />
+              </Link>
+              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
+                <IoLogoInstagram className="sm:text-xl text-lg  " />
+              </Link>
+              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
                 {" "}
-                <IoLogoSkype className="sm:text-xl text-lg"></IoLogoSkype>
-              </span>
+                <IoLogoSkype className="sm:text-xl text-lg" />
+              </Link>
             </div>
           </div>
         </div>
         {/*  ------------------------------------ popular CATEGORIES--------------------------*/}
         <div>
-          <span className="font-bold text-lg pb-6">POPULAR CATEGORIES</span>
+          <h1 className="font-bold text-lg pb-6">POPULAR CATEGORIES</h1>
           <div>
             <Link>
               <div className="flex justify-between py-3 hover:text-red-600">
@@ -183,7 +183,7 @@ const Footer = () => {
         </div>
         {/*--------------------------------popular post --------------------- */}
         <div>
-          <span className="font-bold text-lg pb-6">POPULAR POST</span>
+          <h1 className="font-bold text-lg pb-6 w-full text-center sm:text-start">POPULAR POST</h1>
           <div className="">
             {
               footerTopPost.map(topPost => <div key={topPost.id} className="flex gap-3  hover:text-red-500   p-2">
@@ -204,7 +204,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="text-center py-2 text-gray-300 border-t border-gray-800 ">
+      <div className="text-center py-4 text-gray-300 border-t border-gray-800 ">
         <p>Copyright © 2022 All Rights Reserved.</p>
       </div>
     </div>

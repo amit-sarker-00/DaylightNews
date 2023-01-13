@@ -1,0 +1,105 @@
+[
+  {
+    "_id": 1,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "name": "Newsletter",
+    "title": "Russia's war in Ukraine",
+    "description": "Fighting continues after Ukraine dismissed Putin's call for a temporary ceasefire over Orthodox Christmas as a cynical ploy. The 36-hour Russian-proposed ceasefire ended at midnight local time on Saturday.",
+    "image": "https://i.ibb.co/HXkhJq2/1200x-1.jpg",
+    "category": "Trending"
+  },
+  {
+    "_id": 2,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "This article is about the BasketBall.",
+    "category": "Trending",
+    "name": "BASKETBALL",
+    "description": "Two teams of five players each try to score by shooting a ball through a hoop elevated 10 feet above the ground. The game is played on a rectangular floor called the court, and there is a hoop at each end. The court is divided into two main sections by the mid-court line.",
+    "image": "https://i.ibb.co/L9b21rv/09nba-playoffs-ballhandlers-mobile-Master-At3x.jpg"
+  },
+  {
+    "_id": 3,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "The last game of boxing hot news",
+    "category": "Trending",
+    "name": "BOXING",
+    "description": "The terms pugilism and prizefighting in modern usage are practically synonymous with boxing, although the first term indicates the ancient origins of the sport in its derivation from the Latin pugil, “a boxer,” related to the Latin pugnus, “fist,” and derived in turn from the Greek pyx, “with clenched fist.” The term.",
+    "image": "https://i.ibb.co/sKYpGWC/59131461-605.jpg"
+  },
+  {
+    "_id": 4,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Brazilian football legend Pele dies at age 82",
+    "category": "Trending",
+    "name": "BOXING",
+    "description": "Pele, the legendary Brazilian football player who rose from barefoot poverty to become one of the greatest and best-known athletes in modern history, has died at the age of 82. The death of the only man to win the World Cup three times as a player was confirmed on his Instagram account.",
+    "image": "https://i.ibb.co/Gv4DMDW/0-ko8kj7h4.jpg"
+  },
+  {
+    "_id": 5,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Latest News,breaking stories",
+    "category": "Trending",
+    "name": "BOXING",
+    "description": "Scientists are using satellites and helicopters to map lava flows from the Mauna Loa volcano, and say they're seeing the lava continue its slow progress across the Big Island. The Mauna Loa eruption has reached its second week on the island of Hawaii as the lava flow marches...",
+    "image": "https://i.ibb.co/dthQfPg/download.jpg"
+  },
+  {
+    "_id": 6,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Argentina have won the 2022 World Cup",
+    "category": "Trending",
+    "name": "BOXING",
+    "description": "Argentina have won the 2022 FIFA World Cup after winning on penalties following a 3-3 draw against France in the final. Lionel Messi scored twice to help his nation be crowned world champions.Angel Di Maria won a penalty after Ousmane Dembele fouled the winger in the penalty box, which Messi comfortably converted past Hugo Lloris. Di Maria then added a second after slotting the ball home from close range following a brilliant passing move from Argentina which cut Les Bleus apart",
+    "image": "https://i.ibb.co/Lh1YV3n/gettyimages-1450194969-594x594.jpg"
+  },
+  {
+    "_id": 7,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Golf is a club-and-ball sport",
+    "category": "Trending",
+    "name": "BOXING",
+    "description": "The word 'golf' is not an acronym for anything. Rather, it derives linguistically from the Dutch word 'kolf' or 'kolve,' meaning quite simply 'club. ' In the Scottish dialect of the late 14th or early 15th century, the Dutch term became 'goff' or 'gouff,' and only later in the 16th century 'golf.",
+    "image": "https://i.ibb.co/Qb3Tgqh/collin-morikawa.jpg"
+  },
+  {
+    "_id": 8,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Samsung profits plunge as demand for gadgets slows",
+    "description": "For the memory business, the decline in fourth-quarter demand was greater than expected as customers adjusted inventories in their effort to further tighten finances, Samsung said in the statement Smartphone sales and revenue decreased due to weak demand resulting from prolonged macro issues It is the latest major technology company to reveal how weakness in the global economy is impacting its business Sales have also slowed after demand boomed during the pandemic when customers at home spent a lot online",
+    "image": "https://i.ibb.co/hMvNmpc/128214047-samsung-png.webp",
+    "category": "Trending"
+  }
+]
