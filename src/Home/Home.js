@@ -11,8 +11,7 @@ const Home = () => {
   useTitle('Home')
 
   return (
-    <div>
-      
+    <div className="max-w-[1440px] mx-auto">
       <Category />
       <Banner />
       <TrendingNews />
