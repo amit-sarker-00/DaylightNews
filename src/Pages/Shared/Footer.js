@@ -186,14 +186,14 @@ const Footer = () => {
           <h1 className="font-bold text-lg pb-6 w-full text-center sm:text-start">POPULAR POST</h1>
           <div className="">
             {
-              footerTopPost.map(topPost => <div key={topPost.id} className="flex gap-3 p-2">
+              footerTopPost.map(topPost => <div key={topPost.id} className="flex gap-3  hover:text-red-500   p-2">
                 <img src={car1} alt="" className="w-16 rounded-lg" />
                 <div>
-                  <Link className="hover:text-red-500 transition-all">
+                  <Link className=" transition-all">
                     {topPost.title}
                   </Link>
                   <h1 className="p-2">
-                    <Link className=" items-center gap-2 hover:text-red-500  flex rounded-full transition-all">
+                    <Link className=" items-center gap-2  flex rounded-full transition-all">
                       <IoTimeSharp className="shadow-lg  text-lg bg-red-600 rounded-lg"></IoTimeSharp>
                       {topPost.author.published_date}
                     </Link>

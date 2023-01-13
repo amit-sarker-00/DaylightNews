@@ -4,6 +4,7 @@ import Category from "../Pages/Categoris/Category";
 import Banner from "./Banner/Banner";
 import HomePageArticalAndPost from "./HomepageArticalAndPost/HomePageArticalAndPost";
 import HomePageLetestNews from "./HomePageLetestNews/HomePageLetestNews";
+import News from "./News/News";
 import TrendingNews from "./TrendingNews/TrendingNews";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <TrendingNews />
       <HomePageLetestNews />
       <HomePageArticalAndPost />
+      <News/>
     </div>
   );
 };
