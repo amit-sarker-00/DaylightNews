@@ -11,16 +11,16 @@ const HomePageLetestNews = () => {
                 </div>
                 <div className='flex font-semibold pt-3 gap-2'>
                     <NavLink className={({ isActive }) =>
-                        isActive ? 'text-red-500' : undefined
+                        isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
                     } to='/'>Travel</NavLink>
                     <NavLink className={({ isActive }) =>
-                        isActive ? 'text-red-500' : undefined
+                        isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
                     } to='/fashion'>Fashion</NavLink>
                     <NavLink className={({ isActive }) =>
-                        isActive ? 'text-red-500' : undefined
+                        isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
                     } to='/health'>Health</NavLink>
                     <NavLink className={({ isActive }) =>
-                        isActive ? 'text-red-500' : undefined
+                        isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
                     } to='/nuture'>Nuture</NavLink>
                 </div>
             </section>
