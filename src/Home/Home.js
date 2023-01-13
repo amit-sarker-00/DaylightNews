@@ -5,18 +5,18 @@ import Banner from "./Banner/Banner";
 import Culture from "./Culture-Lifestyle/Culture-Lifestyle";
 import HomePageArticalAndPost from "./HomepageArticalAndPost/HomePageArticalAndPost";
 import HomePageLetestNews from "./HomePageLetestNews/HomePageLetestNews";
+import News from "./News/News";
 import TrendingNews from "./TrendingNews/TrendingNews";
 
 const Home = () => {
   useTitle("Home");
 
   return (
-    <div>
+    <div className="max-w-[1440px] mx-auto">
       <Category />
       <Banner />
       <TrendingNews />
       <HomePageArticalAndPost />
-      <Culture></Culture>
     </div>
   );
 };
