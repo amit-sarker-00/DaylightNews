@@ -6,7 +6,7 @@ const LetestNewsCard = ({ news }) => {
     const { title, picture, category } = news
     return (
         <section>
-            <div class="rounded-lg mx-auto max-w-sm">
+            <div class="rounded-lg mx-auto max-w-sm  hover:text-red-500 transition-all">
                 <div className="overflow-hidden h-[200px] rounded-xl">
                     <img
                         className="transform ease-in-out duration-500 hover:scale-125 object-cover w-full sm:h-[200px] h-full"
@@ -22,7 +22,7 @@ const LetestNewsCard = ({ news }) => {
                     </div>
                 </div>
                 <div>
-                    <Link className='font-bold hover:text-red-500 transition-all text-lg'>
+                    <Link className='font-bold text-lg'>
                         <h1>
                             {title?.length > 22 ? title.slice(0, 22) + '...' : title}
                         </h1>

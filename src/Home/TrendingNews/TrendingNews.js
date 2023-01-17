@@ -43,7 +43,7 @@ const TrendingNews = () => {
         >
           {trendingNews?.map((trending) => (
             <SplideSlide key={trending._id}>
-              <div className=" h-80 shadow hover:shadow-2xl border hover:border-gray-300 ">
+              <div className=" h-80 shadow hover:shadow-2xl border hover:text-red-600  ease-in-out duration-300 hover:border-gray-300 ">
                 <div className="overflow-hidden">
                   <img
                     className="w-full h-44 ease-in-out duration-500 transform hover:scale-125"
@@ -58,12 +58,12 @@ const TrendingNews = () => {
                     </button>
                     <div className="sm:flex gap-1 items-center hidden">
                       <RxCalendar></RxCalendar>
-                      <p className="flex">{trending.author.date}</p>
+                      <p className="text-[14px] text-slate-400">{trending.author.date}</p>
                     </div>
                   </div>
-                  <h3 className="sm:text-xl text-md font-bold">
-                    {trending.title}
-                  </h3>
+                  <Link>  <h3 className="sm:text-xl text-md font-bold">
+                    {trending.title.slice(0, 48) + '...'}
+                  </h3></Link>
                 </div>
               </div>
             </SplideSlide>

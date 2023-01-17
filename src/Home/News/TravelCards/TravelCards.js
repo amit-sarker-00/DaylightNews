@@ -7,11 +7,11 @@ const TravelCards = ({ data }) => {
     const { title, picture, descrption, category, author } = data;
     return (
 
-        <div className=' border-white border hover:border hover:border-red-500 ease-in-out duration-500 hover:rounded-xl transition-all'>
+        <div className=' border-white border hover:border hover:border-red-500 hover:text-red-600  ease-in-out duration-500 hover:rounded-xl transition-all'>
             <div className='flex sm:flex-row flex-col h-full items-center  rounded-xl   py-3 gap-4 '>
                 <figure><img className='sm:w-32 rounded-xl p-1' src={picture} alt="Album" /></figure>
                 <Link>
-                    <h2 className=" font-semibold md:text-start text-black hover:text-red-500 transition-all text-center pb-2 pt-4">{title}</h2>
+                    <h2 className=" font-semibold md:text-start text-center pb-2 pt-4">{title}</h2>
                     <div className="flex justify-around pb-2  ">
                         <div>
                             <p className='flex items-center gap-1 text-gray-400'><HiUser className='text-red-700 bg-gray-300 rounded-md text-lg p-px'></HiUser> {author.name}</p>
