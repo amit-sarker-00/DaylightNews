@@ -2,7 +2,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
 import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
-
 const TrendingNews = () => {
   const [trendingNews, setTrendingNews] = useState([]);
 
@@ -61,7 +60,7 @@ const TrendingNews = () => {
                       <p className="flex">{trending.author.date}</p>
                     </div>
                   </div>
-                  <h3 className="sm:text-xl text-md font-bold">
+                  <h3 className="sm:text-xl link-hover text-md font-bold">
                     {trending.title}
                   </h3>
                 </div>

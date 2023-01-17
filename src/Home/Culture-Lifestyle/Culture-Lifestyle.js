@@ -1,6 +1,5 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
-import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 const Culture = () => {
