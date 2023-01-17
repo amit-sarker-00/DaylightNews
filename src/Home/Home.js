@@ -21,9 +21,7 @@ const Home = () => {
       <TrendingNews />
       <HomePageLetestNews />
       <HomePageArticalAndPost />
-      <News />
       <FoodNews />
-      <Culture />
     </div>
   );
 };
