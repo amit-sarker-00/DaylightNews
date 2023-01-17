@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-const VatingNews = () => {
+const VatingOptions = ({ news }) => {
     const [selectedOption, setSelectedOption] = useState("");
+    const [disabled, setDisabled] = useState(false);
     const [voteCount, setVoteCount] = useState({
-        Yes: 0,
-        No: 0,
-        No_Opinion: 0
+        Yes: 8,
+        No: 5,
+        No_Opinion: 2
     });
 
     const handleVote = option => {
@@ -21,15 +22,21 @@ const VatingNews = () => {
     const option2Percent = (voteCount.No / totalVotes) * 100;
     const option3Percent = (voteCount.No_Opinion / totalVotes) * 100;
 
+
+    const handleVoteSubmit = (event) => {
+        alert(event)
+        setSelectedOption(null)
+        setDisabled(true)
+    }
+
     return (
         <div>
-            <h1>Online Vote</h1>
-            <div className="w-60">
+            <div className="mt-3 select-none">
 
                 <div className="bg-gray-200 rounded-md">
-                    <label className={`flex justify-between p-2 cursor-pointer rounded-md `} htmlFor="Yes">
+                    <label className={`flex  justify-between p-2 cursor-pointer rounded-md `}   >
                         <div className="flex gap-2">
-                            <input onClick={() => handleVote("Yes")} type="radio" name="vote" value='Yes' id="Yes" />
+                            <input disabled={disabled} onClick={() => handleVote("Yes")} type="radio" name={news.id} />
                             Yes
                         </div>
                         <p>{voteCount.Yes}</p>
@@ -37,9 +44,9 @@ const VatingNews = () => {
                     </label>
                 </div>
                 <div className="bg-gray-200 my-2 rounded-md">
-                    <label className={`flex justify-between p-2 cursor-pointer rounded-md`} htmlFor="No">
+                    <label className={`flex justify-between p-2 cursor-pointer rounded-md`} >
                         <div className="flex gap-2">
-                            <input onClick={() => handleVote("No")} type="radio" name="vote" value='No' id="No" />
+                            <input disabled={disabled} onClick={() => handleVote("No")} type="radio" name={news.id} />
                             No
                         </div>
                         <p>{voteCount.No}</p>
@@ -47,9 +54,9 @@ const VatingNews = () => {
                     </label>
                 </div>
                 <div className="bg-gray-200  rounded-md">
-                    <label className={`flex justify-between p-2 cursor-pointer rounded-md`} htmlFor="No-Opinion">
+                    <label className={`flex justify-between p-2 cursor-pointer rounded-md`} >
                         <div className="flex gap-2">
-                            <input onClick={() => handleVote("No_Opinion")} type="radio" name="vote" value='No-Opinion' id="No-Opinion" />
+                            <input disabled={disabled} onClick={() => handleVote("No_Opinion")} type="radio" name={news.id} />
                             No Opinion
                         </div>
                         <p>{voteCount.No_Opinion}</p>
@@ -57,15 +64,14 @@ const VatingNews = () => {
                     </label>
                 </div>
 
-
+                <div className=" flex justify-end mt-3 mb-5">
+                    <button disabled={!selectedOption} onClick={() => handleVoteSubmit(news.id)} className="btn rounded-full btn-sm ">Vote</button>
+                </div>
             </div>
-            <div>
-                <button onClick={() => handleVote("option2")}></button>
 
-            </div>
 
         </div>
     );
 };
 
-export default VatingNews;
+export default VatingOptions;

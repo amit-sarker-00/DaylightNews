@@ -78,7 +78,7 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
-              <h1 className="text-xl font-bold italic "><a href="/">DayLight-News</a></h1>
+              <h1 className="text-xl select-none font-bold italic "><a href="/">DayLight-News</a></h1>
             </div>
             <div>
               <h1 className="text-sm font-semibold">{currentDate}</h1>

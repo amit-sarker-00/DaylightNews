@@ -57,7 +57,7 @@ const SignIn = () => {
   };
   return (
     <div className="">
-      <h1 className="py-5 text-center text-4xl font-bold animate-pulse italic"><Link to='/'>DaiLight-News</Link></h1>
+      <h1 className="py-5 text-center text-4xl font-bold animate-pulse select-none italic"><Link to='/'>DaiLight-News</Link></h1>
       <div className=" px-6 ">
         <div className="flex flex-col sm:w-96   mx-auto rounded-md sm:p-5 py-8 text-gray-900">
           <div className="mb-8 text-center">

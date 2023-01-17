@@ -205,7 +205,7 @@ const Footer = () => {
         </div>
       </footer>
       <div className="text-center py-4 text-gray-300 border-t border-gray-800 ">
-        <p>Copyright © 2022 All Rights Reserved.</p>
+        <p>Copyright © 2023 All Rights Reserved By <a href="#">Programming-hero</a> FriendlyWarriors-Team</p>
       </div>
     </div>
   );

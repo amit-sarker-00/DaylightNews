@@ -8,7 +8,7 @@ import HomePageArticalAndPost from "./HomepageArticalAndPost/HomePageArticalAndP
 import HomePageLetestNews from "./HomePageLetestNews/HomePageLetestNews";
 import News from "./News/News";
 import TrendingNews from "./TrendingNews/TrendingNews";
-import VatingNews from "./VatingNews/VatingNews";
+import OnlineVatingSection from "./OnlineVatingSection/OnlineVatingSection";
 
 const Home = () => {
   useTitle("Home");
@@ -23,7 +23,7 @@ const Home = () => {
       <HomePageArticalAndPost />
       <News />
       <Culture /> */}
-      <VatingNews />
+      <OnlineVatingSection />
     </div>
   );
 };

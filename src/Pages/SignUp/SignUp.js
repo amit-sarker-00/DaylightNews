@@ -100,7 +100,7 @@ const SignUp = () => {
   }
   return (
     <div>
-      <h1 className="py-5 text-center text-4xl font-bold animate-pulse italic"><Link to='/'>DaiLight-News</Link></h1>
+      <h1 className="py-5 text-center text-4xl font-bold animate-pulse select-none italic"><Link to='/'>DaiLight-News</Link></h1>
       <div className="flex justify-center items-center">
         <div className="flex flex-col max-w-md p-6 rounded-md    text-gray-900">
           <div className="mb-8 text-center">
