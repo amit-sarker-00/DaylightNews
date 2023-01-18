@@ -9,6 +9,7 @@ import HomePageArticalAndPost from "./HomepageArticalAndPost/HomePageArticalAndP
 import HomePageLetestNews from "./HomePageLetestNews/HomePageLetestNews";
 import News from "./News/News";
 import TrendingNews from "./TrendingNews/TrendingNews";
+import VideoSection from "./VideoSection/VideoSection";
 
 const Home = () => {
   useTitle("Home");
@@ -23,6 +24,7 @@ const Home = () => {
       <HomePageArticalAndPost />
       <News></News>
       <FoodNews />
+      <VideoSection></VideoSection>
       <Culture></Culture>
     </div>
   );

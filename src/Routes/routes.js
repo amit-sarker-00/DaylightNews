@@ -6,6 +6,7 @@ import Fashion from "../Home/HomePageLetestNews/Fashion";
 import Health from "../Home/HomePageLetestNews/Health";
 import Nuture from "../Home/HomePageLetestNews/Nuture";
 import Travel from "../Home/HomePageLetestNews/Travel";
+import VideoSection from "../Home/VideoSection/VideoSection";
 import Main from "../Layout/Main";
 import Accounts from "../Pages/Accounts/Accounts";
 import SignIn from "../Pages/SignIn/SignIn";
