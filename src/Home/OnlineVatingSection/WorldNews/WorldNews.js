@@ -28,7 +28,7 @@ const WorldNews = () => {
                     }
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                         {
-                            datas && datas.slice(6, 9).map(data => <HorizentalSection data={data} key={data?.title} />)
+                            datas && datas.slice(-3).map(data => <HorizentalSection data={data} key={data?.title} />)
                         }
 
                     </div>

@@ -142,7 +142,7 @@ const Navbar = () => {
               {user?.email ? (
                 <>
                   <div>
-                    <button onClick={logout}>log out</button>
+                    <button className="btn rounded-full btn-sm" onClick={logout}>log out</button>
                     <Link className="sm:px-2" to="/account">
                       Account
                     </Link>

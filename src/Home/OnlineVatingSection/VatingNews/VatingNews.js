@@ -1,18 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsArrowUpRightSquareFill } from 'react-icons/bs';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import VatingOptions from './VatingOptions';
+import { useQuery } from '@tanstack/react-query';
+import Spinner from '../../../Components/Spinner/Spinner';
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const VatingNews = () => {
-    const [vatingNews, setVatingNews] = useState([]);
-    useEffect(() => {
-        fetch('travelData.json').then(res => res.json()).then(result => {
-            setVatingNews(result)
-        })
-    }, []);
+    const { user } = useContext(AuthContext)
+
+    const { data: newsForVote, isLoading } = useQuery({
+        queryKey: ['newsForVoting'],
+        queryFn: () => fetch(`${process.env.REACT_APP_API_URL}newsForVoting`).then(res => res.json())
+    })
+
+
+    if (isLoading) {
+        return
+    }
+
     return (
         <div>
+
             <Link className='flex text-xl font-semibold hover:text-red-600 transition-all gap-2'>Online Vating <span><BsArrowUpRightSquareFill className='text-red-600 mt-1' /></span></Link>
             <div className="mt-5">
                 <Splide
@@ -26,19 +36,19 @@ const VatingNews = () => {
                         speed: "2000",
                     }}
                 >
-                    {vatingNews.map((vatingNews) => (
-                        <SplideSlide className='px-1' key={vatingNews.id}>
+                    {newsForVote.map((voteNews) => (
+                        <SplideSlide className='px-1' key={voteNews._id}>
                             <div className="">
                                 <img
                                     className="h-52 w-full rounded-t-xl object-cover"
-                                    src={vatingNews.picture}
+                                    src={voteNews.picture}
                                     alt=""
                                 />
-                                <p>{vatingNews?.description.slice(0, 215)}</p>
+                                <p>{voteNews?.description.slice(0, 215)}</p>
                             </div>
 
                             <div className=''>
-                                <VatingOptions news={vatingNews} />
+                                <VatingOptions user={user} news={voteNews} />
                             </div>
                         </SplideSlide>
                     ))}

@@ -17,14 +17,14 @@ const Home = () => {
   return (
     <div className="max-w-[1440px] mx-auto">
       {/* <Category /> */}
-      <Spinner />
-      <Banner />
+      {/* <Spinner /> */}
+      {/* <Banner />
       <BreakingNews/>
       <TrendingNews />
       <HomePageLetestNews />
       <HomePageArticalAndPost />
       <News />
-      <Culture />
+      <Culture /> */}
       <OnlineVatingSection />
     </div>
   );

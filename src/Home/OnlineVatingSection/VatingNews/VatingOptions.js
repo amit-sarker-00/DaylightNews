@@ -1,20 +1,18 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const VatingOptions = ({ news }) => {
+const VatingOptions = ({ news, user }) => {
     const [selectedOption, setSelectedOption] = useState("");
-    const [disabled, setDisabled] = useState(false);
-    const [voteCount, setVoteCount] = useState({
-        Yes: 8,
-        No: 5,
-        No_Opinion: 2
-    });
 
+    const [voteCount, setVoteCount] = useState({
+        Yes: news?.vote?.Yes,
+        No: news?.vote?.No,
+        No_Opinion: news?.vote?.No_Opinion
+    });
+    console.log(news);
     const handleVote = option => {
         setSelectedOption(option);
-        setVoteCount({
-            ...voteCount,
-            [option]: voteCount[option] + 1
-        });
+
     };
 
     const totalVotes = Object.values(voteCount).reduce((a, b) => a + b, 0);
@@ -24,9 +22,34 @@ const VatingOptions = ({ news }) => {
 
 
     const handleVoteSubmit = (event) => {
-        alert(event)
-        setSelectedOption(null)
-        setDisabled(true)
+        const data = {
+
+            Yes: {
+                ...voteCount,
+                [selectedOption]: voteCount[selectedOption] + 1
+            },
+            No: {
+                ...voteCount,
+                [selectedOption]: voteCount[selectedOption] + 1
+            },
+            No_Opinion: {
+                ...voteCount,
+                [selectedOption]: voteCount[selectedOption] + 1
+            }
+        }
+        fetch(`${process.env.REACT_APP_API_URL}votingNews?id=${event}`, {
+            method: 'PUT', headers: {
+                'content-type': 'application/json'
+            }, body: JSON.stringify(data)
+        }).then(res => res.json()).then(result => {
+            console.log(result);
+        })
+
+        setVoteCount({
+            ...voteCount,
+            [selectedOption]: voteCount[selectedOption] + 1
+        });
+
     }
 
     return (
@@ -36,36 +59,39 @@ const VatingOptions = ({ news }) => {
                 <div className="bg-gray-200 rounded-md">
                     <label className={`flex  justify-between p-2 cursor-pointer rounded-md `}   >
                         <div className="flex gap-2">
-                            <input disabled={disabled} onClick={() => handleVote("Yes")} type="radio" name={news.id} />
+                            <input disabled={!user?.email} onClick={() => handleVote("Yes")} type="radio" name={news._id} />
                             Yes
                         </div>
                         <p>{voteCount.Yes}</p>
-                        <p>{option1Percent ? `${option1Percent.toFixed(0)}%` : '0%'}</p>
+                        <p>{option1Percent ? `${parseInt(option1Percent)}%` : '0%'}</p>
                     </label>
                 </div>
                 <div className="bg-gray-200 my-2 rounded-md">
                     <label className={`flex justify-between p-2 cursor-pointer rounded-md`} >
                         <div className="flex gap-2">
-                            <input disabled={disabled} onClick={() => handleVote("No")} type="radio" name={news.id} />
+                            <input disabled={!user?.email} onClick={() => handleVote("No")} type="radio" name={news._id} />
                             No
                         </div>
                         <p>{voteCount.No}</p>
-                        <p>{option2Percent ? `${option2Percent.toFixed(0)}%` : '0%'}</p>
+                        <p>{option2Percent ? `${parseInt(option2Percent)}%` : '0%'}</p>
                     </label>
                 </div>
                 <div className="bg-gray-200  rounded-md">
                     <label className={`flex justify-between p-2 cursor-pointer rounded-md`} >
                         <div className="flex gap-2">
-                            <input disabled={disabled} onClick={() => handleVote("No_Opinion")} type="radio" name={news.id} />
+                            <input disabled={!user?.email} onClick={() => handleVote("No_Opinion")} type="radio" name={news._id} />
                             No Opinion
                         </div>
                         <p>{voteCount.No_Opinion}</p>
-                        <p>{option3Percent ? `${option3Percent.toFixed(0)}%` : '0%'}</p>
+                        <p>{option3Percent ? `${parseInt(option3Percent)}%` : '0%'}</p>
                     </label>
                 </div>
 
                 <div className=" flex justify-end mt-3 mb-5">
-                    <button disabled={!selectedOption} onClick={() => handleVoteSubmit(news.id)} className="btn rounded-full btn-sm ">Vote</button>
+                    {user?.email ? <button disabled={!selectedOption} onClick={() => handleVoteSubmit(news._id)} className="btn rounded-full btn-sm ">Vote</button> : <div className="flex gap-2 items-center mx-5">
+                        <p className="text-red-500">please login before put your vote  </p>
+                        <Link to='/login' className="btn rounded-full btn-sm">Login</Link>
+                    </div>}
                 </div>
             </div>
 
