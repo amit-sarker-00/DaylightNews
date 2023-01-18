@@ -20,7 +20,7 @@ const WorldNews = () => {
         <div>
             <Link className='flex  text-xl font-semibold gap-2 hover:text-red-600 transition-all'>World <span><BsArrowUpRightSquareFill className='text-red-600 mt-1' /></span></Link>
 
-            <div className='flex xl:flex-row flex-col bg-r'>
+            <div className='flex xl:flex-row flex-col items-center lg:items-start bg-r'>
                 <div className='mt-5 w-full lg:w-[800px] '>
 
                     {
@@ -34,7 +34,7 @@ const WorldNews = () => {
                     </div>
 
                 </div>
-                <div className='mt-5 w-[100%] xl:w-96 flex flex-row xl:flex-col '>
+                <div className='mt-5 w-[100%] xl:w-96 xl:flex flex-col md:grid md:grid-cols-2 xl:gap-0 gap-4  '>
                     {
                         datas && datas.slice(1, 5).map(data => <RightSide4Card data={data} key={data?.title} />)
                     }

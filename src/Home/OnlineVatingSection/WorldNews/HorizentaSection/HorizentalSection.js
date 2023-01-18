@@ -7,9 +7,9 @@ const HorizentalSection = ({ data }) => {
     } = data
     return (
         <div className=' mb-3 w-full hover:text-red-600 transition-all hover:border border hover:border-gray-200 border-white'>
-            <div className="overflow-hidden h-20">
+            <div className="overflow-hidden xl:h-20">
                 <img
-                    className="h-[100%] w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
+                    className="w-full h-60 ease-in-out duration-500 transform hover:scale-125 object-cover"
                     src={picture}
                     alt=""
                 />
