@@ -18,6 +18,7 @@ const EnvironmentNews = () => {
           The Latest Environment News
         </h1>
       </div>
+      
       <div className="grid md:grid-cols-2 gap-x-5 sm:gap-y-10 gap-y-5">
         {environments?.map((environment) => (
           <EnvironmentNewsCard key={environment?.id} EnvNews={environment} />
