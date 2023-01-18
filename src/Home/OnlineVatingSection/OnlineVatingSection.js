@@ -4,7 +4,7 @@ import WorldNews from './WorldNews/WorldNews';
 
 const OnlineVatingSection = () => {
     return (
-        <section className='flex'>
+        <section className='flex mb-3'>
             <div className='sm:w-[65%]'>
                 <WorldNews />
             </div>
