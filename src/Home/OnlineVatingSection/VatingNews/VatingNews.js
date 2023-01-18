@@ -13,7 +13,7 @@ const VatingNews = () => {
     }, []);
     return (
         <div>
-            <Link className='flex text-xl font-semibold hover:text-red-600 transition-all gap-2'>Online Voting <span><BsArrowUpRightSquareFill className='text-red-600 mt-1' /></span></Link>
+            <Link className='flex text-xl font-semibold hover:text-red-600 transition-all gap-2'>Online Vating <span><BsArrowUpRightSquareFill className='text-red-600 mt-1' /></span></Link>
             <div className="mt-5">
                 <Splide
                     aria-label=""

@@ -60,7 +60,7 @@ const Culture = () => {
         <div className=" gap-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  h-full xl:grid-cols-2 w-full">
           {bannerImg?.slice(3, 8).map((banner) => (
             <Link
-              className="border w-[100%] h-64 "
+              className="border w-[100%] h-64 hover:text-red-600 transition-all "
               to={`/bannerDetails/${banner.id}`}
               key={banner.id}
             >
@@ -78,8 +78,8 @@ const Culture = () => {
                   </h3>
                   <p className="text-gray-600 ">
                     {banner.description.slice(0, 30) + "..."}{" "}
-                    <span className="link  font-semibold ">Read More</span>
                   </p>
+                  <span className="link  font-semibold ">Read More</span>
                 </div>
               </div>
             </Link>
