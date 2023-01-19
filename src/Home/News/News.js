@@ -5,67 +5,75 @@ import TravelCards from './TravelCards/TravelCards';
 
 
 const News = () => {
-    const [travelData, setTravelData] = useState([])
+    const [techNews, setTechNews] = useState([])
     const [lifeStyle, setLifeStyle] = useState([])
-    const [healthNews, setHealthNews] = useState([])
-
-
-
-    // all traverl card 
-    useEffect(() => {
-        fetch('travelData.json')
-            .then(res => res.json())
-            .then(data => setTravelData(data))
-    }, [])
-
-
+    const [cultureshNews, setCulturesNews] = useState([])
 
     useEffect(() => {
-        fetch('lifeStyle.json')
-            .then(res => res.json())
-            .then(data => setLifeStyle(data))
-    }, [])
+        fetch(`${process.env.REACT_APP_API_URL}news`)
+            .then((res) => res.json())
+            .then((result) => {
+                const techNews = result?.filter(tech => tech?.category === 'Tech')
+                setTechNews(techNews.slice(-4))
 
-
+            });
+    }, []);
 
 
     useEffect(() => {
-        fetch('healthNews.json')
-            .then(res => res.json())
-            .then(data => setHealthNews(data))
-    }, [])
+        fetch(`${process.env.REACT_APP_API_URL}news`)
+            .then((res) => res.json())
+            .then((result) => {
+                const lifeStyles = result?.filter(lifeStyles => lifeStyles?.category === 'lifeStyle')
+                setLifeStyle(lifeStyles.slice(-4))
+
+            });
+    }, []);
+
+
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_API_URL}news`)
+            .then((res) => res.json())
+            .then((result) => {
+                const cultures = result?.filter(cultures => cultures?.category === 'cultures')
+                setCulturesNews(cultures.slice(-4))
+
+            });
+    }, []);
+
+
 
     return (
         <div className='mx-auto mb-12'>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-8'>
                 <div className=''>
                     <div className=' border-b-2 border-dashed'>
-                        <button className='bg-red-500 text-white rounded-t-xl py-2 px-5 '> NEWS</button>
+                        <button className='bg-red-500 text-white rounded-t-xl py-2 px-5 '> Technology </button>
                     </div>
                     {
-                        travelData.slice(0, 1).map(travel => <NewsSectionJustOneItemShow
-                            key={travel.id}
+                        techNews.slice(0, 1).map(travel => <NewsSectionJustOneItemShow
+                            key={travel._id}
                             data={travel}
                         ></NewsSectionJustOneItemShow>)
                     }
 
 
                     {
-                        travelData.map(travel => <TravelCards
-                            key={travel.id}
+                        techNews.map(travel => <TravelCards
+                            key={travel._id}
                             data={travel}
                         ></TravelCards>)
                     }
                 </div>
                 <div>
                     <div className=' border-b-2 border-dashed'>
-                        <button className='bg-cyan-400 text-white rounded-t-xl py-2 px-5 '>TRAVEL NEWS</button>
+                        <button className='bg-cyan-400 text-white rounded-t-xl py-2 px-5 '>Life Style</button>
                     </div>
 
 
                     {
                         lifeStyle.slice(0, 1).map(travel => <NewsSectionJustOneItemShow
-                            key={travel.id}
+                            key={travel._id}
                             data={travel}
                         ></NewsSectionJustOneItemShow>)
                     }
@@ -74,25 +82,25 @@ const News = () => {
 
                     {
                         lifeStyle.map(life => <TravelCards
-                            key={life.id}
+                            key={life._id}
                             data={life}
                         ></TravelCards>)
                     }
                 </div>
                 <div>
                     <div className=' border-b-2 border-dashed'>
-                        <button className='bg-black text-white rounded-t-xl py-2 px-5 '>TRAVEL NEWS</button>
+                        <button className='bg-black text-white rounded-t-xl py-2 px-5 '>Cultures</button>
                     </div>
 
                     {
-                        healthNews.slice(0, 1).map(travel => <NewsSectionJustOneItemShow
-                            key={travel.id}
+                        cultureshNews.slice(0, 1).map(travel => <NewsSectionJustOneItemShow
+                            key={travel._id}
                             data={travel}
                         ></NewsSectionJustOneItemShow>)
                     }
                     {
-                        healthNews.map(health => <TravelCards
-                            key={health.id}
+                        cultureshNews.map(health => <TravelCards
+                            key={health._id}
                             data={health}
                         ></TravelCards>)
                     }

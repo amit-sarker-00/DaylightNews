@@ -6,7 +6,7 @@ import DetailsCommentBox from '../DetailsCommentBox/DetailsCommentBox';
 
 
 const DetailsCard = ({ data }) => {
-    console.log(data)
+   
     const { author, category, description
         , picture, title } = data
     // console.log(author?.img)

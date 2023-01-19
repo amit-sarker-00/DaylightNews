@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
-const VatingOptions = ({ news, user }) => {
+const VatingOptions = ({ news, user, refetch }) => {
     const [selectedOption, setSelectedOption] = useState("");
-
+    const [voteBtnDisabled, setvoteBtnDisabled] = useState(false);
     const [voteCount, setVoteCount] = useState({
         Yes: news?.vote?.Yes,
         No: news?.vote?.No,
         No_Opinion: news?.vote?.No_Opinion
     });
-    console.log(news);
+
     const handleVote = option => {
         setSelectedOption(option);
 
@@ -43,6 +42,8 @@ const VatingOptions = ({ news, user }) => {
             }, body: JSON.stringify(data)
         }).then(res => res.json()).then(result => {
             console.log(result);
+            setvoteBtnDisabled(true)
+            refetch()
         })
 
         setVoteCount({
@@ -59,39 +60,37 @@ const VatingOptions = ({ news, user }) => {
                 <div className="bg-gray-200 rounded-md">
                     <label className={`flex  justify-between p-2 cursor-pointer rounded-md `}   >
                         <div className="flex gap-2">
-                            <input disabled={!user?.email} onClick={() => handleVote("Yes")} type="radio" name={news._id} />
+                            <input disabled={voteBtnDisabled} onClick={() => handleVote("Yes")} type="radio" name={news._id} />
                             Yes
                         </div>
-                        <p>{voteCount.Yes}</p>
+
                         <p>{option1Percent ? `${parseInt(option1Percent)}%` : '0%'}</p>
                     </label>
                 </div>
                 <div className="bg-gray-200 my-2 rounded-md">
                     <label className={`flex justify-between p-2 cursor-pointer rounded-md`} >
                         <div className="flex gap-2">
-                            <input disabled={!user?.email} onClick={() => handleVote("No")} type="radio" name={news._id} />
+                            <input disabled={voteBtnDisabled} onClick={() => handleVote("No")} type="radio" name={news._id} />
                             No
                         </div>
-                        <p>{voteCount.No}</p>
+
                         <p>{option2Percent ? `${parseInt(option2Percent)}%` : '0%'}</p>
                     </label>
                 </div>
                 <div className="bg-gray-200  rounded-md">
                     <label className={`flex justify-between p-2 cursor-pointer rounded-md`} >
                         <div className="flex gap-2">
-                            <input disabled={!user?.email} onClick={() => handleVote("No_Opinion")} type="radio" name={news._id} />
+                            <input disabled={voteBtnDisabled} onClick={() => handleVote("No_Opinion")} type="radio" name={news._id} />
                             No Opinion
                         </div>
-                        <p>{voteCount.No_Opinion}</p>
+
                         <p>{option3Percent ? `${parseInt(option3Percent)}%` : '0%'}</p>
                     </label>
                 </div>
 
                 <div className=" flex justify-end mt-3 mb-5">
-                    {user?.email ? <button disabled={!selectedOption} onClick={() => handleVoteSubmit(news._id)} className="btn rounded-full btn-sm ">Vote</button> : <div className="flex gap-2 items-center mx-5">
-                        <p className="text-red-500">please login before put your vote  </p>
-                        <Link to='/login' className="btn rounded-full btn-sm">Login</Link>
-                    </div>}
+                    <button disabled={!selectedOption || voteBtnDisabled} onClick={() => handleVoteSubmit(news._id)} className="btn rounded-full btn-sm ">Vote</button>
+
                 </div>
             </div>
 

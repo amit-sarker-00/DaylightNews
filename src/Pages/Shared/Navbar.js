@@ -5,9 +5,22 @@ import { FaFacebookF, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
+
 const Navbar = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout, setSearchContent } = useContext(AuthContext);
   const [categories, setCategories] = useState([]);
+
+  const [weather, setWeather] = useState({});
+  // weather
+  useEffect(() => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=Dhaka&units=metric&APPID=${process.env.REACT_APP_Weather_API_KEY}`)
+      .then((res) => res.json())
+      .then((result) => {
+        setWeather(result);
+      });
+  }, []);
+  const temp = weather?.main?.temp;
+
 
   // date
   const date = new Date();
@@ -20,7 +33,7 @@ const Navbar = () => {
   const currentDate = date.toLocaleDateString("en-US", options);
   // categories 
   useEffect(() => {
-    fetch("NewsData.json")
+    fetch("allNews.json")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
@@ -48,7 +61,9 @@ const Navbar = () => {
             </div>
 
             <div>
-              <h1>Tempareture </h1>
+              <h1>
+                {temp?.toFixed(0)}°c <span>Tempareture</span>{" "}
+              </h1>
             </div>
           </div>
 
@@ -133,6 +148,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <div>
               <input
+                onChange={e => setSearchContent(e.target.value)}
                 className="p-1 rounded-2xl pl-3  bg-[#f0f2f5] "
                 type="search"
                 placeholder="Search"

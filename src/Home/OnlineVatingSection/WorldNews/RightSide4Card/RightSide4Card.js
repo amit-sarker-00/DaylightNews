@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const RightSide4Card = ({ data }) => {
     const { author, category, description, picture
-        , title
+        , title, _id
     } = data
     return (
         <div className='mx-3 mb-3 w-full hover:text-red-600 transition-all xl:w-72 pb-4 '>
@@ -14,7 +14,7 @@ const RightSide4Card = ({ data }) => {
                     alt=""
                 />
             </div>
-            <Link className='text-lg font-bold'>  <h1> {title.slice(0, 50)}</h1></Link>
+            <Link to={`detail${_id}`} className='text-lg font-bold'>  <h1> {title.slice(0, 50)}</h1></Link>
         </div>
     );
 };

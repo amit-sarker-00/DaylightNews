@@ -7,16 +7,16 @@ const Culture = () => {
   const [bannerImg, setBannerImg] = useState([]);
   //   const [sideBanner, setSideBanner] = useState([]);
   useEffect(() => {
-    fetch("culture-and-lifestyles.json")
+    fetch(`${process.env.REACT_APP_API_URL}news`)
       .then((res) => res.json())
-      .then((data) => setBannerImg(data));
+      .then((result) => {
+        const breakingNews = result?.filter(breaking => breaking?.category === 'cultures')
+        setBannerImg(breakingNews)
+
+      });
   }, []);
 
-  //   useEffect(() => {
-  //     fetch("culture-and-lifestyles.json")
-  //       .then((res) => res.json())
-  //       .then((data) => setSideBanner(data));
-  //   }, []);
+
   return (
     <div className="mb-4 sm:my-10 md:my-16">
       <div className="font-bold text-xl sm:text-2xl text-red-500 my-3">
@@ -45,11 +45,11 @@ const Culture = () => {
             }}
           >
             {bannerImg?.slice(0, 3).map((banner) => (
-              <SplideSlide className="" key={banner.id}>
+              <SplideSlide className="" key={banner?._id}>
                 <div className="w-full h-[100%]">
                   <img
                     className="h-[100%] w-full object-cover"
-                    src={banner.image}
+                    src={banner?.picture}
                     alt=""
                   />
                 </div>
@@ -58,26 +58,26 @@ const Culture = () => {
           </Splide>
         </div>
         <div className=" gap-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  h-full xl:grid-cols-2 w-full">
-          {bannerImg?.slice(3, 8).map((banner) => (
+          {bannerImg?.slice(-4).map((banner) => (
             <Link
               className="border w-[100%] h-64 hover:text-red-600 transition-all "
-              to={`/bannerDetails/${banner.id}`}
-              key={banner.id}
+              to={`/bannerDetails/${banner?._id}`}
+              key={banner?._id}
             >
               <div className="h-[80%]">
                 <div className="overflow-hidden h-[60%]">
                   <img
                     className="h-[100%] w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
-                    src={banner.img}
+                    src={banner?.picture}
                     alt=""
                   />
                 </div>
                 <div className="mx-2">
                   <h3 className="font-bold text-md mt-2 link-hover">
-                    {banner.title}
+                    {banner?.title}
                   </h3>
                   <p className="text-gray-600 ">
-                    {banner.description.slice(0, 30) + "..."}{" "}
+                    {banner?.description.slice(0, 30) + "..."}{" "}
                   </p>
                   <span className="link  font-semibold ">Read More</span>
                 </div>

@@ -15,13 +15,13 @@ const HomePageLetestNews = () => {
                     } to='/'>Travel</NavLink>
                     <NavLink className={({ isActive }) =>
                         isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
-                    } to='/fashion'>Fashion</NavLink>
+                    } to='/domestic'>Domestic</NavLink>
                     <NavLink className={({ isActive }) =>
                         isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
                     } to='/health'>Health</NavLink>
                     <NavLink className={({ isActive }) =>
                         isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
-                    } to='/nuture'>Nuture</NavLink>
+                    } to='/nature'>Nature</NavLink>
                 </div>
             </section>
 

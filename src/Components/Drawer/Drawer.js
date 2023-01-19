@@ -7,7 +7,7 @@ const Drawer = () => {
     const [categories, setCategories] = useState([]);
     // categories 
     useEffect(() => {
-        fetch("NewsData.json")
+        fetch("allNews.json")
             .then((res) => res.json())
             .then((data) => setCategories(data));
     }, []);

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HorizentalSection = ({ data }) => {
     const { author, category, description, picture
-        , title
+        , title, _id
     } = data
     return (
         <div className=' mb-3 w-full hover:text-red-600 transition-all hover:border border hover:border-gray-200 border-white'>
@@ -14,7 +14,7 @@ const HorizentalSection = ({ data }) => {
                     alt=""
                 />
             </div>
-            <Link className='text-md font-bold'><h1>{title.slice(0, 30)}</h1></Link>
+            <Link to={`detail/${_id}`} className='text-md font-bold'><h1>{title.slice(0, 30)}</h1></Link>
         </div>
     );
 };

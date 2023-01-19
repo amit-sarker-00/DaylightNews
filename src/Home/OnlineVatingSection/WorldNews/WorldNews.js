@@ -10,10 +10,14 @@ const WorldNews = () => {
     const [datas, setDatas] = useState([])
 
     useEffect(() => {
-        fetch(`WorldNews.json`)
-            .then(res => res.json())
-            .then(data => setDatas(data))
-    }, [])
+        fetch(`${process.env.REACT_APP_API_URL}news`)
+            .then((res) => res.json())
+            .then((result) => {
+                const WorldNews = result?.filter(world => world?.category === 'World')
+                setDatas(WorldNews)
+
+            });
+    }, []);
 
 
     return (
@@ -24,11 +28,11 @@ const WorldNews = () => {
                 <div className='mt-5 w-full lg:w-[800px] '>
 
                     {
-                        datas && datas.slice(0, 1).map(data => <SingleCard data={data} key={data?.title} />)
+                        datas && datas.slice(0, 1).map(data => <SingleCard data={data} key={data?._id} />)
                     }
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                         {
-                            datas && datas.slice(-3).map(data => <HorizentalSection data={data} key={data?.title} />)
+                            datas && datas.slice(-3).map(data => <HorizentalSection data={data} key={data?._id} />)
                         }
 
                     </div>
@@ -36,7 +40,7 @@ const WorldNews = () => {
                 </div>
                 <div className='mt-5 w-[100%] xl:w-96 xl:flex flex-col md:grid md:grid-cols-2 xl:gap-0 gap-4  '>
                     {
-                        datas && datas.slice(1, 5).map(data => <RightSide4Card data={data} key={data?.title} />)
+                        datas && datas.slice(1, 5).map(data => <RightSide4Card data={data} key={data?._id} />)
                     }
                 </div>
 

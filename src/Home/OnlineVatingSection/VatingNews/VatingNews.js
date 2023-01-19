@@ -10,7 +10,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 const VatingNews = () => {
     const { user } = useContext(AuthContext)
 
-    const { data: newsForVote, isLoading } = useQuery({
+    const { data: newsForVote,refetch, isLoading } = useQuery({
         queryKey: ['newsForVoting'],
         queryFn: () => fetch(`${process.env.REACT_APP_API_URL}newsForVoting`).then(res => res.json())
     })
@@ -48,7 +48,7 @@ const VatingNews = () => {
                             </div>
 
                             <div className=''>
-                                <VatingOptions user={user} news={voteNews} />
+                                <VatingOptions refetch={refetch} user={user} news={voteNews} />
                             </div>
                         </SplideSlide>
                     ))}

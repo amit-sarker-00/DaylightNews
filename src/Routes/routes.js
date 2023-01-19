@@ -21,9 +21,9 @@ export const router = createBrowserRouter([
         element: <Home />,
         children: [
           { path: "/", element: <Travel /> },
-          { path: "/fashion", element: <Fashion /> },
+          { path: "/domestic", element: <Fashion /> },
           { path: "/health", element: <Health /> },
-          { path: "/nuture", element: <Nuture /> },
+          { path: "/nature", element: <Nuture /> },
         ],
       },
       { path: "/account", element: <Accounts /> },
