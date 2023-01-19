@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "./image.css";
 const ImageLoader = ({ cards }) => {
-  // please install first npm i react-loading-skeleton
+  // please install first--- npm i react-loading-skeleton
   return Array(cards)
     .fill(0)
     .map((item, i) => (

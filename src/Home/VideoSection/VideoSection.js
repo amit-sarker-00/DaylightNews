@@ -52,7 +52,7 @@ const VideoSection = () => {
             </div>
           ))}
         </div>
-        <div className="sm:h-[830px] h-[280px]   md:w-[50%]">
+        <div className="sm:h-[870px] h-[280px]   md:w-[50%]">
           {VideoPost?.slice(2, 3).map((video) => (
             <div key={video._id} className="  h-full">
               <div className="h-[100%]">

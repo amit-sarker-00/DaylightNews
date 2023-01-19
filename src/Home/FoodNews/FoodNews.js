@@ -59,7 +59,7 @@ const FoodNews = () => {
         <div className="">
           {foodNews?.slice(5, 10).map((food) => (
             <Link key={food._id} className=" h-full w-full  ">
-              <div className="flex  w-full h-full border items-center">
+              <div className="flex  w-full h-full border">
                 <div className="overflow-hidden h-32 w-44">
                   <img
                     className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
