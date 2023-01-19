@@ -12,6 +12,8 @@ import OnlineVatingSection from "./OnlineVatingSection/OnlineVatingSection";
 import BreakingNews from "./BreakingNews/BreakingNews";
 import SearchData from "../Components/SearchData/SearchData";
 import { AuthContext } from "../Contexts/AuthProvider/AuthProvider";
+import InternetionalTorism from "./InternetionalTorism/InternetionalTorism";
+import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
 
 const Home = () => {
   useTitle("Home");
@@ -23,14 +25,17 @@ const Home = () => {
       {/* <Category /> */}
       {/* <Spinner /> */}
       {searchContent ? <SearchData /> : <>
-        <Banner />
+        {/* <Banner />
         <BreakingNews />
         <TrendingNews />
         <HomePageLetestNews />
         <HomePageArticalAndPost />
         <News />
         <Culture />
-        <OnlineVatingSection /></>}
+        <OnlineVatingSection /> */}
+
+        <InternetionalTorism />
+      </>}
     </div>
   );
 };
