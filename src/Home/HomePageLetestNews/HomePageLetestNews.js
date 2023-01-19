@@ -22,6 +22,7 @@ const HomePageLetestNews = () => {
                     <NavLink className={({ isActive }) =>
                         isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
                     } to='/nuture'>Nuture</NavLink>
+                    
                 </div>
             </section>
 
@@ -29,6 +30,7 @@ const HomePageLetestNews = () => {
                 <Outlet />
             </section>
         </main>
+
     );
 };
 

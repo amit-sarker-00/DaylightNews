@@ -90,7 +90,7 @@ const Navbar = () => {
       <section className="my-2 w-5/6 mx-auto ">
         <div className="flex justify-between">
           <div>
-            <ul className=" gap-3 hidden lg:flex">
+            <ul className=" gap-3  lg:flex hidden">
               <li>
                 <Link>Home</Link>
               </li>
@@ -154,6 +154,7 @@ const Navbar = () => {
                 </>
               )}
             </div>
+            
           </div>
         </div>
       </section>

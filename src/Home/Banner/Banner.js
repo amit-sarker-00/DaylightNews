@@ -82,6 +82,7 @@ const Banner = () => {
           ))}
         </Splide>
       </div>
+      
       <div className=" gap-1 grid grid-cols-1 sm:grid-cols-2 h-full w-full">
         {sideBanner?.map((banner) => (
           <Link to={`/bannerDetails/${banner.id}`} key={banner.id}>

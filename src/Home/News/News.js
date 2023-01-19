@@ -18,16 +18,11 @@ const News = () => {
             .then(data => setTravelData(data))
     }, [])
 
-
-
     useEffect(() => {
         fetch('lifeStyle.json')
             .then(res => res.json())
             .then(data => setLifeStyle(data))
     }, [])
-
-
-
 
     useEffect(() => {
         fetch('healthNews.json')

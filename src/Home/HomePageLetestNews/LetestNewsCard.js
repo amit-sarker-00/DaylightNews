@@ -4,10 +4,11 @@ import { RxCalendar } from "react-icons/rx";
 
 const LetestNewsCard = ({ news }) => {
     const { title, picture, category } = news
+    
     return (
         <section>
             <div class="rounded-lg mx-auto max-w-sm">
-                <div className="overflow-hidden h-[200px] rounded-xl">
+                <div className="overflow-hidden  rounded-xl">
                     <img
                         className="transform ease-in-out duration-500 hover:scale-125 object-cover w-full sm:h-[200px] h-full"
                         src={picture}
@@ -24,7 +25,7 @@ const LetestNewsCard = ({ news }) => {
                 <div>
                     <Link className='font-bold hover:text-red-500 transition-all text-lg'>
                         <h1>
-                            {title?.length > 22 ? title.slice(0, 22) + '...' : title}
+                            {title?.length > 22 ? title.slice(0, 22) + '....' : title}
                         </h1>
                     </Link>
                 </div>

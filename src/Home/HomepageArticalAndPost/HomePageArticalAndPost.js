@@ -10,7 +10,7 @@ const HomePageArticalAndPost = () => {
       .then((data) => setArticleData(data));
   }, []);
 
-  console.log(articleData);
+  // console.log(articleData);
   return (
     <div className=" bg-white py-16 ">
       <div className=" items-center flex justify-between">
