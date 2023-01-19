@@ -1,14 +1,21 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
 import { RxCalendar } from "react-icons/rx";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
+import ImageLoader from "../../Components/ImageLoader/ImageLoader";
 const TrendingNews = () => {
   const [trendingNews, setTrendingNews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("trending.json")
       .then((res) => res.json())
-      .then((data) => setTrendingNews(data));
+      .then((data) => {
+        setTrendingNews(data);
+        setIsLoading(false);
+      });
   }, []);
   return (
     <div className=" mb-4 sm:mb-10 ">
@@ -40,6 +47,8 @@ const TrendingNews = () => {
             perMove: 2,
           }}
         >
+          {isLoading && <ImageLoader cards={8}></ImageLoader>}
+
           {trendingNews?.map((trending) => (
             <SplideSlide key={trending._id}>
               <div className=" h-80 shadow hover:shadow-2xl border hover:border-gray-300 ">

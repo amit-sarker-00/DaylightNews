@@ -4,19 +4,29 @@ import "@splidejs/react-splide/css";
 import "./Banner.css";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
+import ImageLoader from "../../Components/ImageLoader/ImageLoader";
+
 const Banner = () => {
   const [bannerImg, setBannerImg] = useState([]);
   const [sideBanner, setSideBanner] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     fetch("mainBanner.json")
       .then((res) => res.json())
-      .then((data) => setBannerImg(data));
+      .then((data) => {
+        setBannerImg(data);
+        setIsLoading(false);
+      });
   }, []);
 
   useEffect(() => {
     fetch("sideBanner.json")
       .then((res) => res.json())
-      .then((data) => setSideBanner(data));
+      .then((data) => {
+        setSideBanner(data);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
@@ -42,6 +52,7 @@ const Banner = () => {
             speed: "2000",
           }}
         >
+          {isLoading && <ImageLoader cards={3}></ImageLoader>}
           {bannerImg?.map((banner) => (
             <SplideSlide className="relative" key={banner.id}>
               <Link
@@ -83,6 +94,7 @@ const Banner = () => {
         </Splide>
       </div>
       <div className=" gap-1 grid grid-cols-1 sm:grid-cols-2 h-full w-full">
+        {isLoading && <ImageLoader cards={4}></ImageLoader>}
         {sideBanner?.map((banner) => (
           <Link to={`/bannerDetails/${banner.id}`} key={banner.id}>
             <div className=" h-full border sm:border-none  relative overflow-hidden">
