@@ -6,7 +6,7 @@ const HomePageArticleAndPostCard = ({ data }) => {
 
   const { author, category, description, picture, title,_id } = data;
   return (
-    <Link to={`/details/${_id}`} className="p-2 hover:text-red-600 transition-all overflow-hidden shadow ">
+    <Link to={`/detail/${_id}`} className="p-2 hover:text-red-600 transition-all overflow-hidden shadow ">
       <div className="overflow-hidden w-70 md:h-36 sm:h-40">
         <img
           className="transition transform ease-in-out duration-500 hover:scale-125 object-cover w-full sm:h-40 h-full"

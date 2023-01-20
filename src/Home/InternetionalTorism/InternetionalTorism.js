@@ -20,27 +20,8 @@ const InternetionalTorism = () => {
                 console.log(result);
             });
     }, []);
-    useEffect(() => {
-        fetch('InternationalNewsImg/internetionalNewsImage-1.json').then(res => res.json()).then(result => {
-            setSrilanka(result)
-        })
-    }, []);
 
-    // useEffect(() => {
-    //     fetch('InternationalNewsImg/internetionalNewsImg-2.json').then(res => res.json()).then(result => {
-    //         setBangladesh(result)
-    //     })
-    // }, []);
 
-    // useEffect(() => {
-    //     fetch('InternationalNewsImg/internationalNews-3.json').then(res => res.json()).then(result => {
-    //         setDubaiImg(result)
-    //     })
-    // }, []);
-
-    // useEffect(() => {
-    //     Aos.init()
-    // }, [])
 
 
     return (
@@ -56,7 +37,7 @@ const InternetionalTorism = () => {
                         {
                             srilankaa.map(srilanka =>
                                 <InternetionalTorismOne
-                                    key={srilanka.id}
+                                    key={srilanka?._id}
                                     srilanka={srilanka}
                                 ></InternetionalTorismOne>)
                         }
@@ -65,7 +46,7 @@ const InternetionalTorism = () => {
                         {
                             bangladesh.map(bangla =>
                                 <InternetionalTorismTwo
-                                    key={bangla.id}
+                                    key={bangla?._id}
                                     bangla={bangla}
                                 ></InternetionalTorismTwo>)
                         }
@@ -75,7 +56,7 @@ const InternetionalTorism = () => {
                     {
                         duvaiImg.map(dubai =>
                             <InternetionalTorismThree
-                                key={dubai.id}
+                                key={dubai?._id}
                                 dubai={dubai}
                             ></InternetionalTorismThree>)
                     }

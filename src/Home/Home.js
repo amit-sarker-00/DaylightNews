@@ -25,15 +25,14 @@ const Home = () => {
       {/* <Category /> */}
       {/* <Spinner /> */}
       {searchContent ? <SearchData /> : <>
-        {/* <Banner />
+        <Banner />
         <BreakingNews />
         <TrendingNews />
         <HomePageLetestNews />
         <HomePageArticalAndPost />
         <News />
         <Culture />
-        <OnlineVatingSection /> */}
-
+        <OnlineVatingSection />
         <InternetionalTorism />
       </>}
     </div>

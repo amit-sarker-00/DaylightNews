@@ -39,7 +39,7 @@ const Banner = () => {
           {bannerData.slice(-8)?.map((banner) => (
             <SplideSlide className="relative" key={banner._id}>
               <Link
-                to={`/bannerDetails/${banner._id}`}
+                to={`/detail/${banner._id}`}
                 className="w-full h-[100%] gradient"
               >
                 <img
@@ -78,7 +78,7 @@ const Banner = () => {
       </div>
       <div className=" gap-1 grid grid-cols-1 sm:grid-cols-2 h-full w-full">
         {bannerData.slice(103, 107)?.map((banner) => (
-          <Link to={`/bannerDetails/${banner._id}`} key={banner._id}>
+          <Link to={`/detail/${banner._id}`} key={banner._id}>
             <div className=" h-full border sm:border-none  relative overflow-hidden">
               <img
                 className="h-[100%] w-[100%] ease-in-out duration-500 transform hover:scale-125  "

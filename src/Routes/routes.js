@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import DetailsCard from "../Components/CardDetailsPage/DetailsCard/DetailsCard";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import BannerDetails from "../Home/BannerDetails/BannerDetails";
 import Home from "../Home/Home";
@@ -27,9 +28,9 @@ export const router = createBrowserRouter([
         ],
       },
       { path: "/account", element: <Accounts /> },
+      { path: "/detail/:id", element: <DetailsCard /> },
     ],
   },
-  { path: "signup", element: <SignUp /> },
-  { path: "bannerDetails/:id", element: <BannerDetails></BannerDetails> },
-  { path: "login", element: <SignIn /> },
+  { path: "/signup", element: <SignUp /> },
+  { path: "/login", element: <SignIn /> },
 ]);

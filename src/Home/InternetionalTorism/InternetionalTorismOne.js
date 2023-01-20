@@ -19,8 +19,8 @@ const InternetionalTorismOne = ({ srilanka }) => {
                             <a rel="" href="#"
                                 className="px-3 py-2 lg:text-3xl md:text-xl sm:text-lg text-md space-y-6 sm:font-bold  tracking-wider uppercase hover:underline dark:text-gray-100">{title}</a>
                             <ul className='flex dark:text-gray-100 sm:pt-4 pt-2 sm:text-xl text-md '>
-                                <li><p className=''>{author.name}</p></li>
-                                <li> <p>{author.published_date}</p></li>
+                                <li><p className=''>{author?.name}</p></li>
+                                <li> <p>{author?.published_date}</p></li>
                             </ul>
                         </div>
                     </div>

@@ -46,7 +46,7 @@ const BreakingNews = () => {
       >
         {breakingNews?.map((breaking) => (
           <SplideSlide key={breaking?._id}>
-            <Link className=" h-28 flex">
+            <Link to={`/detail/${breaking?._id}`} className=" h-28 flex">
               <div className="overflow-hidden w-40 h-28">
                 <img
                   className="w-full h-full ease-in-out duration-500 transform hover:scale-125"

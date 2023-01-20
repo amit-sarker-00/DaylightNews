@@ -6,7 +6,7 @@ const ReecntWorkForHomePageSlidebar = ({ data }) => {
   const { author, category, description, picture, _id, title } = data;
   return (
     <Link
-      to={`/details/${_id}`}
+      to={`/detail/${_id}`}
       className="flex items-center justify-evenly lg:justify-start md:text-left hover:text-red-600 transition-all bg-slate-50 m-1 shadow overflow-hidden object-cover"
     >
       <div className="overflow-hidden m-2">

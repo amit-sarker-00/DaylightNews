@@ -10,10 +10,10 @@ const InternetionalTorismThree = ({ dubai }) => {
                     <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:via-transparent dark:from-gray-900 dark:to-gray-900"></div>
                     <div className="absolute top-0 left-0 right-0 flex justify-center items-center mx-5 mt-3">
                         <div>
-                            <a rel="" href="#" className="px-3 py-2 lg:text-xl md:text-lg sm:text-lg text-md space-y-6 sm:font-bold flex-wrap  tracking-wider uppercase hover:underline dark:text-gray-100">{title.slice(0, 35)}</a>
+                            <a rel="" href="#" className="px-3 py-2 lg:text-xl md:text-lg sm:text-lg text-md space-y-6 sm:font-bold flex-wrap  tracking-wider uppercase hover:underline dark:text-gray-100">{title?.slice(0, 35)}</a>
                             <ul className='flex dark:text-gray-100 lg:pt-4 pt-2 sm:text-xl text-md '>
-                                <li><p className=''>{author.name}</p></li>
-                                <li> <p>{author.published_date}</p></li>
+                                <li><p className=''>{author?.name}</p></li>
+                                <li> <p>{author?.published_date}</p></li>
                             </ul>
                         </div>
                     </div>
