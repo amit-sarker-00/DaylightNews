@@ -14,6 +14,9 @@ import SearchData from "../Components/SearchData/SearchData";
 import { AuthContext } from "../Contexts/AuthProvider/AuthProvider";
 import InternetionalTorism from "./InternetionalTorism/InternetionalTorism";
 import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
+import ViralNews from "./ViralNews/ViralNews";
+import VideoSection from "./VideoSection/VideoSection";
+import FoodNews from "./FoodNews/FoodNews";
 
 const Home = () => {
   useTitle("Home");
@@ -34,6 +37,9 @@ const Home = () => {
         <Culture />
         <OnlineVatingSection />
         <InternetionalTorism />
+        {/* <FoodNews/>
+        <VideoSection />
+        <ViralNews /> */}
       </>}
     </div>
   );

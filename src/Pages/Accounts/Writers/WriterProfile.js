@@ -54,7 +54,7 @@ const WriterProfile = () => {
       updateWriter(UpdateWriter).then((data) => {
         console.log(data);
       });
-      fetch(`http://localhost:5000/user/${user?.email}`, {
+      fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -85,12 +85,11 @@ const WriterProfile = () => {
           email: user?.email,
           description,
         };
-        console.log(UpdateWriter);
         updateWriter(UpdateWriter).then((data) => {
           console.log(data);
         });
 
-        fetch(`http://localhost:5000/user/${user?.email}`, {
+        fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -125,50 +124,21 @@ const WriterProfile = () => {
             <h2 className="text-xl font-semibold text-[24px] space-y-1">
               {profile?.shopname ? profile?.shopname : user?.displayName}
             </h2>
-            {/* <div className="flex text-yellow-400 text-[14px] ">
-              <StarIcon className="h-4 w-4" />
-              <StarIcon className="h-4 w-4" />
-              <StarIcon className="h-4 w-4" />
-              <StarIcon className="h-4 w-4" />
-              <StarIcon className="h-4 w-4" />
-              <p className="text-[#253D4E] ml-2"> 4.0</p>
-            </div> */}
+
             <p className="space-y-1 text-[14px]">
               {profile.description ? profile.description : "description...."}
             </p>
             <p className="space-y-1 text-[16px]font-bold">Follow Us</p>
-            {/* <div className="flex space-y-1">
-              <a href={profile?.twitter}>
-                <img src={twitter} className="px-1" alt="" />
-              </a>
-              <a href={profile?.facebook}>
-                <img src={facebook} className="px-1" alt="" />
-              </a>
-              <a href={profile?.instagram}>
-                <img src={insta} className="px-1" alt="" />
-              </a>
-              <a href={profile?.pinterest}>
-                <img src={ping} className="px-1" alt="" />
-              </a>
-            </div> */}
+
             <div className="flex space-y-1">
-              {/* <MapPinIcon className="h-10 w-10 text-[#3BB77E]" /> */}
               <p className="px-1">
                 Address: {profile?.address ? profile?.address : "Bangladesh"}
               </p>
             </div>
             <div className="flex space-y-1">
-              {/* <PhoneIcon className="h-5 w-5  text-[#3BB77E]" /> */}
               <p className="px-1">
                 Call Us: {profile.phone ? profile.phone : "0123456789"}
               </p>
-            </div>
-            <div>
-              <Link>
-                <button className="bg-[#3BB77E] text-white mt-2 px-4 py-2 rounded-sm font-bold">
-                  Contact Seller
-                </button>
-              </Link>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DetailsCard from './DetailsCard/DetailsCard';
 import LatestNews from './LetestNews/LatestNews';
-
+import { useParams } from 'react-router';
 
 
 
@@ -9,32 +9,35 @@ import LatestNews from './LetestNews/LatestNews';
 
 const CardDetailsPage = () => {
 
+    const params = useParams()
 
-    const [data, setData] = useState([])
+    const [detail, setDetail] = useState({});
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_API_URL}news/${params?.id}`)
+            .then((res) => res.json())
+            .then((result) => {
+                setDetail(result)
+            });
+    }, [params?.id]);
+
     const [recentData, setRecentData] = useState([])
 
+    
     useEffect(() => {
-        fetch("testingforDetailspage.json")
-            .then(res => res.json())
-            .then(data => setData(data))
+        fetch(`${process.env.REACT_APP_API_URL}news`)
+            .then((res) => res.json())
+            .then((result) => {
+                setRecentData(result?.slice(-5))
+            });
+    }, []);
 
-    }, [])
-
-    useEffect(() => {
-        fetch("LetestNewsDomesticCategory.json")
-            .then(res => res.json())
-            .then(data => setRecentData(data))
-
-    }, [])
 
     // console.log(recentData)
 
     return (
         <div className='flex w-full gap-0 lg:gap-5 h-full'>
             <div className='flex '>
-                {
-                    data && data.map(da => <DetailsCard data={da} key={da.id} />)
-                }
+                   <DetailsCard detail={detail} />
             </div>
             <div>
                 <h1 className='text-center text-xl font-semibold pb-5 hidden lg:block'>Latest News</h1>

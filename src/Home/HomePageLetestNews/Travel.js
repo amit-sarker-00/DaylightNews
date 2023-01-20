@@ -9,14 +9,14 @@ const Travel = () => {
             .then((result) => {
                 const fashionNews = result?.filter(fashion => fashion?.category === 'travel')
                 setTravels(fashionNews)
-                console.log(result);
+
             });
     }, []);
 
     return (
         <section className='sm:grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-5 sm:gap-y-10 gap-y-5 '>
             {
-                travels?.slice(-8)?.map((travel ) => <LetestNewsCard news={travel} key={travel?._id} />)
+                travels?.slice(-8)?.map((travel) => <LetestNewsCard news={travel} key={travel?._id} />)
             }
         </section>
     );

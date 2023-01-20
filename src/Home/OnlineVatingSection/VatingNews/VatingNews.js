@@ -10,7 +10,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 const VatingNews = () => {
     const { user } = useContext(AuthContext)
 
-    const { data: newsForVote,refetch, isLoading } = useQuery({
+    const { data: newsForVote, refetch, isLoading } = useQuery({
         queryKey: ['newsForVoting'],
         queryFn: () => fetch(`${process.env.REACT_APP_API_URL}newsForVoting`).then(res => res.json())
     })
@@ -36,7 +36,7 @@ const VatingNews = () => {
                         speed: "2000",
                     }}
                 >
-                    {newsForVote.map((voteNews) => (
+                    {newsForVote?.map((voteNews) => (
                         <SplideSlide className='px-1' key={voteNews._id}>
                             <div className="">
                                 <img

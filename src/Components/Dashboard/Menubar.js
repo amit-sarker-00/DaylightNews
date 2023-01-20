@@ -13,11 +13,9 @@ const Menubar = ({ role }) => {
     <div className="px-2">
       <div className="flex flex-col justify-between flex-1 mt-6">
         <nav>
-          {role && role !== "requested" ? (
-            <>{role === "admin" ? <AdminMenu /> : <WriterMenu />} </>
-          ) : (
-            <UserMenu />
-          )}
+          {role === "admin" && <AdminMenu />}
+          {role === "writer" && <WriterMenu />}
+          {role === "reader" && <UserMenu />}
         </nav>
       </div>
 
