@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SkeletonLoading from '../../Components/SkeletonLoading/SkeletonLoading';
 import LetestNewsCard from './LetestNewsCard';
 
 const Travel = () => {
@@ -15,6 +16,8 @@ const Travel = () => {
 
     return (
         <section className='sm:grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-5 sm:gap-y-10 gap-y-5 '>
+            {travels?.length === 0 && <SkeletonLoading cards={4} />}
+
             {
                 travels?.slice(-8)?.map((travel) => <LetestNewsCard news={travel} key={travel?._id} />)
             }

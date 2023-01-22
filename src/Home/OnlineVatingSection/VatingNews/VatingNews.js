@@ -6,6 +6,7 @@ import VatingOptions from './VatingOptions';
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../../../Components/Spinner/Spinner';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import SkeletonLoading from '../../../Components/SkeletonLoading/SkeletonLoading';
 
 const VatingNews = () => {
     const { user } = useContext(AuthContext)
@@ -36,6 +37,8 @@ const VatingNews = () => {
                         speed: "2000",
                     }}
                 >
+
+                    {isLoading&& <SkeletonLoading cards={8} />}
                     {newsForVote?.map((voteNews) => (
                         <SplideSlide className='px-1' key={voteNews._id}>
                             <div className="">

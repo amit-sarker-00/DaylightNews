@@ -3,6 +3,7 @@ import InternetionalTorismOne from './InternetionalTorismOne';
 import InternetionalTorismThree from './InternetionalTorismThree';
 import InternetionalTorismTwo from './InternetionalTorismTwo';
 import Aos from 'aos';
+import SkeletonLoading from '../../Components/SkeletonLoading/SkeletonLoading';
 
 const InternetionalTorism = () => {
     const [srilankaa, setSrilanka] = useState([])
@@ -27,13 +28,15 @@ const InternetionalTorism = () => {
     return (
         <div className='my-8'>
             <div
-                className=' text-black font-semibold md:text-3xl text-xl uppercase py-4 sm:text-left text-center'>
+                className=' text-red-600 font-semibold md:text-3xl text-xl uppercase py-4 sm:text-left text-center'>
                 Internetional Tories News
             </div>
 
             <div className=''>
                 <div className='flex overflow-hidden'>
                     <div className='md:w-2/3 w-full'>
+                        {srilankaa?.length === 0 && <SkeletonLoading cards={1} />}
+
                         {
                             srilankaa.map(srilanka =>
                                 <InternetionalTorismOne
@@ -43,6 +46,8 @@ const InternetionalTorism = () => {
                         }
                     </div>
                     <div className='w-1/3 hidden md:block '>
+                        {bangladesh?.length === 0 && <SkeletonLoading cards={1} />}
+
                         {
                             bangladesh.map(bangla =>
                                 <InternetionalTorismTwo
@@ -53,6 +58,8 @@ const InternetionalTorism = () => {
                     </div>
                 </div>
                 <div className='md:flex block '>
+                    {duvaiImg?.length === 0 && <SkeletonLoading cards={5} />}
+
                     {
                         duvaiImg.map(dubai =>
                             <InternetionalTorismThree

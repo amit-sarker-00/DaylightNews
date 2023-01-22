@@ -2,6 +2,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
 import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
 const Culture = () => {
   const [bannerImg, setBannerImg] = useState([]);
@@ -44,6 +45,7 @@ const Culture = () => {
               speed: "2000",
             }}
           >
+            {bannerImg?.length === 0 && <SkeletonLoading cards={3} />}
             {bannerImg?.slice(0, 3).map((banner) => (
               <SplideSlide className="" key={banner?._id}>
                 <div className="w-full h-[100%]">
@@ -58,6 +60,8 @@ const Culture = () => {
           </Splide>
         </div>
         <div className=" gap-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  h-full xl:grid-cols-2 w-full">
+          {bannerImg?.length === 0 && <SkeletonLoading cards={2} />}
+
           {bannerImg?.slice(-4).map((banner) => (
             <Link
               className="border w-[100%] h-64 hover:text-red-600 transition-all "

@@ -6,7 +6,7 @@ const InternetionalTorismTwo = ({ bangla }) => {
         <div>
             <div className="relative w-full mx-auto border shadow">
                 <div className="relative flex items-end w-full text-left bg-center bg-cover cursor-pointer  lg:row-span-2  group dark:bg-gray-500">
-                    <img className='w-full 2xl:h-[288px] xl:h-[220px] lg:h-[180px] md:h-[130px]' src={picture} alt="" />
+                    <img className='w-full 2xl:h-[280px] xl:h-[220px] lg:h-[180px] md:h-[130px]' src={picture} alt="" />
                     <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:via-transparent dark:from-gray-900 dark:to-gray-900"></div>
                     <div className="absolute top-0 left-0 right-0 flex justify-center items-center mx-5 mt-3">
                         <div>

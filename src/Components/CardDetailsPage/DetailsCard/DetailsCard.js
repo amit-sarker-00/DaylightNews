@@ -5,8 +5,7 @@ import DetailsCommentBox from '../DetailsCommentBox/DetailsCommentBox';
 
 
 
-const DetailsCard = ({ detail }) => {
-
+const DetailsCard = ({ detail, reactions, refetch }) => {
 
     const { picture, title, category, description, author } = detail
 
@@ -37,10 +36,10 @@ const DetailsCard = ({ detail }) => {
                             }</h1>
                         </div>
                     </div>
-                    <DetailsCardReaction />
+                    <DetailsCardReaction refetch={refetch} reactions={reactions} detail={detail} />
                 </div>
                 <div className=' '>
-                    <DetailsCommentBox />
+                    <DetailsCommentBox detail={detail} />
                 </div>
             </div >
         </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SkeletonLoading from '../../Components/SkeletonLoading/SkeletonLoading';
 import LetestNewsCard from './LetestNewsCard';
 
 const Fashion = () => {
@@ -12,9 +13,10 @@ const Fashion = () => {
                 console.log(result);
             });
     }, []);
-  
+
     return (
         <section className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-5 sm:gap-y-10 gap-y-5'>
+            {fashionNews?.length === 0 && <SkeletonLoading cards={4} />}
             {
                 fashionNews?.slice(-8)?.map(fashion => <LetestNewsCard key={fashion?._id} news={fashion} />)
             }

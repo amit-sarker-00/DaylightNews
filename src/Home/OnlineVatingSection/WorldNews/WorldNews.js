@@ -4,6 +4,7 @@ import { BsArrowUpRightSquareFill } from 'react-icons/bs';
 import SingleCard from './SigleCard/SingleCard';
 import RightSide4Card from './RightSide4Card/RightSide4Card';
 import HorizentalSection from './HorizentaSection/HorizentalSection';
+import SkeletonLoading from '../../../Components/SkeletonLoading/SkeletonLoading';
 
 const WorldNews = () => {
 
@@ -26,11 +27,14 @@ const WorldNews = () => {
 
             <div className='flex xl:flex-row flex-col items-center lg:items-start bg-r'>
                 <div className='mt-5 w-full lg:w-[800px] '>
+                    {datas?.length === 0 && <SkeletonLoading cards={1} />}
+
 
                     {
                         datas && datas.slice(0, 1).map(data => <SingleCard data={data} key={data?._id} />)
                     }
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
+                        {datas?.length === 0 && <SkeletonLoading cards={3} />}
                         {
                             datas && datas.slice(-3).map(data => <HorizentalSection data={data} key={data?._id} />)
                         }
@@ -39,6 +43,8 @@ const WorldNews = () => {
 
                 </div>
                 <div className='mt-5 w-[100%] xl:w-96 xl:flex flex-col md:grid md:grid-cols-2 xl:gap-0 gap-4  '>
+                    {datas?.length === 0 && <SkeletonLoading cards={2} />}
+
                     {
                         datas && datas.slice(1, 5).map(data => <RightSide4Card data={data} key={data?._id} />)
                     }

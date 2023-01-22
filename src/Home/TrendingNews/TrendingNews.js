@@ -2,6 +2,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
 import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
 const TrendingNews = () => {
   const [trendingNews, setTrendingNews] = useState([]);
@@ -45,6 +46,7 @@ const TrendingNews = () => {
             perMove: 2,
           }}
         >
+          {trendingNews?.length === 0 && <SkeletonLoading cards={6} />}
           {trendingNews?.map((trending) => (
             <SplideSlide key={trending?._id}>
               <div className=" h-80 shadow hover:shadow-2xl border hover:text-red-600  ease-in-out duration-300 hover:border-gray-300 ">
@@ -57,7 +59,7 @@ const TrendingNews = () => {
                 </div>
                 <div className="mx-2">
                   <div className="flex gap-2 my-2 items-center flex-wrap justify-between">
-                    <Link to={`${trending?.category}`}><button className="px-2 bg-red-600 hover:bg-red-700 rounded-sm text-white font-semibold">
+                    <Link to={`/category/${trending?.category}`}><button className="px-2 bg-red-600 hover:bg-red-700 rounded-sm text-white font-semibold">
                       {trending?.category}
                     </button></Link>
                     <div className="sm:flex gap-1 items-center hidden">

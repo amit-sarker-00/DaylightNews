@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SkeletonLoading from '../../Components/SkeletonLoading/SkeletonLoading';
 import NewsSectionJustOneItemShow from './NewsSectionJustOneItemshow/NewsSectionJustOneItemShow';
 import TravelCards from './TravelCards/TravelCards';
 
@@ -50,6 +51,8 @@ const News = () => {
                     <div className=' border-b-2 border-dashed'>
                         <button className='bg-red-500 text-white rounded-t-xl py-2 px-5 '> Technology </button>
                     </div>
+                    {techNews?.length === 0 && <SkeletonLoading cards={1} />}
+
                     {
                         techNews.slice(0, 1).map(travel => <NewsSectionJustOneItemShow
                             key={travel._id}
@@ -69,6 +72,7 @@ const News = () => {
                     <div className=' border-b-2 border-dashed'>
                         <button className='bg-cyan-400 text-white rounded-t-xl py-2 px-5 '>Life Style</button>
                     </div>
+                    {lifeStyle?.length === 0 && <SkeletonLoading cards={1} />}
 
 
                     {
@@ -91,6 +95,7 @@ const News = () => {
                     <div className=' border-b-2 border-dashed'>
                         <button className='bg-black text-white rounded-t-xl py-2 px-5 '>Cultures</button>
                     </div>
+                    {cultureshNews?.length === 0 && <SkeletonLoading cards={1} />}
 
                     {
                         cultureshNews.slice(0, 1).map(travel => <NewsSectionJustOneItemShow

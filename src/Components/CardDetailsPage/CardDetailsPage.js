@@ -1,17 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import DetailsCard from './DetailsCard/DetailsCard';
 import LatestNews from './LetestNews/LatestNews';
 import { useParams } from 'react-router';
+import SkeletonLoading from '../SkeletonLoading/SkeletonLoading';
+import { useQuery } from '@tanstack/react-query';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import SearchData from '../SearchData/SearchData';
 
 
 
 
 
 const CardDetailsPage = () => {
+    const { searchContent } = useContext(AuthContext)
+
 
     const params = useParams()
 
+    const [recentData, setRecentData] = useState([])
     const [detail, setDetail] = useState({});
+
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}news/${params?.id}`)
             .then((res) => res.json())
@@ -20,9 +28,9 @@ const CardDetailsPage = () => {
             });
     }, [params?.id]);
 
-    const [recentData, setRecentData] = useState([])
 
-    
+
+
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}news`)
             .then((res) => res.json())
@@ -31,26 +39,36 @@ const CardDetailsPage = () => {
             });
     }, []);
 
+    const { data: reactions, refetch } = useQuery({
+        queryKey: ['reactions', params?.id],
+        queryFn: () => fetch(`${process.env.REACT_APP_API_URL}reactions/${params?.id}`).then(res => res.json())
+    })
 
-    // console.log(recentData)
+
 
     return (
-        <div className='flex w-full gap-0 lg:gap-5 h-full'>
-            <div className='flex '>
-                   <DetailsCard detail={detail} />
-            </div>
-            <div>
-                <h1 className='text-center text-xl font-semibold pb-5 hidden lg:block'>Latest News</h1>
-                <div className='lg:w-[500px]  hidden lg:block flex-col'>
-                    {
-                        recentData && recentData.map(recent => <LatestNews recent={recent} key={recent.id} />)
-                    }
-                </div>
-                <div className='mt-10 hidden lg:block'>
-                    <img className='object-cover w-[500px] h-[700px]' src="https://cdn.ecommercedns.uk/files/8/242988/9/13322649/christmas-banner-1.png" alt="" />
+        <div>
+            {searchContent ? <SearchData /> :
+                <div className='flex w-full gap-0 lg:gap-5 h-full'>
+                    <div className='flex '>
+                        <DetailsCard detail={detail} refetch={refetch} reactions={reactions} />
+                    </div>
+                    <div>
+                        <h1 className='text-center text-xl font-semibold pb-5 hidden lg:block'>Latest News</h1>
+                        <div className='lg:w-[500px]  hidden lg:flex gap-3  flex-col'>
+                            {recentData?.length === 0 && <SkeletonLoading cards={4} />}
 
+                            {
+                                recentData && recentData.map(recent => <LatestNews recent={recent} key={recent._id} />)
+                            }
+                        </div>
+                        <div className='mt-10 hidden lg:block'>
+                            <img className='object-cover w-[500px] h-[700px]' src="https://cdn.ecommercedns.uk/files/8/242988/9/13322649/christmas-banner-1.png" alt="" />
+
+                        </div>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     );
 };

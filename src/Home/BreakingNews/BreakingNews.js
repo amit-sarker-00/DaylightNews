@@ -2,6 +2,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BiTime } from "react-icons/bi";
+import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 const BreakingNews = () => {
   const [breakingNews, setBreakingNews] = useState([]);
   useEffect(() => {
@@ -44,6 +45,7 @@ const BreakingNews = () => {
           pagination: false,
         }}
       >
+        {breakingNews?.length === 0 && <SkeletonLoading cards={6} />}
         {breakingNews?.map((breaking) => (
           <SplideSlide key={breaking?._id}>
             <Link to={`/detail/${breaking?._id}`} className=" h-28 flex">

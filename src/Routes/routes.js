@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import AllCategoryPage from "../Components/AllCategoryPage/AllCategoryPage";
 import CardDetailsPage from "../Components/CardDetailsPage/CardDetailsPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
@@ -32,12 +33,13 @@ export const router = createBrowserRouter([
         element: <Home />,
         children: [
           { path: "/", element: <Travel /> },
-          { path: "/fashion", element: <Fashion /> },
+          { path: "/domestic", element: <Fashion /> },
           { path: "/health", element: <Health /> },
-          { path: "/nuture", element: <Nuture /> },
+          { path: "/nature", element: <Nuture /> },
         ],
       },
       { path: "detail/:id", element: <CardDetailsPage /> },
+      { path: "/category/:id", element: <AllCategoryPage /> },
       {
         path: "/account",
         element: (

@@ -17,8 +17,7 @@ import {
 import { Link } from "react-router-dom";
 
 import car1 from "../../assest/Footer img/car 2.jfif";
-import car2 from "../../assest/Footer img/car 3.jfif";
-import car3 from "../../assest/Footer img/car 4.jfif";
+
 
 const Footer = () => {
 

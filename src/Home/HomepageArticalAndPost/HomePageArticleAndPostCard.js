@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HomePageArticleAndPostCard = ({ data }) => {
 
-  const { author, category, description, picture, title,_id } = data;
+  const { author, category, description, picture, title, _id } = data;
   return (
     <Link to={`/detail/${_id}`} className="p-2 hover:text-red-600 transition-all overflow-hidden shadow ">
       <div className="overflow-hidden w-70 md:h-36 sm:h-40">
@@ -16,8 +16,8 @@ const HomePageArticleAndPostCard = ({ data }) => {
       </div>
       <div>
         <div className="flex items-center py-2">
-          <div className="w-1 h-5 bg-red-600 "></div>
-          <p className="pl-5 text-xl text-black ">{category}</p>
+          <div className="w-1 h-5 mr-1 bg-black"></div>
+          <Link to={`/category/${category}`} className=" px-2 text-xl text-white hover:bg-red-600 bg-red-500 ">{category}</Link>
         </div>
         <h1 className="text-sm sm:text-xl font-semibold ">
           {title.slice(0, 20) + "..."}

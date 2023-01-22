@@ -43,13 +43,16 @@ export const addNews = async (newsData) => {
 };
 //get filtered  news for a writer
 export const getNews = async (email) => {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}news/${email}`, {
-    method: "GET",
-    headers: {
-      "content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("news-token")}`,
-    },
-  });
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}news/${email}`,
+    {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("news-token")}`,
+      },
+    }
+  );
   const data = await response.json();
   return data;
 };
@@ -68,51 +71,63 @@ export const deleteNews = async (id) => {
 
 // update a news
 export const updateNews = async (newsData) => {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}news/${newsData?.id}`, {
-    method: "PATCH",
-    headers: {
-      "content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("news-token")}`,
-    },
-    body: JSON.stringify(newsData),
-  });
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}news/${newsData?.id}`,
+    {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("news-token")}`,
+      },
+      body: JSON.stringify(newsData),
+    }
+  );
   const data = await response.json();
   return data;
 };
 // get all comments for a user (reader)
 export const getComments = async (email) => {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}comments/${email}`, {
-    method: "GET",
-    headers: {
-      "content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("news-token")}`,
-    },
-  });
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}comments/${email}`,
+    {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("news-token")}`,
+      },
+    }
+  );
   const data = await response.json();
   return data;
 };
 
 // delete  a comments
 export const deleteComment = async (id) => {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}comments/${id}`, {
-    method: "DELETE",
-    headers: {
-      "content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("news-token")}`,
-    },
-  });
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}comments/${id}`,
+    {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("news-token")}`,
+      },
+    }
+  );
   const data = await response.json();
   return data;
 };
 // get wishlist for a user (reader)
 export const getWishlist = async (email) => {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}likes/${email}`, {
-    method: "GET",
-    headers: {
-      "content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("news-token")}`,
-    },
-  });
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}likes/${email}`,
+    {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("news-token")}`,
+      },
+    }
+  );
   const data = await response.json();
   return data;
 };
@@ -125,6 +140,19 @@ export const deleteWishlist = async (id) => {
       authorization: `Bearer ${localStorage.getItem("news-token")}`,
     },
   });
+  const data = await response.json();
+  return data;
+};
+export const addComment = async (commentData) => {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}comments`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("news-token")}`,
+    },
+    body: JSON.stringify(commentData),
+  });
+
   const data = await response.json();
   return data;
 };

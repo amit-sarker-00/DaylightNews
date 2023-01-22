@@ -4,11 +4,11 @@ import { HiUser } from "react-icons/hi2";
 import { IoTimeSharp } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 
-const SearchCardData = ({ searchData }) => {
+const SearchCardData = ({ searchData, setSearchData }) => {
     const { title, picture, descrption, category, author, _id } = searchData;
     return (
         <div className='w-full sm:w-96 md:w-auto border-white border hover:border hover:border-red-500 hover:text-red-600  ease-in-out duration-500 hover:rounded-xl transition-all'>
-            <Link title={title} to={`details/${_id}`}>
+            <Link onClick={() => setSearchData(null)} title={title} to={`/detail/${_id}`}>
                 <div className='flex flex-row  border-b h-full items-center rounded-xl gap-2 '>
                     <img className='w-32 h-20 rounded-xl p-1' src={picture} alt="Album" />
 
