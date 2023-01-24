@@ -61,7 +61,7 @@ const BreakingNews = () => {
                 />
               </div>
               <div className="mx-2">
-                <h3 className="sm:text-md link-hover text-xl font-bold mb-1">
+                <h3 className="sm:text-md link-hover hover:text-red-500  text-xl font-bold mb-1">
                   {breaking?.title}
                 </h3>
                 <p>{breaking?.description.slice(0, 30) + "..."}</p>

@@ -38,7 +38,7 @@ const Home = () => {
           <News />
           <Culture />
           <OnlineVatingSection />
-          {/* <InternetionalTorism /> */}
+          <InternetionalTorism />
           <FoodNews />
           <VideoSection />
           <ViralNews />

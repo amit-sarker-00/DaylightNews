@@ -6,17 +6,17 @@ import { Link } from "react-router-dom";
 const NewsSectionJustOneItemShow = ({ data }) => {
   const { title, picture, descrption, category, author, _id } = data;
   return (
-    <div className="  flex items-center  rounded-xl my-3 gap-4 ">
-      <div className="relative overflow-hidden rounded-md ">
+    <div className="  flex items-center   my-3 gap-4 ">
+      <div className="relative overflow-hidden ">
         <img
-          className="work rounded-xl ease-in-out duration-500 object-cover md:h-[300px] w-full transition transform hover:scale-125"
+          className="work  ease-in-out duration-500 object-cover md:h-[300px] w-full transition transform hover:scale-125"
           src={picture}
           alt=""
         />
         <div className="absolute sm:bottom-5 bottom-2 text-white font-semibold left-3">
           <Link
             to={`detail/${_id}`}
-            className="bg-black py-1 px-3 rounded-md lg:text-md xl:text-xl"
+            className=" hero-overlay py-1 px-3  lg:text-md xl:text-xl"
           >
             {title?.slice(0, 30)}
           </Link>
@@ -28,7 +28,7 @@ const NewsSectionJustOneItemShow = ({ data }) => {
                 alt=""
               />
             </div>
-            <div className="flex items-center gap-2 bg-white py-1 px-3 rounded-md">
+            <div className="flex items-center gap-2 bg-white py-1 px-3">
               <RxCalendar className="text-red-500 "></RxCalendar>
               <p className="text-[12px] text-red-500">
                 {author?.published_date}

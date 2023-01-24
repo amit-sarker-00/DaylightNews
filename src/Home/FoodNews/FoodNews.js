@@ -42,7 +42,7 @@ const FoodNews = () => {
                 </div>
                 <div className="mx-2 w-72 h-32">
                   <h4 className="font-semibold text-red-400">{food.name}</h4>
-                  <h3 className="sm:text-md link-hover text-md font-bold mb-1">
+                  <h3 className="sm:text-md link-hover hover:text-red-500  text-md font-bold mb-1">
                     {food.title}
                   </h3>
                   <div className="flex gap-2 items-center font-bold text-gray-400">
@@ -59,7 +59,7 @@ const FoodNews = () => {
         <div className="">
           {foodNews?.slice(5, 10).map((food) => (
             <Link key={food._id} className=" h-full w-full  ">
-              <div className="flex  w-full h-full border">
+              <div className="flex   w-full h-full border">
                 <div className="overflow-hidden h-32 w-44">
                   <img
                     className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
@@ -69,7 +69,7 @@ const FoodNews = () => {
                 </div>
                 <div className="mx-2 w-72">
                   <h4 className="font-semibold text-red-400">{food.name}</h4>
-                  <h3 className="sm:text-md link-hover text-md font-bold mb-1">
+                  <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
                     {food.title}
                   </h3>
                   <div className="flex gap-2 items-center font-bold text-gray-400">

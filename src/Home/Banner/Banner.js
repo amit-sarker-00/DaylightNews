@@ -64,7 +64,7 @@ const Banner = () => {
                       </Link>
                       <h3
                         title={banner?.title}
-                        className="sm:text-2xl text-md text-white"
+                        className="sm:text-2xl mt-1 link-hover text-md text-white"
                       >
                         {banner?.title?.length > 50
                           ? banner?.title.slice(0, 50) + "..."
@@ -110,13 +110,13 @@ const Banner = () => {
                       {banner?.category}
                     </Link>
 
-                    <h3 className="text-sm text-white hover:underline  hero-overlay">
+                    <h3 className="text-sm text-white link-hover   hover:underline mt-1 hero-overlay">
                       {banner?.title?.length > 50
                         ? banner?.title.slice(0, 50) + "..."
                         : banner?.title}
                     </h3>
                     <div className="sm:flex hidden gap-2 items-center mt-3 text-xs flex-wrap">
-                      <div className="flex items-center gap-1 font-bold py-1   px-2 bg-white text-red-500">
+                      <div className="flex items-center gap-1 font-bold  py-1  px-2 bg-white text-red-500">
                         <img
                           className="w-4 h-4 rounded-xl"
                           src={banner?.author?.author_img}

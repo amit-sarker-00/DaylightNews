@@ -32,7 +32,7 @@ const HomePageArticleAndPostCard = ({ data }) => {
           </div>
         </div>
         <div className=" mx-2">
-          <h1 className="text-sm sm:text-xl link-hover font-semibold">
+          <h1 className="text-sm sm:text-xl hover:text-red-500 link-hover font-semibold">
             {title.slice(0, 20) + "..."}
           </h1>
           <p>

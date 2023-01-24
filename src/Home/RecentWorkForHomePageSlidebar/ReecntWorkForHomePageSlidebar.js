@@ -13,7 +13,7 @@ const ReecntWorkForHomePageSlidebar = ({ data }) => {
         <img className="w-36 h-20 " src={picture} alt="" />
       </div>
       <div className="pl-5 text-left ">
-        <h1 className="text-sm md:text-sm lg:text-xl font-semibold">
+        <h1 className="text-sm md:text-sm lg:text-xl link-hover hover:text-red-500 font-semibold">
           {title.slice(0, 20) + "..."}
         </h1>
         <div className="flex items-center ">
