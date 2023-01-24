@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import PrimaryButton from "../../Components/Button/PrimaryButton";
-import SmallSpinner from "../../Components/Spinner/SmallSpinner";
-import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
-
-const DistricModal = () => {
-  const { loading } = useContext(AuthContext);
+import React, { useState } from "react";
+const DistricModal = ({
+  uniqueDistrict,
+  handleUpdateDistrict,
+  setCity,
+  city,
+}) => {
   return (
     <div>
       <input type="checkbox" id="update-modal" className="modal-toggle" />
@@ -18,30 +18,41 @@ const DistricModal = () => {
           </label>
 
           <form
-            // onSubmit={handleUpdateDistrict}
+            onSubmit={handleUpdateDistrict}
             className="space-y-1 ng-untouched ng-pristine ng-valid "
           >
             <div className="text-center">
-              <h1 className="text-xl"> Update Your Shop!</h1>
+              <h1 className="text-xl">CHANGE CITY</h1>
             </div>
-
-            <div className="space-y-3 text-sm ">
-              <label className="block text-sm">Shop Name</label>
-              <input
-                type="text"
-                name="shopname"
-                placeholder="Enter Your Shop Name"
-                className="w-full px-4 py-3 rounded-md bg-gray-100  text-gray-900 "
-              />
+            <div className="grid grid-cols-4 gap-4 py-2">
+              {uniqueDistrict?.map((district, uxi) => (
+                <div className="flex" key={uxi} district={district}>
+                  <input
+                    type="radio"
+                    name="radio-5"
+                    id={district}
+                    className="radio radio-success mr-2"
+                    onChange={() => setCity({ district })}
+                    required
+                  />
+                  <label htmlFor={district}>{district}</label>
+                </div>
+              ))}
             </div>
-
-            <div>
-              <PrimaryButton
-                type="submit"
-                classes="w-full px-8 py-5 font-semibold rounded-lg text-white bg-[#3BB77E] "
-              >
-                {loading ? <SmallSpinner /> : "Submit & Update"}
-              </PrimaryButton>
+            <div className="text-center">
+              Click to make {city?.district} default city. It will replace your
+              current city Chittagong from across TOI
+            </div>
+            <div className="text-center ">
+              <button type="submit" className="btn btn-success text-white mx-2">
+                CONFIRM
+              </button>
+              <label for="update-modal" class="btn btn-error text-white mx-2">
+                CANCEL
+              </label>
+              {/* <bu class="modal-action">
+              
+              </bu> */}
             </div>
           </form>
         </div>

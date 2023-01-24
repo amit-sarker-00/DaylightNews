@@ -8,22 +8,29 @@ import HomePageDivisionSingleCard from "./HomePageDivisionSingleCard ";
 
 const HomePageDivisionData = () => {
   const [datas, setDatas] = useState([]);
+  const [city, setCity] = useState({});
+  const [districtData, setDistrictData] = useState({});
 
   useEffect(() => {
-    fetch("district.json")
+    fetch(`district.json?districs=${city?.district}`)
       .then((res) => res.json())
       .then((result) => {
         setDatas(result);
       });
   }, []);
-  // console.log(datas);
 
   //unique district
-  const uniqueDistrict = [...new Set(datas?.map((data) => data?.districs))];
-  console.log(uniqueDistrict);
+  const uniqueDistrict = [...new Set(datas?.map((data) => data?.district))];
+  // console.log(uniqueDistrict);
 
-  const handleUpdateDistrict = (id) => {
-    // console.log(id);
+  const handleUpdateDistrict = (event) => {
+    event.preventDefault();
+    fetch(`district.json?districs=${city?.district}`)
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        setDatas(result);
+      });
   };
 
   return (
@@ -61,8 +68,8 @@ const HomePageDivisionData = () => {
         <div className="w-full sm:w-[800px]  mx-auto xl:w-[300px] ">
           <h1 className="text-2xl font-bold text-center">Division Category</h1>
           <div className="pl-5 py-4">
-            <label htmlFor="update-modal" className="text-xl font-bold ">
-              Division
+            <label htmlFor="update-modal" className="text-xl  ">
+              {city?.district ? city?.district : "Dhaka"} || Change City
             </label>
           </div>
           <div className="p-2 ">
@@ -74,7 +81,12 @@ const HomePageDivisionData = () => {
           </div>
         </div>
       </div>
-      <DistricModal handleUpdateDistrict={handleUpdateDistrict} />
+      <DistricModal
+        handleUpdateDistrict={handleUpdateDistrict}
+        uniqueDistrict={uniqueDistrict}
+        setCity={setCity}
+        city={city}
+      />
     </div>
   );
 };
