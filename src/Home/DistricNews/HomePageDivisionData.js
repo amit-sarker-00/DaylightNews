@@ -16,7 +16,16 @@ const HomePageDivisionData = () => {
         setDatas(result);
       });
   }, []);
-  console.log(datas);
+  // console.log(datas);
+
+  //unique district
+  const uniqueDistrict = [...new Set(datas?.map((data) => data?.districs))];
+  console.log(uniqueDistrict);
+
+  const handleUpdateDistrict = (id) => {
+    // console.log(id);
+  };
+
   return (
     <div>
       <div className="flex  flex-col-reverse xl:flex-row">
@@ -52,7 +61,9 @@ const HomePageDivisionData = () => {
         <div className="w-full sm:w-[800px]  mx-auto xl:w-[300px] ">
           <h1 className="text-2xl font-bold text-center">Division Category</h1>
           <div className="pl-5 py-4">
-            <Link className="">Division</Link>
+            <label htmlFor="update-modal" className="text-xl font-bold ">
+              Division
+            </label>
           </div>
           <div className="p-2 ">
             <img
@@ -63,7 +74,7 @@ const HomePageDivisionData = () => {
           </div>
         </div>
       </div>
-      <DistricModal />
+      <DistricModal handleUpdateDistrict={handleUpdateDistrict} />
     </div>
   );
 };
