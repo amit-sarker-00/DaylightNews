@@ -18,7 +18,7 @@ const InternetionalTorism = () => {
                 setSrilanka(fashionNews.slice(0, 1))
                 setBangladesh(fashionNews.slice(0, 2))
                 setDubaiImg(fashionNews.slice(0, 3))
-                console.log(result);
+
             });
     }, []);
 

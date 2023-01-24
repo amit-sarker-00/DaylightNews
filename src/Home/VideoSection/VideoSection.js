@@ -25,9 +25,10 @@ const VideoSection = () => {
                     height="100%"
                     src={video.video}
                     title=" video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen="true"
+                    allowFullScreen={true}
+
                   ></iframe>
                 </div>
                 <div className="mt-3">
@@ -63,9 +64,10 @@ const VideoSection = () => {
                     height="100%"
                     src={video.video}
                     title=" video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen="true"
+                    allowFullScreen={true}
+
                   ></iframe>
                 </div>
                 <div className="mt-3">
@@ -101,9 +103,10 @@ const VideoSection = () => {
                     height="100%"
                     src={video.video}
                     title=" video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen="true"
+                    allowFullScreen={true}
+
                   ></iframe>
                 </div>
                 <div className="mt-3">
