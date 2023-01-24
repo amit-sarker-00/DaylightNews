@@ -17,30 +17,35 @@ import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
 import ViralNews from "./ViralNews/ViralNews";
 import VideoSection from "./VideoSection/VideoSection";
 import FoodNews from "./FoodNews/FoodNews";
+import HomePageDivisionData from "./DistricNews/HomePageDivisionData";
 
 const Home = () => {
   useTitle("Home");
-  const { searchContent } = useContext(AuthContext)
-
+  const { searchContent } = useContext(AuthContext);
 
   return (
     <div className="max-w-[1440px] mx-auto">
       {/* <Category /> */}
       {/* <Spinner /> */}
-      {searchContent ? <SearchData /> : <>
-        <Banner />
-        <BreakingNews />
-        <TrendingNews />
-        <HomePageLetestNews />
-        <HomePageArticalAndPost />
-        <News />
-        <Culture />
-        <OnlineVatingSection />
-        <InternetionalTorism />
-        <FoodNews/>
-        <VideoSection />
-        <ViralNews />
-      </>}
+      {searchContent ? (
+        <SearchData />
+      ) : (
+        <>
+          <Banner />
+          <HomePageDivisionData />
+          <BreakingNews />
+          <TrendingNews />
+          <HomePageLetestNews />
+          <HomePageArticalAndPost />
+          <News />
+          <Culture />
+          <OnlineVatingSection />
+          <InternetionalTorism />
+          <FoodNews />
+          <VideoSection />
+          <ViralNews />
+        </>
+      )}
     </div>
   );
 };
