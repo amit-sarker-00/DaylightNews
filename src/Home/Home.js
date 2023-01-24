@@ -17,6 +17,9 @@ import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
 import ViralNews from "./ViralNews/ViralNews";
 import VideoSection from "./VideoSection/VideoSection";
 import FoodNews from "./FoodNews/FoodNews";
+import Search from "../Components/Search/Search";
+import ReakTimeVisitor from "../Components/RealTimeVisitor/ReakTimeVisitor";
+import HomePageDivisionData from "./HomePageDivisionData/HomePageDivisionData";
 
 const Home = () => {
   useTitle("Home");
@@ -29,18 +32,23 @@ const Home = () => {
       {/* <Spinner /> */}
       {searchContent ? <SearchData /> : <>
         <Banner />
-        <BreakingNews />
-        <TrendingNews />
-        <HomePageLetestNews />
+        {/* <BreakingNews /> */}
+        {/* <TrendingNews /> */}
+        {/* <HomePageLetestNews />
         <HomePageArticalAndPost />
         <News />
         <Culture />
         <OnlineVatingSection />
         <InternetionalTorism />
-        <FoodNews/>
+        <FoodNews />
         <VideoSection />
         <ViralNews />
+        
+         */}
       </>}
+      <HomePageDivisionData />
+      {/* <ReakTimeVisitor /> */}
+      {/* <Search /> */}
     </div>
   );
 };

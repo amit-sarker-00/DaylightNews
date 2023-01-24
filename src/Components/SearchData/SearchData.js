@@ -5,14 +5,29 @@ import SearchCardData from './SearchCardData';
 const SearchData = () => {
     const { searchContent } = useContext(AuthContext)
     const [searchDatas, setSearchDatas] = useState([]);
+    const [searchApiData, setSearchApiData] = useState([]);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}searchNews?search=${searchContent}`).then(res => res.json()).then(result => {
-            setSearchDatas(result);
-        })
+        fetch(`${process.env.REACT_APP_API_URL}news`)
+            .then((res) => res.json())
+            .then((data) => {
+                setSearchApiData(data)
+            });
+    }, []);
 
 
-    }, [searchContent]);
+
+    const handleFilter = (searchContent) => {
+        if (searchContent?.length > 1) {
+            const filterResult = searchApiData.filter(item => item?.title?.toLowerCase().includes(searchContent?.toLowerCase()) || item?.category?.toLowerCase().includes(searchContent?.toLowerCase()))
+            setSearchDatas(filterResult)
+        } else {
+            setSearchDatas([])
+        }
+
+    }
+    handleFilter()
+
     return (
         <div>
             <h1>Search on "{searchContent}"</h1>
