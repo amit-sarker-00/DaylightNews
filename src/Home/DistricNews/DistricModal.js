@@ -10,13 +10,6 @@ const DistricModal = ({
       <input type="checkbox" id="update-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative text-black bg-white  w-10/12 max-w-5xl">
-          <label
-            htmlFor="update-modal"
-            className="btn btn-sm btn-circle absolute right-2 top-2"
-          >
-            ✕
-          </label>
-
           <form
             onSubmit={handleUpdateDistrict}
             className="space-y-1 ng-untouched ng-pristine ng-valid "
@@ -24,7 +17,7 @@ const DistricModal = ({
             <div className="text-center">
               <h1 className="text-xl">CHANGE CITY</h1>
             </div>
-            <div className="grid grid-cols-4 gap-4 py-2">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 py-2">
               {uniqueDistrict?.map((district, uxi) => (
                 <div className="flex" key={uxi} district={district}>
                   <input
@@ -39,20 +32,23 @@ const DistricModal = ({
                 </div>
               ))}
             </div>
-            <div className="text-center">
-              Click to make {city?.district} default city. It will replace your
-              current city Chittagong from across TOI
-            </div>
+            {city?.district && (
+              <div className="text-center">
+                Click to make {city?.district} default city. It will replace
+                your current city Chittagong from across TOI
+              </div>
+            )}
             <div className="text-center ">
               <button type="submit" className="btn btn-success text-white mx-2">
                 CONFIRM
               </button>
-              <label for="update-modal" class="btn btn-error text-white mx-2">
+
+              <label
+                htmlFor="update-modal"
+                class="btn btn-error text-white mx-2"
+              >
                 CANCEL
               </label>
-              {/* <bu class="modal-action">
-              
-              </bu> */}
             </div>
           </form>
         </div>

@@ -9,7 +9,6 @@ import HomePageDivisionSingleCard from "./HomePageDivisionSingleCard ";
 const HomePageDivisionData = () => {
   const [datas, setDatas] = useState([]);
   const [city, setCity] = useState({});
-  const [districtData, setDistrictData] = useState({});
 
   useEffect(() => {
     fetch(`district.json?districs=${city?.district}`)
@@ -31,6 +30,7 @@ const HomePageDivisionData = () => {
         console.log(result);
         setDatas(result);
       });
+    console.log(city?.district);
   };
 
   return (
