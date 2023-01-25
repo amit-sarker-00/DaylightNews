@@ -5,7 +5,6 @@ import Category from "../Pages/Categoris/Category";
 import Banner from "./Banner/Banner";
 import BreakingNews from "./BreakingNews/BreakingNews";
 import Culture from "./Culture-Lifestyle/Culture-Lifestyle";
-import FoodNews from "./FoodNews/FoodNews";
 import HomePageArticalAndPost from "./HomepageArticalAndPost/HomePageArticalAndPost";
 import HomePageLetestNews from "./HomePageLetestNews/HomePageLetestNews";
 import News from "./News/News";
@@ -28,24 +27,18 @@ const Home = () => {
 
       {/* <Category /> */}
       {/* <Spinner /> */}
-      {searchContent ? (
-        <SearchData />
-      ) : (
-        <>
-          <Banner />
-          <BreakingNews />
-          <TrendingNews />
-          <HomePageLetestNews />
-          <HomePageArticalAndPost />
-          <News />
-          {/* <Culture /> */}
-          <OnlineVatingSection />
-          {/* <InternetionalTorism /> */}
-          <SportsNews />
-          <VideoSection />
-          <ViralNews />
-        </>
-      )}
+      {searchContent ? <SearchData /> : <>
+        <Banner />
+        <BreakingNews />
+        <TrendingNews />
+        <HomePageLetestNews />
+        <HomePageArticalAndPost />
+        <News />
+        <OnlineVatingSection />
+        <SportsNews />
+        <VideoSection />
+        <ViralNews />
+      </>}
     </div>
   );
 };

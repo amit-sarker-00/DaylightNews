@@ -6,61 +6,57 @@ import { BsFillEmojiAngryFill } from 'react-icons/bs';
 import { BsEmojiSunglassesFill } from 'react-icons/bs';
 import { BsEmojiNeutral } from 'react-icons/bs';
 
-const DetailsCardReaction = ({ detail, reactions, refetch }) => {
+const DetailsCardReaction = ({ detail, reactions, reCall }) => {
 
-    const [emojiCount, setEmojiCount] = useState({
-        smileEmoji: 8,
-        frownEmoji: 5,
-        angryEmoji: 3,
-        sunglasEmoji: 9,
-        naturalEmoji: 5,
-    });
+    const [smileEmoji, setSmileEmoji] = useState(reactions?.smileEmoji > 0 ? reactions?.smileEmoji : 0);
+    const [frownEmoji, setFrownEmoji] = useState(reactions?.frownEmoji > 0 ? reactions?.frownEmoji : 0);
+    const [angryEmoji, setAngryEmoji] = useState(reactions?.angryEmoji > 0 ? reactions?.angryEmoji : 0);
+    const [sunglasEmoji, setSunglasEmoji] = useState(reactions?.sunglasEmoji > 0 ? reactions?.sunglasEmoji : 0);
+    const [naturalEmoji, setNaturalEmoji] = useState(reactions?.naturalEmoji > 0 ? reactions?.naturalEmoji : 0);
 
+    const data = {
+        smileEmoji, frownEmoji, angryEmoji, sunglasEmoji, naturalEmoji
+    }
+    console.log(reactions);
+    const updateReactionFN = () => {
+        fetch(`${process.env.REACT_APP_API_URL}reactions?id=${detail?._id}`, {
+            method: 'PUT', headers: {
+                'content-type': 'application/json'
+            }, body: JSON.stringify(data)
+        }).then(res => res.json()).then(result => {
+            reCall()
+
+        })
+    }
     const handleVote = option => {
-        setEmojiCount({
-            ...emojiCount,
-            [option]: parseInt(emojiCount[option] + 1)
-        });
+        if (option === 'smileEmoji') {
+            setSmileEmoji(smileEmoji + 1)
+            updateReactionFN()
+        }
+        if (option === 'frownEmoji') {
+            setFrownEmoji(frownEmoji + 1)
+            updateReactionFN()
 
-        const data = {
-            reactionNewsId: detail?._id,
-            smileEmoji: {
-                ...emojiCount,
-                [option]: parseInt(emojiCount[option] + 1)
-            },
-            frownEmoji: {
-                ...emojiCount,
-                [option]: parseInt(emojiCount[option] + 1)
-            },
-            angryEmoji: {
-                ...emojiCount,
-                [option]: parseInt(emojiCount[option] + 1)
-            },
-            sunglasEmoji: {
-                ...emojiCount,
-                [option]: parseInt(emojiCount[option] + 1)
-            },
-            naturalEmoji: {
-                ...emojiCount,
-                [option]: parseInt(emojiCount[option] + 1)
-            },
+        }
+        if (option === 'angryEmoji') {
+            setAngryEmoji(angryEmoji + 1)
+            updateReactionFN()
+
+        }
+        if (option === 'sunglasEmoji') {
+            setSunglasEmoji(sunglasEmoji + 1)
+            updateReactionFN()
+
+        }
+        if (option === 'naturalEmoji') {
+            setNaturalEmoji(naturalEmoji + 1)
+            updateReactionFN()
+
         }
 
-        if (option) {
-            fetch(`${process.env.REACT_APP_API_URL}reactions?id=${detail?._id}`, {
-                method: 'PUT', headers: {
-                    'content-type': 'application/json'
-                }, body: JSON.stringify(data)
-            }).then(res => res.json()).then(result => {
-                console.log(result);
-                refetch()
-
-            })
-        }
 
     };
 
-    console.log(reactions);
 
     return (
         <div className='mx-auto text-center'>
@@ -68,26 +64,26 @@ const DetailsCardReaction = ({ detail, reactions, refetch }) => {
             <div className='w-full lg:w-80 mx-auto  flex gap-2 m-1 flex-col md:flex-row'>
                 <div className='border py-2 lg:py-4 px-2 lg:px-6'>
                     <SlEmotsmile onClick={() => handleVote("smileEmoji")} className='mx-auto cursor-pointer m-1 text-yellow-800 text-xl' />
-                    <p>{reactions?.smileEmoji}</p>
+                    <p>{smileEmoji}</p>
                 </div>
                 <div className='border py-2 lg:py-4 px-2 lg:px-6'>
                     <BsEmojiFrown onClick={() => handleVote("frownEmoji")} className='mx-auto cursor-pointer m-1 text-yellow-800 text-xl' />
-                    <p>{reactions?.frownEmoji}</p>
+                    <p>{frownEmoji}</p>
 
                 </div>
                 <div className='border py-2 lg:py-4 px-2 lg:px-6'>
                     <BsFillEmojiAngryFill onClick={() => handleVote("angryEmoji")} className='mx-auto cursor-pointer m-1 text-yellow-800 text-xl' />
-                    <p>{reactions?.angryEmoji}</p>
+                    <p>{angryEmoji}</p>
 
                 </div>
                 <div className='border py-2 lg:py-4 px-2 lg:px-6'>
                     <BsEmojiSunglassesFill onClick={() => handleVote("sunglasEmoji")} className='mx-auto cursor-pointer m-1 text-yellow-800 text-xl' />
-                    <p>{reactions?.sunglasEmoji}</p>
+                    <p>{sunglasEmoji}</p>
 
                 </div>
                 <div className='border py-2 lg:py-4 px-2 lg:px-6'>
                     <BsEmojiNeutral onClick={() => handleVote("naturalEmoji")} className='mx-auto cursor-pointer m-1 text-yellow-800 text-xl' />
-                    <p>{reactions?.naturalEmoji}</p>
+                    <p>{naturalEmoji}</p>
 
                 </div>
             </div>
