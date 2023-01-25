@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const SingleCard = ({ data }) => {
   // console.log(data)
-  const { author, category, description, picture, title } = data;
+  const { author, category, description, picture, title, _id } = data;
   return (
     <div className=" transition-all">
       <img className="  w-full" src={picture} alt="" />
-      <Link className="">
+      <Link to={`/detail/${_id}`} className="">
         <h1 className="text-2xl hover:text-red-600 link-hover font-bold py-1">
           {title}
         </h1>

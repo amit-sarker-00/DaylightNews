@@ -25,7 +25,7 @@ const ViralNews = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         <div>
-          <div className="font-bold border  text-center py-1">
+          <div className="font-bold border text-red-500 text-center py-1">
             <h1>MOST POPULAR</h1>
           </div>
           <div>
@@ -45,7 +45,7 @@ const ViralNews = () => {
                   </div>
                   <div className="mx-2 w-72 h-32">
                     <h4 className="font-semibold text-red-400">{viral.name}</h4>
-                    <h3 className="sm:text-md link-hover text-md font-bold mb-1">
+                    <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
                       {viral.title}
                     </h3>
                     <p className="text-gray-500">
@@ -64,7 +64,7 @@ const ViralNews = () => {
           </div>
         </div>
         <div className="">
-          <div className="font-bold border text-center py-1">
+          <div className="font-bold border text-red-500 text-center py-1">
             <h1>TALKED ABOUT</h1>
           </div>
           <div>
@@ -84,7 +84,7 @@ const ViralNews = () => {
                   </div>
                   <div className="mx-2 w-72 h-32">
                     <h4 className="font-semibold text-red-400">{viral.name}</h4>
-                    <h3 className="sm:text-md link-hover text-md font-bold mb-1">
+                    <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
                       {viral.title}
                     </h3>
                     <p className="text-gray-500">
@@ -103,7 +103,7 @@ const ViralNews = () => {
           </div>
         </div>
         <div className="">
-          <div className="font-bold border text-center py-1">
+          <div className="font-bold border text-red-500 text-center py-1">
             <h1>VIDEO OF THE DAY</h1>
           </div>
           <div className="h-[50%] mb-6 border">
