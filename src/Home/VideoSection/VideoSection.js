@@ -11,9 +11,9 @@ const VideoSection = () => {
   return (
     <div className="mb-4 sm:my-10 md:my-16">
       <div className="font-bold text-xl sm:text-2xl text-red-500 my-3">
-        <h1>Video Post</h1>
+        <h1>VIDEO POST NEWS</h1>
       </div>
-      <div className="md:flex  justify-between gap-4 ">
+      <div className="lg:flex  justify-between gap-4 ">
         <div>
           {VideoPost?.slice(0, 2).map((video) => (
             <div className="" key={video._id}>
@@ -52,11 +52,11 @@ const VideoSection = () => {
             </div>
           ))}
         </div>
-        <div className="sm:h-[870px] h-[280px]   md:w-[50%]">
+        <div className="  w-full lg:w-[50%]">
           {VideoPost?.slice(2, 3).map((video) => (
             <div key={video._id} className="  h-full">
               <div className="h-[100%]">
-                <div className="h-[75%] mb-3">
+                <div className="lg:h-[650px] h-[300px] mb-3">
                   <iframe
                     className="rounded-2xl"
                     width="100%"

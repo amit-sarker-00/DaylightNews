@@ -5,7 +5,7 @@ export const setAuthToken = (user) => {
   };
 
   //   Save user in db & get token
-  fetch(`http://localhost:5000/user/${user?.email}`, {
+  fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
     method: "PUT",
     headers: {
       "content-type": "application/json",
@@ -22,7 +22,7 @@ export const setAuthToken = (user) => {
 
 //get user
 export const getUser = async (email) => {
-  const response = await fetch(`http://localhost:5000/user/${email}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}user/${email}`, {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -36,7 +36,7 @@ export const getUser = async (email) => {
 // make a writer
 export const makeWriter = async (user) => {
   delete user._id;
-  const response = await fetch(`http://localhost:5000/user/${user?.email}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
     method: "PUT",
     headers: {
       "content-type": "application/json",
@@ -52,7 +52,7 @@ export const makeWriter = async (user) => {
 //make a reader
 export const makeReader = async (user) => {
   delete user._id;
-  const response = await fetch(`http://localhost:5000/user/${user?.email}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
     method: "PUT",
     headers: {
       "content-type": "application/json",
@@ -67,7 +67,7 @@ export const makeReader = async (user) => {
 
 // get role
 export const getRole = async (email) => {
-  const response = await fetch(`http://localhost:5000/user/${email}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}user/${email}`, {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -76,4 +76,31 @@ export const getRole = async (email) => {
   });
   const user = await response.json();
   return user?.role;
+};
+// Delete a User
+export const deleteUser = async (id) => {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}users/${id}`, {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("news-token")}`,
+    },
+  });
+
+  const data = await response.json();
+  return data;
+};
+
+//delete writer
+export const deleteWriter = async (id) => {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}writers/${id}`, {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("news-token")}`,
+    },
+  });
+
+  const data = await response.json();
+  return data;
 };

@@ -17,8 +17,7 @@ import {
 import { Link } from "react-router-dom";
 
 import car1 from "../../assest/Footer img/car 2.jfif";
-import car2 from "../../assest/Footer img/car 3.jfif";
-import car3 from "../../assest/Footer img/car 4.jfif";
+
 
 const Footer = () => {
 
@@ -205,7 +204,7 @@ const Footer = () => {
         </div>
       </footer>
       <div className="text-center py-4 text-gray-300 border-t border-gray-800 ">
-        <p>Copyright © 2022 All Rights Reserved.</p>
+        <p>Copyright © 2023 All Rights Reserved By <a href="#">Programming-hero</a> FriendlyWarriors-Team</p>
       </div>
     </div>
   );

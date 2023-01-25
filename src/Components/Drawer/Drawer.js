@@ -7,7 +7,7 @@ const Drawer = () => {
     const [categories, setCategories] = useState([]);
     // categories 
     useEffect(() => {
-        fetch("NewsData.json")
+        fetch(`${process.env.REACT_APP_API_URL}news`)
             .then((res) => res.json())
             .then((data) => setCategories(data));
     }, []);
@@ -57,8 +57,8 @@ const Drawer = () => {
                                 <Link tabIndex={1} className="flex items-center gap-1 "><span>Categories</span> <IoIosArrowDropdown className="mt-1" /></Link>
                                 <ul tabIndex={1} className="dropdown-content sm:w-60 w-20 z-50 rounded-md text-black font-semibold  shadow bg-gray-200 ">
                                     {
-                                        uniqueCategory.map((category, i) => <li className="w-full">
-                                            <Link to={`/category/${category}`} className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500 hover:text-white" key={i}>{category}</Link>
+                                        uniqueCategory.map((category, i) => <li key={i} className="w-full">
+                                            <Link to={`/category/${category}`} className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500  "  >{category}</Link>
                                         </li>)
                                     }
                                 </ul>
