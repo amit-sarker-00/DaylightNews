@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
-const EnvironmentNewsCard = ({ EnvNews }) => {
-  const { title, picture, category, description, author } = EnvNews;
+const VoicesCard = ({ VoiceNews }) => {
+  const { title, picture, category, description, author } = VoiceNews;
   return (
     <div>
       <Link
         to={`/details/`}
         className="p-2 flex gap-4 transition-all overflow-hidden shadow items-center"
       >
-        <div className="overflow-hidden w-70 md:h-52 sm:h-40">
+        <div className="overflow-hidden w-[250px] md:h-52 sm:h-40">
           <img
             className="transition transform ease-in-out duration-500 hover:scale-125 object-cover w-[250px] sm:h-52 h-full"
             src={picture}
@@ -19,7 +19,7 @@ const EnvironmentNewsCard = ({ EnvNews }) => {
         <div>
           <div>
             <div className="flex items-center py-2">
-              <div className="w-1 h-5 text-black "></div>
+              <div className="w-1 h-5  text-black "></div>
               <p className="pl-5 text-xl text-black font-bold">{category}</p>
             </div>
             <h1 className="text-sm sm:text-xl font-semibold ">{title}</h1>
@@ -51,4 +51,4 @@ const EnvironmentNewsCard = ({ EnvNews }) => {
   );
 };
 
-export default EnvironmentNewsCard;
+export default VoicesCard;

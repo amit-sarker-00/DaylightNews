@@ -10,6 +10,7 @@ import News from "./News/News";
 import TrendingNews from "./TrendingNews/TrendingNews";
 import OnlineVatingSection from "./OnlineVatingSection/OnlineVatingSection";
 import EnvironmentNews from "./EnvironmentNews/EnvironmentNews";
+import Voices from "./Voices/Voices";
 
 const Home = () => {
   useTitle("Home");
@@ -25,7 +26,8 @@ const Home = () => {
       <News />
       <Culture /> */}
       {/* <OnlineVatingSection /> */}
-      <EnvironmentNews/>
+      <EnvironmentNews />
+      <Voices />
     </div>
   );
 };
