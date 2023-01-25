@@ -17,6 +17,8 @@ import { AuthContext } from "../Contexts/AuthProvider/AuthProvider";
 import InternetionalTorism from "./InternetionalTorism/InternetionalTorism";
 import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
 import SportsNews from "./SportsNews/SportsNews";
+import EnvironmentNews from "./EnvironmentNews/EnvironmentNews";
+import Voices from "./Voices/Voices";
 
 const Home = () => {
   useTitle("Home");
@@ -38,6 +40,8 @@ const Home = () => {
         <SportsNews />
         <VideoSection />
         <ViralNews />
+        <EnvironmentNews />
+        <Voices />
       </>}
     </div>
   );
