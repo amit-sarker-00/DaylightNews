@@ -16,7 +16,7 @@ import InternetionalTorism from "./InternetionalTorism/InternetionalTorism";
 import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
 import ViralNews from "./ViralNews/ViralNews";
 import VideoSection from "./VideoSection/VideoSection";
-import FoodNews from "./FoodNews/FoodNews";
+import SportsNews from "./SportsNews/SportsNews";
 
 const Home = () => {
   useTitle("Home");
@@ -36,10 +36,10 @@ const Home = () => {
           <HomePageLetestNews />
           <HomePageArticalAndPost />
           <News />
-          <Culture />
+          {/* <Culture /> */}
           <OnlineVatingSection />
-          <InternetionalTorism />
-          <FoodNews />
+          {/* <InternetionalTorism /> */}
+          <SportsNews />
           <VideoSection />
           <ViralNews />
         </>

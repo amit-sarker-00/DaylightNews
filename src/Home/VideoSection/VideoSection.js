@@ -9,9 +9,9 @@ const VideoSection = () => {
       .then((data) => setVideoPost(data));
   }, []);
   return (
-    <div className="mb-4 sm:my-10 md:my-16 border">
+    <div className="mb-4 sm:my-10 md:my-16">
       <div className="font-bold text-xl sm:text-2xl text-red-500 my-3">
-        <h1>Video Post</h1>
+        <h1>VIDEO POST NEWS</h1>
       </div>
       <div className="lg:flex  justify-between gap-4 ">
         <div>

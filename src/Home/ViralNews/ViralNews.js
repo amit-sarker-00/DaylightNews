@@ -21,16 +21,20 @@ const ViralNews = () => {
   return (
     <div className="mb-4 sm:my-10 md:my-16">
       <div className="font-bold text-xl sm:text-2xl text-red-500 my-3">
-        <h1>Viral News</h1>
+        <h1>VIRAL NEWS</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         <div>
-          <div className="font-bold border text-center py-1">
+          <div className="font-bold border  text-center py-1">
             <h1>MOST POPULAR</h1>
           </div>
           <div>
             {viralNews?.slice(0, 4).map((viral) => (
-              <Link key={viral._id} className=" h-full w-full  ">
+              <Link
+                to={`/detail/${viral?._id}`}
+                key={viral._id}
+                className=" h-full w-full  "
+              >
                 <div className="flex w-full border h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
                     <img
@@ -65,7 +69,11 @@ const ViralNews = () => {
           </div>
           <div>
             {viralNews?.slice(4, 8).map((viral) => (
-              <Link key={viral._id} className=" h-full w-full  ">
+              <Link
+                to={`/detail/${viral?._id}`}
+                key={viral._id}
+                className=" h-full w-full  "
+              >
                 <div className="flex w-full border h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
                     <img

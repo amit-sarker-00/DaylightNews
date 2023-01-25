@@ -13,9 +13,9 @@ const ReecntWorkForHomePageSlidebar = ({ data }) => {
         <img className="w-36 h-20 " src={picture} alt="" />
       </div>
       <div className="pl-5 text-left ">
-        <h1 className="text-sm md:text-sm lg:text-xl link-hover hover:text-red-500 font-semibold">
+        <h3 className="text-sm md:text-sm lg:text-xl link-hover hover:text-red-500 font-semibold">
           {title.slice(0, 20) + "..."}
-        </h1>
+        </h3>
         <div className="flex items-center ">
           <FaCalendarDay className="text-red-500" />
           <p className="pl-2 text-[12px] text-slate-400">

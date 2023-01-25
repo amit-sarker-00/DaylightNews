@@ -29,8 +29,8 @@ const VatingNews = () => {
 
   return (
     <div className="">
-      <Link className="flex text-xl font-semibold hover:text-red-600 transition-all gap-2">
-        Online Voting{" "}
+      <Link className="flex text-xl sm:text-2xl font-bold text-red-500 transition-all gap-2">
+        ONLINE VOTING
         <span>
           <BsArrowUpRightSquareFill className="text-red-600 mt-1" />
         </span>

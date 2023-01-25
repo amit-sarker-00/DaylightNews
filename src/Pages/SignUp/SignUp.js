@@ -102,11 +102,11 @@ const SignUp = () => {
   };
   return (
     <div>
-      <h1 className="py-5 text-center text-4xl font-bold animate-pulse italic">
-        <Link to="/">DaiLight-News</Link>
+      <h1 className="py-5 text-center text-4xl font-bold animate-pulse font-serif">
+        <Link to="/">DaylightNews</Link>
       </h1>
-      <div className="flex justify-center items-center">
-        <div className="flex flex-col max-w-md p-6 rounded-md    text-gray-900">
+      <div className="flex w-96 sm:w-[450px] mx-auto items-center border shadow-sm">
+        <div className="flex flex-col mx-auto max-w-lg p-6 rounded-md    text-gray-900">
           <div className="mb-8 text-center">
             <h1 className=" text-3xl">Create an Account</h1>
           </div>
@@ -114,7 +114,7 @@ const SignUp = () => {
             onSubmit={handleSubmit}
             noValidate=""
             action=""
-            className="space-y-6 ng-untouched ng-pristine ng-valid"
+            className="space-y-6 ng-untouched  w-full md:w-96 ng-pristine  ng-valid"
           >
             <div className="space-y-4">
               <div>
@@ -196,13 +196,13 @@ const SignUp = () => {
               {/* <div>
               <select className="select select-bordered  w-full bg-white "></select>
             </div> */}
-              <div>
-                <div className="flex mb-3 ">
+              <div className="flex sm:flex-row flex-col items-center gap-2">
+                <div className="flex sm:mb-0 mb-2">
                   <input
                     type="radio"
                     name="radio-5"
                     id="reader"
-                    className="radio radio-success mr-2"
+                    className="radio  radio-success mr-1"
                     onChange={() => setRole("reader")}
                     required
                   />
@@ -213,7 +213,7 @@ const SignUp = () => {
                     type="radio"
                     name="radio-5"
                     id="writer"
-                    className="radio radio-success mr-2"
+                    className="radio radio-success mr-1"
                     onChange={() => setRole("writer")}
                     required
                   />
@@ -225,7 +225,7 @@ const SignUp = () => {
               <div>
                 <PrimaryButton
                   type="submit"
-                  classes="w-full px-8 py-3 font-semibold rounded-lg bg-[#3BB77E] text-white"
+                  classes="w-full  px-8 py-3 font-semibold rounded-lg bg-[#000000] hover:bg-[#000000] text-white"
                 >
                   {"Submit & Register"}
                 </PrimaryButton>
