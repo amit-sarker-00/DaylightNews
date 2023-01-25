@@ -17,6 +17,8 @@ import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
 import ViralNews from "./ViralNews/ViralNews";
 import VideoSection from "./VideoSection/VideoSection";
 import FoodNews from "./FoodNews/FoodNews";
+import EnvironmentNews from "./EnvironmentNews/EnvironmentNews";
+import Voices from "./Voices/Voices";
 
 const Home = () => {
   useTitle("Home");
@@ -33,12 +35,14 @@ const Home = () => {
         <TrendingNews />
         <HomePageLetestNews />
         <HomePageArticalAndPost />
+        <EnvironmentNews />
         <News />
         <Culture />
         <OnlineVatingSection />
         <InternetionalTorism />
-        <FoodNews/>
+        <FoodNews />
         <VideoSection />
+        <Voices />
         <ViralNews />
       </>}
     </div>
