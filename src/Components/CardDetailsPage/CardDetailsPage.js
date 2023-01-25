@@ -20,6 +20,7 @@ const CardDetailsPage = () => {
     const [recentData, setRecentData] = useState([])
     const [detail, setDetail] = useState({});
 
+
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}news/${params?.id}`)
             .then((res) => res.json())
@@ -39,19 +40,26 @@ const CardDetailsPage = () => {
             });
     }, []);
 
-    const { data: reactions, refetch } = useQuery({
+    const { data: reactions, isLoading, refetch: reCall } = useQuery({
         queryKey: ['reactions', params?.id],
         queryFn: () => fetch(`${process.env.REACT_APP_API_URL}reactions/${params?.id}`).then(res => res.json())
     })
 
+    const { data: singleNewsComment = [], refetch } = useQuery({
+        queryKey: ['comment', params?.id],
+        queryFn: () => fetch(`${process.env.REACT_APP_API_URL}comment/${params.id}`).then(res => res.json())
+    })
 
+    if (isLoading) {
+        return <div className='w-full py-8 text-center font-bold'>Loading...</div>
+    }
 
     return (
         <div>
             {searchContent ? <SearchData /> :
                 <div className='flex w-full gap-0 lg:gap-5 h-full'>
                     <div className='flex '>
-                        <DetailsCard detail={detail} refetch={refetch} reactions={reactions} />
+                        <DetailsCard reCall={reCall} singleNewsComment={singleNewsComment} detail={detail} refetch={refetch} reactions={reactions} />
                     </div>
                     <div>
                         <h1 className='text-center text-xl font-semibold pb-5 hidden lg:block'>Latest News</h1>

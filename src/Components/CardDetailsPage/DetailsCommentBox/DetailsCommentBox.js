@@ -1,33 +1,27 @@
-import React, { useContext, useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext } from "react";
 import { format } from "date-fns";
 import { toast } from "react-hot-toast";
 import { addComment } from "../../../api/services";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import AllComment from "./AllComment";
 
-const DetailsCommentBox = ({ detail }) => {
+const DetailsCommentBox = ({ detail, singleNewsComment, refetch }) => {
 
-    //   console.log(detail);
-    const { _id, picture } = detail;
+    const { picture } = detail;
     const { user } = useContext(AuthContext);
     const [loading, setLoading] = React.useState(false);
-    const [comments, setComments] = React.useState([]);
-    useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}comment/${_id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                // console.log(data);
-                setComments(data);
-            });
-    }, [loading]);
-    //   console.log(comments);
+
+
+
     const handleCommentBox = (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const message = form.message.value;
+        if (!message) {
+            return alert('Please write a message!')
+        }
         const commentData = {
             userImage: user?.photoURL,
             picture,
@@ -38,13 +32,15 @@ const DetailsCommentBox = ({ detail }) => {
             time: format(new Date(), "p"),
             date: format(new Date(), "PP"),
         };
-        // console.log(commentData);
+
         addComment(commentData).then((data) => {
             toast.success("Comment Successfuly !");
+            refetch()
             e.target.reset();
             setLoading(!loading);
         });
     };
+
 
     return (
         <div className="text-center w-full lg:w-[700px] mx-auto py-10 ">
@@ -54,7 +50,7 @@ const DetailsCommentBox = ({ detail }) => {
                     <div className="w-full  sm:w-[300px]">
                         <p className="text-left text-gray-500 py-1">Full Name*</p>
                         <input
-                            className="w-full h-10"
+                            className="w-full input input-bordered h-10"
                             type="text"
                             name="name"
                             defaultValue={user?.displayName}
@@ -63,7 +59,7 @@ const DetailsCommentBox = ({ detail }) => {
                     <div className="w-full sm:w-[300px]">
                         <p className="text-left text-gray-500 py-1">Email*</p>
                         <input
-                            className="w-full h-10"
+                            className="w-full input input-bordered h-10"
                             type="email"
                             name="email"
                             defaultValue={user?.email}
@@ -83,11 +79,11 @@ const DetailsCommentBox = ({ detail }) => {
 
                 <input
                     type="submit"
-                    className="py-2 px-7 bg-red-600 text-white"
+                    className="py-2 px-7 mb-5 bg-red-600 text-white"
                     value="Submit Comment "
                 />
             </form>
-            {comments.map((comment) => (
+            {singleNewsComment?.map((comment) => (
                 <AllComment key={comment?._id} comment={comment}></AllComment>
             ))}
         </div>

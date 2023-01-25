@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import DetailsCardReaction from '../DetailsCardReaction/DetailsCardReaction';
 import DetailsCommentBox from '../DetailsCommentBox/DetailsCommentBox';
 
 
 
 
-const DetailsCard = ({ detail, reactions, refetch }) => {
+const DetailsCard = ({ detail, reCall, reactions, refetch, singleNewsComment }) => {
 
     const { picture, title, category, description, author } = detail
 
@@ -14,7 +14,7 @@ const DetailsCard = ({ detail, reactions, refetch }) => {
             <div>
                 <div className=' relative  w-full  object-cover '>
                     <img className='w-full lg:h-[500px]' src={picture} alt="" />
-                    <h1 className='absolute top-0 right-0 bg-red-700 py-1 px-5 text-white font-semibold'>{category}</h1>
+                    <Link to={`/category/${category}`} className='absolute top-0 right-0 bg-red-700 py-1 px-5 text-white font-semibold'>{category}</Link>
                 </div>
                 <div>
                     <p className='py-2'>{author?.published_date}</p>
@@ -36,10 +36,10 @@ const DetailsCard = ({ detail, reactions, refetch }) => {
                             }</h1>
                         </div>
                     </div>
-                    <DetailsCardReaction refetch={refetch} reactions={reactions} detail={detail} />
+                    <DetailsCardReaction reCall={reCall} reactions={reactions} detail={detail} />
                 </div>
                 <div className=' '>
-                    <DetailsCommentBox detail={detail} />
+                    <DetailsCommentBox singleNewsComment={singleNewsComment} refetch={refetch} detail={detail} />
                 </div>
             </div >
         </div>

@@ -27,7 +27,6 @@ const SearchData = () => {
 
     return (
         <div>
-
             <h1>Search on {searchContent}, Found-Items: {searchDatas?.length}</h1>
             <div>
                 {isLoading && <p className='text-center'>Loading....</p>}
