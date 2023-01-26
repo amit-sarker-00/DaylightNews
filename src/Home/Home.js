@@ -16,33 +16,38 @@ import SearchData from "../Components/SearchData/SearchData";
 import { AuthContext } from "../Contexts/AuthProvider/AuthProvider";
 import InternetionalTorism from "./InternetionalTorism/InternetionalTorism";
 import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
-import SportsNews from "./SportsNews/SportsNews";
-import EnvironmentNews from "./EnvironmentNews/EnvironmentNews";
-import Voices from "./Voices/Voices";
+import ViralNews from "./ViralNews/ViralNews";
+import VideoSection from "./VideoSection/VideoSection";
+import FoodNews from "./FoodNews/FoodNews";
+import HomePageDivisionData from "./DistricNews/HomePageDivisionData";
 
 const Home = () => {
   useTitle("Home");
   const { searchContent } = useContext(AuthContext);
+  const { searchContent } = useContext(AuthContext);
 
   return (
     <div className="max-w-[1440px] mx-auto">
-
       {/* <Category /> */}
       {/* <Spinner /> */}
-      {searchContent ? <SearchData /> : <>
-        <Banner />
-        <BreakingNews />
-        <TrendingNews />
-        <HomePageLetestNews />
-        <HomePageArticalAndPost />
-        <News />
-        <OnlineVatingSection />
-        <SportsNews />
-        <VideoSection />
-        <ViralNews />
-        <EnvironmentNews />
-        <Voices />
-      </>}
+      {searchContent ? (
+        <SearchData />
+      ) : (
+        <>
+          <Banner />
+          <BreakingNews />
+          <TrendingNews />
+          <HomePageLetestNews />
+          <HomePageArticalAndPost />
+          <News />
+          <OnlineVatingSection />
+          <SportsNews />
+          <VideoSection />
+          <ViralNews />
+          <EnvironmentNews />
+          <Voices />
+        </>
+      )}
     </div>
   );
 };
