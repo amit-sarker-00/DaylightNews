@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
-const SportsNews = () => {
-  const [sportsNews, setSportsNews] = useState([]);
-  useEffect(() => {
+const SportsNews = () =>
+{
+  const [ sportsNews, setSportsNews ] = useState([]);
+  useEffect(() =>
+  {
     fetch("FoodNews.json")
       .then((res) => res.json())
       .then((data) => setSportsNews(data));
@@ -23,17 +25,17 @@ const SportsNews = () => {
               height="100%"
               src="https://www.youtube.com/embed/fu5a6ErmqoU"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen="true"
+              allowFullScreen={true}
             ></iframe>
           </div>
         </div>
         <div className="">
           {sportsNews?.slice(0, 5).map((sports) => (
             <Link
-              to={`/detail/${sports?._id}`}
-              key={sports._id}
+              to={`/detail/${ sports?._id }`}
+              key={sports?._id}
               className=" h-full w-full  "
             >
               <div className="flex w-full border h-full items-center">
@@ -45,14 +47,14 @@ const SportsNews = () => {
                   />
                 </div>
                 <div className="mx-2 w-72 h-32">
-                  <h4 className="font-semibold text-red-400">{sports.name}</h4>
+                  <h4 className="font-semibold text-red-400">{sports?.name}</h4>
                   <h3 className="sm:text-md link-hover hover:text-red-500  text-md font-bold mb-1">
-                    {sports.title}
+                    {sports?.title}
                   </h3>
                   <div className="flex gap-2 items-center font-bold text-gray-400">
                     <RxCalendar></RxCalendar>
                     <p className=" font-bold text-gray-400">
-                      {sports.author.published_date}
+                      {sports?.author?.published_date}
                     </p>
                   </div>
                 </div>
@@ -63,7 +65,7 @@ const SportsNews = () => {
         <div className="">
           {sportsNews?.slice(5, 10).map((sports) => (
             <Link
-              to={`/detail/${sports?._id}`}
+              to={`/detail/${ sports?._id }`}
               key={sports._id}
               className=" h-full w-full  "
             >
@@ -92,7 +94,7 @@ const SportsNews = () => {
           ))}
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
-const FoodNews = () => {
-  const [foodNews, setFoodNews] = useState([]);
-  useEffect(() => {
+const FoodNews = () =>
+{
+  const [ foodNews, setFoodNews ] = useState([]);
+  useEffect(() =>
+  {
     fetch("FoodNews.json")
       .then((res) => res.json())
       .then((data) => setFoodNews(data));
@@ -25,66 +27,66 @@ const FoodNews = () => {
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen={true}
+              allowFullScreen={true}={true}
             ></iframe>
-          </div>
-        </div>
-        <div className="">
-          {foodNews?.slice(0, 5).map((food) => (
-            <Link key={food._id} className=" h-full w-full  ">
-              <div className="flex w-full border h-full items-center">
-                <div className="overflow-hidden  h-32 w-44">
-                  <img
-                    className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
-                    src={food.image}
-                    alt=""
-                  />
-                </div>
-                <div className="mx-2 w-72 h-32">
-                  <h4 className="font-semibold text-red-400">{food.name}</h4>
-                  <h3 className="sm:text-md link-hover text-md font-bold mb-1">
-                    {food.title}
-                  </h3>
-                  <div className="flex gap-2 items-center font-bold text-gray-400">
-                    <RxCalendar></RxCalendar>
-                    <p className=" font-bold text-gray-400">
-                      {food.author.date}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-        <div className="">
-          {foodNews?.slice(5, 10).map((food) => (
-            <Link key={food._id} className=" h-full w-full  ">
-              <div className="flex  w-full h-full border">
-                <div className="overflow-hidden h-32 w-44">
-                  <img
-                    className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
-                    src={food.image}
-                    alt=""
-                  />
-                </div>
-                <div className="mx-2 w-72">
-                  <h4 className="font-semibold text-red-400">{food.name}</h4>
-                  <h3 className="sm:text-md link-hover text-md font-bold mb-1">
-                    {food.title}
-                  </h3>
-                  <div className="flex gap-2 items-center font-bold text-gray-400">
-                    <RxCalendar></RxCalendar>
-                    <p className=" font-bold text-gray-400">
-                      {food.author.date}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
         </div>
       </div>
+      <div className="">
+        {foodNews?.slice(0, 5).map((food) => (
+          <Link key={food._id} className=" h-full w-full  ">
+            <div className="flex w-full border h-full items-center">
+              <div className="overflow-hidden  h-32 w-44">
+                <img
+                  className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
+                  src={food.image}
+                  alt=""
+                />
+              </div>
+              <div className="mx-2 w-72 h-32">
+                <h4 className="font-semibold text-red-400">{food.name}</h4>
+                <h3 className="sm:text-md link-hover text-md font-bold mb-1">
+                  {food.title}
+                </h3>
+                <div className="flex gap-2 items-center font-bold text-gray-400">
+                  <RxCalendar></RxCalendar>
+                  <p className=" font-bold text-gray-400">
+                    {food.author.date}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+      <div className="">
+        {foodNews?.slice(5, 10).map((food) => (
+          <Link key={food._id} className=" h-full w-full  ">
+            <div className="flex  w-full h-full border">
+              <div className="overflow-hidden h-32 w-44">
+                <img
+                  className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
+                  src={food.image}
+                  alt=""
+                />
+              </div>
+              <div className="mx-2 w-72">
+                <h4 className="font-semibold text-red-400">{food.name}</h4>
+                <h3 className="sm:text-md link-hover text-md font-bold mb-1">
+                  {food.title}
+                </h3>
+                <div className="flex gap-2 items-center font-bold text-gray-400">
+                  <RxCalendar></RxCalendar>
+                  <p className=" font-bold text-gray-400">
+                    {food.author.date}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
+    </div >
   );
 };
 

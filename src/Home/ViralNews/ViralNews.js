@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {
+import
+{
   FaGithub,
   FaInstagram,
   FaLinkedin,
@@ -11,9 +12,11 @@ import { RxCalendar } from "react-icons/rx";
 import { BsFacebook } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const ViralNews = () => {
-  const [viralNews, setviralNews] = useState([]);
-  useEffect(() => {
+const ViralNews = () =>
+{
+  const [ viralNews, setviralNews ] = useState([]);
+  useEffect(() =>
+  {
     fetch("viralNews.json")
       .then((res) => res.json())
       .then((data) => setviralNews(data));
@@ -31,7 +34,7 @@ const ViralNews = () => {
           <div>
             {viralNews?.slice(0, 4).map((viral) => (
               <Link
-                to={`/detail/${viral?._id}`}
+                to={`/detail/${ viral?._id }`}
                 key={viral._id}
                 className=" h-full w-full  "
               >
@@ -70,7 +73,7 @@ const ViralNews = () => {
           <div>
             {viralNews?.slice(4, 8).map((viral) => (
               <Link
-                to={`/detail/${viral?._id}`}
+                to={`/detail/${ viral?._id }`}
                 key={viral._id}
                 className=" h-full w-full  "
               >
@@ -118,40 +121,40 @@ const ViralNews = () => {
               allowFullScreen={true}
 
             ></iframe>
+        </div>
+        <div>
+          <div className="text-center py-3  font-bold border-2 mb-3">
+            <h1>JOIN US</h1>
           </div>
           <div>
-            <div className="text-center py-3  font-bold border-2 mb-3">
-              <h1>JOIN US</h1>
-            </div>
-            <div>
-              <ul className="flex items-center gap-5 justify-center">
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                  <FaGithub className="text-xl"></FaGithub>
-                </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                  <BsFacebook className="text-lg"></BsFacebook>
-                </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                  <FaTwitter className="text-lg"></FaTwitter>
-                </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                  <FaInstagram className="text-lg"></FaInstagram>
-                </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                  <FaLinkedin className="text-lg"></FaLinkedin>
-                </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                  <FaYoutube className="text-lg"></FaYoutube>
-                </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                  <FaWhatsapp className="text-lg"></FaWhatsapp>
-                </li>
-              </ul>
-            </div>
+            <ul className="flex items-center gap-5 justify-center">
+              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <FaGithub className="text-xl"></FaGithub>
+              </li>
+              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <BsFacebook className="text-lg"></BsFacebook>
+              </li>
+              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <FaTwitter className="text-lg"></FaTwitter>
+              </li>
+              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <FaInstagram className="text-lg"></FaInstagram>
+              </li>
+              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <FaLinkedin className="text-lg"></FaLinkedin>
+              </li>
+              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <FaYoutube className="text-lg"></FaYoutube>
+              </li>
+              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <FaWhatsapp className="text-lg"></FaWhatsapp>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
+    </div >
   );
 };
 

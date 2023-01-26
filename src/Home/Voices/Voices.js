@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import VoicesCard from "./VoicesCard";
 
-const Voices = () => {
-  const [Voices, setVoices] = useState([]);
-  useEffect(() => {
+const Voices = () =>
+{
+  const [ Voices, setVoices ] = useState([]);
+  useEffect(() =>
+  {
     fetch("Voices.json")
       .then((res) => res.json())
-      .then((result) => {
+      .then((result) =>
+      {
         setVoices(result);
       });
   }, []);
@@ -14,20 +17,20 @@ const Voices = () => {
   return (
     <div className=" py-7">
       <div>
-        <h1 className=" font-bold text-xl sm:text-2xl text-black-500 mb-5">
-          Voices
+        <h1 className=" font-bold text-xl text-red-600  sm:text-2xl text-black-500 mb-5">
+          Voices News
         </h1>
       </div>
       <div className="flex md:flex-row flex-col gap-5">
         <div className="">
-          <div class="flex justify-center">
-            <div class="rounded-lg shadow-lg bg-white max-w-sm">
+          <div className="flex justify-center">
+            <div className="rounded-lg shadow-lg bg-white max-w-sm">
               <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-                <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt="" />
+                <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt="" />
               </a>
-              <div class="p-2">
-                <h5 class="text-gray-900 text-xl font-medium mb-2">The enduring message my grandfather took</h5>
-                <p class="text-gray-700 text-base text-justify mb-4">
+              <div className="p-2">
+                <h5 className="text-gray-900 text-xl font-medium mb-2">The enduring message my grandfather took</h5>
+                <p className="text-gray-700 text-base text-justify mb-4">
                   Air pollution control devices are a series of devices that work to prevent a variety of different pollutants, both gaseous and solid, from entering the atmosphere primarily out of industrial
                 </p>
 

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const TravelCards = ({ data }) =>
 {
   const { title, picture, descrption, category, author, _id } = data;
-  console.log(author);
+
   return (
     <div className="  border-2 hover:ml-5  transition-all">
       <Link to={`detail/${ _id }`}>

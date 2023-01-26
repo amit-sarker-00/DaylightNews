@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
           { path: "/", element: <Travel /> },
           { path: "/domestic", element: <Fashion /> },
           { path: "/health", element: <Health /> },
-          { path: "/nature", element: <Nuture /> },
+          { path: "/natural", element: <Nuture /> },
         ],
       },
       { path: "detail/:id", element: <CardDetailsPage /> },

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { RxCalendar } from "react-icons/rx";
 
-const VideoSection = () => {
-  const [VideoPost, setVideoPost] = useState([]);
-  useEffect(() => {
+const VideoSection = () =>
+{
+  const [ VideoPost, setVideoPost ] = useState([]);
+  useEffect(() =>
+  {
     fetch("videosection.json")
       .then((res) => res.json())
       .then((data) => setVideoPost(data));
@@ -129,10 +131,11 @@ const VideoSection = () => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
+          ))
+          }
+        </div >
+      </div >
+    </div >
   );
 };
 

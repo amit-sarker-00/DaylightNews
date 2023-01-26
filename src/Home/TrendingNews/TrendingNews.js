@@ -4,13 +4,16 @@ import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
-const TrendingNews = () => {
-  const [trendingNews, setTrendingNews] = useState([]);
-
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}news`)
+const TrendingNews = () =>
+{
+  const [ trendingNews, setTrendingNews ] = useState([]);
+  console.log(trendingNews);
+  useEffect(() =>
+  {
+    fetch(`${ process.env.REACT_APP_API_URL }news`)
       .then((res) => res.json())
-      .then((result) => {
+      .then((result) =>
+      {
         const breakingNews = result?.filter(
           (trending) => trending?.category === "HotNews"
         );
@@ -52,7 +55,7 @@ const TrendingNews = () => {
           {trendingNews?.map((trending) => (
             <SplideSlide key={trending?._id}>
               <div className=" h-80 shadow hover:shadow-2xl border   ease-in-out duration-300 hover:border-gray-300 ">
-                <Link to={`/detail/${trending?._id}`}>
+                <Link to={`/detail/${ trending?._id }`}>
                   <div className="overflow-hidden">
                     <img
                       className="w-full h-44 ease-in-out duration-500 transform hover:scale-125"
@@ -62,7 +65,7 @@ const TrendingNews = () => {
                   </div>
                   <div className="mx-2">
                     <div className="flex gap-2 my-2 items-center flex-wrap justify-between">
-                      <Link to={`/category/${trending?.category}`}>
+                      <Link to={`/category/${ trending?.category }`}>
                         <button className="px-2 bg-red-600 hover:bg-red-700 rounded-sm text-white font-semibold">
                           {trending?.category}
                         </button>
@@ -70,11 +73,12 @@ const TrendingNews = () => {
                       <div className="sm:flex gap-1 items-center hidden">
                         <RxCalendar></RxCalendar>
                         <p className="text-[14px] text-slate-400">
-                          {trending?.author.date}
+                          {trending?.dapublished_datete}
+
                         </p>
                       </div>
                     </div>
-                    <Link to={`detail/${trending?._id}`}>
+                    <Link to={`detail/${ trending?._id }`}>
                       {" "}
                       <h3 className="sm:text-xl text-md link-hover hover:text-red-500 font-bold">
                         {trending?.title?.length > 49
