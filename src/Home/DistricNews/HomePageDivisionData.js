@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import DistricModal from "./DistricModal";
 import DivisionHorizontalData from "./DivisionHorizontalData ";
 import DivisionTitleData from "./DivisionTitleData ";
@@ -10,13 +9,13 @@ const HomePageDivisionData = () => {
   const [datas, setDatas] = useState([]);
   const [city, setCity] = useState({});
 
-  useEffect(() => {
-    fetch(`district.json?districs=${city?.district}`)
-      .then((res) => res.json())
-      .then((result) => {
-        setDatas(result);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`district.json?districs=${city?.district}`)
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       setDatas(result);
+  //     });
+  // }, []);
 
   //unique district
   const uniqueDistrict = [...new Set(datas?.map((data) => data?.district))];
@@ -24,13 +23,6 @@ const HomePageDivisionData = () => {
 
   const handleUpdateDistrict = (event) => {
     event.preventDefault();
-    fetch(`district.json?districs=${city?.district}`)
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        setDatas(result);
-      });
-    console.log(city?.district);
   };
 
   return (

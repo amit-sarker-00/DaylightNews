@@ -45,7 +45,7 @@ const DistricModal = ({
 
               <label
                 htmlFor="update-modal"
-                class="btn btn-error text-white mx-2"
+                className="btn btn-error text-white mx-2"
               >
                 CANCEL
               </label>
