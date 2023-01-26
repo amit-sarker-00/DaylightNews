@@ -8,22 +8,44 @@ import HomePageDivisionSingleCard from "./HomePageDivisionSingleCard ";
 const HomePageDivisionData = () => {
   const [datas, setDatas] = useState([]);
   const [city, setCity] = useState({});
+  const [districtData, setDistrictData] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`district.json?districs=${city?.district}`)
-  //     .then((res) => res.json())
-  //     .then((result) => {
-  //       setDatas(result);
-  //     });
-  // }, []);
+  if (city?.district === undefined) {
+    setCity({ district: "Dhaka" });
+  }
+
+  console.log(city?.district);
+
+  useEffect(() => {
+    fetch(`http://localhost:8000/news`)
+      .then((res) => res.json())
+      .then((result) => {
+        setDatas(result);
+      });
+  }, []);
 
   //unique district
   const uniqueDistrict = [...new Set(datas?.map((data) => data?.district))];
   // console.log(uniqueDistrict);
-
   const handleUpdateDistrict = (event) => {
     event.preventDefault();
   };
+
+  useEffect(() => {
+    fetch(
+      `http://localhost:8000/district/${
+        city?.district ? city?.district : "Dhaka"
+      }`
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        setDistrictData(result);
+      });
+  }, [city?.district]);
+
+  console.log(districtData);
+  console.log(datas);
+  console.log(city?.district);
 
   return (
     <div>
@@ -32,18 +54,18 @@ const HomePageDivisionData = () => {
           <h1 className="text-2xl font-bold ">Division </h1>
           <div className="flex flex-col lg:flex-row ">
             <div>
-              {datas &&
-                datas
+              {districtData &&
+                districtData
                   ?.slice(1, 2)
-                  .map((data) => (
+                  ?.map((data) => (
                     <HomePageDivisionSingleCard data={data} key={data?._id} />
                   ))}
             </div>
             <div className="p-5 ">
-              {datas &&
-                datas
+              {districtData &&
+                districtData
                   ?.slice(0, 6)
-                  ?.map((data) => (
+                  .map((data) => (
                     <DivisionTitleData data={data} key={data?._id} />
                   ))}
             </div>
@@ -52,7 +74,7 @@ const HomePageDivisionData = () => {
             {datas &&
               datas
                 ?.slice(1, 5)
-                .map((data) => (
+                ?.map((data) => (
                   <DivisionHorizontalData data={data} key={data?._id} />
                 ))}
           </div>
@@ -60,7 +82,7 @@ const HomePageDivisionData = () => {
         <div className="w-full sm:w-[800px]  mx-auto xl:w-[300px] ">
           <h1 className="text-2xl font-bold text-center">Division Category</h1>
           <div className="pl-5 py-4">
-            <label htmlFor="update-modal" className="text-xl  ">
+            <label htmlFor="update-modal" className="text-xl">
               {city?.district ? city?.district : "Dhaka"} || Change City
             </label>
           </div>
@@ -75,7 +97,7 @@ const HomePageDivisionData = () => {
       </div>
       <DistricModal
         handleUpdateDistrict={handleUpdateDistrict}
-        uniqueDistrict={uniqueDistrict}
+        uniqueDistrict={uniqueDistrict.splice(1)}
         setCity={setCity}
         city={city}
       />
