@@ -12,7 +12,7 @@ const News = () => {
     fetch(`${process.env.REACT_APP_API_URL}news`)
       .then((res) => res.json())
       .then((result) => {
-        const techNews = result?.filter((tech) => tech?.category === "Tech");
+        const techNews = result?.filter((tech) => tech?.category === "entertainment");
         setTechNews(techNews?.slice(-4));
       });
   }, []);

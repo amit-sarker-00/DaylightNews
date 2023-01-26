@@ -4,11 +4,13 @@ import { IoTimeSharp } from "react-icons/io5";
 import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
-const TravelCards = ({ data }) => {
+const TravelCards = ({ data }) =>
+{
   const { title, picture, descrption, category, author, _id } = data;
+  console.log(author);
   return (
     <div className="  border-2 hover:ml-5  transition-all">
-      <Link to={`detail/${_id}`}>
+      <Link to={`detail/${ _id }`}>
         <div className="flex sm:flex-row p-1 flex-col items-center h-24 gap-4 ">
           <figure>
             <img className="sm:w-32 h-20" src={picture} alt="Album" />
@@ -20,8 +22,8 @@ const TravelCards = ({ data }) => {
             <div className="flex justify-around pb-2  ">
               <div>
                 <p className="flex items-center gap-1 text-gray-400">
-                  <HiUser className="text-red-700 bg-gray-300 rounded-md text-lg p-px"></HiUser>{" "}
-                  {author?.name}
+                  <img className="w-lg w-7 h-7 rounded-full" src={author?.author_img} alt="" />
+                  {author?.author_name}
                 </p>
               </div>
               <p className="text-gray-400">|</p>
