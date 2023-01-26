@@ -49,7 +49,7 @@ const ViralNews = () => {
                       {viral.title}
                     </h3>
                     <p className="text-gray-500">
-                      {viral.description.slice(0, 45) + "..."}
+                      {viral.description?.slice(0, 45) + "..."}
                     </p>
                     <div className="flex gap-2 items-center font-bold text-gray-400">
                       <RxCalendar></RxCalendar>
@@ -88,7 +88,7 @@ const ViralNews = () => {
                       {viral.title}
                     </h3>
                     <p className="text-gray-500">
-                      {viral.description.slice(0, 45) + "..."}
+                      {viral.description?.slice(0, 45) + "..."}
                     </p>
                     <div className="flex gap-2 items-center font-bold text-gray-400">
                       <RxCalendar></RxCalendar>

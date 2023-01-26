@@ -11,7 +11,7 @@ const SingleCard = ({ data }) => {
         <h1 className="text-2xl hover:text-red-600 link-hover font-bold py-1">
           {title}
         </h1>
-        <p className="text-gray-600 pb-4">{description.slice(0, 300)}</p>
+        <p className="text-gray-600 pb-4">{description?.slice(0, 300)}</p>
       </Link>
     </div>
   );

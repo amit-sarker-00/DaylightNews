@@ -78,7 +78,7 @@ const TrendingNews = () => {
                       {" "}
                       <h3 className="sm:text-xl text-md link-hover hover:text-red-500 font-bold">
                         {trending?.title?.length > 49
-                          ? trending?.title.slice(0, 49) + "..."
+                          ? trending?.title?.slice(0, 49) + "..."
                           : trending?.title}
                       </h3>
                     </Link>

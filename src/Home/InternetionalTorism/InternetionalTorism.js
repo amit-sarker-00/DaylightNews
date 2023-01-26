@@ -15,9 +15,9 @@ const InternetionalTorism = () => {
             .then((res) => res.json())
             .then((result) => {
                 const fashionNews = result?.filter(fashion => fashion?.category === 'travel')
-                setSrilanka(fashionNews.slice(0, 1))
-                setBangladesh(fashionNews.slice(0, 2))
-                setDubaiImg(fashionNews.slice(0, 3))
+                setSrilanka(fashionNews?.slice(0, 1))
+                setBangladesh(fashionNews?.slice(0, 2))
+                setDubaiImg(fashionNews?.slice(0, 3))
 
             });
     }, []);

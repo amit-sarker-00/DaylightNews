@@ -71,7 +71,7 @@ const EntertainmentNews = () => {
                                 ></EntertainmentNewsComment>)
                         }
                         {
-                            entertainmentComment.slice(0, 1).map(comment =>
+                            entertainmentComment?.slice(0, 1).map(comment =>
                                 <EntertainmetnNewsCommentImage
                                     key={comment.id}
                                     comment={comment}

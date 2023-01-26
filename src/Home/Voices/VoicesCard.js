@@ -17,9 +17,9 @@ const VoicesCard = ({ VoiceNews }) => {
               <Link to={`/category/${category}`} className="absolute top-0 bg-red-500 rounded-tl-lg inline-block px-1 py-1 text-white">{category}</Link>
             </div>
             <div class=" pl-3 py-2 flex flex-col justify-start">
-              <h5 class="text-gray-900 text-md font-medium mb-2">{title.slice(0, 40)}</h5>
+              <h5 class="text-gray-900 text-md font-medium mb-2">{title?.slice(0, 40)}</h5>
               <p class="text-gray-700 text-base mb-4">
-                {description.slice(0, 80)}...
+                {description?.slice(0, 80)}...
               </p>
               <div className="flex items-center gap-5 pt-3">
                 <div className="flex items-center gap-1">

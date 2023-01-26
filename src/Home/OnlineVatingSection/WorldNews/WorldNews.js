@@ -35,13 +35,13 @@ const WorldNews = () => {
 
           {datas &&
             datas
-              .slice(0, 1)
+              ?.slice(0, 1)
               .map((data) => <SingleCard data={data} key={data?._id} />)}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {datas?.length === 0 && <SkeletonLoading cards={3} />}
             {datas &&
               datas
-                .slice(-3)
+                ?.slice(-3)
                 .map((data) => (
                   <HorizentalSection data={data} key={data?._id} />
                 ))}
@@ -52,7 +52,7 @@ const WorldNews = () => {
 
           {datas &&
             datas
-              .slice(1, 5)
+              ?.slice(1, 5)
               .map((data) => <RightSide4Card data={data} key={data?._id} />)}
         </div>
       </div>

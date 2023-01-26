@@ -14,7 +14,7 @@ const ReecntWorkForHomePageSlidebar = ({ data }) => {
       </div>
       <div className="pl-5 text-left ">
         <h3 className="text-sm md:text-sm lg:text-xl link-hover hover:text-red-500 font-semibold">
-          {title.slice(0, 20) + "..."}
+          {title?.slice(0, 20) + "..."}
         </h3>
         <div className="flex items-center ">
           <FaCalendarDay className="text-red-500" />

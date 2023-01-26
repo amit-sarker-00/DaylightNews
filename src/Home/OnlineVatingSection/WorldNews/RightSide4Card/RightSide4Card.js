@@ -14,7 +14,7 @@ const RightSide4Card = ({ data }) => {
       </div>
       <Link to={`detail${_id}`} className="text-lg font-bold">
         {" "}
-        <h1 className="hover:text-red-600 link-hover"> {title.slice(0, 50)}</h1>
+        <h1 className="hover:text-red-600 link-hover"> {title?.slice(0, 50)}</h1>
       </Link>
     </div>
   );

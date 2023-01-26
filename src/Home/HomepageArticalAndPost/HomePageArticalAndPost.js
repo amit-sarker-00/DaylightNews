@@ -43,7 +43,7 @@ const HomePageArticalAndPost = () => {
 
           {articleData &&
             articleData
-              .slice(-6)
+              ?.slice(-6)
               .map((data) => (
                 <HomePageArticleAndPostCard data={data} key={data._id} />
               ))}
@@ -57,7 +57,7 @@ const HomePageArticalAndPost = () => {
 
             {allNews &&
               allNews
-                .slice(-8)
+                ?.slice(-8)
                 .map((data) => (
                   <ReecntWorkForHomePageSlidebar data={data} key={data._id} />
                 ))}

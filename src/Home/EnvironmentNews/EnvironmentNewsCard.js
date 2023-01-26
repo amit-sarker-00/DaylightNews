@@ -21,7 +21,7 @@ const EnvironmentNewsCard = ({ EnvNews }) => {
               <div class=" ">
 
                 <div class="  font-bold text-xl mb-2">{title}</div>
-                <p class="text-gray-700 text-base">{description.slice(0, 190)}...</p>
+                <p class="text-gray-700 text-base">{description?.slice(0, 190)}...</p>
               </div>
               <div class="flex items-center">
                 <img class="w-10 h-10 rounded-full mr-4" src={author?.img} alt="Avatar of Writer" />

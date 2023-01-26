@@ -43,7 +43,7 @@ const Banner = () => {
             }}
           >
             {bannerData?.length === 0 && <SkeletonLoading cards={6} />}
-            {bannerData.slice(-8)?.map((banner) => (
+            {bannerData?.slice(-8)?.map((banner) => (
               <SplideSlide className="relative" key={banner._id}>
                 <Link
                   to={`/detail/${banner._id}`}
@@ -67,7 +67,7 @@ const Banner = () => {
                         className="sm:text-2xl mt-1 link-hover text-md text-white"
                       >
                         {banner?.title?.length > 50
-                          ? banner?.title.slice(0, 50) + "..."
+                          ? banner?.title?.slice(0, 50) + "..."
                           : banner?.title}
                       </h3>
                       <div className="sm:flex hidden gap-2 items-center mt-3">
@@ -93,7 +93,7 @@ const Banner = () => {
         </div>
         <div className=" gap-1 grid grid-cols-1 sm:grid-cols-2 h-full w-full">
           {bannerData?.length === 0 && <SkeletonLoading cards={2} />}
-          {bannerData.slice(103, 107)?.map((banner) => (
+          {bannerData?.slice(103, 107)?.map((banner) => (
             <Link to={`/detail/${banner._id}`} key={banner._id}>
               <div className=" h-full border sm:border-none  relative overflow-hidden">
                 <img
@@ -112,7 +112,7 @@ const Banner = () => {
 
                     <h3 className="text-sm text-white link-hover   hover:underline mt-1 hero-overlay">
                       {banner?.title?.length > 50
-                        ? banner?.title.slice(0, 50) + "..."
+                        ? banner?.title?.slice(0, 50) + "..."
                         : banner?.title}
                     </h3>
                     <div className="sm:flex hidden gap-2 items-center mt-3 text-xs flex-wrap">

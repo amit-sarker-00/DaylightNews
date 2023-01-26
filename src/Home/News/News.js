@@ -13,7 +13,7 @@ const News = () => {
       .then((res) => res.json())
       .then((result) => {
         const techNews = result?.filter((tech) => tech?.category === "Tech");
-        setTechNews(techNews.slice(-4));
+        setTechNews(techNews?.slice(-4));
       });
   }, []);
 
@@ -24,7 +24,7 @@ const News = () => {
         const lifeStyles = result?.filter(
           (lifeStyles) => lifeStyles?.category === "lifeStyle"
         );
-        setLifeStyle(lifeStyles.slice(-4));
+        setLifeStyle(lifeStyles?.slice(-4));
       });
   }, []);
 
@@ -35,7 +35,7 @@ const News = () => {
         const cultures = result?.filter(
           (cultures) => cultures?.category === "cultures"
         );
-        setCulturesNews(cultures.slice(-4));
+        setCulturesNews(cultures?.slice(-4));
       });
   }, []);
 
@@ -51,7 +51,7 @@ const News = () => {
           </div>
           {techNews?.length === 0 && <SkeletonLoading cards={1} />}
 
-          {techNews.slice(0, 1).map((travel) => (
+          {techNews?.slice(0, 1).map((travel) => (
             <NewsSectionJustOneItemShow
               key={travel._id}
               data={travel}
@@ -70,7 +70,7 @@ const News = () => {
           </div>
           {lifeStyle?.length === 0 && <SkeletonLoading cards={1} />}
 
-          {lifeStyle.slice(0, 1).map((travel) => (
+          {lifeStyle?.slice(0, 1).map((travel) => (
             <NewsSectionJustOneItemShow
               key={travel._id}
               data={travel}
@@ -89,7 +89,7 @@ const News = () => {
           </div>
           {cultureshNews?.length === 0 && <SkeletonLoading cards={1} />}
 
-          {cultureshNews.slice(0, 1).map((travel) => (
+          {cultureshNews?.slice(0, 1).map((travel) => (
             <NewsSectionJustOneItemShow
               key={travel._id}
               data={travel}
