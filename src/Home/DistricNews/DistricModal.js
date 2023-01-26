@@ -7,7 +7,11 @@ const DistricModal = ({
   dis,
   setDis,
 }) => {
-  console.log(dis);
+  //after confirm button click then close the modal
+  const closeModal = () => {
+    document.getElementById("update-modal").checked = false;
+  };
+
   return (
     <div>
       <input type="checkbox" id="update-modal" className="modal-toggle" />
@@ -58,6 +62,7 @@ const DistricModal = ({
                 type="submit"
                 className="btn btn-success text-white mx-2"
                 disabled={dis === "off"}
+                onClick={closeModal}
               >
                 CONFIRM
               </button>

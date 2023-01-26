@@ -11,9 +11,6 @@ const HomePageDivisionData = () => {
   const [districtData, setDistrictData] = useState([]);
   const [preData, setPreData] = useState([]);
   const [dis, setDis] = useState("off");
-
-  console.log(city?.district);
-
   useEffect(() => {
     fetch(`http://localhost:8000/news`)
       .then((res) => res.json())
@@ -21,24 +18,19 @@ const HomePageDivisionData = () => {
         setDatas(result);
       });
   }, []);
-
   //unique district
   const uniqueDistrict = [...new Set(datas?.map((data) => data?.district))];
   // console.log(uniqueDistrict);
 
-  // confirm button click and set city
   const handleUpdateDistrict = (e) => {
     e.preventDefault();
     const form = e.target;
     const radio = document.querySelectorAll("input[type=radio]:checked");
     const district = radio[0]?.id;
-    console.log(district);
-    const isDefault = radio[1]?.id;
-    if (isDefault) {
-      localStorage.setItem("city", JSON.stringify({ district: district }));
+    console.log(city?.district);
+    if (dis === "on") {
+      setCity({ district: district });
     }
-
-    setCity({ district: district });
     fetch(
       `http://localhost:8000/district/${
         city?.district ? city?.district : "Dhaka"
@@ -60,10 +52,8 @@ const HomePageDivisionData = () => {
       .then((result) => {
         setPreData(result);
       });
-  }, [city?.district]);
-
-  console.log(preData);
-
+  }, []);
+  // console.log(datas);
   return (
     <div>
       <div className="flex  flex-col-reverse xl:flex-row">
