@@ -2,9 +2,12 @@ import React from "react";
 const DistricModal = ({
   uniqueDistrict,
   handleUpdateDistrict,
-  setCity,
   city,
+  setCity,
+  dis,
+  setDis,
 }) => {
+  console.log(dis);
   return (
     <div>
       <input type="checkbox" id="update-modal" className="modal-toggle" />
@@ -26,18 +29,36 @@ const DistricModal = ({
                     id={district}
                     className="radio radio-success mr-2"
                     required
+                    onClick={() => {
+                      setCity({ district: district });
+                    }}
                   />
                   <label htmlFor={district}>{district}</label>
                 </div>
               ))}
             </div>
+
             {city?.district && (
               <div className="text-center py-5">
+                <input
+                  type="radio"
+                  name="rad"
+                  id={city?.district}
+                  onClick={() => {
+                    setDis("on");
+                  }}
+                  className="radio radio-success mr-2"
+                  required
+                />
                 Click to make {city?.district} default city.
               </div>
             )}
             <div className="text-center ">
-              <button type="submit" className="btn btn-success text-white mx-2">
+              <button
+                type="submit"
+                className="btn btn-success text-white mx-2"
+                disabled={dis === "off"}
+              >
                 CONFIRM
               </button>
 

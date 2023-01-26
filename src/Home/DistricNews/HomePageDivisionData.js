@@ -9,10 +9,7 @@ const HomePageDivisionData = () => {
   const [datas, setDatas] = useState([]);
   const [city, setCity] = useState({});
   const [districtData, setDistrictData] = useState([]);
-
-  if (city?.district === undefined) {
-    setCity({ district: "Dhaka" });
-  }
+  const [dis, setDis] = useState("off");
 
   console.log(city?.district);
 
@@ -31,14 +28,16 @@ const HomePageDivisionData = () => {
   // confirm button click and set city
   const handleUpdateDistrict = (e) => {
     e.preventDefault();
-
+    const form = e.target;
     const radio = document.querySelectorAll("input[type=radio]:checked");
     const district = radio[0]?.id;
     console.log(district);
-    setCity({ district: district });
-  };
+    const isDefault = radio[1]?.id;
+    if (isDefault) {
+      localStorage.setItem("city", JSON.stringify({ district: district }));
+    }
 
-  useEffect(() => {
+    setCity({ district: district });
     fetch(
       `http://localhost:8000/district/${
         city?.district ? city?.district : "Dhaka"
@@ -47,12 +46,25 @@ const HomePageDivisionData = () => {
       .then((res) => res.json())
       .then((result) => {
         setDistrictData(result);
+        form.reset();
+        setDis("off");
       });
-  }, [city?.district]);
+  };
+  // useEffect(() => {
+  //   fetch(
+  //     `http://localhost:8000/district/${
+  //       city?.district ? city?.district : "Dhaka"
+  //     }`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       setDistrictData(result);
+  //     });
+  // }, [city?.district]);
 
-  console.log(districtData);
+  // console.log(districtData);
   // console.log(datas);
-  console.log(city?.district);
+  // console.log(city?.district);
 
   return (
     <div>
@@ -95,7 +107,7 @@ const HomePageDivisionData = () => {
           </div>
           <div className="p-2 ">
             <img
-              className="rounded-lg  w-full sm:w-[800px]  mx-auto xl:w-[300px] xl:h-[450px]"
+              className="rounded-lg  w-[300px] h-[400px] sm:w-[800px]  mx-auto xl:w-[300px] xl:h-[450px]"
               src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/mtn-data-bundle-advert-design-template-086b970e7957e55a44ea4f181feb5a4b_screen.jpg?ts=1637022062"
               alt=""
             />
@@ -107,6 +119,8 @@ const HomePageDivisionData = () => {
         uniqueDistrict={uniqueDistrict.splice(1)}
         setCity={setCity}
         city={city}
+        dis={dis}
+        setDis={setDis}
       />
     </div>
   );
