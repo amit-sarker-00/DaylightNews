@@ -9,6 +9,7 @@ const HomePageDivisionData = () => {
   const [datas, setDatas] = useState([]);
   const [city, setCity] = useState({});
   const [districtData, setDistrictData] = useState([]);
+  const [preData, setPreData] = useState([]);
   const [dis, setDis] = useState("off");
 
   console.log(city?.district);
@@ -50,21 +51,18 @@ const HomePageDivisionData = () => {
         setDis("off");
       });
   };
-  // useEffect(() => {
-  //   fetch(
-  //     `http://localhost:8000/district/${
-  //       city?.district ? city?.district : "Dhaka"
-  //     }`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((result) => {
-  //       setDistrictData(result);
-  //     });
-  // }, [city?.district]);
+  useEffect(() => {
+    fetch(
+      `http://localhost:8000/district/Dhaka
+      `
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        setPreData(result);
+      });
+  }, [city?.district]);
 
-  // console.log(districtData);
-  // console.log(datas);
-  // console.log(city?.district);
+  console.log(preData);
 
   return (
     <div>
@@ -73,20 +71,34 @@ const HomePageDivisionData = () => {
           <h1 className="text-2xl font-bold ">Division </h1>
           <div className="flex flex-col lg:flex-row ">
             <div>
-              {districtData &&
-                districtData
-                  ?.slice(1, 2)
-                  ?.map((data) => (
+              {city?.district ? (
+                <>
+                  {districtData?.slice(1, 2)?.map((data) => (
                     <HomePageDivisionSingleCard data={data} key={data?._id} />
                   ))}
+                </>
+              ) : (
+                <>
+                  {preData.slice(1, 2).map((data) => (
+                    <HomePageDivisionSingleCard data={data} key={data?._id} />
+                  ))}
+                </>
+              )}
             </div>
             <div className="p-5 ">
-              {districtData &&
-                districtData
-                  ?.slice(0, 6)
-                  .map((data) => (
+              {city?.district ? (
+                <>
+                  {districtData?.slice(0, 6).map((data) => (
                     <DivisionTitleData data={data} key={data?._id} />
                   ))}
+                </>
+              ) : (
+                <>
+                  {preData?.slice(0, 6).map((data) => (
+                    <DivisionTitleData data={data} key={data?._id} />
+                  ))}
+                </>
+              )}
             </div>
           </div>
           <div className=" gap-5 pb-5 grid grid-flow-cols-1 md:grid-cols-2 sm-flex xl:grid-cols-4 lg:grid-cols-3">
