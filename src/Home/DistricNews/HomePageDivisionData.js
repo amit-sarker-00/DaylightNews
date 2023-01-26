@@ -27,8 +27,15 @@ const HomePageDivisionData = () => {
   //unique district
   const uniqueDistrict = [...new Set(datas?.map((data) => data?.district))];
   // console.log(uniqueDistrict);
-  const handleUpdateDistrict = (event) => {
-    event.preventDefault();
+
+  // confirm button click and set city
+  const handleUpdateDistrict = (e) => {
+    e.preventDefault();
+
+    const radio = document.querySelectorAll("input[type=radio]:checked");
+    const district = radio[0]?.id;
+    console.log(district);
+    setCity({ district: district });
   };
 
   useEffect(() => {
@@ -44,7 +51,7 @@ const HomePageDivisionData = () => {
   }, [city?.district]);
 
   console.log(districtData);
-  console.log(datas);
+  // console.log(datas);
   console.log(city?.district);
 
   return (

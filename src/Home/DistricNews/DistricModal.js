@@ -25,7 +25,6 @@ const DistricModal = ({
                     name="radio-5"
                     id={district}
                     className="radio radio-success mr-2"
-                    onChange={() => setCity({ district })}
                     required
                   />
                   <label htmlFor={district}>{district}</label>
