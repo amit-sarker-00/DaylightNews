@@ -18,6 +18,7 @@ const Banner = () => {
         setLoading(false)
       });
   }, []);
+  console.log(bannerData)
 
   return (
     <div>

@@ -4,14 +4,14 @@ import React, { useContext, useEffect, useState } from 'react';
 
 const Search = () => {
 
-  
+
 
 
     const [data, setData] = useState([]);
     const [searchApiData, setSearchApiData] = useState([]);
     const [filterr, setFilter] = useState('');
 
-   
+
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}news`)

@@ -20,6 +20,8 @@ import FoodNews from "./FoodNews/FoodNews";
 import Search from "../Components/Search/Search";
 import ReakTimeVisitor from "../Components/RealTimeVisitor/ReakTimeVisitor";
 import HomePageDivisionData from "./HomePageDivisionData/HomePageDivisionData";
+import HomePageStorySection from "./HomePageStorySection/HomePageStorySection";
+import HomePageSnipper from "./HomePageStorySection/HomePageSnipper";
 
 const Home = () => {
   useTitle("Home");
@@ -32,21 +34,21 @@ const Home = () => {
       {/* <Spinner /> */}
       {searchContent ? <SearchData /> : <>
         <Banner />
-        {/* <BreakingNews /> */}
+        <BreakingNews />
         {/* <TrendingNews /> */}
-        {/* <HomePageLetestNews />
-        <HomePageArticalAndPost />
-        <News />
-        <Culture />
-        <OnlineVatingSection />
-        <InternetionalTorism />
-        <FoodNews />
-        <VideoSection />
-        <ViralNews />
-        
-         */}
+        {/* <HomePageLetestNews /> */}
+        {/* <HomePageArticalAndPost /> */}
+        {/* <News /> */}
+        {/* <Culture /> */}
+        {/* <OnlineVatingSection /> */}
+        {/* <InternetionalTorism /> */}
+        {/* <FoodNews /> */}
+        {/* <VideoSection /> */}
+        {/* <ViralNews /> */}
       </>}
-      <HomePageDivisionData />
+      {/* <HomePageDivisionData /> */}
+      <HomePageStorySection />
+      {/* <HomePageSnipper /> */}
       {/* <ReakTimeVisitor /> */}
       {/* <Search /> */}
     </div>
