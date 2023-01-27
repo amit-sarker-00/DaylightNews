@@ -32,8 +32,7 @@ const HomePageDivisionData = () => {
       setCity({ district: district });
     }
     fetch(
-      `http://localhost:8000/district/${
-        city?.district ? city?.district : "Dhaka"
+      `http://localhost:8000/district/${city?.district ? city?.district : "Dhaka"
       }`
     )
       .then((res) => res.json())

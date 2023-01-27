@@ -20,6 +20,7 @@ import SportsNews from "./SportsNews/SportsNews";
 import EnvironmentNews from "./EnvironmentNews/EnvironmentNews";
 import Voices from "./Voices/Voices";
 import HomePageDivisionData from "./DistricNews/HomePageDivisionData";
+import HomePageStorySection from "./HomePageStorySection/HomePageStorySection";
 
 const Home = () => {
   useTitle("Home");
@@ -42,6 +43,7 @@ const Home = () => {
           <News />
           <OnlineVatingSection />
           <SportsNews />
+          <HomePageStorySection />
           <VideoSection />
           <ViralNews />
           <EnvironmentNews />

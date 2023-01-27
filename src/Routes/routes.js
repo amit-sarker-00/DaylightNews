@@ -7,6 +7,7 @@ import Fashion from "../Home/HomePageLetestNews/Fashion";
 import Health from "../Home/HomePageLetestNews/Health";
 import Nuture from "../Home/HomePageLetestNews/Nuture";
 import Travel from "../Home/HomePageLetestNews/Travel";
+import HomePageStoryAllImage from "../Home/HomePageStorySection/HomePageStoryAllImage";
 import VideoSection from "../Home/VideoSection/VideoSection";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Main from "../Layout/Main";
@@ -94,7 +95,7 @@ export const router = createBrowserRouter([
     ],
   },
 
-
+  { path: "story/:id", element: <HomePageStoryAllImage /> },
   { path: "signup", element: <SignUp /> },
   { path: "login", element: <SignIn /> },
 ]);
