@@ -19,6 +19,8 @@ import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
 import SportsNews from "./SportsNews/SportsNews";
 import EnvironmentNews from "./EnvironmentNews/EnvironmentNews";
 import Voices from "./Voices/Voices";
+import HomePageDivisionData from "./DistricNews/HomePageDivisionData";
+import HomePageStorySection from "./HomePageStorySection/HomePageStorySection";
 
 const Home = () => {
   useTitle("Home");
@@ -26,23 +28,28 @@ const Home = () => {
 
   return (
     <div className="max-w-[1440px] mx-auto">
-
       {/* <Category /> */}
       {/* <Spinner /> */}
-      {searchContent ? <SearchData /> : <>
-        <Banner />
-        <BreakingNews />
-        <TrendingNews />
-        <HomePageLetestNews />
-        <HomePageArticalAndPost />
-        <News />
-        <OnlineVatingSection />
-        <SportsNews />
-        <VideoSection />
-        <ViralNews />
-        <EnvironmentNews />
-        <Voices />
-      </>}
+      {searchContent ? (
+        <SearchData />
+      ) : (
+        <>
+          <Banner />
+          <HomePageDivisionData />
+          <BreakingNews />
+          <TrendingNews />
+          <HomePageLetestNews />
+          <HomePageArticalAndPost />
+          <News />
+          <OnlineVatingSection />
+          <SportsNews />
+          <HomePageStorySection />
+          <VideoSection />
+          <ViralNews />
+          <EnvironmentNews />
+          <Voices />
+        </>
+      )}
     </div>
   );
 };
