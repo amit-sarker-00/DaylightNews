@@ -1,13 +1,12 @@
 import React from "react";
-import { HiUser } from "react-icons/hi2";
-import { IoTimeSharp } from "react-icons/io5";
+ 
 import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 const TravelCards = ({ data }) =>
 {
-  const { title, picture, descrption, category, author, _id } = data;
-  console.log(author);
+  const { title, picture,  author, _id } = data;
+ 
   return (
     <div className="  border-2 hover:ml-5  transition-all">
       <Link to={`detail/${ _id }`}>

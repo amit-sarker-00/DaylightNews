@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
-const SportsNews = () => {
-  const [sportsNews, setSportsNews] = useState([]);
-  useEffect(() => {
+const SportsNews = () =>
+{
+  const [ sportsNews, setSportsNews ] = useState([]);
+  useEffect(() =>
+  {
     fetch("FoodNews.json")
       .then((res) => res.json())
       .then((data) => setSportsNews(data));
@@ -23,16 +25,16 @@ const SportsNews = () => {
               height="100%"
               src="https://www.youtube.com/embed/fu5a6ErmqoU"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen="true"
+              allowFullScreen={true}
             ></iframe>
           </div>
         </div>
         <div className="">
           {sportsNews?.slice(0, 5).map((sports) => (
             <Link
-              to={`/detail/${sports?._id}`}
+              to={`/detail/${ sports?._id }`}
               key={sports._id}
               className=" h-full w-full  "
             >
@@ -63,7 +65,7 @@ const SportsNews = () => {
         <div className="">
           {sportsNews?.slice(5, 10).map((sports) => (
             <Link
-              to={`/detail/${sports?._id}`}
+              to={`/detail/${ sports?._id }`}
               key={sports._id}
               className=" h-full w-full  "
             >

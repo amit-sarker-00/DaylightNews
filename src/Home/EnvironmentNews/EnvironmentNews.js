@@ -4,10 +4,12 @@ import EnvironmentNewsCard from "./EnvironmentNewsCard";
 const EnvironmentNews = () => {
   const [environments, setEnvironments] = useState([]);
   useEffect(() => {
-    fetch("EnvironmentNews.json")
+    fetch(`${ process.env.REACT_APP_API_URL }news`)
       .then((res) => res.json())
-      .then((result) => {
-        setEnvironments(result);
+      .then((result) =>
+      {
+        const environmentNews = result.filter(environment => environment.category ==='EnvironmentNews')
+        setEnvironments(environmentNews);
       });
   }, []);
 
@@ -15,7 +17,7 @@ const EnvironmentNews = () => {
     <div className="mb-16">
       <div>
         <h1 className=" font-bold text-xl sm:text-2xl text-red-500 mb-5">
-          The Latest Environment News
+      Environment News
         </h1>
       </div>
 

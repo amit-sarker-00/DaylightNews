@@ -35,9 +35,9 @@ const Home = () => {
       ) : (
         <>
           <Banner />
-          <HomePageDivisionData />
           <BreakingNews />
           <TrendingNews />
+          <HomePageDivisionData />
           <HomePageLetestNews />
           <HomePageArticalAndPost />
           <News />

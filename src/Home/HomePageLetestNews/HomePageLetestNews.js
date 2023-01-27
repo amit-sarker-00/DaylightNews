@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
-const HomePageLetestNews = () => {
+const HomePageLetestNews = () =>
+{
     return (
         <main className='px-3 mt-8 mb-16'>
             <section className='flex mb-7 sm:flex-row flex-col sm:justify-between sm:items-center '>
@@ -15,13 +16,13 @@ const HomePageLetestNews = () => {
                     } to='/'>Travel</NavLink>
                     <NavLink className={({ isActive }) =>
                         isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
-                    } to='/fashion'>Fashion</NavLink>
+                    } to='/domestic'>Domestic</NavLink>
                     <NavLink className={({ isActive }) =>
                         isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
                     } to='/health'>Health</NavLink>
                     <NavLink className={({ isActive }) =>
                         isActive ? 'text-red-500' : 'hover:text-red-500 transition-all'
-                    } to='/nuture'>Nuture</NavLink>
+                    } to='/natural'>Natural</NavLink>
                 </div>
             </section>
 

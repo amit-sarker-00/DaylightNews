@@ -5,50 +5,58 @@ import DivisionHorizontalData from "./DivisionHorizontalData ";
 import DivisionTitleData from "./DivisionTitleData ";
 import HomePageDivisionSingleCard from "./HomePageDivisionSingleCard ";
 
-const HomePageDivisionData = () => {
-  const [datas, setDatas] = useState([]);
-  const [city, setCity] = useState({});
-  const [districtData, setDistrictData] = useState([]);
-  const [preData, setPreData] = useState([]);
-  const [dis, setDis] = useState("off");
-  useEffect(() => {
-    fetch(`http://localhost:8000/news`)
+const HomePageDivisionData = () =>
+{
+  const [ datas, setDatas ] = useState([]);
+  const [ city, setCity ] = useState({});
+  const [ districtData, setDistrictData ] = useState([]);
+  const [ preData, setPreData ] = useState([]);
+  const [ dis, setDis ] = useState("off");
+  useEffect(() =>
+  {
+    fetch(`${ process.env.REACT_APP_API_URL }news`)
       .then((res) => res.json())
-      .then((result) => {
+      .then((result) =>
+      {
         setDatas(result);
       });
   }, []);
   //unique district
-  const uniqueDistrict = [...new Set(datas?.map((data) => data?.district))];
+  const uniqueDistrict = [ ...new Set(datas?.map((data) => data?.district)) ];
   // console.log(uniqueDistrict);
 
-  const handleUpdateDistrict = (e) => {
+  const handleUpdateDistrict = (e) =>
+  {
     e.preventDefault();
     const form = e.target;
     const radio = document.querySelectorAll("input[type=radio]:checked");
-    const district = radio[0]?.id;
+    const district = radio[ 0 ]?.id;
     console.log(city?.district);
-    if (dis === "on") {
+    if (dis === "on")
+    {
       setCity({ district: district });
     }
     fetch(
-      `http://localhost:8000/district/${city?.district ? city?.district : "Dhaka"
+      `${ process.env.REACT_APP_API_URL }district/${ city?.district ? city?.district : "Dhaka"
       }`
     )
       .then((res) => res.json())
-      .then((result) => {
+      .then((result) =>
+      {
         setDistrictData(result);
         form.reset();
         setDis("off");
       });
   };
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetch(
-      `http://localhost:8000/district/Dhaka
+      `${ process.env.REACT_APP_API_URL }district/Dhaka
       `
     )
       .then((res) => res.json())
-      .then((result) => {
+      .then((result) =>
+      {
         setPreData(result);
       });
   }, []);
@@ -90,13 +98,20 @@ const HomePageDivisionData = () => {
               )}
             </div>
           </div>
-          <div className=" gap-5 pb-5 grid grid-flow-cols-1 md:grid-cols-2 sm-flex xl:grid-cols-4 lg:grid-cols-3">
-            {datas &&
-              datas
-                ?.slice(1, 5)
-                ?.map((data) => (
+          <div className=" gap-5 mt-2  pb-5 grid grid-flow-cols-1 md:grid-cols-2 sm-flex xl:grid-cols-4 lg:grid-cols-3">
+            {city?.district ? (
+              <>
+                {districtData?.slice(1, 5).map((data) => (
                   <DivisionHorizontalData data={data} key={data?._id} />
                 ))}
+              </>
+            ) : (
+              <>
+                {datas?.slice(1, 5).map((data) => (
+                  <DivisionHorizontalData data={data} key={data?._id} />
+                ))}
+              </>
+            )}
           </div>
         </div>
         <div className="w-full sm:w-[800px]  mx-auto xl:w-[300px] ">

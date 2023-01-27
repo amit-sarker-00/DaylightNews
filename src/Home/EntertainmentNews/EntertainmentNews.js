@@ -18,6 +18,7 @@ const EntertainmentNews = () => {
                 console.log(result);
             });
     }, []);
+    
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}news`)
             .then((res) => res.json())

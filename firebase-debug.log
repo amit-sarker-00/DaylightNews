@@ -1,0 +1,42 @@
+[debug] [2023-01-27T14:24:34.329Z] ----------------------------------------------------------------------
+[debug] [2023-01-27T14:24:34.333Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-01-27T14:24:34.333Z] CLI Version:   11.19.0
+[debug] [2023-01-27T14:24:34.334Z] Platform:      win32
+[debug] [2023-01-27T14:24:34.334Z] Node Version:  v16.16.0
+[debug] [2023-01-27T14:24:34.347Z] Time:          Fri Jan 27 2023 20:24:34 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-01-27T14:24:34.347Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-27T14:24:34.354Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-01-27T14:24:34.503Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-27T14:24:34.504Z] > authorizing via signed-in user (jsjillurahmanjibon@gmail.com)
+[debug] [2023-01-27T14:24:34.504Z] [iam] checking project daylight-news-withteam for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-01-27T14:24:34.505Z] > refreshing access token with scopes: []
+[debug] [2023-01-27T14:24:34.507Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-01-27T14:24:34.507Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[warn] !  Unable to fetch the CLI MOTD and remote config. 
+[debug] [2023-01-27T14:24:45.535Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2023-01-27T14:24:45.662Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-01-27T14:24:45.664Z] > refreshing access token with scopes: []
+[debug] [2023-01-27T14:24:45.665Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-01-27T14:24:45.666Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-01-27T14:24:45.671Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-01-27T14:24:45.693Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:144:12)
+    at refreshTokens (C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:508:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Client.getAccessToken (C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:149:23)
+    at async Client.addAuthHeader (C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:140:21)
+    at async Client.request (C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:96:34)
+    at async getFirebaseProject (C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:295:21)
+    at async getDefaultHostingSite (C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:74:9)
+    at async C:\Users\Jillu Rahman Jibon\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:214:17
+[error] 
+[error] Error: Failed to get Firebase project daylight-news-withteam. Please make sure the project exists and your account has permission to access it.
