@@ -19,7 +19,7 @@ const DashboardLayout = () => {
   return (
     <div className="relative min-h-screen md:flex lg:flex    lg:py-20  ">
       <Menubar role={role}></Menubar>
-      <div>
+      <div className="mx-auto">
         <Outlet />
       </div>
     </div>

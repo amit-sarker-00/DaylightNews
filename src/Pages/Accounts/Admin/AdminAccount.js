@@ -5,6 +5,7 @@ import { getUser } from "../../../api/auth";
 import { imageUpload } from "../../../api/imageUpload";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import WriterProfileUpdateModal from "../Writers/WriterProfileUpdateModal";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const AdminAccount = () => {
   const { user } = useContext(AuthContext);
@@ -108,55 +109,56 @@ const AdminAccount = () => {
       });
   };
   return (
-    <div className=" md:max-w-xs lg:max-w-xs px-10 md:px-0 lg:px-0">
-      <div className="flex flex-col justify-center lg:px-4 md:px-4 px-10 py-6 shadow-md rounded-xl  text-gray-900 bg-[#d1e8f2]">
-        <img
-          src={profile?.shopimage ? profile?.shopimage : user?.photoURL}
-          alt=""
-          className="w-32 h-32 "
-        />
-        <div className="space-y-4  divide-y divide-gray-700">
-          <div className="my-2 space-y-1">
-            <h2 className="text-xl font-semibold text-[24px] space-y-1">
-              {profile?.shopname ? profile?.shopname : user?.displayName}
-            </h2>
-            {/* <div className="flex text-yellow-400 text-[14px] ">
-              <StarIcon className="h-4 w-4" />
-              <StarIcon className="h-4 w-4" />
-              <StarIcon className="h-4 w-4" />
-              <StarIcon className="h-4 w-4" />
-              <StarIcon className="h-4 w-4" />
-              <p className="text-[#253D4E] ml-2"> 4.0</p>
-            </div> */}
-            <p className="space-y-1 text-[14px]">
-              {profile.description ? profile.description : "description...."}
-            </p>
-            <p className="space-y-1 text-[16px]font-bold">Follow Us</p>
-            {/* <div className="flex space-y-1">
-              <a href={profile?.twitter}>
-                <img src={twitter} className="px-1" alt="" />
-              </a>
-              <a href={profile?.facebook}>
-                <img src={facebook} className="px-1" alt="" />
-              </a>
-              <a href={profile?.instagram}>
-                <img src={insta} className="px-1" alt="" />
-              </a>
-              <a href={profile?.pinterest}>
-                <img src={ping} className="px-1" alt="" />
-              </a>
-            </div> */}
-            <div className="flex space-y-1">
-              {/* <MapPinIcon className="h-10 w-10 text-[#3BB77E]" /> */}
-              <p className="px-1">
-                Address: {profile?.address ? profile?.address : "Bangladesh"}
-              </p>
+    <div className="shadow-lg border text-gray-600">
+      <div className="w-[400px] mx-auto">
+        <div className="py-3">
+          <img
+            className=" w-[150px] mx-auto bg-black h-[150px] object-cover border rounded-full"
+            src={
+              user.photoURL ? (
+                user.photoURL
+              ) : (
+                <div className="relative flex-shrink-0">
+                  <span className="absolute bottom-0 right-0 w-4 h-4 dark:bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-900"></span>
+                  <img
+                    src="https://source.unsplash.com/50x50/?portrait"
+                    alt=""
+                    className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700"
+                  />
+                </div>
+              )
+            }
+            alt=""
+          />
+        </div>
+        <div className="">
+          <h1 className="text-2xl text-center font-bold">
+            {user?.displayName}
+            <span>({profile.role})</span>
+          </h1>
+          <div className="text-center mt-3 mb-6 font-bold">
+            <button className="p-2  hover:bg-gray-400  transition-all bg-gray-300 rounded-sm">
+              Update Profile
+            </button>
+          </div>
+          <hr className="w-[80%] h-1 bg-gray-300 rounded-2xl mb-3 mx-auto" />
+          <div>
+            <div className=" text-center">
+              <h1 className="font-bold">Connect With Me</h1>
             </div>
-            <div className="flex space-y-1">
-              {/* <PhoneIcon className="h-5 w-5  text-[#3BB77E]" /> */}
-              <p className="px-1">
-                Call Us: {profile.phone ? profile.phone : "0123456789"}
-              </p>
+            <div className="flex items-center gap-5 justify-center my-3">
+              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+                <FaFacebook className="w-7 h-7 "></FaFacebook>
+              </button>
+              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+                <FaLinkedin className="w-7 h-7 "></FaLinkedin>
+              </button>
+              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+                <FaInstagram className="w-7 h-7 "></FaInstagram>
+              </button>
+              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+                <FaTwitter className="w-7 h-7 "></FaTwitter>
+              </button>
             </div>
           </div>
         </div>
