@@ -9,9 +9,10 @@ const BreakingNews = () => {
     fetch(`${process.env.REACT_APP_API_URL}news`)
       .then((res) => res.json())
       .then((result) => {
-        const breakingNews = result?.filter(breaking => breaking?.category === 'breaking')
-        setBreakingNews(breakingNews)
-
+        const breakingNews = result?.filter(
+          (breaking) => breaking?.category === "breaking"
+        );
+        setBreakingNews(breakingNews);
       });
   }, []);
 
@@ -50,8 +51,11 @@ const BreakingNews = () => {
         {breakingNews?.length === 0 && <SkeletonLoading cards={6} />}
         {breakingNews?.map((breaking) => (
           <SplideSlide key={breaking?._id}>
-            <Link to={`/detail/${breaking?._id}`} className=" h-28 flex">
-              <div className="overflow-hidden w-40 h-28">
+            <Link
+              to={`/detail/${breaking?._id}`}
+              className=" h-32 flex border-2"
+            >
+              <div className="overflow-hidden w-40 h-32">
                 <img
                   className="w-full h-full ease-in-out duration-500 transform hover:scale-125"
                   src={breaking?.picture}
@@ -59,9 +63,10 @@ const BreakingNews = () => {
                 />
               </div>
               <div className="mx-2">
-                <h3 className="sm:text-md link-hover text-md font-bold mb-1">
+                <h3 className="sm:text-md link-hover hover:text-red-500  text-xl font-bold mb-1">
                   {breaking?.title}
                 </h3>
+                <p>{breaking?.description.slice(0, 30) + "..."}</p>
                 <div className="flex gap-1 items-center font-bold text-gray-400">
                   <BiTime></BiTime>
                   <p className=" font-bold text-gray-400">two minutes ago</p>

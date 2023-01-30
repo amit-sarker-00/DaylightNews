@@ -42,13 +42,13 @@ const AllCategoryPage = () => {
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 py-5 gap-5'>
                         {
-                            datas && datas.slice(1, 6).map(data => <HorizontalThreeImage data={data} key={data?._id} />)
+                            datas && datas?.slice(1, 6).map(data => <HorizontalThreeImage data={data} key={data?._id} />)
                         }
 
                     </div>
                     <div className='grid grid-cols-1 '>
                         {
-                            datas && datas.slice(7, 200).map((data, i) => <AllCard data={data} key={data?._id} i={i} />)
+                            datas && datas?.slice(7, 200).map((data, i) => <AllCard data={data} key={data?._id} i={i} />)
                         }
 
                     </div>

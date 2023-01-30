@@ -6,7 +6,7 @@ import PrimaryButton from "../../Components/Button/PrimaryButton";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import useTitle from "../../Hooks/useTitle";
 const SignIn = () => {
-  useTitle('SignIn Page')
+  useTitle("SignIn Page");
   const [userEmail, setUserEmail] = useState("");
   const { signin, setLoading, signInWithGoogle, resetPassword } =
     useContext(AuthContext);
@@ -57,9 +57,11 @@ const SignIn = () => {
   };
   return (
     <div className="">
-      <h1 className="py-5 text-center text-4xl font-bold animate-pulse select-none italic"><Link to='/'>DaiLight-News</Link></h1>
-      <div className=" px-6 ">
-        <div className="flex flex-col sm:w-96   mx-auto rounded-md sm:p-5 py-8 text-gray-900">
+      <h1 className="py-5 text-center text-4xl font-bold animate-pulse select-none font-serif">
+        <Link to="/">DaylightNews</Link>
+      </h1>
+      <div className=" flex w-96 sm:w-[450px] mx-auto items-center border shadow-sm">
+        <div className="flex flex-col  mx-auto rounded-md sm:p-5 py-8 text-gray-900">
           <div className="mb-8 text-center">
             <h1 className="my-3 text-4xl font-semibold">Login</h1>
             <p className="text-sm text-gray-400">
@@ -70,7 +72,7 @@ const SignIn = () => {
             onSubmit={handleSubmit}
             noValidate=""
             action=""
-            className="space-y-6 ng-untouched ng-pristine ng-valid"
+            className="w-96 space-y-6 ng-untouched ng-pristine ng-valid"
           >
             <div className="space-y-4">
               <div>
@@ -108,7 +110,7 @@ const SignIn = () => {
             <div>
               <PrimaryButton
                 type="submit"
-                classes="w-full px-8 py-3 font-semibold rounded-md bg-[#3BB77E] text-white"
+                classes="w-full px-8 py-3 font-semibold rounded-md bg-[#000000] hover:bg-[#000000] text-white"
               >
                 {"Sign in"}
               </PrimaryButton>
