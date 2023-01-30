@@ -8,7 +8,7 @@ const VoicesCard = ({ VoiceNews }) =>
   return (
     <div>
       <Link
-        to={`/details/${ _id }`}
+        to={`/detail/${ _id }`}
         className="p-2 flex gap-4 transition-all overflow-hidden shadow items-center"
       >
         <div className="flex justify-center">

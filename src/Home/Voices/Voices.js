@@ -6,13 +6,15 @@ const Voices = () =>
   const [ Voices, setVoices ] = useState([]);
   useEffect(() =>
   {
-    fetch("Voices.json")
+    fetch(`${ process.env.REACT_APP_API_URL }news`)
       .then((res) => res.json())
       .then((result) =>
       {
-        setVoices(result);
+        const voicesNews = result.filter(voice => voice.category === 'voices')
+        setVoices(voicesNews?.slice(-6));
       });
   }, []);
+
 
   return (
     <div className=" py-7">

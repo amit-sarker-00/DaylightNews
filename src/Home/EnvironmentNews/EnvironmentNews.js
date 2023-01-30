@@ -6,11 +6,12 @@ const EnvironmentNews = () =>
   const [ environments, setEnvironments ] = useState([]);
   useEffect(() =>
   {
-    fetch("EnvironmentNews.json")
+    fetch(`${ process.env.REACT_APP_API_URL }news`)
       .then((res) => res.json())
       .then((result) =>
       {
-        setEnvironments(result);
+        const environmentNews = result.filter(environment => environment.category === 'EnvironmentNews')
+        setEnvironments(environmentNews?.slice(-6));
       });
   }, []);
 

@@ -7,7 +7,6 @@ import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 const TrendingNews = () =>
 {
   const [ trendingNews, setTrendingNews ] = useState([]);
-  console.log(trendingNews);
   useEffect(() =>
   {
     fetch(`${ process.env.REACT_APP_API_URL }news`)
@@ -20,6 +19,7 @@ const TrendingNews = () =>
         setTrendingNews(breakingNews);
       });
   }, []);
+
   return (
     <div className=" mb-4 sm:mb-10 ">
       <div className="my-3 flex items-center gap-2">
@@ -54,6 +54,7 @@ const TrendingNews = () =>
           {trendingNews?.length === 0 && <SkeletonLoading cards={6} />}
           {trendingNews?.map((trending) => (
             <SplideSlide key={trending?._id}>
+
               <div className=" h-80 shadow hover:shadow-2xl border   ease-in-out duration-300 hover:border-gray-300 ">
                 <Link to={`/detail/${ trending?._id }`}>
                   <div className="overflow-hidden">
@@ -73,8 +74,7 @@ const TrendingNews = () =>
                       <div className="sm:flex gap-1 items-center hidden">
                         <RxCalendar></RxCalendar>
                         <p className="text-[14px] text-slate-400">
-                          {trending?.dapublished_datete}
-
+                          {trending?.author?.published_date}
                         </p>
                       </div>
                     </div>

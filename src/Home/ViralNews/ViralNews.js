@@ -17,10 +17,15 @@ const ViralNews = () =>
   const [ viralNews, setviralNews ] = useState([]);
   useEffect(() =>
   {
-    fetch("viralNews.json")
+    fetch(`${ process.env.REACT_APP_API_URL }news`)
       .then((res) => res.json())
-      .then((data) => setviralNews(data));
+      .then((data) =>
+      {
+        const viralNews = data.filter(viral => viral.category === 'viral')
+        setviralNews(viralNews)
+      });
   }, []);
+  console.log(viralNews);
   return (
     <div className="mb-4 sm:my-10 md:my-16">
       <div className="font-bold text-xl sm:text-2xl text-red-500 my-3">
@@ -35,29 +40,29 @@ const ViralNews = () =>
             {viralNews?.slice(0, 4).map((viral) => (
               <Link
                 to={`/detail/${ viral?._id }`}
-                key={viral._id}
+                key={viral?._id}
                 className=" h-full w-full  "
               >
                 <div className="flex w-full border h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
                     <img
                       className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
-                      src={viral.image}
+                      src={viral?.picture}
                       alt=""
                     />
                   </div>
                   <div className="mx-2 w-72 h-32">
-                    <h4 className="font-semibold text-red-400">{viral.name}</h4>
+                    <h4 className="font-semibold text-red-400">{viral?.name}</h4>
                     <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
-                      {viral.title}
+                      {viral?.title}
                     </h3>
                     <p className="text-gray-500">
-                      {viral.description?.slice(0, 45) + "..."}
+                      {viral?.description?.slice(0, 45) + "..."}
                     </p>
                     <div className="flex gap-2 items-center font-bold text-gray-400">
                       <RxCalendar></RxCalendar>
                       <p className=" font-bold text-gray-400">
-                        {viral.author.date}
+                        {viral?.author?.published_date}
                       </p>
                     </div>
                   </div>
@@ -74,29 +79,29 @@ const ViralNews = () =>
             {viralNews?.slice(4, 8).map((viral) => (
               <Link
                 to={`/detail/${ viral?._id }`}
-                key={viral._id}
+                key={viral?._id}
                 className=" h-full w-full  "
               >
                 <div className="flex w-full border h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
                     <img
                       className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
-                      src={viral.image}
+                      src={viral?.picture}
                       alt=""
                     />
                   </div>
                   <div className="mx-2 w-72 h-32">
-                    <h4 className="font-semibold text-red-400">{viral.name}</h4>
+                    <h4 className="font-semibold text-red-400">{viral?.name}</h4>
                     <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
-                      {viral.title}
+                      {viral?.title}
                     </h3>
                     <p className="text-gray-500">
-                      {viral.description?.slice(0, 45) + "..."}
+                      {viral?.description?.slice(0, 45) + "..."}
                     </p>
                     <div className="flex gap-2 items-center font-bold text-gray-400">
                       <RxCalendar></RxCalendar>
                       <p className=" font-bold text-gray-400">
-                        {viral.author.date}
+                        {viral?.author.date}
                       </p>
                     </div>
                   </div>
@@ -121,39 +126,39 @@ const ViralNews = () =>
               allowFullScreen={true}
 
             ></iframe>
-        </div>
-        <div>
-          <div className="text-center py-3  font-bold border-2 mb-3">
-            <h1>JOIN US</h1>
           </div>
           <div>
-            <ul className="flex items-center gap-5 justify-center">
-              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                <FaGithub className="text-xl"></FaGithub>
-              </li>
-              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                <BsFacebook className="text-lg"></BsFacebook>
-              </li>
-              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                <FaTwitter className="text-lg"></FaTwitter>
-              </li>
-              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                <FaInstagram className="text-lg"></FaInstagram>
-              </li>
-              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                <FaLinkedin className="text-lg"></FaLinkedin>
-              </li>
-              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                <FaYoutube className="text-lg"></FaYoutube>
-              </li>
-              <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
-                <FaWhatsapp className="text-lg"></FaWhatsapp>
-              </li>
-            </ul>
+            <div className="text-center py-3  font-bold border-2 mb-3">
+              <h1>JOIN US</h1>
+            </div>
+            <div>
+              <ul className="flex items-center gap-5 justify-center">
+                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                  <FaGithub className="text-xl"></FaGithub>
+                </li>
+                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                  <BsFacebook className="text-lg"></BsFacebook>
+                </li>
+                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                  <FaTwitter className="text-lg"></FaTwitter>
+                </li>
+                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                  <FaInstagram className="text-lg"></FaInstagram>
+                </li>
+                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                  <FaLinkedin className="text-lg"></FaLinkedin>
+                </li>
+                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                  <FaYoutube className="text-lg"></FaYoutube>
+                </li>
+                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                  <FaWhatsapp className="text-lg"></FaWhatsapp>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div >
   );
 };
