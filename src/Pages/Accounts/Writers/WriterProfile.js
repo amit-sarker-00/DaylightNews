@@ -179,7 +179,7 @@ const WriterProfile = () => {
   return (
     <div className="">
       <div className=" text-gray-600 md:mt-0 mb-16 my-10">
-        <div className="md:w-[400px] border  mx-auto">
+        <div className="md:w-[400px] border shadow-sm mx-auto">
           <div className="relative">
             <p className="h-40 bg-blue-900 w-full"></p>
             <div className="py-3 top-1/2 left-1/3 absolute">
@@ -216,7 +216,7 @@ const WriterProfile = () => {
                 {profile.email}
               </p>
             </div>
-            <p className="flex text-yellow-400 my-3 items-center justify-center gap-2">
+            <p className="flex text-yellow-400 mb-3 items-center justify-center gap-2">
               <span className="text-gray-600 font-semibold">Rating : </span>
               <FaStar></FaStar>
               <FaStar></FaStar>
@@ -261,12 +261,12 @@ const WriterProfile = () => {
         </div>
       </div>
       <div className="my-6">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div style={{ width: "100%" }}>
-            <div className="text-center font-bold text-xl">
-              <h1>Your Last Profile views</h1>
+            <div className="text-center font-bold text-xl mb-2">
+              <h1>Your Profile Views</h1>
             </div>
-            <ResponsiveContainer width="100%" height={370}>
+            <ResponsiveContainer className=" border" width="100%" height={360}>
               <LineChart
                 width={500}
                 height={200}
@@ -298,7 +298,7 @@ const WriterProfile = () => {
               <h1>Notifications</h1>
               <div className="w-2 h-2 mt-1 bg-green-500 animate-pulse rounded-full"></div>
             </div>
-            <div className="text-gray-700 font-semibold">
+            <div className="text-gray-700   font-semibold">
               <div className="flex hover:ml-4 transition-all items-center justify-between  py-3 px-2 border ">
                 <div className="flex items-center gap-4">
                   <p className="p-2 bg-green-200  rounded-md ">
