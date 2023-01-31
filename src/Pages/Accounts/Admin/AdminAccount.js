@@ -109,58 +109,44 @@ const AdminAccount = () => {
       });
   };
   return (
-    <div className="shadow-lg border text-gray-600">
-      <div className="w-[400px] mx-auto">
-        <div className="py-3">
-          <img
-            className=" w-[150px] mx-auto bg-black h-[150px] object-cover border rounded-full"
-            src={
-              user.photoURL ? (
-                user.photoURL
-              ) : (
-                <div className="relative flex-shrink-0">
-                  <span className="absolute bottom-0 right-0 w-4 h-4 dark:bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-900"></span>
-                  <img
-                    src="https://source.unsplash.com/50x50/?portrait"
-                    alt=""
-                    className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700"
-                  />
-                </div>
-              )
-            }
-            alt=""
-          />
+    <div className="shadow-lg border text-gray-600 md:my-0 my-10">
+      <div className="md:w-[400px]  mx-auto">
+        <div className="relative">
+          <p className="h-40 bg-blue-900 w-full"></p>
+          <div className="py-3 top-1/2 left-1/3 absolute">
+            <img
+              className=" w-[150px] mx-auto bg-black h-[150px] object-cover border rounded-full"
+              src={
+                user.photoURL ? (
+                  user.photoURL
+                ) : (
+                  <div className="relative flex-shrink-0">
+                    <span className="absolute bottom-0 right-0 w-4 h-4 dark:bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-900"></span>
+                    <img
+                      src="https://source.unsplash.com/50x50/?portrait"
+                      alt=""
+                      className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700"
+                    />
+                  </div>
+                )
+              }
+              alt=""
+            />
+          </div>
         </div>
-        <div className="">
+        <div className="mt-20">
           <h1 className="text-2xl text-center font-bold">
             {user?.displayName}
             <span>({profile.role})</span>
           </h1>
-          <div className="text-center mt-3 mb-6 font-bold">
-            <button className="p-2  hover:bg-gray-400  transition-all bg-gray-300 rounded-sm">
+          <h2 className="font-bold text-center my-2">FrontEnd Developer</h2>
+          <div className="text-center mt-3 mb-6 font-bold ">
+            <button className="p-2  bg-gray-300 rounded-sm">
               Update Profile
             </button>
           </div>
+
           <hr className="w-[80%] h-1 bg-gray-300 rounded-2xl mb-3 mx-auto" />
-          <div>
-            <div className=" text-center">
-              <h1 className="font-bold">Connect With Me</h1>
-            </div>
-            <div className="flex items-center gap-5 justify-center my-3">
-              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
-                <FaFacebook className="w-7 h-7 "></FaFacebook>
-              </button>
-              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
-                <FaLinkedin className="w-7 h-7 "></FaLinkedin>
-              </button>
-              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
-                <FaInstagram className="w-7 h-7 "></FaInstagram>
-              </button>
-              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
-                <FaTwitter className="w-7 h-7 "></FaTwitter>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
       <WriterProfileUpdateModal handelUpdateProfile={handelUpdateProfile} />
