@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import AllCategoryPage from "../Components/AllCategoryPage/AllCategoryPage";
 import CardDetailsPage from "../Components/CardDetailsPage/CardDetailsPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import Gadgets from "../Gadgets/Gadgets";
 import Home from "../Home/Home";
 import Fashion from "../Home/HomePageLetestNews/Fashion";
 import Health from "../Home/HomePageLetestNews/Health";
@@ -40,6 +41,9 @@ export const router = createBrowserRouter([
       },
       { path: "detail/:id", element: <CardDetailsPage /> },
       { path: "/category/:id", element: <AllCategoryPage /> },
+      {
+        path: "gadgets",element: <Gadgets />
+      },
       {
         path: "/account",
         element: (
@@ -88,11 +92,12 @@ export const router = createBrowserRouter([
             path: "comments",
             element: <Comments />,
           },
+          
+
         ],
       },
     ],
   },
-
 
   { path: "signup", element: <SignUp /> },
   { path: "login", element: <SignIn /> },

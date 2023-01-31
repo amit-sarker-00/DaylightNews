@@ -107,7 +107,7 @@ const Navbar = () => {
           <div>
             <ul className=" gap-3 hidden lg:flex">
               <li>
-                <Link>Home</Link>
+                <Link to='/'>Home</Link>
               </li>
               <li>
                 <Link>News</Link>
@@ -140,7 +140,7 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <Link>Gadgets</Link>
+                <Link to="/Gadgets" >Gadgets</Link>
               </li>
             </ul>
           </div>
