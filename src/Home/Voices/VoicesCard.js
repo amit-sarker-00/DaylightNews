@@ -2,24 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
 
-const VoicesCard = ({ VoiceNews }) => {
+const VoicesCard = ({ VoiceNews }) =>
+{
   const { title, picture, category, _id, description, author } = VoiceNews;
   return (
     <div>
       <Link
-        to={`/details/${_id}`}
+        to={`/detail/${ _id }`}
         className="p-2 flex gap-4 transition-all overflow-hidden shadow items-center"
       >
-        <div class="flex justify-center">
-          <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+        <div className="flex justify-center">
+          <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
             <div className=" relative">
-              <img class=" w-full h-full object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src={picture} alt="" />
-              <Link to={`/category/${category}`} className="absolute top-0 bg-red-500 rounded-tl-lg inline-block px-1 py-1 text-white">{category}</Link>
+              <img className=" w-full h-full object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src={picture} alt="" />
+              <Link to={`/category/${ category }`} className="absolute top-0 bg-red-500 rounded-tl-lg inline-block px-1 py-1 text-white">{category}</Link>
             </div>
-            <div class=" pl-3 py-2 flex flex-col justify-start">
-              <h5 class="text-gray-900 text-md font-medium mb-2">{title.slice(0, 40)}</h5>
-              <p class="text-gray-700 text-base mb-4">
-                {description.slice(0, 80)}...
+            <div className=" pl-3 py-2 flex flex-col justify-start">
+              <h5 className="text-gray-900 text-md font-medium mb-2">{title?.slice(0, 40)}</h5>
+              <p className="text-gray-700 text-base mb-4">
+                {description?.slice(0, 80)}...
               </p>
               <div className="flex items-center gap-5 pt-3">
                 <div className="flex items-center gap-1">
@@ -37,7 +38,7 @@ const VoicesCard = ({ VoiceNews }) => {
                   </p>
                 </div>
               </div>
-              <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
+              <p className="text-gray-600 text-xs">Last updated 3 mins ago</p>
             </div>
           </div>
         </div>
