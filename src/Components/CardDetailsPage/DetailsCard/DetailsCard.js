@@ -1,8 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Share from "../../Share/Share";
 import DetailsCardReaction from "../DetailsCardReaction/DetailsCardReaction";
 import DetailsCommentBox from "../DetailsCommentBox/DetailsCommentBox";
 
-const DetailsCard = ({ detail, reactions, refetch }) => {
+const DetailsCard = ({
+  detail,
+  reCall,
+  reactions,
+  refetch,
+  singleNewsComment,
+}) => {
   const { picture, title, category, description, author } = detail;
 
   return (
@@ -10,14 +17,22 @@ const DetailsCard = ({ detail, reactions, refetch }) => {
       <div>
         <div className=" relative  w-full  object-cover ">
           <img className="w-full lg:h-[500px]" src={picture} alt="" />
-          <h1 className="absolute top-0 right-0 hero-overlay py-1 px-5 text-white font-semibold">
-            {category}
-          </h1>
+          <div className=" hero-overlay absolute top-0">
+            <Link
+              to={`/category/${category}`}
+              className="absolute top-0 right-0 bg-red-700 py-1 px-5 text-white font-semibold"
+            >
+              {category}
+            </Link>
+          </div>
         </div>
         <div>
           <p className="py-2">{author?.published_date}</p>
           <p className="text-2xl font-semibold ">{title}</p>
           <p className="py-3 text-lg">{description}</p>
+          <div className="px-5 py-5">
+            <Share></Share>
+          </div>
           <div className="mr-0 lg:mr-5 bg-blue-100 py-5 mx-auto">
             <img
               className="w-20 mx-auto"
@@ -47,13 +62,17 @@ const DetailsCard = ({ detail, reactions, refetch }) => {
             </div>
           </div>
           <DetailsCardReaction
-            refetch={refetch}
+            reCall={reCall}
             reactions={reactions}
             detail={detail}
           />
         </div>
         <div className=" ">
-          <DetailsCommentBox detail={detail} />
+          <DetailsCommentBox
+            singleNewsComment={singleNewsComment}
+            refetch={refetch}
+            detail={detail}
+          />
         </div>
       </div>
     </div>

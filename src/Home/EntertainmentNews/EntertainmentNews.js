@@ -18,6 +18,7 @@ const EntertainmentNews = () => {
                 console.log(result);
             });
     }, []);
+    
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}news`)
             .then((res) => res.json())
@@ -71,7 +72,7 @@ const EntertainmentNews = () => {
                                 ></EntertainmentNewsComment>)
                         }
                         {
-                            entertainmentComment.slice(0, 1).map(comment =>
+                            entertainmentComment?.slice(0, 1).map(comment =>
                                 <EntertainmetnNewsCommentImage
                                     key={comment.id}
                                     comment={comment}

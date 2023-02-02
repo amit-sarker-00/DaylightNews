@@ -13,7 +13,7 @@ const HorizentalSection = ({ data }) => {
         />
       </div>
       <Link to={`detail/${_id}`} className="text-md font-bold">
-        <h1 className="hover:text-red-600 link-hover">{title.slice(0, 30)}</h1>
+        <h1 className="hover:text-red-600 link-hover">{title?.slice(0, 30)}</h1>
       </Link>
     </div>
   );

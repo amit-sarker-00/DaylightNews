@@ -5,18 +5,17 @@ import "./Banner.css";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
+import { useQuery } from "@tanstack/react-query";
 
-const Banner = () => {
-  const [bannerData, setBannerData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}news`)
+const Banner = () =>
+{
+
+  const { data: bannerData, isLoading } = useQuery({
+    queryKey: [ 'bannerNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }bannerNews`)
       .then((res) => res.json())
-      .then((data) => {
-        setBannerData(data);
-        setLoading(false);
-      });
-  }, []);
+  })
+
 
   return (
     <div>
@@ -42,11 +41,11 @@ const Banner = () => {
               speed: "2000",
             }}
           >
-            {bannerData?.length === 0 && <SkeletonLoading cards={6} />}
-            {bannerData.slice(-8)?.map((banner) => (
+            {isLoading && <SkeletonLoading cards={6} />}
+            {bannerData?.map((banner) => (
               <SplideSlide className="relative" key={banner._id}>
                 <Link
-                  to={`/detail/${banner._id}`}
+                  to={`/detail/${ banner._id }`}
                   className="w-full h-[100%] gradient"
                 >
                   <img
@@ -57,7 +56,7 @@ const Banner = () => {
                   <div className=" absolute bottom-10 px-5 text-cyan-500  z-50">
                     <div className="  ">
                       <Link
-                        to={`/category/${banner?.category}`}
+                        to={`/category/${ banner?.category }`}
                         className="font-bold py-1 mb-2 px-2 bg-red-600 hover:bg-red-700 text-white"
                       >
                         {banner?.category}
@@ -67,7 +66,7 @@ const Banner = () => {
                         className="sm:text-2xl mt-1 link-hover text-md text-white"
                       >
                         {banner?.title?.length > 50
-                          ? banner?.title.slice(0, 50) + "..."
+                          ? banner?.title?.slice(0, 50) + "..."
                           : banner?.title}
                       </h3>
                       <div className="sm:flex hidden gap-2 items-center mt-3">
@@ -92,19 +91,20 @@ const Banner = () => {
           </Splide>
         </div>
         <div className=" gap-1 grid grid-cols-1 sm:grid-cols-2 h-full w-full">
-          {bannerData?.length === 0 && <SkeletonLoading cards={2} />}
-          {bannerData.slice(103, 107)?.map((banner) => (
-            <Link to={`/detail/${banner._id}`} key={banner._id}>
+          {isLoading && <SkeletonLoading cards={2} />}
+          {bannerData?.slice(-4)?.map((banner) => (
+            <Link to={`/detail/${ banner._id }`} key={banner._id}>
+
               <div className=" h-full border sm:border-none  relative overflow-hidden">
                 <img
-                  className="h-[100%] w-[100%] ease-in-out duration-500 transform hover:scale-125  "
-                  src={banner.picture}
+                  className="w-[100%] xl:h-[284px] md:h-[200px] sm:h-[200px] h-[230px] object-cover ease-in-out duration-500 transform hover:scale-125 "
+                  src={banner?.picture}
                   alt=""
                 />
                 <div className=" absolute bottom-2 pl-3 text-cyan-500  z-40">
                   <div className="  ">
                     <Link
-                      to={`/category/${banner?.category}`}
+                      to={`/category/${ banner?.category }`}
                       className="font-bold mb-2 px-2 bg-red-600 hover:bg-red-700 rounded-sm text-white"
                     >
                       {banner?.category}
@@ -112,7 +112,7 @@ const Banner = () => {
 
                     <h3 className="text-sm text-white link-hover   hover:underline mt-1 hero-overlay">
                       {banner?.title?.length > 50
-                        ? banner?.title.slice(0, 50) + "..."
+                        ? banner?.title?.slice(0, 50) + "..."
                         : banner?.title}
                     </h3>
                     <div className="sm:flex hidden gap-2 items-center mt-3 text-xs flex-wrap">

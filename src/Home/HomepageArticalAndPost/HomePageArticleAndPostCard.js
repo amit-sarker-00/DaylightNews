@@ -33,10 +33,10 @@ const HomePageArticleAndPostCard = ({ data }) => {
         </div>
         <div className=" mx-2">
           <h3 className="text-md sm:text-xl hover:text-red-500 link-hover font-bold">
-            {title.slice(0, 20) + "..."}
+            {title?.slice(0, 20) + "..."}
           </h3>
           <p>
-            {description.slice(0, 40) + "..."}
+            {description?.slice(0, 40) + "..."}
             <span className="text-red-500 link-hover">Read More</span>
           </p>
         </div>

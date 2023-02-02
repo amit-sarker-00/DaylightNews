@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { RxCalendar } from "react-icons/rx";
 
-const VideoSection = () => {
-  const [VideoPost, setVideoPost] = useState([]);
-  useEffect(() => {
+const VideoSection = () =>
+{
+  const [ VideoPost, setVideoPost ] = useState([]);
+  useEffect(() =>
+  {
     fetch("videosection.json")
       .then((res) => res.json())
       .then((data) => setVideoPost(data));
@@ -25,9 +27,10 @@ const VideoSection = () => {
                     height="100%"
                     src={video.video}
                     title=" video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen="true"
+                    allowFullScreen={true}
+
                   ></iframe>
                 </div>
                 <div className="mt-3">
@@ -63,9 +66,10 @@ const VideoSection = () => {
                     height="100%"
                     src={video.video}
                     title=" video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen="true"
+                    allowFullScreen={true}
+
                   ></iframe>
                 </div>
                 <div className="mt-3">
@@ -101,9 +105,10 @@ const VideoSection = () => {
                     height="100%"
                     src={video.video}
                     title=" video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen="true"
+                    allowFullScreen={true}
+
                   ></iframe>
                 </div>
                 <div className="mt-3">
@@ -126,10 +131,11 @@ const VideoSection = () => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
+          ))
+          }
+        </div >
+      </div >
+    </div >
   );
 };
 

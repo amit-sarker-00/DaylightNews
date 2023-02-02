@@ -1,6 +1,5 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
-import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
@@ -81,7 +80,7 @@ const Culture = () => {
                     {banner?.title}
                   </h3>
                   <p className="text-gray-600 ">
-                    {banner?.description.slice(0, 30) + "..."}{" "}
+                    {banner?.description?.slice(0, 30) + "..."}{" "}
                   </p>
                   <span className="link  font-semibold ">Read More</span>
                 </div>

@@ -56,7 +56,7 @@ const VatingNews = () => {
                   alt=""
                 />
                 <p className="text-gray-600">
-                  {voteNews?.description.slice(0, 220)}
+                  {voteNews?.description?.slice(0, 220)}
                 </p>
               </div>
 

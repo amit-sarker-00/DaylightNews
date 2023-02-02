@@ -3,18 +3,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BiTime } from "react-icons/bi";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
-const BreakingNews = () => {
-  const [breakingNews, setBreakingNews] = useState([]);
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}news`)
+import { useQuery } from "@tanstack/react-query";
+const BreakingNews = () =>
+{
+  const { data: breakingNews, isLoading } = useQuery({
+    queryKey: [ 'breakingNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }breakingNews`)
       .then((res) => res.json())
-      .then((result) => {
-        const breakingNews = result?.filter(
-          (breaking) => breaking?.category === "breaking"
-        );
-        setBreakingNews(breakingNews);
-      });
-  }, []);
+  })
+
 
   return (
     <div className="mb-4 sm:mb-10">
@@ -46,11 +43,11 @@ const BreakingNews = () => {
           pagination: false,
         }}
       >
-        {breakingNews?.length === 0 && <SkeletonLoading cards={6} />}
+        {isLoading && <SkeletonLoading cards={6} />}
         {breakingNews?.map((breaking) => (
           <SplideSlide key={breaking?._id}>
             <Link
-              to={`/detail/${breaking?._id}`}
+              to={`/detail/${ breaking?._id }`}
               className=" h-32 flex border-2"
             >
               <div className="overflow-hidden w-40 h-32">

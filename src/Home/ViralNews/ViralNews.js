@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import {
+import React from "react";
+import
+{
   FaGithub,
   FaInstagram,
   FaLinkedin,
@@ -10,14 +11,18 @@ import {
 import { RxCalendar } from "react-icons/rx";
 import { BsFacebook } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
-const ViralNews = () => {
-  const [viralNews, setviralNews] = useState([]);
-  useEffect(() => {
-    fetch("viralNews.json")
+const ViralNews = () =>
+{
+  const { data: viralNews, isLoading } = useQuery({
+    queryKey: [ 'viralNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }viralNews`)
       .then((res) => res.json())
-      .then((data) => setviralNews(data));
-  }, []);
+  })
+
+
   return (
     <div className="mb-4 sm:my-10 md:my-16">
       <div className="font-bold text-xl sm:text-2xl text-red-500 my-3">
@@ -29,32 +34,33 @@ const ViralNews = () => {
             <h1>MOST POPULAR</h1>
           </div>
           <div>
+            {isLoading && <SkeletonLoading />}
             {viralNews?.slice(0, 4).map((viral) => (
               <Link
-                to={`/detail/${viral?._id}`}
-                key={viral._id}
+                to={`/detail/${ viral?._id }`}
+                key={viral?._id}
                 className=" h-full w-full  "
               >
                 <div className="flex w-full border h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
                     <img
                       className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
-                      src={viral.image}
+                      src={viral?.picture}
                       alt=""
                     />
                   </div>
                   <div className="mx-2 w-72 h-32">
-                    <h4 className="font-semibold text-red-400">{viral.name}</h4>
+                    <h4 className="font-semibold text-red-400">{viral?.name}</h4>
                     <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
-                      {viral.title}
+                      {viral?.title}
                     </h3>
                     <p className="text-gray-500">
-                      {viral.description.slice(0, 45) + "..."}
+                      {viral?.description?.slice(0, 45) + "..."}
                     </p>
                     <div className="flex gap-2 items-center font-bold text-gray-400">
                       <RxCalendar></RxCalendar>
                       <p className=" font-bold text-gray-400">
-                        {viral.author.date}
+                        {viral?.author?.published_date}
                       </p>
                     </div>
                   </div>
@@ -68,32 +74,33 @@ const ViralNews = () => {
             <h1>TALKED ABOUT</h1>
           </div>
           <div>
+            {isLoading && <SkeletonLoading />}
             {viralNews?.slice(4, 8).map((viral) => (
               <Link
-                to={`/detail/${viral?._id}`}
-                key={viral._id}
+                to={`/detail/${ viral?._id }`}
+                key={viral?._id}
                 className=" h-full w-full  "
               >
                 <div className="flex w-full border h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
                     <img
                       className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
-                      src={viral.image}
+                      src={viral?.picture}
                       alt=""
                     />
                   </div>
                   <div className="mx-2 w-72 h-32">
-                    <h4 className="font-semibold text-red-400">{viral.name}</h4>
+                    <h4 className="font-semibold text-red-400">{viral?.name}</h4>
                     <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
-                      {viral.title}
+                      {viral?.title}
                     </h3>
                     <p className="text-gray-500">
-                      {viral.description.slice(0, 45) + "..."}
+                      {viral?.description?.slice(0, 45) + "..."}
                     </p>
                     <div className="flex gap-2 items-center font-bold text-gray-400">
                       <RxCalendar></RxCalendar>
                       <p className=" font-bold text-gray-400">
-                        {viral.author.date}
+                        {viral?.author.date}
                       </p>
                     </div>
                   </div>
@@ -113,9 +120,10 @@ const ViralNews = () => {
               height="100%"
               src="https://www.youtube.com/embed/ULIJrqzwMIY"
               title=" video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen="true"
+              allowFullScreen={true}
+
             ></iframe>
           </div>
           <div>
@@ -150,7 +158,7 @@ const ViralNews = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
