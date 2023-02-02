@@ -50,16 +50,14 @@ const CardDetailsPage = () => {
     queryFn: () => fetch(`${process.env.REACT_APP_API_URL}comment/${params.id}`).then(res => res.json())
   })
 
-  if (isLoading) {
-    return <div className='w-full py-8 text-center font-bold'>Loading...</div>
-  }
+ 
 
   return (
     <div>
       {searchContent ? <SearchData /> :
         <div className='flex w-full gap-0 lg:gap-5 h-full'>
           <div className='flex '>
-            <DetailsCard reCall={reCall} singleNewsComment={singleNewsComment} detail={detail} refetch={refetch} reactions={reactions} />
+            <DetailsCard reCall={reCall} isLoading={isLoading} singleNewsComment={singleNewsComment} detail={detail} refetch={refetch} reactions={reactions} />
           </div>
           <div>
             <h1 className='text-center text-xl font-semibold pb-5 hidden lg:block'>Latest News</h1>

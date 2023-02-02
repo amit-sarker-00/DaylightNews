@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import "./Banner.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 import { useQuery } from "@tanstack/react-query";
@@ -44,7 +44,7 @@ const Banner = () =>
             {isLoading && <SkeletonLoading cards={6} />}
             {bannerData?.map((banner) => (
               <SplideSlide className="relative" key={banner._id}>
-                <Link
+                <NavLink id="RouterNavLink"
                   to={`/detail/${ banner._id }`}
                   className="w-full h-[100%] gradient"
                 >
@@ -85,7 +85,7 @@ const Banner = () =>
                       </div>
                     </div>
                   </div>
-                </Link>
+                </NavLink>
               </SplideSlide>
             ))}
           </Splide>
@@ -97,7 +97,7 @@ const Banner = () =>
 
               <div className=" h-full border sm:border-none  relative overflow-hidden">
                 <img
-                  className="w-[100%] xl:h-[284px] md:h-[200px] sm:h-[200px] h-[230px] object-cover ease-in-out duration-500 transform hover:scale-125 "
+                  className="w-[100%] xl:h-[252px] lg:h-[200px] md:h-[180px] sm:h-[200px] h-[230px] object-cover ease-in-out duration-500 transform hover:scale-125 "
                   src={banner?.picture}
                   alt=""
                 />

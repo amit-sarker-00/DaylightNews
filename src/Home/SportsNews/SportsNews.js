@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
+import { useQuery } from "@tanstack/react-query";
 const SportsNews = () =>
 {
-  const [ sportsNews, setSportsNews ] = useState([]);
-  useEffect(() =>
-  {
-    fetch("FoodNews.json")
+
+  const { data: sportsNews, isLoading } = useQuery({
+    queryKey: [ 'sportsNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }sportsNews`)
       .then((res) => res.json())
-      .then((data) => setSportsNews(data));
-  }, []);
-  console.log(sportsNews);
+  })
+
   return (
     <div>
       <div className="my-3">

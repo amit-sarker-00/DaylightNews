@@ -1,8 +1,8 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { RxCalendar } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
 const TrendingNews = () =>
@@ -50,7 +50,7 @@ const TrendingNews = () =>
             <SplideSlide key={trending?._id}>
 
               <div className=" h-80 shadow hover:shadow-2xl border   ease-in-out duration-300 hover:border-gray-300 ">
-                <Link to={`/detail/${ trending?._id }`}>
+                <NavLink id="RouterNavLink" to={`/detail/${ trending?._id }`}>
                   <div className="overflow-hidden">
                     <img
                       className="w-full h-44 ease-in-out duration-500 transform hover:scale-125"
@@ -72,16 +72,14 @@ const TrendingNews = () =>
                         </p>
                       </div>
                     </div>
-                    <Link to={`detail/${ trending?._id }`}>
-                      {" "}
-                      <h3 className="sm:text-xl text-md link-hover hover:text-red-500 font-bold">
-                        {trending?.title?.length > 49
-                          ? trending?.title?.slice(0, 49) + "..."
-                          : trending?.title}
-                      </h3>
+                    {" "}
+                    <Link to={`detail/${ trending?._id }`} className="sm:text-xl text-md link-hover hover:text-red-500 font-bold">
+                      {trending?.title?.length > 49
+                        ? trending?.title?.slice(0, 49) + "..."
+                        : trending?.title}
                     </Link>
                   </div>
-                </Link>
+                </NavLink>
               </div>
             </SplideSlide>
           ))}

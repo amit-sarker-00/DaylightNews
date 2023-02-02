@@ -10,7 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 const Navbar = () =>
 {
   const { user, logout, setSearchContent } = useContext(AuthContext);
- 
+
   const [ weather, setWeather ] = useState({});
   // weather
   useEffect(() =>
@@ -41,6 +41,8 @@ const Navbar = () =>
     queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }categories`)
       .then((res) => res.json())
   })
+
+  const categories = allCategory.filter(n => n !== undefined && n !== null && n !== false && n !== 0)
 
 
   return (
@@ -140,9 +142,9 @@ const Navbar = () =>
                   </Link>
                   <ul
                     tabIndex={1}
-                    className="dropdown-content sm:w-60 w-20 z-50 rounded-md  shadow bg-gray-200 "
+                    className="dropdown-content  grid grid-cols-2 xl:w-[500px] lg:w-[400px]  md:w-[300px] z-50 rounded-md  shadow bg-gray-200 "
                   >
-                    {allCategory?.map((category, i) => (
+                    {categories?.map((category, i) => (
                       <li key={i} className="w-full">
                         <Link
                           to={`/category/${ category }`}

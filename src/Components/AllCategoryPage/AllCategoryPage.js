@@ -23,7 +23,7 @@ const AllCategoryPage = () => {
             });
     }, [params?.id]);
 
-    console.log(datas);
+   
 
     return (
         <div>
