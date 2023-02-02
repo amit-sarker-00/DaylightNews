@@ -47,7 +47,7 @@ const SignUp = () => {
         const userData = {
           name,
           email,
-          image: imageData.data.display_url,
+          image: imageData?.data?.display_url,
           role,
         };
         console.log(userData);
@@ -57,7 +57,7 @@ const SignUp = () => {
           .then((result) => {
             setAuthToken(result.user);
             // console.log(result.user);
-            updateUserProfile(name, imageData.data.display_url)
+            updateUserProfile(name, imageData?.data?.display_url)
               .then(() => {
                 if (userData.role === "writer") {
                   addWriter(userData).then((data) => {

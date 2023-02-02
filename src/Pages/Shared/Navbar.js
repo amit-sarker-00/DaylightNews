@@ -4,6 +4,8 @@ import { IoIosArrowDropdown } from "react-icons/io";
 import { FaFacebookF, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+import SpacialNews from "../../Components/SpacialNews/SpacialNews";
+import DonateNotUser from "../../Components/DonationPage/DonateNotUser";
 
 const Navbar = () => {
   const { user, logout, setSearchContent } = useContext(AuthContext);
@@ -47,6 +49,7 @@ const Navbar = () => {
 
   return (
     <main>
+
       <section className="bg-[#f0f2f5] pb-5">
         <div className="">
           <div className="max-w-[1440px] mx-auto flex  justify-between py-1">
@@ -60,7 +63,10 @@ const Navbar = () => {
               </label>
             </div>
 
-            <div>
+            <div className="flex item-center">
+              {
+                user?.uid ? <Link to="/Donate" className="bg-black px-5 py-1 text-white rounded-sm mr-5">Donate us</Link> : <label htmlFor="my-modal-3" className="bg-black px-5 py-1 text-white rounded-sm mr-5">Donate us</label>
+              }
               <h1>
                 {temp?.toFixed(0)}°c <span>Tempareture</span>{" "}
               </h1>
@@ -112,27 +118,27 @@ const Navbar = () => {
       <section className="my-2 max-w-[1440px] mx-auto ">
         <div className="flex justify-between">
           <div>
-            <ul className=" gap-3 hidden lg:flex">
+            <ul className=" gap-5 hidden lg:flex">
               <li>
-                <Link>Home</Link>
+                <Link className="text-1xl font-semibold">Home</Link>
               </li>
               <li>
-                <Link>News</Link>
+                <Link className="text-1xl font-semibold">News</Link>
               </li>
               <li>
-                <Link>Sports</Link>
+                <Link className="text-1xl font-semibold">Sports</Link>
               </li>
               <li>
-                <Link>Pages</Link>
+                <Link className="text-1xl font-semibold">Pages</Link>
               </li>
               <li>
-                <Link>Travel</Link>
+                <Link className="text-1xl font-semibold">Travel</Link>
               </li>
               <li>
-                <Link>Future </Link>
+                <Link className="text-1xl font-semibold">Future </Link>
               </li>
               <li>
-                <Link>Culture</Link>
+                <Link className="text-1xl font-semibold" to="/stockMarket">Live Stock Market </Link>
               </li>
               <li>
                 <div className="dropdown dropdown-hover">
@@ -142,13 +148,13 @@ const Navbar = () => {
                   </Link>
                   <ul
                     tabIndex={1}
-                    className="dropdown-content sm:w-60 w-20 z-50 rounded-md  shadow bg-gray-200 "
+                    className="dropdown-content sm:w-60 w-20 z-50 rounded-md  shadow bg-gray-200 text-1xl font-semibold"
                   >
                     {uniqueCategory.map((category, i) => (
                       <li key={i} className="w-full">
                         <Link
                           to={`/category/${category}`}
-                          className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500"
+                          className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500 text-1xl font-semibold"
                         >
                           {category}
                         </Link>
@@ -158,7 +164,7 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <Link>Gadgets</Link>
+                <Link className="text-1xl font-semibold">Gadgets</Link>
               </li>
             </ul>
           </div>
@@ -198,6 +204,10 @@ const Navbar = () => {
           </div>
         </div>
       </section>
+      <div className="w-full  mx-auto">
+        <SpacialNews />
+      </div>
+      <DonateNotUser />
     </main>
   );
 };

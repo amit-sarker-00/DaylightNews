@@ -9,8 +9,6 @@ import HomePageArticalAndPost from "./HomepageArticalAndPost/HomePageArticalAndP
 import HomePageLetestNews from "./HomePageLetestNews/HomePageLetestNews";
 import News from "./News/News";
 import TrendingNews from "./TrendingNews/TrendingNews";
-import VideoSection from "./VideoSection/VideoSection";
-import ViralNews from "./ViralNews/ViralNews";
 import OnlineVatingSection from "./OnlineVatingSection/OnlineVatingSection";
 import SearchData from "../Components/SearchData/SearchData";
 import { AuthContext } from "../Contexts/AuthProvider/AuthProvider";
@@ -19,6 +17,14 @@ import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
 import ViralNews from "./ViralNews/ViralNews";
 import VideoSection from "./VideoSection/VideoSection";
 import FoodNews from "./FoodNews/FoodNews";
+import SportsNews from "./SportsNews/SportsNews";
+import Voices from "./Voices/Voices";
+
+import HomePageStorySection from "./HomePageStorySection/HomePageStorySection";
+import EnvironmentNews from "./EnvironmentNews/EnvironmentNews";
+import HomePageDivisionData from "./DistricNews/HomePageDivisionData";
+import LiveStockMarketData from "./LiveStockMarketData/LiveStockMarketData";
+import SpacialNews from "../Components/SpacialNews/SpacialNews";
 
 const Home = () => {
   useTitle("Home");
@@ -28,20 +34,26 @@ const Home = () => {
     <div className="max-w-[1440px] mx-auto">
       {/* <Category /> */}
       {/* <Spinner /> */}
-      {searchContent ? <SearchData /> : <>
-        <Banner />
-        <BreakingNews />
-        <TrendingNews />
-        <HomePageLetestNews />
-        <HomePageArticalAndPost />
-        <News />
-        <Culture />
-        <OnlineVatingSection />
-        <InternetionalTorism />
-        <FoodNews/>
-        <VideoSection />
-        <ViralNews />
-      </>}
+      {searchContent ? (
+        <SearchData />
+      ) : (
+        <>
+          <Banner />
+          <BreakingNews />
+          <TrendingNews />
+          <HomePageDivisionData />
+          <HomePageLetestNews />
+          <HomePageArticalAndPost />
+
+          <OnlineVatingSection />
+          <SportsNews />
+          <HomePageStorySection />
+          <VideoSection />
+          <ViralNews />
+          <EnvironmentNews />
+          <Voices />
+        </>
+      )}
     </div>
   );
 };

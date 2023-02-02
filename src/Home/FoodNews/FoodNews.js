@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
-const FoodNews = () =>
-{
-  const [ foodNews, setFoodNews ] = useState([]);
-  useEffect(() =>
-  {
+const FoodNews = () => {
+  const [foodNews, setFoodNews] = useState([]);
+  useEffect(() => {
     fetch("FoodNews.json")
       .then((res) => res.json())
       .then((data) => setFoodNews(data));
@@ -87,7 +85,9 @@ const FoodNews = () =>
           </div>
         </div>
       </div >
-      );
+    </div >
+  );
+
 };
 
-      export default FoodNews;
+export default FoodNews;
