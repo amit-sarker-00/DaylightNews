@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {
+import
+{
   FaGithub,
   FaInstagram,
   FaLinkedin,
@@ -11,46 +12,57 @@ import { RxCalendar } from "react-icons/rx";
 import { BsFacebook } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const ViralNews = () => {
-  const [viralNews, setviralNews] = useState([]);
-  useEffect(() => {
-    fetch("viralNews.json")
+const ViralNews = () =>
+{
+  const [ viralNews, setviralNews ] = useState([]);
+  useEffect(() =>
+  {
+    fetch(`${ process.env.REACT_APP_API_URL }news`)
       .then((res) => res.json())
-      .then((data) => setviralNews(data));
+      .then((data) =>
+      {
+        const viralNews = data.filter(viral => viral.category === 'viral')
+        setviralNews(viralNews)
+      });
   }, []);
+  console.log(viralNews);
   return (
     <div className="mb-4 sm:my-10 md:my-16">
       <div className="font-bold text-xl sm:text-2xl text-red-500 my-3">
-        <h1>Viral News</h1>
+        <h1>VIRAL NEWS</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         <div>
-          <div className="font-bold border text-center py-1">
+          <div className="font-bold border text-red-500 text-center py-1">
             <h1>MOST POPULAR</h1>
           </div>
           <div>
             {viralNews?.slice(0, 4).map((viral) => (
-              <Link key={viral._id} className=" h-full w-full  ">
+              <Link
+                to={`/detail/${ viral?._id }`}
+                key={viral?._id}
+                className=" h-full w-full  "
+              >
                 <div className="flex w-full border h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
                     <img
                       className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
-                      src={viral.image}
+                      src={viral?.picture}
                       alt=""
                     />
                   </div>
                   <div className="mx-2 w-72 h-32">
-                    <h4 className="font-semibold text-red-400">{viral.name}</h4>
-                    <h3 className="sm:text-md link-hover text-md font-bold mb-1">
-                      {viral.title}
+                    <h4 className="font-semibold text-red-400">{viral?.name}</h4>
+                    <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
+                      {viral?.title}
                     </h3>
                     <p className="text-gray-500">
-                      {viral.description.slice(0, 45) + "..."}
+                      {viral?.description?.slice(0, 45) + "..."}
                     </p>
                     <div className="flex gap-2 items-center font-bold text-gray-400">
                       <RxCalendar></RxCalendar>
                       <p className=" font-bold text-gray-400">
-                        {viral.author.date}
+                        {viral?.author?.published_date}
                       </p>
                     </div>
                   </div>
@@ -60,32 +72,36 @@ const ViralNews = () => {
           </div>
         </div>
         <div className="">
-          <div className="font-bold border text-center py-1">
+          <div className="font-bold border text-red-500 text-center py-1">
             <h1>TALKED ABOUT</h1>
           </div>
           <div>
             {viralNews?.slice(4, 8).map((viral) => (
-              <Link key={viral._id} className=" h-full w-full  ">
+              <Link
+                to={`/detail/${ viral?._id }`}
+                key={viral?._id}
+                className=" h-full w-full  "
+              >
                 <div className="flex w-full border h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
                     <img
                       className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
-                      src={viral.image}
+                      src={viral?.picture}
                       alt=""
                     />
                   </div>
                   <div className="mx-2 w-72 h-32">
-                    <h4 className="font-semibold text-red-400">{viral.name}</h4>
-                    <h3 className="sm:text-md link-hover text-md font-bold mb-1">
-                      {viral.title}
+                    <h4 className="font-semibold text-red-400">{viral?.name}</h4>
+                    <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
+                      {viral?.title}
                     </h3>
                     <p className="text-gray-500">
-                      {viral.description.slice(0, 45) + "..."}
+                      {viral?.description?.slice(0, 45) + "..."}
                     </p>
                     <div className="flex gap-2 items-center font-bold text-gray-400">
                       <RxCalendar></RxCalendar>
                       <p className=" font-bold text-gray-400">
-                        {viral.author.date}
+                        {viral?.author.date}
                       </p>
                     </div>
                   </div>
@@ -95,7 +111,7 @@ const ViralNews = () => {
           </div>
         </div>
         <div className="">
-          <div className="font-bold border text-center py-1">
+          <div className="font-bold border text-red-500 text-center py-1">
             <h1>VIDEO OF THE DAY</h1>
           </div>
           <div className="h-[50%] mb-6 border">
@@ -103,11 +119,12 @@ const ViralNews = () => {
               className=""
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/A6j7hkFPJQs"
+              src="https://www.youtube.com/embed/ULIJrqzwMIY"
               title=" video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen="true"
+              allowFullScreen={true}
+
             ></iframe>
           </div>
           <div>
@@ -142,7 +159,7 @@ const ViralNews = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

@@ -1,6 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import AllCategoryPage from "../Components/AllCategoryPage/AllCategoryPage";
 import CardDetailsPage from "../Components/CardDetailsPage/CardDetailsPage";
+import BdOnlinePayment from "../Components/DonationPage/BdOnlinePayment";
+import DonateNotUser from "../Components/DonationPage/DonateNotUser";
+import DonationFail from "../Components/DonationPage/DonationFail";
+import DonationPage from "../Components/DonationPage/DonationPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Gadgets from "../Gadgets/Gadgets";
 import GadgetsDetails from "../Gadgets/GadgetsDetails";
@@ -9,6 +13,7 @@ import Fashion from "../Home/HomePageLetestNews/Fashion";
 import Health from "../Home/HomePageLetestNews/Health";
 import Nuture from "../Home/HomePageLetestNews/Nuture";
 import Travel from "../Home/HomePageLetestNews/Travel";
+import LiveStockMarketData from "../Home/LiveStockMarketData/LiveStockMarketData";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Main from "../Layout/Main";
 import AdminAccount from "../Pages/Accounts/Admin/AdminAccount";
@@ -43,6 +48,19 @@ export const router = createBrowserRouter([
       { path: "detail/:id", element: <CardDetailsPage /> },
       // { path: "gadgetsDetails/:id", element: <GadgetsDetails/> },
       { path: "/category/:id", element: <AllCategoryPage /> },
+
+      { path: "/stockMarket", element: <LiveStockMarketData /> },
+      { path: "/donate", element: <DonationPage /> },
+
+      {
+        path: "/bdPayment/success",
+        element: <BdOnlinePayment />,
+      },
+      {
+        path: "/payment/fail",
+        element: <DonationFail />,
+      },
+
       {
         path: "gadgets",element: <Gadgets />
       },
