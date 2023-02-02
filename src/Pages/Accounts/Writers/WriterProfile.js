@@ -15,10 +15,9 @@ import { MdOutlineAddReaction } from "react-icons/md";
 import { AiFillEye } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import {
-  Brush,
+  Area,
+  AreaChart,
   CartesianGrid,
-  Line,
-  LineChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -136,43 +135,43 @@ const WriterProfile = () => {
     {
       name: "Day 3",
       uv: 4000,
-      pv: 400,
+      users: 400,
       amt: 2400,
     },
     {
       name: "Day 3",
-      uv: 3000,
-      pv: 1398,
+      uv: 5000,
+      users: 1398,
       amt: 2210,
     },
     {
       name: "Day 7",
       uv: 2000,
-      pv: 3800,
+      users: 6000,
       amt: 2290,
     },
     {
       name: "Day 10",
       uv: 2780,
-      pv: 4008,
+      users: 4008,
       amt: 2000,
     },
     {
       name: "Day 15",
       uv: 1890,
-      pv: 7800,
+      users: 7800,
       amt: 2181,
     },
     {
       name: "Day 20",
       uv: 2390,
-      pv: 2800,
+      users: 2800,
       amt: 2500,
     },
     {
       name: "Day 30",
       uv: 3490,
-      pv: 300,
+      users: 300,
       amt: 2100,
     },
   ];
@@ -266,32 +265,27 @@ const WriterProfile = () => {
             <div className="text-center font-bold text-xl mb-2">
               <h1>Your Profile Views</h1>
             </div>
-            <ResponsiveContainer className=" border" width="100%" height={360}>
-              <LineChart
-                width={500}
-                height={200}
-                data={data}
-                syncId="anyId"
-                margin={{
-                  top: 10,
-                  right: 30,
-                  left: 0,
-                  bottom: 0,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Line
-                  type="monotone"
-                  dataKey="pv"
-                  stroke="#82ca9d"
-                  fill="#82ca9d"
-                />
-                {/* <Brush /> */}
-              </LineChart>
-            </ResponsiveContainer>
+            <div className="border" style={{ width: "100%", height: 340 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart
+                  width={500}
+                  height={400}
+                  data={data}
+                  margin={{
+                    top: 10,
+                    right: 30,
+                    left: 0,
+                    bottom: 0,
+                  }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip />
+                  <Area dataKey="users" stroke="#8884d8" fill="#8884d8" />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
           </div>
           <div>
             <div className="flex items-center justify-center gap-2 font-bold text-xl mb-2">

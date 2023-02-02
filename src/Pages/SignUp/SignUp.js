@@ -47,7 +47,7 @@ const SignUp = () => {
         const userData = {
           name,
           email,
-          image: imageData.data.display_url,
+          image: imageData?.data?.display_url,
           role,
         };
         console.log(userData);
