@@ -1,23 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { IoIosArrowDropdown } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
-const Drawer = () => {
-    const [categories, setCategories] = useState([]);
-    // categories 
-    useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}news`)
-            .then((res) => res.json())
-            .then((data) => setCategories(data));
-    }, []);
-    // console.log(News);
+const Drawer = () =>
+{
 
-    // all category in news
-    const allCategory = categories.map((news) => news.category);
-    // console.log(allCategory);
-    // unique category
-    const uniqueCategory = [...new Set(allCategory)];
+    // categories
+    const { data: allCategory = [] } = useQuery({
+        queryKey: [ 'categories' ],
+        queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }categories`)
+            .then((res) => res.json())
+    })
 
     return (
         <section>
@@ -57,8 +52,8 @@ const Drawer = () => {
                                 <Link tabIndex={1} className="flex items-center gap-1 "><span>Categories</span> <IoIosArrowDropdown className="mt-1" /></Link>
                                 <ul tabIndex={1} className="dropdown-content sm:w-60 w-20 z-50 rounded-md text-black font-semibold  shadow bg-gray-200 ">
                                     {
-                                        uniqueCategory.map((category, i) => <li key={i} className="w-full">
-                                            <Link to={`/category/${category}`} className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500  "  >{category}</Link>
+                                        allCategory?.map((category, i) => <li key={i} className="w-full">
+                                            <Link to={`/category/${ category }`} className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500  "  >{category}</Link>
                                         </li>)
                                     }
                                 </ul>

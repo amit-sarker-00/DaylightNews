@@ -9,9 +9,9 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import Gadgets from "../Gadgets/Gadgets";
 import GadgetsDetails from "../Gadgets/GadgetsDetails";
 import Home from "../Home/Home";
-import Fashion from "../Home/HomePageLetestNews/Fashion";
+import Domestic from "../Home/HomePageLetestNews/Demestic";
 import Health from "../Home/HomePageLetestNews/Health";
-import Nuture from "../Home/HomePageLetestNews/Nuture";
+import Natural from "../Home/HomePageLetestNews/Natural";
 import Travel from "../Home/HomePageLetestNews/Travel";
 import LiveStockMarketData from "../Home/LiveStockMarketData/LiveStockMarketData";
 import DashboardLayout from "../Layout/DashboardLayout";
@@ -40,9 +40,9 @@ export const router = createBrowserRouter([
         element: <Home />,
         children: [
           { path: "/", element: <Travel /> },
-          { path: "/domestic", element: <Fashion /> },
+          { path: "/domestic", element: <Domestic /> },
           { path: "/health", element: <Health /> },
-          { path: "/nature", element: <Nuture /> },
+          { path: "/natural", element: <Nuture /> },
         ],
       },
       { path: "detail/:id", element: <CardDetailsPage /> },

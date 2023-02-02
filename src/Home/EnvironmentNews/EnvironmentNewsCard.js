@@ -21,7 +21,7 @@ const EnvironmentNewsCard = ({ EnvNews }) =>
             <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-200 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <div className=" ">
 
-                <div className="  font-bold text-xl mb-2">{title}</div>
+                <div className="  font-bold text-xl hover:link mb-2">{title}</div>
                 <p className="text-gray-700 text-base">{description?.slice(0, 190)}...</p>
               </div>
               <div className="flex items-center">

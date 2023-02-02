@@ -44,7 +44,7 @@ const Home = () => {
           <HomePageDivisionData />
           <HomePageLetestNews />
           <HomePageArticalAndPost />
-
+          
           <OnlineVatingSection />
           <SportsNews />
           <HomePageStorySection />

@@ -9,7 +9,7 @@ const VoicesCard = ({ VoiceNews }) =>
     <div>
       <Link
         to={`/detail/${ _id }`}
-        className="p-2 flex gap-4 transition-all overflow-hidden shadow items-center"
+        className="p-2 flex gap-4 hover:text-red-500 transition-all overflow-hidden shadow items-center"
       >
         <div className="flex justify-center">
           <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
@@ -18,7 +18,7 @@ const VoicesCard = ({ VoiceNews }) =>
               <Link to={`/category/${ category }`} className="absolute top-0 bg-red-500 rounded-tl-lg inline-block px-1 py-1 text-white">{category}</Link>
             </div>
             <div className=" pl-3 py-2 flex flex-col justify-start">
-              <h5 className="text-gray-900 text-md font-medium mb-2">{title?.slice(0, 40)}</h5>
+              <h5 className=" text-md hover:link font-medium mb-2">{title?.slice(0, 40)}</h5>
               <p className="text-gray-700 text-base mb-4">
                 {description?.slice(0, 80)}...
               </p>
