@@ -3,6 +3,7 @@ import AllCategoryPage from "../Components/AllCategoryPage/AllCategoryPage";
 import CardDetailsPage from "../Components/CardDetailsPage/CardDetailsPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Gadgets from "../Gadgets/Gadgets";
+import GadgetsDetails from "../Gadgets/GadgetsDetails";
 import Home from "../Home/Home";
 import Fashion from "../Home/HomePageLetestNews/Fashion";
 import Health from "../Home/HomePageLetestNews/Health";
@@ -40,6 +41,7 @@ export const router = createBrowserRouter([
         ],
       },
       { path: "detail/:id", element: <CardDetailsPage /> },
+      // { path: "gadgetsDetails/:id", element: <GadgetsDetails/> },
       { path: "/category/:id", element: <AllCategoryPage /> },
       {
         path: "gadgets",element: <Gadgets />

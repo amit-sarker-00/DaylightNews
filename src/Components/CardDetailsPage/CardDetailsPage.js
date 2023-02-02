@@ -8,9 +8,6 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import SearchData from '../SearchData/SearchData';
 
 
-
-
-
 const CardDetailsPage = () => {
     const { searchContent } = useContext(AuthContext)
 
