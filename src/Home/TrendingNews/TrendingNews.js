@@ -1,4 +1,5 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
@@ -6,19 +7,12 @@ import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
 const TrendingNews = () =>
 {
-  const [ trendingNews, setTrendingNews ] = useState([]);
-  useEffect(() =>
-  {
-    fetch(`${ process.env.REACT_APP_API_URL }news`)
+  const { data: trendingNews, isLoading } = useQuery({
+    queryKey: [ 'trendingNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }trendingNews`)
       .then((res) => res.json())
-      .then((result) =>
-      {
-        const breakingNews = result?.filter(
-          (trending) => trending?.category === "HotNews"
-        );
-        setTrendingNews(breakingNews);
-      });
-  }, []);
+  })
+
 
   return (
     <div className=" mb-4 sm:mb-10 ">
@@ -51,7 +45,7 @@ const TrendingNews = () =>
             perMove: 2,
           }}
         >
-          {trendingNews?.length === 0 && <SkeletonLoading cards={6} />}
+          {isLoading && <SkeletonLoading cards={6} />}
           {trendingNews?.map((trending) => (
             <SplideSlide key={trending?._id}>
 

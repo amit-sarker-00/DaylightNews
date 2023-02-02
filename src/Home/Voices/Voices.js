@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
+import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 import VoicesCard from "./VoicesCard";
 
 const Voices = () =>
 {
-  const [ Voices, setVoices ] = useState([]);
-  useEffect(() =>
-  {
-    fetch(`${ process.env.REACT_APP_API_URL }news`)
+  const { data: voicesNews, isLoading } = useQuery({
+    queryKey: [ 'voicesNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }voicesNews`)
       .then((res) => res.json())
-      .then((result) =>
-      {
-        const voicesNews = result.filter(voice => voice.category === 'voices')
-        setVoices(voicesNews?.slice(-6));
-      });
-  }, []);
+  })
 
 
   return (
-    <div className=" py-7">
+    <div className=" py-7 mb-8">
       <div>
         <h1 className=" font-bold text-xl text-red-600  sm:text-2xl text-black-500 mb-5">
           Voices News
@@ -41,7 +37,8 @@ const Voices = () =>
           </div>
         </div>
         <div className="grid lg:grid-cols-2 gap-x-5 sm:gap-y-10 gap-y-5">
-          {Voices?.map((Voice) => (
+          {isLoading && <SkeletonLoading />}
+          {voicesNews?.slice(0, 6).map((Voice) => (
             <VoicesCard key={Voice?._id} VoiceNews={Voice} />
           ))}
         </div>

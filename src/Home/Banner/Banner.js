@@ -5,21 +5,17 @@ import "./Banner.css";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
+import { useQuery } from "@tanstack/react-query";
 
 const Banner = () =>
 {
-  const [ bannerData, setBannerData ] = useState([]);
-  const [ loading, setLoading ] = useState(true);
-  useEffect(() =>
-  {
-    fetch(`${ process.env.REACT_APP_API_URL }news`)
+
+  const { data: bannerData, isLoading } = useQuery({
+    queryKey: [ 'bannerNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }bannerNews`)
       .then((res) => res.json())
-      .then((data) =>
-      {
-        setBannerData(data);
-        setLoading(false);
-      });
-  }, []);
+  })
+
 
   return (
     <div>
@@ -45,8 +41,8 @@ const Banner = () =>
               speed: "2000",
             }}
           >
-            {bannerData?.length === 0 && <SkeletonLoading cards={6} />}
-            {bannerData?.slice(-8)?.map((banner) => (
+            {isLoading && <SkeletonLoading cards={6} />}
+            {bannerData?.map((banner) => (
               <SplideSlide className="relative" key={banner._id}>
                 <Link
                   to={`/detail/${ banner._id }`}
@@ -95,13 +91,13 @@ const Banner = () =>
           </Splide>
         </div>
         <div className=" gap-1 grid grid-cols-1 sm:grid-cols-2 h-full w-full">
-          {bannerData?.length === 0 && <SkeletonLoading cards={2} />}
-          {bannerData?.slice(103, 107)?.map((banner) => (
+          {isLoading && <SkeletonLoading cards={2} />}
+          {bannerData?.slice(-4)?.map((banner) => (
             <Link to={`/detail/${ banner._id }`} key={banner._id}>
-            
+
               <div className=" h-full border sm:border-none  relative overflow-hidden">
                 <img
-                  className="h-[100%] w-[100%] ease-in-out duration-500 transform hover:scale-125  "
+                  className="w-[100%] xl:h-[284px] md:h-[200px] sm:h-[200px] h-[230px] object-cover ease-in-out duration-500 transform hover:scale-125 "
                   src={banner?.picture}
                   alt=""
                 />
