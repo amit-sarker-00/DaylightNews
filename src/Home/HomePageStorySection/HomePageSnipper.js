@@ -1,11 +1,10 @@
 import React from 'react';
 import "../HomePageStorySection/HomePageSnipper.css"
 
-const HomePageSnipper = () =>
-{
+const HomePageSnipper = () => {
     return (
         <div className='background'>
-            <div className="spinner-3"></div>
+            <div class="spinner-3"></div>
         </div>
     );
 };

@@ -1,16 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
-import { NavLink, } from 'react-router-dom';
+import { act } from 'react-dom/test-utils';
+import { NavLink, Outlet } from 'react-router-dom';
 import HomePageStoryaPhotogallery from './HomePageStoryaPhotogallery';
 import HomePageStoryLifeStyle from './HomePageStoryLifeStyle';
 import HomePageStoryModel from './HomePageStoryModel';
 import HomePageStoryNature from './HomePageStoryNature';
 import HomePageStoryTravel from './HomePageStoryTravel';
 
-const HomePageStorySection = () =>
-{
+const HomePageStorySection = () => {
 
-    const [ active, setActive ] = useState("FirstCard")
+    const [active, setActive] = useState("FirstCard")
 
 
     return (

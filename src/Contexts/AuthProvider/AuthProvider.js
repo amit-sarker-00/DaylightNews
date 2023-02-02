@@ -94,7 +94,7 @@ const AuthProvider = ({ children }) => {
     signin,
     resetPassword,
     loading,
-    setLoading, searchContent,  setSearchContent
+    setLoading, searchContent, setSearchContent
   };
 
   return (

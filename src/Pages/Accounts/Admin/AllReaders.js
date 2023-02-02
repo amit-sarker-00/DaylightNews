@@ -7,7 +7,7 @@ const AllReaders = () => {
   const [reader, setReader] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    fetch("${process.env.REACT_APP_API_URL}users")
+    fetch(`${process.env.REACT_APP_API_URL}users`)
       .then((res) => res.json())
       .then((data) => {
         setReader(data);

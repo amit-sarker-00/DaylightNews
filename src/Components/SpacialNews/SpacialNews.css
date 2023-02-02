@@ -1,0 +1,8 @@
+.text {
+	border-radius: 0% 0% 100% 0%;
+	color: white;
+	background-color: black;
+	width: 150px;
+	height: 40px;
+	padding: 5px;
+}

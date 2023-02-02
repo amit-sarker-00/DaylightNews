@@ -6,6 +6,7 @@ import SearchCardData from './SearchCardData';
 const SearchData = () => {
     const { searchContent } = useContext(AuthContext)
     const [searchDatas, setSearchDatas] = useState([]);
+    const [searchApiData, setSearchApiData] = useState([]);
 
     const { data = [], isLoading } = useQuery({
         queryKey: ['news'],

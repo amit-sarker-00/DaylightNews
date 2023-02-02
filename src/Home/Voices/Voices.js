@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import VoicesCard from "./VoicesCard";
 
-const Voices = () =>
-{
-  const [ Voices, setVoices ] = useState([]);
-  useEffect(() =>
-  {
-    fetch(`${ process.env.REACT_APP_API_URL }news`)
+const Voices = () => {
+  const [Voices, setVoices] = useState([]);
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}news`)
       .then((res) => res.json())
-      .then((result) =>
-      {
+      .then((result) => {
         const voicesNews = result.filter(voice => voice.category === 'voices')
         setVoices(voicesNews?.slice(-6));
       });

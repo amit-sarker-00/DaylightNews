@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import EnvironmentNewsCard from "./EnvironmentNewsCard";
 
-const EnvironmentNews = () =>
-{
-  const [ environments, setEnvironments ] = useState([]);
-  useEffect(() =>
-  {
-    fetch(`${ process.env.REACT_APP_API_URL }news`)
+const EnvironmentNews = () => {
+  const [environments, setEnvironments] = useState([]);
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}news`)
       .then((res) => res.json())
-      .then((result) =>
-      {
+      .then((result) => {
         const environmentNews = result.filter(environment => environment.category === 'EnvironmentNews')
         setEnvironments(environmentNews?.slice(-6));
       });
