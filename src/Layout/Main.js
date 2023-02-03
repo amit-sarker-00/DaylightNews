@@ -7,13 +7,9 @@ import Navbar from "../Pages/Shared/Navbar";
 const Main = () => {
   return (
     <div>
-<<<<<<< HEAD
-      <Navbar />
-      <Outlet />
-      <Footer />
-=======
       <div className="drawer">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+
 
         <div className="drawer-content">
           <Navbar />
@@ -29,7 +25,6 @@ const Main = () => {
           <Drawer />
         </div>
       </div>
->>>>>>> main
     </div>
   );
 };

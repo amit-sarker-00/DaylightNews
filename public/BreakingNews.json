@@ -1,0 +1,111 @@
+[
+  {
+    "_id": 1,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "The Mysterious dog",
+    "image": "https://i.ibb.co/58Yrx3C/pexels-photo-326957.jpg",
+    "category": "Breaking",
+    "description": "growing number of schools across the UK are bringing dogs into the classroom to support learning, particularly reading. Yes, dogs!  In fact as early as 1999 an American organization called Intermountain Therapy Animals used dogs to support children’s reading and since  then international interest has grown and there are now a number of initiatives around the world, including The Bark and Read Foundation in the UK.But is this a quaint idea or does it have real merit and be worthy of more schools taking it seriously.One of the main reasons there is growing interest in such initiatives is because of widespread concerns over children’s standards of reading, as indicated by the (PISA) results. In 2016, the UK ranks 21st, below many other European countries, and our average point score fell from 499 to 498 in three years. Although PISA attracts critics, few would deny that around the UK many children lack motivation and enjoyment when reading and this has an impact on their achievement.  Yet the Organisation for Economic Co-operation and Development found that students who enjoyed reading the most performed significantly better than those who said that they enjoyed reading the least - over a third stated that they gained no enjoyment from books. Enjoyment of reading is a stronger predictor of success than socio-economic background (Clark and De Zoysa, 2011). The various reading programmes that use dogs share the principle that reading should be enjoyable. Dogs may provide an incentive for those children reluctant to pick up a book. Why? Well, the dog is a non-judgmental listener, whose very presence may calm and relax reluctant and anxious readers. Well-trained reading dogs make for a patient audience. Dew (2000:199) suggests that the dog brings a nonverbal but collaborative language to the classroom – the dog ‘never expresses himself or his wisdom verbally, but he can speak volumes nonverbally’.Of course, not everyone likes dogs and it is important to teach children how to behave safely around them. Young children frequently misunderstand body language. Bringing a well-trained and assessed dog into school in a controlled manner can help all children learn how to safely meet, greet and respect these animals. "
+  },
+  {
+    "_id": 2,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Murder in Dhaka",
+    "category": "Breaking",
+    "image": "https://i.ibb.co/74BpWXv/pexels-photo-673862.jpg",
+    "description": "On the night of January 15th, 2023, police were called to a residence in the suburbs of Dhaka Bangladesh, where they found the body of 34-year-old John Doe. The victim had been brutally stabbed multiple times, and there were signs of a struggle throughout the house.Upon arriving at the scene, police immediately began their investigation. They collected evidence, took statements from witnesses, and canvassed the neighborhood for anyone who may have seen or heard anything suspicious.According to witnesses, the victim had been hosting a dinner party at his home earlier in the evening. Several guests reported that there had been an altercation between the victim and another party-goer, identified as 25-year-old Jane Smith. Smith had left the party shortly before the murder took place, and she was later arrested and charged with the crime.The prosecution's case against Smith is based on several key pieces of evidence. A bloody knife found at the scene of the crime has been linked to Smith through DNA analysis, and witnesses reported hearing her and the victim arguing loudly before the murder took place. Additionally, several guests reported seeing Smith leave the party in a hurry shortly before the murder occurred.The defense, however, has argued that the evidence against Smith is circumstantial and that there are inconsistencies in the prosecution's case. They have pointed out that several other guests at the party had motive to commit the murder and that there is no concrete evidence linking Smith to the crime.The trial is ongoing, and a verdict is expected to be reached within the next few weeks. The case has garnered widespread media attention, and the public is closely following the proceedings.This murder case highlights the importance of thorough and unbiased investigation in bringing justice for the victim and his loved ones. It also serves as a reminder of the complexities and nuances of criminal cases, where evidence and testimony must be carefully examined and evaluated in order to reach a fair and just decision."
+  },
+  {
+    "_id": 3,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Scientist found 100 years old boat middle of the sea",
+    "category": "Breaking",
+    "description": "On a recent diving expedition off the coast of XYZ, a team of divers made a remarkable discovery: the wreckage of an old wooden sailing ship, lying at the bottom of the sea.The ship, which is believed to date back to the late 19th or early 20th century, was found in relatively good condition, despite being submerged for an unknown number of years. The divers were able to identify several key features of the ship, including its wooden hull, rusted iron fittings, and intricate carvings on the stern.It is not yet clear how the ship came to be at the bottom of the sea, but the divers did find evidence of damage to the hull, which suggests that it may have sunk in a storm or other maritime accident.The discovery of the shipwreck has sparked excitement among maritime historians and archaeology enthusiasts, as it offers a unique glimpse into the past and a chance to learn more about the history of shipbuilding and seafaring.The ship's discovery also raises many questions, such as the identity of the ship, and its origins and the reason why it sunk, the divers and researchers will have to carefully study the ship and the surrounding area to try and piece together the mystery of this historic vessel.The ship is now being studied by a team of experts, who will work to document and preserve the wreck, and will also be working to identify the ship and its history. The findings will be shared with the public as soon as possible.This shipwreck is not only a valuable historical artifact, but also a reminder of the dangers and mysteries that lie beneath the sea. It serves as a reminder of the importance of preserving our maritime heritage, and the need for continued exploration and discovery in order to fully understand our past.The ship's discovery also raises many questions, such as the identity of the ship, and its origins and the reason why it sunk, the divers and researchers will have to carefully study the ship and the surrounding area to try and piece together the mystery of this historic vessel.",
+    "image": "https://i.ibb.co/VJwL4SQ/pexels-photo-4089287.jpg"
+  },
+
+  {
+    "_id": 4,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Sylhet car Accident",
+    "category": "Breaking",
+    "description": "On the evening of January 17th, 2023, a tragic car accident occurred on the busy Main Street of sylhet Bangladesh. The accident, which involved two vehicles, resulted in multiple injuries and one fatality.According to witnesses, the accident occurred when a sedan, driven by 23-year-old Mark Johnson, collided with a SUV, driven by 45-year-old Susan Thompson, at the intersection of Main Street and Elm Street. The impact of the collision caused both vehicles to spin out of control, and the sedan ultimately struck a nearby utility pole.Emergency responders were quickly called to the scene, and both drivers, as well as several passengers in the SUV, were rushed to the hospital with injuries. Unfortunately, one passenger in the SUV, identified as 56-year-old Jane Doe, was pronounced dead at the scene.The cause of the accident is currently under investigation by local police. Initial reports indicate that Johnson may have run a red light, but the investigation is still ongoing.The accident has resulted in widespread sadness and mourning in the community, and has also raised concerns about traffic safety on Main Street. Many residents have called for increased enforcement of traffic laws and for the city to consider implementing measures to improve safety at the intersection where the accident occurred.This tragic accident serves as a reminder of the dangers of reckless and negligent driving. It is a tragic reminder that even a small mistake on the road can have serious and life-changing consequences. We should all take responsibility for our actions on the road and drive with care and attention, in order to prevent accidents like this from happening in the future.Our thoughts and prayers are with the victims of this accident and their families during this difficult time.",
+    "image": "https://i.ibb.co/Yh01RhW/crash-test-collision-60-km-h-distraction-163016.jpg"
+  },
+  {
+    "_id": 5,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Scientists speculate that ours might not be held",
+    "category": "Breaking",
+    "image": "https://i.ibb.co/p4xHv8s/pexels-photo-669619.jpg",
+    "description": "In partnership with Sydney startup Trace, Envato is delivering on its sustainability promise as a B-Corp and meeting part of its recent commitment to the To Whom It Should Concern campaign. Envato is now officially carbon neutral, as part of a comprehensive new sustainability.When we signed on to the To Whom It May Concern campaign we made a pledge to be 100% renewable by 2030 and carbon zero by 2040,” said Envato CEO Hichame Assi. “It’s a commitment made on the back of our B Corp certification, and one we believe reflects not just our values but a broader sense of how businesses can contribute to fighting climate change.We are proud that our people can make a positive impact on the world around us through their work at Envato. And while there is still lots of work to do to realise carbon, we’re nonetheless pleased we’ve reached this sustainability milestone and thrilled to partner with Trace to further track and refine the management of our carbon footprint. An through Trace, Envato is now able to more comprehensively measure the amount of carbon emissions the business generates. This includes not just its physical offices in Melbourne, Guadalajara and Los Angeles, but also includes an estimate of the footprint of its 600 plus staff who work flexibly around the world, as well as the usage tied to its tech infrastructure including our cloud computing services."
+  },
+  {
+    "_id": 6,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Suicide occurred in Barishal",
+    "category": "Breaking",
+    "image": "https://i.ibb.co/SJk6Gf6/pexels-photo-9563663.jpg",
+    "description": "Suicide is a serious public health issue that affects people of all ages and backgrounds. According to the World Health Organization, suicide is the second leading cause of death among 15-29 year-olds globally. It is a complex issue with multiple causes, and it is important to raise awareness about suicide and its prevention.One of the main causes of suicide is mental health issues such as depression, anxiety, and PTSD. These conditions can lead to feelings of hopelessness, helplessness, and worthlessness, which can make suicide seem like the only option. Other factors that can contribute to suicide include substance abuse, financial stress, relationship problems, and traumatic life events.It's important to recognize the warning signs of suicide and to take them seriously. These signs can include talking about wanting to die, talking about feeling hopeless or having no purpose, increasing alcohol or drug use, and withdrawing from friends, family, and activities.Preventing suicide requires a multifaceted approach that addresses the underlying causes of suicide, including mental health and substance abuse issues. This approach should include education, early identification and treatment of mental health conditions, and support for those who have lost someone to suicide.One of the most important steps in preventing suicide is to reach out for help if you or someone you know is struggling. This can be done by talking to a trusted friend or family member, seeking help from a mental health professional, or calling a suicide prevention hotline.It's important to remember that suicide is preventable and that help is available. By raising awareness about suicide and its prevention, we can work together to save lives. If you or someone you know is in crisis, please reach out for help.Here are some helplines that you can contact if you or someone you know needs help:Suicide is a complex issue with multiple causes and it's important to raise awareness about it and its prevention. Let's come together to support those who are struggling and to save lives."
+  },
+  {
+    "_id": 7,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Today's Weather Temperature is below to 10 degrees Celsius",
+    "category": "Breaking",
+    "description": "Winter is a season that brings a unique set of challenges and opportunities. As the days get shorter and the temperatures drop, it's important to be prepared for the colder weather and the potential hazards it can bring.One of the most significant hazards of winter is the risk of hypothermia and frostbite. These conditions occur when the body loses heat faster than it can produce it, and they can be life-threatening if not treated quickly. To prevent hypothermia and frostbite, it's important to dress in warm layers, protect exposed skin, and to pay attention to weather forecast and wind chill.Another hazard of winter is the risk of accidents on the road. Snow and ice can make for slippery driving conditions, and it's important to drive carefully, reduce speed, and keep a safe distance from other vehicles. It's also important to equip your vehicle with snow tires, chains, and a winter emergency kit.Winter also brings the opportunity for outdoor activities such as skiing, snowboarding, ice skating, and snowshoeing. These activities can be a great way to stay active and enjoy the winter weather, but they also come with their own set of hazards. It's important to be aware of the risks and take proper safety precautions when participating in these activities.Winter also can bring some other challenges, such as power outages, due to storms or heavy snowfall, and a harder time to travel, and to get groceries, it's important to have a plan for these situations and to be prepared with emergency supplies.Despite the challenges, winter can also be a beautiful and enjoyable season. Whether you're cozying up by the fire or hitting the slopes, there are plenty of ways to make the most of the winter months.In conclusion, Winter can bring hazards, but also many opportunities and beautiful moments, it's important to be prepared for the colder weather, and the potential hazards that it can bring, and enjoy the winter season safely.",
+    "image": "https://i.ibb.co/MGTP8tG/pexels-photo-14947212.jpg"
+  },
+  {
+    "_id": 8,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "Tornado is coming on 25 jun,2023",
+    "category": "Breaking",
+    "image": "https://i.ibb.co/YbCsjCF/pexels-photo-5726814.jpg",
+    "description": "Tornadoes are powerful and dangerous storms that can cause significant damage and destruction. They are formed by the combination of warm and cold air, and they are characterized by a rotating column of air that extends from the base of a thunderstorm to the ground.Tornadoes can occur anywhere, but they are most common in the central and southern United States, particularly in the spring and summer months. They can strike with little warning and can be difficult to predict, making them a constant threat to communities.The damage caused by a tornado can be devastating. Strong winds can destroy homes, buildings, and infrastructure, and flying debris can cause injury or death. Tornadoes can also cause power outages, flash flooding, and other hazards that can make it difficult for communities to recover.To prepare for a tornado, it's important to have a plan in place. This should include identifying a safe place to take shelter, such as a basement or storm cellar, and having emergency supplies on hand, such as food, water, and a battery-powered radio. It's also important to stay informed about weather conditions and to be ready to act quickly if a tornado warning is issued.During a tornado, it's essential to take shelter immediately. This can be in a basement or storm cellar, or in an interior room on the lowest level of a building. Avoid windows and stay away from exterior walls. If you are in a vehicle, try to get to a sturdy shelter, or lie in a low ditch or ravine.After a tornado, it's important to be aware of the potential hazards that can occur, such as power lines, gas leaks, and structural damage. Do not enter damaged buildings and stay away from any debris. Listen to local authorities for information on when it is safe to return to your home.Tornadoes are powerful and dangerous storms that can cause significant damage and destruction. It's important to be prepared for the potential hazards that they can bring and to take immediate action when a warning is issued. Remember that safety comes first, and always listen to the advise of local authorities."
+  },
+  {
+    "_id": 9,
+    "author": {
+      "author_name": "Jimmy Dane",
+      "date": "2022-08-24",
+      "author_img": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    "title": "The rain will come heavily after this winter",
+    "category": "Breaking",
+    "image": "https://i.ibb.co/yWgTpV8/pexels-photo-459451.jpg",
+    "description": "Heavy rain can cause a variety of problems, from flash floods to landslides, that can affect communities and disrupt daily life. It's important to be aware of the potential hazards that heavy rain can bring and to take steps to protect yourself and your property.One of the most significant hazards of heavy rain is flash flooding. This occurs when water from heavy rainfalls cannot be absorbed into the ground quickly enough, and it can cause damage to homes and businesses, and it can also be fatal. To protect yourself from flash floods, it's important to be aware of weather forecasts, and avoid low-lying areas and areas prone to flooding, and to stay up to date with any flood warnings or watches that may be in effect.Another hazard of heavy rain is landslides. These can occur when heavy rain saturates the ground, causing it to become unstable and slide down a slope. Landslides can be particularly dangerous, as they can cause damage to homes and buildings, and they can also block roads and disrupt transportation. To protect yourself from landslides, it's important to be aware of the potential hazards in your area, and to avoid building or living in areas prone to landslides.Heavy rain can also cause power outages and traffic disruptions, making it harder to travel and to get supplies. It's important to have a plan in case of power outages and to be prepared with emergency supplies.In addition to the hazards, heavy rain can also bring benefits such as replenishing water supplies and helping to prevent wildfires. However, it's important to remember that too much of a good thing can also be bad and can bring hazards to communities.In conclusion, heavy rain can cause a variety of problems from flash floods to landslides. It's important to be aware of the potential hazards that heavy rain can bring and to take steps to protect yourself and your property. Stay informed with weather forecasts, and be prepared for power outages and other disruptions. Remember that safety comes first, and always follow the advise of local authorities."
+  }
+]
