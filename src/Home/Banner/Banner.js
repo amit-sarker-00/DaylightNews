@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import "./Banner.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 import { useQuery } from "@tanstack/react-query";
@@ -19,7 +19,7 @@ const Banner = () =>
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-1  my-4 sm:my-10 md:my-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-1  my-4 sm:my-10 md:my-10">
         <div className=" ">
           <Splide
             aria-label=""
@@ -44,7 +44,7 @@ const Banner = () =>
             {isLoading && <SkeletonLoading cards={6} />}
             {bannerData?.map((banner) => (
               <SplideSlide className="relative" key={banner._id}>
-                <Link
+                <NavLink id="RouterNavLink"
                   to={`/detail/${ banner._id }`}
                   className="w-full h-[100%] gradient"
                 >
@@ -56,7 +56,7 @@ const Banner = () =>
                   <div className=" absolute bottom-10 px-5 text-cyan-500  z-50">
                     <div className="  ">
                       <Link
-                        to={`/category/${ banner?.category }`}
+                        to={`/category/${banner?.category}`}
                         className="font-bold py-1 mb-2 px-2 bg-red-600 hover:bg-red-700 text-white"
                       >
                         {banner?.category}
@@ -85,7 +85,7 @@ const Banner = () =>
                       </div>
                     </div>
                   </div>
-                </Link>
+                </NavLink>
               </SplideSlide>
             ))}
           </Splide>
@@ -97,14 +97,14 @@ const Banner = () =>
 
               <div className=" h-full border sm:border-none  relative overflow-hidden">
                 <img
-                  className="w-[100%] xl:h-[284px] md:h-[200px] sm:h-[200px] h-[230px] object-cover ease-in-out duration-500 transform hover:scale-125 "
+                  className="w-[100%] xl:h-[252px] lg:h-[200px] md:h-[180px] sm:h-[200px] h-[230px] object-cover ease-in-out duration-500 transform hover:scale-125 "
                   src={banner?.picture}
                   alt=""
                 />
                 <div className=" absolute bottom-2 pl-3 text-cyan-500  z-40">
                   <div className="  ">
                     <Link
-                      to={`/category/${ banner?.category }`}
+                      to={`/category/${banner?.category}`}
                       className="font-bold mb-2 px-2 bg-red-600 hover:bg-red-700 rounded-sm text-white"
                     >
                       {banner?.category}

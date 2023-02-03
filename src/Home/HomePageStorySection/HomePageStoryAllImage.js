@@ -1,19 +1,18 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { BiTime } from 'react-icons/bi';
-import { RxCalendar } from 'react-icons/rx';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import HomePageSnipper from './HomePageSnipper';
 
-const HomePageStoryAllImage = () => {
+const HomePageStoryAllImage = () =>
+{
 
     const params = useParams()
-    console.log(params)
+
 
     const { data: stories, refetch } = useQuery({
-        queryKey: ['stories', params?.id],
-        queryFn: () => fetch(`${process.env.REACT_APP_API_URL}stories/${params?.id}`).then(res => res.json())
+        queryKey: [ 'stories', params?.id ],
+        queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }stories/${ params?.id }`).then(res => res.json())
     })
 
 

@@ -3,16 +3,19 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { deleteWriter } from "../../../api/auth";
 
-const AllWriters = () => {
-  const [writers, setWriters] = useState([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}writers`)
+const AllWriters = () =>
+{
+  const [ writers, setWriters ] = useState([]);
+  const [ loading, setLoading ] = useState(false);
+  useEffect(() =>
+  {
+    fetch(`${ process.env.REACT_APP_API_URL }writers`)
       .then((res) => res.json())
       .then((data) => setWriters(data));
   }, []);
   // console.log(writers);
-  const handleDelete = (id) => {
+  const handleDelete = (id) =>
+  {
     deleteWriter(id);
     toast.success("delet writer Succussfuly");
     setLoading(!loading);
