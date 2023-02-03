@@ -45,11 +45,11 @@ const Home = () => {
           <OnlineVatingSection />
           <SportsNews />
           <HomePageStorySection />
-          {/* <VideoSection />
-          <ViralNews /> */}
+          <VideoSection />
+          <ViralNews />
           {/* <News/> */}
-          {/* <EnvironmentNews />
-          <Voices /> */}
+          <EnvironmentNews />
+          <Voices />
         </>
       )}
     </div>
