@@ -12,7 +12,7 @@ const EnvironmentNewsCard = ({ EnvNews }) =>
       >
 
         <div>
-          <div className=" w-full lg:max-w-full xl:h-[250px] lg:flex">
+          <div className=" w-full lg:max-w-full xl:h-[220px] lg:flex">
             <div className="h-48 lg:h-auto lg:w-48 relative flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" title="Mountain">
               <img className="w-full h-full" src={picture} alt="" />
               <Link to={`/category/${ category }`} className="absolute w-full font-semibold bg-red-100 px-1 py-1 text-red-600  left-0 top-0">{category}</Link>

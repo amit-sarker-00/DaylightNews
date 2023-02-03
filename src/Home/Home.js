@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Spinner from "../Components/Spinner/Spinner";
 import useTitle from "../Hooks/useTitle";
-import Category from "../Pages/Categoris/Category";
 import Banner from "./Banner/Banner";
 import BreakingNews from "./BreakingNews/BreakingNews";
 import Culture from "./Culture-Lifestyle/Culture-Lifestyle";
@@ -34,7 +33,7 @@ const Home = () => {
         <SearchData />
       ) : (
         <>
-          <Banner />
+            <Banner />
           <BreakingNews />
           <TrendingNews />
           <HomePageDivisionData />
@@ -45,6 +44,7 @@ const Home = () => {
           <HomePageStorySection />
           <VideoSection />
           <ViralNews />
+            {/* <News/> */}
           <EnvironmentNews />
           <Voices />
         </>

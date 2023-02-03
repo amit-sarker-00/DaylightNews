@@ -49,8 +49,8 @@ const TrendingNews = () =>
           {trendingNews?.map((trending) => (
             <SplideSlide key={trending?._id}>
 
-              <div className=" h-80 shadow hover:shadow-2xl border   ease-in-out duration-300 hover:border-gray-300 ">
-                <NavLink id="RouterNavLink" to={`/detail/${ trending?._id }`}>
+              <div className=" h-80 shadow hover:text-red-500 hover:shadow-2xl border   ease-in-out duration-300 hover:border-gray-300 ">
+                <NavLink to={`/detail/${ trending?._id }`}>
                   <div className="overflow-hidden">
                     <img
                       className="w-full h-44 ease-in-out duration-500 transform hover:scale-125"
@@ -73,7 +73,7 @@ const TrendingNews = () =>
                       </div>
                     </div>
                     {" "}
-                    <Link to={`detail/${ trending?._id }`} className="sm:text-xl text-md link-hover hover:text-red-500 font-bold">
+                    <Link to={`detail/${ trending?._id }`} className="sm:text-xl text-md link-hover  font-bold">
                       {trending?.title?.length > 49
                         ? trending?.title?.slice(0, 49) + "..."
                         : trending?.title}

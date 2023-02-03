@@ -13,7 +13,7 @@ const HomePageArticalAndPost = () =>
       .then((res) => res.json())
   })
   const { data: recentlyNews, isLoading: recentLoading } = useQuery({
-    queryKey: [ 'articleNews' ],
+    queryKey: [ 'recentlyNews' ],
     queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }recentlyNews`)
       .then((res) => res.json())
   })
