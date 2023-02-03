@@ -24,7 +24,8 @@ import HomePageDivisionData from "./DistricNews/HomePageDivisionData";
 import LiveStockMarketData from "./LiveStockMarketData/LiveStockMarketData";
 import SpacialNews from "../Components/SpacialNews/SpacialNews";
 
-const Home = () => {
+const Home = () =>
+{
   useTitle("Home");
   const { searchContent } = useContext(AuthContext);
 

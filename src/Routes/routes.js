@@ -1,10 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
+import InternetionalTorism from "../Components/InternetionalTorism/InternetionalTorism";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import BannerDetails from "../Home/BannerDetails/BannerDetails";
+import EntertainmentNews from "../Home/EntertainmentNews/EntertainmentNews/EntertainmentNews";
 import AllCategoryPage from "../Components/AllCategoryPage/AllCategoryPage";
 import CardDetailsPage from "../Components/CardDetailsPage/CardDetailsPage";
 import BdOnlinePayment from "../Components/DonationPage/BdOnlinePayment";
 import DonationFail from "../Components/DonationPage/DonationFail";
 import DonationPage from "../Components/DonationPage/DonationPage";
-import ErrorPage from "../ErrorPage/ErrorPage";
+import Gadgets from "../Gadgets/Gadgets";
+import GadgetsDetails from "../Gadgets/GadgetsDetails";
 import Home from "../Home/Home";
 import Domestic from "../Home/HomePageLetestNews/Demestic";
 import Health from "../Home/HomePageLetestNews/Health";
@@ -24,6 +29,7 @@ import UpdateNews from "../Pages/Accounts/Writers/UpdateNews";
 import WriterProfile from "../Pages/Accounts/Writers/WriterProfile";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
+import SlickCarousel from "../Practice/SlickCarousel/SlickCarousel";
 import Welcome from "../Pages/Welcome/Welcome";
 import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
@@ -44,6 +50,7 @@ export const router = createBrowserRouter([
       },
       { path: "detail/:id", element: <CardDetailsPage /> },
       { path: "/category/:id", element: <AllCategoryPage /> },
+      { path: "/gadgets/:id", element: <Gadgets /> },
 
       { path: "/stockMarket", element: <LiveStockMarketData /> },
       { path: "/donate", element: <DonationPage /> },
@@ -57,6 +64,9 @@ export const router = createBrowserRouter([
         element: <DonationFail />,
       },
 
+      {
+        path: "gadgets", element: <Gadgets />
+      },
       {
         path: "/account",
         element: (
@@ -105,12 +115,16 @@ export const router = createBrowserRouter([
             path: "comments",
             element: <Comments />,
           },
+
+
         ],
       },
     ],
   },
 
-
   { path: "signup", element: <SignUp /> },
   { path: "login", element: <SignIn /> },
+  { path: '/SlickCarousel', element: <SlickCarousel /> },
+  { path: '/entertainmentNews', element: <EntertainmentNews /> },
+
 ]);

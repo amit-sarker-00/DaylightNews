@@ -29,9 +29,9 @@ const LetestNewsCard = ({ news }) =>
             </div>
           </div>
           <div className="mx-2">
-            {/* <h1 className="link-hover">
+            <h1 className="link-hover">
               {title?.length > 22 ? title.slice(0, 22) + "..." : title}
-            </h1> */}
+            </h1>
             <h1 className="link-hover  ">{title}</h1>
           </div>
         </div>

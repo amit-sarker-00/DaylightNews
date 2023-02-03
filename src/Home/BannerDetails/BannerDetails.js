@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 const BannerDetails = () => {
   const params = useParams();
   const { id } = params;
+console.log(params);
 
   // useEffect(() => {
   //   fetch(`mainBanner.json/${params._id}`)

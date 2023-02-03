@@ -6,8 +6,8 @@ import VoicesCard from "./VoicesCard";
 const Voices = () =>
 {
   const { data: voicesNews, isLoading } = useQuery({
-    queryKey: [ 'voicesNews' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }voicesNews`)
+    queryKey: ['voicesNews'],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL }voicesNews`)
       .then((res) => res.json())
   })
 
