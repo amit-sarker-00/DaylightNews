@@ -5,6 +5,8 @@ import { FaFacebookF, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
+import SpacialNews from "../../Components/SpacialNews/SpacialNews";
+import DonateNotUser from "../../Components/DonationPage/DonateNotUser";
 
 
 const Navbar = () =>
@@ -47,9 +49,10 @@ const Navbar = () =>
 
   return (
     <main>
+
       <section className="bg-[#f0f2f5] pb-5">
         <div className="">
-          <div className="w-5/6 mx-auto flex  justify-between py-1">
+          <div className="max-w-[1440px] mx-auto flex  justify-between py-1">
             <div>
               <label
                 htmlFor="my-drawer"
@@ -60,14 +63,17 @@ const Navbar = () =>
               </label>
             </div>
 
-            <div>
+            <div className="flex item-center">
+              {
+                user?.uid ? <Link to="/Donate" className="bg-black px-5 py-1 text-white rounded-sm mr-5">Donate us</Link> : <label htmlFor="my-modal-3" className="bg-black px-5 py-1 text-white rounded-sm mr-5">Donate us</label>
+              }
               <h1>
                 {temp?.toFixed(0)}°c <span>Tempareture</span>{" "}
               </h1>
             </div>
           </div>
 
-          <div className="w-5/6 mx-auto items-center sm:flex-row flex flex-col justify-between">
+          <div className="max-w-[1440px] mx-auto items-center sm:flex-row flex flex-col justify-between">
             <div>
               <ul className="flex gap-3">
                 <Link className="rounded-full" href="#">
@@ -109,30 +115,30 @@ const Navbar = () =>
         </div>
       </section>
 
-      <section className="my-2 w-5/6 mx-auto ">
+      <section className="my-2 max-w-[1440px] mx-auto ">
         <div className="flex justify-between">
           <div>
-            <ul className=" gap-3 hidden lg:flex">
+            <ul className=" gap-5 hidden lg:flex">
               <li>
                 <Link to='/'>Home</Link>
               </li>
               <li>
-                <Link>News</Link>
+                <Link className="text-1xl font-semibold">News</Link>
               </li>
               <li>
-                <Link>Sports</Link>
+                <Link className="text-1xl font-semibold">Sports</Link>
               </li>
               <li>
-                <Link>Pages</Link>
+                <Link className="text-1xl font-semibold">Pages</Link>
               </li>
               <li>
-                <Link>Travel</Link>
+                <Link className="text-1xl font-semibold">Travel</Link>
               </li>
               <li>
-                <Link>Future </Link>
+                <Link className="text-1xl font-semibold">Future </Link>
               </li>
               <li>
-                <Link>Culture</Link>
+                <Link className="text-1xl font-semibold" to="/stockMarket">Live Stock Market </Link>
               </li>
               <li>
                 <div className="dropdown dropdown-hover">
@@ -158,7 +164,7 @@ const Navbar = () =>
                 </div>
               </li>
               <li>
-                <Link>Gadgets</Link>
+                <Link className="text-1xl font-semibold">Gadgets</Link>
               </li>
             </ul>
           </div>
@@ -198,6 +204,10 @@ const Navbar = () =>
           </div>
         </div>
       </section>
+      <div className="w-full  mx-auto">
+        <SpacialNews />
+      </div>
+      <DonateNotUser />
     </main>
   );
 };

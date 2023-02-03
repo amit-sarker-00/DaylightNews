@@ -35,7 +35,7 @@ const SportsNews = () =>
         <div className="">
           {sportsNews?.slice(0, 5).map((sports) => (
             <Link
-              to={`/detail/${ sports?._id }`}
+              to={`/detail/${sports?._id}`}
               key={sports._id}
               className=" h-full hover:text-red-500 w-full  "
             >
@@ -66,7 +66,7 @@ const SportsNews = () =>
         <div className="">
           {sportsNews?.slice(5, 10).map((sports) => (
             <Link
-              to={`/detail/${ sports?._id }`}
+              to={`/detail/${sports?._id}`}
               key={sports._id}
               className=" h-full w-full  "
             >

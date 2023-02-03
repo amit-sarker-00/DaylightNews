@@ -4,12 +4,13 @@ import Drawer from "../Components/Drawer/Drawer";
 import Footer from "../Pages/Shared/Footer";
 import Navbar from "../Pages/Shared/Navbar";
 
-const Main = () => {
+const Main = () =>
+{
   return (
     <div>
       <div className="drawer">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-     
+
 
         <div className="drawer-content">
           <Navbar />
