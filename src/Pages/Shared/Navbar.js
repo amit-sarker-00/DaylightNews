@@ -207,7 +207,7 @@ const Navbar = () => {
       <div className="w-full  mx-auto">
         <SpacialNews />
       </div>
-      <DonateNotUser />
+      {/* <DonateNotUser /> */}
     </main>
   );
 };
