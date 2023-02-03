@@ -64,7 +64,7 @@ const Culture = () => {
           {bannerImg?.slice(-4).map((banner) => (
             <Link
               className="border w-[100%] h-64 hover:text-red-600 transition-all "
-              to={`/bannerDetails/${banner?._id}`}
+              to={`/detail/${banner?._id}`}
               key={banner?._id}
             >
               <div className="h-[80%]">

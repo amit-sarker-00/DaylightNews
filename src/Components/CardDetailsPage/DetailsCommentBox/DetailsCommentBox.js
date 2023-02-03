@@ -1,25 +1,29 @@
 import React, { useContext } from "react";
 import { format } from "date-fns";
 import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
 import { addComment } from "../../../api/services";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import AllComment from "./AllComment";
 
-const DetailsCommentBox = ({ detail, singleNewsComment, refetch }) => {
+const DetailsCommentBox = ({ detail, singleNewsComment, refetch }) =>
+{
 
     const { picture } = detail;
     const { user } = useContext(AuthContext);
-    const [loading, setLoading] = React.useState(false);
+    const [ loading, setLoading ] = React.useState(false);
 
 
 
-    const handleCommentBox = (e) => {
+    const handleCommentBox = (e) =>
+    {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const message = form.message.value;
-        if (!message) {
+        if (!message)
+        {
             return alert('Please write a message!')
         }
         const commentData = {
@@ -33,7 +37,8 @@ const DetailsCommentBox = ({ detail, singleNewsComment, refetch }) => {
             date: format(new Date(), "PP"),
         };
 
-        addComment(commentData).then((data) => {
+        addComment(commentData).then((data) =>
+        {
             toast.success("Comment Successfuly !");
             refetch()
             e.target.reset();
@@ -77,11 +82,19 @@ const DetailsCommentBox = ({ detail, singleNewsComment, refetch }) => {
                     ></textarea>
                 </div>
 
-                <input
+
+                {user?.email ? <input disabled={!user?.email}
                     type="submit"
                     className="py-2 px-7 mb-5 bg-red-600 text-white"
                     value="Submit Comment "
-                />
+                /> : <div>
+                    <input disabled={!user?.email}
+                        type="submit"
+                        className="py-2 px-7 mb-5 bg-red-300 text-white"
+                        value="Submit Comment "
+                    />
+                    <p className="">Please Sign in befire then you can comments <Link className="font-bold link " to={'/login'}>Login</Link> </p>
+                </div>}
             </form>
             {singleNewsComment?.map((comment) => (
                 <AllComment key={comment?._id} comment={comment}></AllComment>

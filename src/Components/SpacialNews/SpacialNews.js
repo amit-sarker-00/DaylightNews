@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import "../SpacialNews/SpacialNews.css"
+import Marquee from "react-fast-marquee";
 
-const SpacialNews = () => {
+const SpacialNews = () =>
+{
 
 
-    const [bannerData, setBannerData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    useEffect(() => {
+    const [ bannerData, setBannerData ] = useState([]);
+    const [ loading, setLoading ] = useState(true);
+    useEffect(() =>
+    {
         fetch(`sylet.json`)
             .then((res) => res.json())
-            .then((data) => {
+            .then((data) =>
+            {
                 setBannerData(data);
                 setLoading(false);
             });
     }, []);
-    console.log(bannerData)
+
 
     return (
         <div className='max-w-[1440px] mx-auto'>
@@ -22,21 +26,13 @@ const SpacialNews = () => {
                 <div className=''>
                     <h1 className='text  '>Spacial News</h1>
                 </div>
-                <div className='w-full flex'>
 
+                <Marquee >
+                    {bannerData?.map((item) => (
+                        <> {item?.title} || </>
+                    ))}
+                </Marquee>
 
-
-                    <div className='flex '>
-                        <marquee direction="left"
-                            onmousedown="this.stop();"
-                            onmouseup="this.start();">
-                            {bannerData.map((item) => (
-                                <> {item?.title} || </>
-                            ))}
-                        </marquee>
-                    </div>
-
-                </div>
             </div>
         </div>
     );

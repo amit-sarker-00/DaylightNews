@@ -1,24 +1,24 @@
 import { useQuery } from '@tanstack/react-query';
-import React  from 'react';
+import React from 'react';
 import HomePageSnipper from '../HomePageStorySection/HomePageSnipper';
 import LetestNewsCard from './LetestNewsCard';
 
-const Health = () => {
-    const { data: healths,isLoading } = useQuery({
+const Domestic = () =>
+{
+    const { data: domesticNews, isLoading } = useQuery({
         queryKey: [ 'letestNews' ],
-        queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }letestNews?letest=${'health'}`)
+        queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }letestNews?letest=${ 'Domestic' }`)
             .then((res) => res.json())
     })
 
     return (
         <section className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-5 sm:gap-y-10 gap-y-5'>
-            {isLoading &&  <HomePageSnipper/>}
-
+            {isLoading && <HomePageSnipper />}
             {
-                healths?.slice(-8)?.map(health => <LetestNewsCard key={health?._id} news={health} />)
+                domesticNews?.slice(-8)?.map(fashion => <LetestNewsCard key={fashion?._id} news={fashion} />)
             }
         </section>
     );
 };
 
-export default Health;
+export default Domestic;

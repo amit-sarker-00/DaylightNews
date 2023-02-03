@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import
 {
   FaGithub,
@@ -11,21 +11,18 @@ import
 import { RxCalendar } from "react-icons/rx";
 import { BsFacebook } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
 const ViralNews = () =>
 {
-  const [ viralNews, setviralNews ] = useState([]);
-  useEffect(() =>
-  {
-    fetch(`${ process.env.REACT_APP_API_URL }news`)
+  const { data: viralNews, isLoading } = useQuery({
+    queryKey: [ 'viralNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }viralNews`)
       .then((res) => res.json())
-      .then((data) =>
-      {
-        const viralNews = data.filter(viral => viral.category === 'viral')
-        setviralNews(viralNews)
-      });
-  }, []);
-  console.log(viralNews);
+  })
+
+
   return (
     <div className="mb-4 sm:my-10 md:my-16">
       <div className="font-bold text-xl sm:text-2xl text-red-500 my-3">
@@ -37,11 +34,12 @@ const ViralNews = () =>
             <h1>MOST POPULAR</h1>
           </div>
           <div>
+            {isLoading && <SkeletonLoading />}
             {viralNews?.slice(0, 4).map((viral) => (
               <Link
                 to={`/detail/${ viral?._id }`}
                 key={viral?._id}
-                className=" h-full w-full  "
+                className=" h-full hover:text-red-500 w-full  "
               >
                 <div className="flex w-full border h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
@@ -53,7 +51,7 @@ const ViralNews = () =>
                   </div>
                   <div className="mx-2 w-72 h-32">
                     <h4 className="font-semibold text-red-400">{viral?.name}</h4>
-                    <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
+                    <h3 className="sm:text-md link-hover  text-md font-bold mb-1">
                       {viral?.title}
                     </h3>
                     <p className="text-gray-500">
@@ -76,11 +74,12 @@ const ViralNews = () =>
             <h1>TALKED ABOUT</h1>
           </div>
           <div>
+            {isLoading && <SkeletonLoading />}
             {viralNews?.slice(4, 8).map((viral) => (
               <Link
                 to={`/detail/${ viral?._id }`}
                 key={viral?._id}
-                className=" h-full w-full  "
+                className=" h-full hover:text-red-500 w-full  "
               >
                 <div className="flex w-full border h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
@@ -92,7 +91,7 @@ const ViralNews = () =>
                   </div>
                   <div className="mx-2 w-72 h-32">
                     <h4 className="font-semibold text-red-400">{viral?.name}</h4>
-                    <h3 className="sm:text-md link-hover hover:text-red-500 text-md font-bold mb-1">
+                    <h3 className="sm:text-md link-hover  text-md font-bold mb-1">
                       {viral?.title}
                     </h3>
                     <p className="text-gray-500">

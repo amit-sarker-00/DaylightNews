@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import "./Banner.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
+import { useQuery } from "@tanstack/react-query";
 
-const Banner = () => {
-  const [bannerData, setBannerData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}news`)
+const Banner = () =>
+{
+
+  const { data: bannerData, isLoading } = useQuery({
+    queryKey: [ 'bannerNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }bannerNews`)
       .then((res) => res.json())
-      .then((data) => {
-        setBannerData(data);
-        setLoading(false);
-      });
-  }, []);
-  // console.log(bannerData)
+  })
+
 
   return (
     <div>
@@ -43,11 +41,11 @@ const Banner = () => {
               speed: "2000",
             }}
           >
-            {/* {bannerData?.length === 0 && <SkeletonLoading cards={6} />} */}
-            {bannerData?.slice(-8)?.map((banner) => (
+            {isLoading && <SkeletonLoading cards={6} />}
+            {bannerData?.map((banner) => (
               <SplideSlide className="relative" key={banner._id}>
-                <Link
-                  to={`/detail/${banner._id}`}
+                <NavLink id="RouterNavLink"
+                  to={`/detail/${ banner._id }`}
                   className="w-full h-[100%] gradient"
                 >
                   <img
@@ -87,19 +85,19 @@ const Banner = () => {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </NavLink>
               </SplideSlide>
             ))}
           </Splide>
         </div>
         <div className=" gap-1 grid grid-cols-1 sm:grid-cols-2 h-full w-full">
-          {bannerData?.length === 0 && <SkeletonLoading cards={2} />}
-          {bannerData?.slice(103, 107)?.map((banner) => (
-            <Link to={`/detail/${banner._id}`} key={banner._id}>
+          {isLoading && <SkeletonLoading cards={2} />}
+          {bannerData?.slice(-4)?.map((banner) => (
+            <Link to={`/detail/${ banner._id }`} key={banner._id}>
 
               <div className=" h-full border sm:border-none  relative overflow-hidden">
                 <img
-                  className="h-[100%] w-[100%] ease-in-out duration-500 transform hover:scale-125  "
+                  className="w-[100%] xl:h-[252px] lg:h-[200px] md:h-[180px] sm:h-[200px] h-[230px] object-cover ease-in-out duration-500 transform hover:scale-125 "
                   src={banner?.picture}
                   alt=""
                 />

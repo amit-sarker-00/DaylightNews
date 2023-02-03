@@ -1,24 +1,18 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
 import { RxCalendar } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
 const TrendingNews = () =>
 {
-  const [ trendingNews, setTrendingNews ] = useState([]);
-  useEffect(() =>
-  {
-    fetch(`${ process.env.REACT_APP_API_URL }news`)
+  const { data: trendingNews, isLoading } = useQuery({
+    queryKey: [ 'trendingNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }trendingNews`)
       .then((res) => res.json())
-      .then((result) =>
-      {
-        const breakingNews = result?.filter(
-          (trending) => trending?.category === "HotNews"
-        );
-        setTrendingNews(breakingNews);
-      });
-  }, []);
+  })
+
 
   return (
     <div className=" mb-4 sm:mb-10 ">
@@ -51,12 +45,12 @@ const TrendingNews = () =>
             perMove: 2,
           }}
         >
-          {trendingNews?.length === 0 && <SkeletonLoading cards={6} />}
+          {isLoading && <SkeletonLoading cards={6} />}
           {trendingNews?.map((trending) => (
             <SplideSlide key={trending?._id}>
 
-              <div className=" h-80 shadow hover:shadow-2xl border   ease-in-out duration-300 hover:border-gray-300 ">
-                <Link to={`/detail/${ trending?._id }`}>
+              <div className=" h-80 shadow hover:text-red-500 hover:shadow-2xl border   ease-in-out duration-300 hover:border-gray-300 ">
+                <NavLink to={`/detail/${ trending?._id }`}>
                   <div className="overflow-hidden">
                     <img
                       className="w-full h-44 ease-in-out duration-500 transform hover:scale-125"
@@ -78,16 +72,14 @@ const TrendingNews = () =>
                         </p>
                       </div>
                     </div>
-                    <Link to={`detail/${ trending?._id }`}>
-                      {" "}
-                      <h3 className="sm:text-xl text-md link-hover hover:text-red-500 font-bold">
-                        {trending?.title?.length > 49
-                          ? trending?.title?.slice(0, 49) + "..."
-                          : trending?.title}
-                      </h3>
+                    {" "}
+                    <Link to={`detail/${ trending?._id }`} className="sm:text-xl text-md link-hover  font-bold">
+                      {trending?.title?.length > 49
+                        ? trending?.title?.slice(0, 49) + "..."
+                        : trending?.title}
                     </Link>
                   </div>
-                </Link>
+                </NavLink>
               </div>
             </SplideSlide>
           ))}

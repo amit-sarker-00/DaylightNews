@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import HomePageSnipper from './HomePageSnipper';
 import HomePageStoryAllCard from './HomePageStoryAllCard';
 
-const HomePageStoryModel = () => {
+const HomePageStoryModel = () =>
+{
 
-    const [datas, setDatas] = useState([])
+    const [ datas, setDatas ] = useState([])
 
 
-    useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}stories`)
+    useEffect(() =>
+    {
+        fetch(`${ process.env.REACT_APP_API_URL }stories`)
             .then((res) => res.json())
-            .then((result) => {
+            .then((result) =>
+            {
                 const breakingNews = result?.filter(breaking => breaking?.stories === 'modelStory')
                 setDatas(breakingNews)
 
             });
     }, []);
-    // console.log(datas)
 
 
     return (

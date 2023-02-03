@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Spinner from "../Components/Spinner/Spinner";
 import useTitle from "../Hooks/useTitle";
-import Category from "../Pages/Categoris/Category";
 import Banner from "./Banner/Banner";
 import BreakingNews from "./BreakingNews/BreakingNews";
 import Culture from "./Culture-Lifestyle/Culture-Lifestyle";
@@ -16,7 +15,6 @@ import InternetionalTorism from "./InternetionalTorism/InternetionalTorism";
 import EntertainmentNews from "./EntertainmentNews/EntertainmentNews";
 import ViralNews from "./ViralNews/ViralNews";
 import VideoSection from "./VideoSection/VideoSection";
-import FoodNews from "./FoodNews/FoodNews";
 import SportsNews from "./SportsNews/SportsNews";
 import Voices from "./Voices/Voices";
 
@@ -38,18 +36,18 @@ const Home = () => {
         <SearchData />
       ) : (
         <>
-          <Banner />
+            <Banner />
           <BreakingNews />
           <TrendingNews />
           <HomePageDivisionData />
           <HomePageLetestNews />
           <HomePageArticalAndPost />
-
           <OnlineVatingSection />
           <SportsNews />
           <HomePageStorySection />
           <VideoSection />
           <ViralNews />
+            {/* <News/> */}
           <EnvironmentNews />
           <Voices />
         </>

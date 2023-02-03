@@ -4,7 +4,8 @@ import Drawer from "../Components/Drawer/Drawer";
 import Footer from "../Pages/Shared/Footer";
 import Navbar from "../Pages/Shared/Navbar";
 
-const Main = () => {
+const Main = () =>
+{
   return (
     <div>
       <div className="drawer">

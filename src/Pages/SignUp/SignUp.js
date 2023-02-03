@@ -9,11 +9,12 @@ import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import useTitle from "../../Hooks/useTitle";
 
-const SignUp = () => {
+const SignUp = () =>
+{
   useTitle("SignUp Page");
 
-  const [role, setRole] = useState(null);
-  const [selectedImage, setSelectedImage] = useState();
+  const [ role, setRole ] = useState(null);
+  const [ selectedImage, setSelectedImage ] = useState();
   const {
     createUser,
     updateUserProfile,
@@ -26,7 +27,8 @@ const SignUp = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event) =>
+  {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
@@ -36,50 +38,59 @@ const SignUp = () => {
 
     const formData = new FormData();
     formData.append("image", selectedImage);
-    const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_KEY}`;
+    const url = `https://api.imgbb.com/1/upload?key=${ process.env.REACT_APP_IMGBB_KEY }`;
 
     fetch(url, {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
-      .then((imageData) => {
+      .then((imageData) =>
+      {
         const userData = {
           name,
           email,
-          image: imageData?.data?.display_url,
+          image: imageData.data.display_url,
           role,
         };
         console.log(userData);
 
         // Create User
         createUser(email, password)
-          .then((result) => {
+          .then((result) =>
+          {
             setAuthToken(result.user);
             // console.log(result.user);
-            updateUserProfile(name, imageData?.data?.display_url)
-              .then(() => {
-                if (userData.role === "writer") {
-                  addWriter(userData).then((data) => {
+            updateUserProfile(name, imageData.data.display_url)
+              .then(() =>
+              {
+                if (userData.role === "writer")
+                {
+                  addWriter(userData).then((data) =>
+                  {
                     console.log(data);
                   });
                 }
-                if (userData.role === "writer") {
+                if (userData.role === "writer")
+                {
                   makeWriter(userData);
                 }
-                if (userData.role === "reader") {
+                if (userData.role === "reader")
+                {
                   makeReader(userData);
                 }
                 toast.success("Sign up Succesfuly");
                 setLoading(false);
                 navigate(from, { replace: true });
               })
-              .catch((err) => {
+              .catch((err) =>
+              {
                 toast.error(err.message);
               });
           })
 
-          .catch((err) => {
+          .catch((err) =>
+          {
             toast.error(err.message);
             setLoading(false);
           });
@@ -87,17 +98,21 @@ const SignUp = () => {
       .catch((err) => console.log(err));
   };
 
-  const handleGoogleSignin = () => {
-    signInWithGoogle().then((result) => {
+  const handleGoogleSignin = () =>
+  {
+    signInWithGoogle().then((result) =>
+    {
       // console.log(result.user);
       setAuthToken(result.user);
       setLoading(false);
       navigate(from, { replace: true });
     });
   };
-  const imageChange = (e) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setSelectedImage(e.target.files[0]);
+  const imageChange = (e) =>
+  {
+    if (e.target.files && e.target.files.length > 0)
+    {
+      setSelectedImage(e.target.files[ 0 ]);
     }
   };
   return (
