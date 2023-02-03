@@ -2,26 +2,24 @@ import React from "react";
 import { useState } from "react";
 import { RiShareForwardLine } from "react-icons/ri";
 import { FaTimes } from 'react-icons/fa';
-import
-{
-  EmailShareButton,
-  FacebookShareButton,
-  FacebookIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
-  WhatsappShareButton,
-  WhatsappIcon,
-  EmailIcon,
-  FacebookMessengerShareButton,
-  FacebookMessengerIcon,
-  TwitterShareButton,
-  TwitterIcon,
+import {
+EmailShareButton,
+FacebookShareButton,
+FacebookIcon,
+LinkedinShareButton,
+LinkedinIcon,
+WhatsappShareButton,
+WhatsappIcon,
+EmailIcon,
+FacebookMessengerShareButton,
+FacebookMessengerIcon,
+TwitterShareButton,
+TwitterIcon,
 } from "react-share";
-const Share = () =>
-{
+const Share = () => {
 
-  const shareUrl = `${ window.location.href }`;
-  const [ shareWith, setShareWith ] = useState(false);
+  const shareUrl = `${window.location.href}`;
+  const [shareWith, setShareWith] = useState(false);
   return (
     <div className="">
       <div
@@ -92,7 +90,7 @@ const Share = () =>
         ) : (
           <div className="btn btn-outline  " onClick={() => setShareWith(!shareWith)}>
 
-            Share <RiShareForwardLine  />
+            Share <RiShareForwardLine />
           </div>
         )}
       </div>

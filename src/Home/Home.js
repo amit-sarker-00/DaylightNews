@@ -36,7 +36,7 @@ const Home = () => {
         <SearchData />
       ) : (
         <>
-            <Banner />
+          <Banner />
           <BreakingNews />
           <TrendingNews />
           <HomePageDivisionData />
@@ -45,11 +45,11 @@ const Home = () => {
           <OnlineVatingSection />
           <SportsNews />
           <HomePageStorySection />
-          <VideoSection />
-          <ViralNews />
-            {/* <News/> */}
-          <EnvironmentNews />
-          <Voices />
+          {/* <VideoSection />
+          <ViralNews /> */}
+          {/* <News/> */}
+          {/* <EnvironmentNews />
+          <Voices /> */}
         </>
       )}
     </div>
