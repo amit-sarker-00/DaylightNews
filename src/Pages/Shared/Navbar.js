@@ -202,7 +202,7 @@ const Navbar = () => {
         </div>
       </section>
       <div className="w-full  mx-auto">
-        {/* <SpacialNews /> */}
+        <SpacialNews />
       </div>
       <DonateNotUser />
     </main>
