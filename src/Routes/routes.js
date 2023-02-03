@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import AllCategoryPage from "../Components/AllCategoryPage/AllCategoryPage";
 import CardDetailsPage from "../Components/CardDetailsPage/CardDetailsPage";
 import BdOnlinePayment from "../Components/DonationPage/BdOnlinePayment";
-import DonateNotUser from "../Components/DonationPage/DonateNotUser";
 import DonationFail from "../Components/DonationPage/DonationFail";
 import DonationPage from "../Components/DonationPage/DonationPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
