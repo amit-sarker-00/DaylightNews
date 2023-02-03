@@ -9,20 +9,17 @@ import SpacialNews from "../../Components/SpacialNews/SpacialNews";
 import DonateNotUser from "../../Components/DonationPage/DonateNotUser";
 
 
-const Navbar = () =>
-{
+const Navbar = () => {
   const { user, logout, setSearchContent } = useContext(AuthContext);
 
-  const [ weather, setWeather ] = useState({});
+  const [weather, setWeather] = useState({});
   // weather
-  useEffect(() =>
-  {
+  useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Dhaka&units=metric&APPID=${ process.env.REACT_APP_Weather_API_KEY }`
+      `https://api.openweathermap.org/data/2.5/weather?q=Dhaka&units=metric&APPID=${process.env.REACT_APP_Weather_API_KEY}`
     )
       .then((res) => res.json())
-      .then((result) =>
-      {
+      .then((result) => {
         setWeather(result);
       });
   }, []);
@@ -39,8 +36,8 @@ const Navbar = () =>
   const currentDate = date.toLocaleDateString("en-US", options);
   // categories
   const { data: allCategory = [] } = useQuery({
-    queryKey: [ 'categories' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }categories`)
+    queryKey: ['categories'],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}categories`)
       .then((res) => res.json())
   })
 
@@ -153,7 +150,7 @@ const Navbar = () =>
                     {categories?.map((category, i) => (
                       <li key={i} className="w-full">
                         <Link
-                          to={`/category/${ category }`}
+                          to={`/category/${category}`}
                           className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500"
                         >
                           {category}
@@ -205,7 +202,7 @@ const Navbar = () =>
         </div>
       </section>
       <div className="w-full  mx-auto">
-        <SpacialNews />
+        {/* <SpacialNews /> */}
       </div>
       <DonateNotUser />
     </main>
