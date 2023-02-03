@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { RxCalendar } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import "./gadgets.css"
+import { HiShoppingCart, IconName } from "react-icons/hi2";
 
 const Gadgets = () => {
     const [gadgets, setGadgets] = useState([])
@@ -34,11 +35,21 @@ const Gadgets = () => {
                                 <div
                                     className="flex flex-col justify-center">
                                     <h3
-                                        className="  lg:text-4xl md:text-xl text-md font-semibold sm:space-y-4 space-y-0  mt-3 sm:py-4 p-0 sm:w-2/3 w-full rounded-lg text-white hover:underline font-sans  ">
+                                        className="  lg:text-4xl md:text-xl text-md font-semibold sm:space-y-3 space-y-0  mt-3 sm:py-4 p-0 sm:w-2/3 w-full rounded-lg text-white hover:underline font-sans  ">
                                         {banner?.title?.length > 80 ? banner?.title.slice(0, 80) + "..." : banner?.title}
                                     </h3>
-                                    <div>
-                                        <button className=' font-semibold sm:text-lg text-sm  sm:px-8  sm:py-2 py-1 mb-2 px-4 bg-red-600 hover:bg-green-700 hover:text-black translate rounded-md text-white'>Buy</button>
+                                    <ul className='list-disc text-gray-300 px-4 hidden md:block '>
+                                        <li> {banner?.product_used?.first}</li>
+                                        <li> {banner?.product_used?.second}</li>
+                                        <li > {banner?.product_used?.third}</li>
+                                        <li> {banner?.product_used?.four}</li>
+                                    </ul>
+                                    <div className='sm:py-2 py-0'>
+                                        <button
+                                            className=' font-semibold sm:text-lg text-sm  sm:px-8 px-2 sm:py-2 py-1   bg-red-600 hover:bg-green-700 hover:text-black translate rounded-md text-white flex items-center gap-3'>
+                                            <HiShoppingCart className='text-xl text-whit' />
+                                            Buy Now
+                                        </button>
                                     </div>
                                 </div>
                             </div>

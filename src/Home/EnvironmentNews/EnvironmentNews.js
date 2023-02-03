@@ -3,18 +3,6 @@ import React from "react";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 import EnvironmentNewsCard from "./EnvironmentNewsCard";
 
-<<<<<<< HEAD
-const EnvironmentNews = () => {
-  const [environments, setEnvironments] = useState([]);
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}news`)
-      .then((res) => res.json())
-      .then((result) => {
-        const environmentNews = result.filter(environment => environment.category === 'EnvironmentNews')
-        setEnvironments(environmentNews?.slice(-6));
-      });
-  }, []);
-=======
 const EnvironmentNews = () =>
 {
   const { data: environmentNews, isLoading } = useQuery({
@@ -22,7 +10,6 @@ const EnvironmentNews = () =>
     queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }environmentNews`)
       .then((res) => res.json())
   })
->>>>>>> 1526a4fa885aa644356d9e2880ca0501334980f3
 
   return (
     <div className="mb-16">

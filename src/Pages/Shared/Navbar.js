@@ -4,6 +4,9 @@ import { IoIosArrowDropdown } from "react-icons/io";
 import { FaFacebookF, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+import { useQuery } from "@tanstack/react-query";
+import SpacialNews from "../../Components/SpacialNews/SpacialNews";
+import DonateNotUser from "../../Components/DonationPage/DonateNotUser";
 
 const Navbar = () =>
 {
@@ -158,7 +161,7 @@ const Navbar = () =>
                 </div>
               </li>
               <li>
-                <Link className="text-1xl font-semibold">Gadgets</Link>
+                <Link to='/gadgets' className="text-1xl font-semibold">Gadgets</Link>
               </li>
             </ul>
           </div>

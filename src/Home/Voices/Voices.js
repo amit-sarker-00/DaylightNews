@@ -3,19 +3,12 @@ import React from "react";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 import VoicesCard from "./VoicesCard";
 
-const Voices = () =>
-{
-  const [ Voices, setVoices ] = useState([]);
-  useEffect(() =>
-  {
-    fetch(`${ process.env.REACT_APP_API_URL }news`)
+const Voices = () => {
+  const { data: voicesNews, isLoading } = useQuery({
+    queryKey: ['voicesNews'],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL }voicesNews`)
       .then((res) => res.json())
-      .then((result) =>
-      {
-        const voicesNews = result.filter(voice => voice.category === 'voices')
-        setVoices(voicesNews?.slice(-6));
-      });
-  }, []);
+  })
 
 
   return (
