@@ -1,6 +1,6 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
+import React  from "react";
 import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
