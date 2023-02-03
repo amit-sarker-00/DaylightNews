@@ -26,19 +26,13 @@ const SpacialNews = () =>
                 <div className=''>
                     <h1 className='text  '>Spacial News</h1>
                 </div>
-                <div className='w-full flex'>
 
+                <Marquee >
+                    {bannerData?.map((item) => (
+                        <> {item?.title} || </>
+                    ))}
+                </Marquee>
 
-
-                    <div className='flex '>
-                        <Marquee>
-                            {bannerData?.map((item) => (
-                                <> {item?.title} || </>
-                            ))}
-                        </Marquee>
-                    </div>
-
-                </div>
             </div>
         </div>
     );
