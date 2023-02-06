@@ -25,7 +25,7 @@ const BreakingNews = () =>
       </div>
 
       <div>
-        <Marquee className="overflow-hidden" speed={1}>
+        <Marquee className="overflow-hidden" speed={2}>
           {isLoading && <SkeletonLoading cards={6} />}
           {breakingNews?.map((breaking) => (
 
