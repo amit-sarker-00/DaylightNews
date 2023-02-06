@@ -20,22 +20,11 @@ const HomePageStorySection = () =>
                     <h1 className='font-bold text-xl sm:text-2xl text-red-500'>STORIES</h1>
                 </div>
                 <div className='flex flex-wrap font-semibold gap-2 md:gap-7'>
-                    <NavLink onClick={() => setActive("FirstCard")} className={({ isActive }) =>
-                        isActive ? 'text-black' : 'text-red-500 transition-all'
-                    } to='/'>Model</NavLink>
-
-                    <NavLink onClick={() => setActive("SecondCard")} className={({ isActive }) =>
-                        isActive ? 'text-black' : 'hover:text-red-500 transition-all'
-                    } to='/'>Lifestyle</NavLink>
-                    <NavLink onClick={() => setActive("ThirdCard")} className={({ isActive }) =>
-                        isActive ? 'text-black' : 'hover:text-red-500 transition-all'
-                    } to='/'>Health</NavLink>
-                    <NavLink onClick={() => setActive("FourthCard")} className={({ isActive }) =>
-                        isActive ? 'text-black' : 'hover:text-red-500 transition-all'
-                    } to='/'>Travel</NavLink>
-                    <NavLink onClick={() => setActive("FiveCard")} className={({ isActive }) =>
-                        isActive ? 'text-black' : 'hover:text-red-500 transition-all'
-                    } to='/'>PhotoGallery</NavLink>
+                    <NavLink onClick={() => setActive("FirstCard")} to='/'>Model</NavLink>
+                    <NavLink onClick={() => setActive("SecondCard")} to='/'>Lifestyle</NavLink>
+                    <NavLink onClick={() => setActive("ThirdCard")} to='/'>Health</NavLink>
+                    <NavLink onClick={() => setActive("FourthCard")} to='/'>Travel</NavLink>
+                    <NavLink onClick={() => setActive("FiveCard")} to='/'>PhotoGallery</NavLink>
                 </div>
             </section>
 

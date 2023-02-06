@@ -1,9 +1,10 @@
 import React from "react";
 
-function AllComment({ comment }) {
+function AllComment ({ comment })
+{
     const { name, userImage, message, date, time } = comment.comment;
     return (
-        <div className="border border-gray-300 rounded-md mt-2 mb-2">
+        <div className="border border-gray-200 dark:border-gray-700   rounded-md mt-2 mb-2">
             <div className="flex space-x-4 ">
                 <img
                     alt=""

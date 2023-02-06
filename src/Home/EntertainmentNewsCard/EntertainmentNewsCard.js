@@ -1,11 +1,12 @@
 import React from 'react';
 import { IconName, IoBookmark } from "react-icons/io5";
-const EntertainmentNewsCard = ({ entertainment }) => {
+const EntertainmentNewsCard = ({ entertainment }) =>
+{
     // console.log(entertainment);
     const { picture, title, author, position } = entertainment;
 
     return (
-        <div className='flex justify-center p-4 hover:border hover:border-gray-500'>
+        <div className='flex justify-center p-4 hover:border hover:border-gray-200 dark:border-gray-700  '>
             <div className=" lg:w-full md:w-96 w-80 overflow-hidden text-black">
                 <div className=" sm:text-left text-center">
                     <p
