@@ -6,21 +6,17 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 
-
-const Navbar = () =>
-{
+const Navbar = () => {
   const { user, logout, setSearchContent } = useContext(AuthContext);
- 
-  const [ weather, setWeather ] = useState({});
+
+  const [weather, setWeather] = useState({});
   // weather
-  useEffect(() =>
-  {
+  useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Dhaka&units=metric&APPID=${ process.env.REACT_APP_Weather_API_KEY }`
+      `https://api.openweathermap.org/data/2.5/weather?q=Dhaka&units=metric&APPID=${process.env.REACT_APP_Weather_API_KEY}`
     )
       .then((res) => res.json())
-      .then((result) =>
-      {
+      .then((result) => {
         setWeather(result);
       });
   }, []);
@@ -37,11 +33,12 @@ const Navbar = () =>
   const currentDate = date.toLocaleDateString("en-US", options);
   // categories
   const { data: allCategory = [] } = useQuery({
-    queryKey: [ 'categories' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }categories`)
-      .then((res) => res.json())
-  })
-
+    queryKey: ["categories"],
+    queryFn: () =>
+      fetch(`${process.env.REACT_APP_API_URL}categories`).then((res) =>
+        res.json()
+      ),
+  });
 
   return (
     <main>
@@ -112,7 +109,7 @@ const Navbar = () =>
           <div>
             <ul className=" gap-3 hidden lg:flex">
               <li>
-                <Link to='/'>Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <Link>News</Link>
@@ -145,7 +142,7 @@ const Navbar = () =>
                     {allCategory?.map((category, i) => (
                       <li key={i} className="w-full">
                         <Link
-                          to={`/category/${ category }`}
+                          to={`/category/${category}`}
                           className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500"
                         >
                           {category}
