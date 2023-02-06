@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { AiOutlineBars } from "react-icons/ai";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { FaFacebookF, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
+import SpacialNews from "../../Components/SpacialNews/SpacialNews";
+import DonateNotUser from "../../Components/DonationPage/DonateNotUser";
 
 const Navbar = () => {
   const { user, logout, setSearchContent } = useContext(AuthContext);
@@ -44,7 +46,7 @@ const Navbar = () => {
     <main>
       <section className="bg-[#f0f2f5] pb-5">
         <div className="">
-          <div className="w-5/6 mx-auto flex  justify-between py-1">
+          <div className="max-w-[1440px] mx-auto flex  justify-between py-1">
             <div>
               <label
                 htmlFor="my-drawer"
@@ -55,14 +57,29 @@ const Navbar = () => {
               </label>
             </div>
 
-            <div>
+            <div className="flex item-center">
+              {user?.uid ? (
+                <Link
+                  to="/Donate"
+                  className="bg-black px-5 py-1 text-white rounded-sm mr-5"
+                >
+                  Donate us
+                </Link>
+              ) : (
+                <label
+                  htmlFor="my-modal-3"
+                  className="bg-black px-5 py-1 text-white rounded-sm mr-5"
+                >
+                  Donate us
+                </label>
+              )}
               <h1>
                 {temp?.toFixed(0)}°c <span>Tempareture</span>{" "}
               </h1>
             </div>
           </div>
 
-          <div className="w-5/6 mx-auto items-center sm:flex-row flex flex-col justify-between">
+          <div className="max-w-[1440px] mx-auto items-center sm:flex-row flex flex-col justify-between">
             <div>
               <ul className="flex gap-3">
                 <Link className="rounded-full" href="#">
@@ -104,42 +121,60 @@ const Navbar = () => {
         </div>
       </section>
 
-      <section className="my-2 w-5/6 mx-auto ">
+      <section className="my-2 max-w-[1440px] mx-auto ">
         <div className="flex justify-between">
           <div>
-            <ul className=" gap-3 hidden lg:flex">
+            <ul className=" gap-5 hidden lg:flex">
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link>News</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">
+                  News
+                </NavLink>
               </li>
               <li>
-                <Link>Sports</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">
+                  Sports
+                </NavLink>
               </li>
               <li>
-                <Link>Pages</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">
+                  Pages
+                </NavLink>
               </li>
               <li>
-                <Link>Travel</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">
+                  Travel
+                </NavLink>
               </li>
               <li>
-                <Link>Future </Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">
+                  Future{" "}
+                </NavLink>
               </li>
               <li>
-                <Link>Culture</Link>
+                <NavLink
+                  className="text-1xl hover:text-red-500 font-semibold"
+                  to="/stockMarket"
+                >
+                  Live Stock Market{" "}
+                </NavLink>
               </li>
               <li>
                 <div className="dropdown dropdown-hover">
-                  <Link tabIndex={1} className="flex items-center gap-1 ">
-                    <span>Categories</span>{" "}
+                  <NavLink
+                    tabIndex={1}
+                    className="flex hover:text-red-500 items-center gap-1 "
+                  >
+                    <span className="text-1xl font-semibold">Categories</span>{" "}
                     <IoIosArrowDropdown className="mt-1" />
-                  </Link>
+                  </NavLink>
                   <ul
                     tabIndex={1}
-                    className="dropdown-content sm:w-60 w-20 z-50 rounded-md  shadow bg-gray-200 "
+                    className="dropdown-content  grid grid-cols-2 xl:w-[500px] lg:w-[400px]  md:w-[300px] z-50 rounded-md  shadow bg-gray-200 "
                   >
-                    {allCategory?.map((category, i) => (
+                    {categories?.map((category, i) => (
                       <li key={i} className="w-full">
                         <Link
                           to={`/category/${category}`}
@@ -153,7 +188,9 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <Link>Gadgets</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">
+                  Gadgets
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -193,6 +230,10 @@ const Navbar = () => {
           </div>
         </div>
       </section>
+      <div className="w-full  mx-auto">
+        <SpacialNews />
+      </div>
+      <DonateNotUser />
     </main>
   );
 };

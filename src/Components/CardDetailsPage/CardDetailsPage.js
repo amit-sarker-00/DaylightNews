@@ -11,63 +11,61 @@ import SearchData from '../SearchData/SearchData';
 
 
 
-const CardDetailsPage = () => {
+const CardDetailsPage = () =>
+{
   const { searchContent } = useContext(AuthContext)
 
 
   const params = useParams()
 
-  const [recentData, setRecentData] = useState([])
-  const [detail, setDetail] = useState({});
+  const [ detail, setDetail ] = useState({});
 
 
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}news/${params?.id}`)
+  useEffect(() =>
+  {
+    fetch(`${ process.env.REACT_APP_API_URL }news/${ params?.id }`)
       .then((res) => res.json())
-      .then((result) => {
+      .then((result) =>
+      {
         setDetail(result)
       });
-  }, [params?.id]);
+  }, [ params?.id ]);
 
 
 
 
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}news`)
+  const { data: recentlyNews, isLoading: recentLoading } = useQuery({
+    queryKey: [ 'recentlyNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }recentlyNews`)
       .then((res) => res.json())
-      .then((result) => {
-        setRecentData(result?.slice(-5))
-      });
-  }, []);
+  })
 
   const { data: reactions, isLoading, refetch: reCall } = useQuery({
-    queryKey: ['reactions', params?.id],
-    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}reactions/${params?.id}`).then(res => res.json())
+    queryKey: [ 'reactions', params?.id ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }reactions/${ params?.id }`).then(res => res.json())
   })
 
   const { data: singleNewsComment = [], refetch } = useQuery({
-    queryKey: ['comment', params?.id],
-    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}comment/${params.id}`).then(res => res.json())
+    queryKey: [ 'comment', params?.id ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }comment/${ params.id }`).then(res => res.json())
   })
 
-  if (isLoading) {
-    return <div className='w-full py-8 text-center font-bold'>Loading...</div>
-  }
+
 
   return (
     <div>
       {searchContent ? <SearchData /> :
         <div className='flex w-full gap-0 lg:gap-5 h-full'>
           <div className='flex '>
-            <DetailsCard reCall={reCall} singleNewsComment={singleNewsComment} detail={detail} refetch={refetch} reactions={reactions} />
+            <DetailsCard reCall={reCall} isLoading={isLoading} singleNewsComment={singleNewsComment} detail={detail} refetch={refetch} reactions={reactions} />
           </div>
           <div>
             <h1 className='text-center text-xl font-semibold pb-5 hidden lg:block'>Latest News</h1>
             <div className='lg:w-[500px]  hidden lg:flex gap-3  flex-col'>
-              {recentData?.length === 0 && <SkeletonLoading cards={4} />}
+              {recentLoading && <SkeletonLoading cards={4} />}
 
               {
-                recentData && recentData.map(recent => <LatestNews recent={recent} key={recent._id} />)
+                recentlyNews && recentlyNews?.slice(0, 6).map(recent => <LatestNews recent={recent} key={recent._id} />)
               }
             </div>
             <div className='mt-10 hidden lg:block'>

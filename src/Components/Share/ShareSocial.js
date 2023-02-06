@@ -1,29 +1,32 @@
 import React from 'react';
 import { RiShareForwardLine } from "react-icons/ri";
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  FacebookIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
-  WhatsappShareButton,
-  WhatsappIcon,
-  EmailIcon,
-  FacebookMessengerShareButton,
-  FacebookMessengerIcon,
-  TwitterShareButton,
-  TwitterIcon,
-} from "react-share";
+import
+  {
+    EmailShareButton,
+    FacebookShareButton,
+    FacebookIcon,
+    LinkedinShareButton,
+    LinkedinIcon,
+    WhatsappShareButton,
+    WhatsappIcon,
+    EmailIcon,
+    FacebookMessengerShareButton,
+    FacebookMessengerIcon,
+    TwitterShareButton,
+    TwitterIcon,
+  } from "react-share";
 import Tippy from '@tippyjs/react';
-const ShareSocial = () => {
-    const shareUrl = "https://www.prothomalo.com/";
-    return (
-       
-          <Tippy
-    render={share => (
-      <div className="box"
-      tabIndex="-3" {...share}>
-        <div
+const ShareSocial = () =>
+{
+  const shareUrl = `${ window.location.href }`;
+   
+  return (
+
+    <Tippy
+      render={share => (
+        <div className="box"
+          tabIndex="-3" {...share}>
+          <div
             className="px-5 py-5"
             style={{
               background: "black",
@@ -31,8 +34,8 @@ const ShareSocial = () => {
               width: "100%",
             }}
           >
-          <div className="flex gap-5 ">
-          <FacebookShareButton
+            <div className="flex gap-5 ">
+              <FacebookShareButton
                 url={shareUrl}
                 quote={"nijer mato title dibo"}
                 hashtag={"#portfolio..."}
@@ -78,15 +81,15 @@ const ShareSocial = () => {
               </WhatsappShareButton>
             </div>
           </div>
+        </div>
+      )}
+    >
+      <div className="btn btn-outline gap-2">
+        Share This News <RiShareForwardLine />{" "}
       </div>
-    )}
-  >
-   <div className="btn btn-outline gap-2">
-                 Share This News <RiShareForwardLine />{" "}
-          </div>
-  </Tippy> 
-     
-    );
+    </Tippy>
+
+  );
 };
 
 export default ShareSocial;

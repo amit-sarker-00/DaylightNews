@@ -1,9 +1,9 @@
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { BiTime } from "react-icons/bi";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 import { useQuery } from "@tanstack/react-query";
+import Marquee from "react-fast-marquee";
 const BreakingNews = () =>
 {
   const { data: breakingNews, isLoading } = useQuery({
@@ -13,6 +13,8 @@ const BreakingNews = () =>
   })
 
 
+  // console.log(breakingNews)
+
   return (
     <div className="mb-4 sm:mb-10">
       <div className="my-3 flex items-center gap-2">
@@ -21,34 +23,15 @@ const BreakingNews = () =>
         </h1>
         <div className="w-2 h-2 mt-1 bg-green-500 animate-pulse rounded-full"></div>
       </div>
-      <Splide
-        className=" "
-        aria-label=""
-        options={{
-          speed: "8000",
-          autoplay: true,
-          gap: "1rem",
-          rewind: true,
-          perPage: 3,
-          breakpoints: {
-            1024: {
-              perPage: 2,
-            },
-            576: {
-              perPage: 1,
-            },
-          },
 
-          arrows: false,
-          pagination: false,
-        }}
-      >
-        {isLoading && <SkeletonLoading cards={6} />}
-        {breakingNews?.map((breaking) => (
-          <SplideSlide key={breaking?._id}>
-            <Link
+      <div>
+        <Marquee className="overflow-hidden" speed={1}>
+          {isLoading && <SkeletonLoading cards={6} />}
+          {breakingNews?.map((breaking) => (
+
+            <Link key={breaking?._id}
               to={`/detail/${ breaking?._id }`}
-              className=" h-32 flex border-2"
+              className=" h-32 hover:text-red-500 flex border-2"
             >
               <div className="overflow-hidden w-40 h-32">
                 <img
@@ -59,7 +42,7 @@ const BreakingNews = () =>
               </div>
               <div className="mx-2">
                 <h3 className="sm:text-md link-hover hover:text-red-500  text-xl font-bold mb-1">
-                  {breaking?.title}
+                  {breaking?.title?.slice(0, 20)}
                 </h3>
                 <p>{breaking?.description.slice(0, 30) + "..."}</p>
                 <div className="flex gap-1 items-center font-bold text-gray-400">
@@ -68,9 +51,10 @@ const BreakingNews = () =>
                 </div>
               </div>
             </Link>
-          </SplideSlide>
-        ))}
-      </Splide>
+
+          ))}
+        </Marquee>
+      </div>
     </div>
   );
 };

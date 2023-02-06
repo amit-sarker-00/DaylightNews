@@ -3,26 +3,27 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import SearchCardData from './SearchCardData';
 
-const SearchData = () => {
+const SearchData = () =>
+{
     const { searchContent } = useContext(AuthContext)
-    const [searchDatas, setSearchDatas] = useState([]);
+    const [ searchDatas, setSearchDatas ] = useState([]);
 
     const { data = [], isLoading } = useQuery({
-        queryKey: ['news'],
-        queryFn: () => fetch(`${process.env.REACT_APP_API_URL}news`).then(res => res.json())
+        queryKey: [ 'news' ],
+        queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }news`).then(res => res.json())
     })
 
 
 
-    useEffect(() => {
+    useEffect(() =>
+    {
 
         const filterResult = data.filter(item => item?.title?.toLowerCase().includes(searchContent?.toLowerCase()) || item?.category?.toLowerCase().includes(searchContent?.toLowerCase()))
         setSearchDatas(filterResult)
 
-    }, [searchContent]);
+    }, [ searchContent, searchDatas ,data]);
 
-
-    console.log(searchDatas);
+ 
 
 
     return (
