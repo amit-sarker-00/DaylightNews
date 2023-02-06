@@ -19,7 +19,7 @@ import {
 const Share = () => {
   const location = useLocation();
   // const currentUrl = location.pathname;
-  const shareUrl =location.pathname; 
+  const shareUrl = location.pathname;
   const [hover, setHover] = useState(false);
   const onHover = () => {
     setHover(true);
@@ -30,12 +30,7 @@ const Share = () => {
   };
   return (
     <div className="">
-      <div
-        onMouseEnter={onHover}
-        onMouseLeave={onLeave}
-      
-        tabIndex="-3"
-      >
+      <div onMouseEnter={onHover} onMouseLeave={onLeave} tabIndex="-3">
         {hover ? (
           <div
             className="px-5 py-5"
@@ -46,8 +41,10 @@ const Share = () => {
             }}
           >
             <div className="flex gap-5 ">
-              <div><h1 className="text-xl text-white">Share</h1></div>
-          
+              <div>
+                <h1 className="text-xl text-white">Share</h1>
+              </div>
+
               <FacebookShareButton
                 url={shareUrl}
                 quote={"nijer mato title dibo"}
@@ -70,13 +67,13 @@ const Share = () => {
                 <LinkedinIcon size={40} round={true} />
               </LinkedinShareButton>
 
-//               <FacebookMessengerShareButton
+              {/* //               <FacebookMessengerShareButton
 //                 url={shareUrl}
 //                 quote={"nijer mato title dibo"}
 //                 hashtag={"#portfolio..."}
 //               >
 //                 <FacebookMessengerIcon size={40} round={true} />
-//               </FacebookMessengerShareButton>
+//               </FacebookMessengerShareButton> */}
 
               <EmailShareButton
                 url={shareUrl}
@@ -96,7 +93,6 @@ const Share = () => {
           </div>
         ) : (
           <div className="btn btn-outline">
-           
             Share <RiShareForwardLine />
           </div>
         )}
@@ -105,4 +101,4 @@ const Share = () => {
   );
 };
 
-// export default Share;
+export default Share;

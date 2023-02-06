@@ -174,7 +174,7 @@ const Navbar = () => {
                     tabIndex={1}
                     className="dropdown-content  grid grid-cols-2 xl:w-[500px] lg:w-[400px]  md:w-[300px] z-50 rounded-md  shadow bg-gray-200 "
                   >
-                    {categories?.map((category, i) => (
+                    {allCategory?.map((category, i) => (
                       <li key={i} className="w-full">
                         <Link
                           to={`/category/${category}`}
