@@ -32,6 +32,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import SlickCarousel from "../Practice/SlickCarousel/SlickCarousel";
 import Welcome from "../Pages/Welcome/Welcome";
 import PrivateRoute from "./PrivateRoute";
+import TranslationPage from "../Components/Translation/TranslationPage";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -65,7 +66,10 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "gadgets", element: <Gadgets />
+        path: "/gadgets", element: <Gadgets />
+      },
+      {
+        path: "/translation", element: <TranslationPage />
       },
       {
         path: "/account",

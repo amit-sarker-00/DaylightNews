@@ -132,7 +132,7 @@ const Navbar = () => {
                 <NavLink className="text-1xl hover:text-red-500 font-semibold">Travel</NavLink>
               </li>
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold">Future </NavLink>
+                <NavLink to="/translation" className="text-1xl hover:text-red-500 font-semibold">Translate Your Language </NavLink>
               </li>
               <li>
                 <NavLink className="text-1xl hover:text-red-500 font-semibold" to="/stockMarket">Live Stock Market </NavLink>

@@ -24,8 +24,7 @@ import HomePageDivisionData from "./DistricNews/HomePageDivisionData";
 import LiveStockMarketData from "./LiveStockMarketData/LiveStockMarketData";
 import SpacialNews from "../Components/SpacialNews/SpacialNews";
 
-const Home = () =>
-{
+const Home = () => {
   useTitle("Home");
   const { searchContent } = useContext(AuthContext);
 
@@ -40,17 +39,17 @@ const Home = () =>
           <Banner />
           <BreakingNews />
           <TrendingNews />
-          <HomePageDivisionData />
+          {/* <HomePageDivisionData />
           <HomePageLetestNews />
           <HomePageArticalAndPost />
           <OnlineVatingSection />
           <SportsNews />
           <HomePageStorySection />
           <VideoSection />
-          <ViralNews />
+          <ViralNews /> */}
           {/* <News/> */}
-          <EnvironmentNews />
-          <Voices />
+          {/* <EnvironmentNews />
+          <Voices /> */}
         </>
       )}
     </div>
