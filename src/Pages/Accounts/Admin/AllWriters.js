@@ -9,7 +9,7 @@ const AllWriters = () =>
   const [ loading, setLoading ] = useState(false);
   useEffect(() =>
   {
-    fetch("${process.env.REACT_APP_API_URL}writers")
+    fetch(`${ process.env.REACT_APP_API_URL }writers`)
       .then((res) => res.json())
       .then((data) => setWriters(data));
   }, []);

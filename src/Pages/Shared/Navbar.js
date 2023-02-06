@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AiOutlineBars } from "react-icons/ai";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { FaFacebookF, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import SpacialNews from "../../Components/SpacialNews/SpacialNews";
@@ -117,32 +117,32 @@ const Navbar = () => {
           <div>
             <ul className=" gap-5 hidden lg:flex">
               <li>
-                <Link to='/'>Home</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold" to='/'>Home</NavLink>
               </li>
               <li>
-                <Link className="text-1xl font-semibold">News</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">News</NavLink>
               </li>
               <li>
-                <Link className="text-1xl font-semibold">Sports</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">Sports</NavLink>
               </li>
               <li>
-                <Link className="text-1xl font-semibold">Pages</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">Pages</NavLink>
               </li>
               <li>
-                <Link className="text-1xl font-semibold">Travel</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">Travel</NavLink>
               </li>
               <li>
-                <Link className="text-1xl font-semibold">Future </Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">Future </NavLink>
               </li>
               <li>
-                <Link className="text-1xl font-semibold" to="/stockMarket">Live Stock Market </Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold" to="/stockMarket">Live Stock Market </NavLink>
               </li>
               <li>
                 <div className="dropdown dropdown-hover">
-                  <Link tabIndex={1} className="flex items-center gap-1 ">
-                    <span>Categories</span>{" "}
+                  <NavLink tabIndex={1} className="flex hover:text-red-500 items-center gap-1 ">
+                    <span className="text-1xl font-semibold">Categories</span>{" "}
                     <IoIosArrowDropdown className="mt-1" />
-                  </Link>
+                  </NavLink>
                   <ul
                     tabIndex={1}
                     className="dropdown-content  grid grid-cols-2 xl:w-[500px] lg:w-[400px]  md:w-[300px] z-50 rounded-md  shadow bg-gray-200 "
@@ -161,7 +161,7 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <Link className="text-1xl font-semibold">Gadgets</Link>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold" to={`/gadgets`}>Gadgets</NavLink>
               </li>
             </ul>
           </div>

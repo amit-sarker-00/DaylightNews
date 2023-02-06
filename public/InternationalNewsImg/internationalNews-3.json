@@ -1,0 +1,32 @@
+[
+    {
+        "author": {
+            "name": "By Katy Harvill -",
+            "published_date": " March 20,2023"
+        },
+        "title": "There are many ways to get paid to travel the world. Sharanya Iyer uses her skills as a content creator",
+        "position": "America",
+        "picture": "https://i.ibb.co/CmXXK7z/street.jpg",
+        "category": "international"
+    },
+    {
+        "author": {
+            "name": "By aloxkolla Harvill -",
+            "published_date": " March 20,2023"
+        },
+        "title": "Amazing And Most-Visited Arab Amirat Tourist Places For Your 2023 Trip to Dubai",
+        "position": "dubai",
+        "picture": "https://i.ibb.co/QKZkWsK/dubai.jpg",
+        "category": "international"
+    },
+    {
+        "author": {
+            "name": "By trilling Harlos -",
+            "published_date": " March 20,2023"
+        },
+        "title": "Your Travel Companion for the Whole Trip: From Flights, Cars to Hotels and Things to Do. Take Advantage of Our Package Deals.",
+        "position": "Maldive",
+        "picture": "https://i.ibb.co/mtB806k/maldiv.webp",
+        "category": "international"
+    }
+]

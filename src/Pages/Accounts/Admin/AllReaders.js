@@ -3,13 +3,11 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { deleteUser } from "../../../api/auth";
 
-const AllReaders = () =>
-{
-  const [ reader, setReader ] = useState([]);
-  const [ loading, setLoading ] = useState(false);
-  useEffect(() =>
-  {
-    fetch("${process.env.REACT_APP_API_URL}users")
+const AllReaders = () => {
+  const [reader, setReader] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}users`)
       .then((res) => res.json())
       .then((data) =>
       {

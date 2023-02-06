@@ -1,20 +1,21 @@
 import React, { useContext } from 'react';
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
-const DonationPage = () => {
+const DonationPage = () =>
+{
     const { user, } = useContext(AuthContext);
-    console.log(user)
+   
 
-
-    const handlePayment = (e) => {
+    const handlePayment = (e) =>
+    {
         e.preventDefault();
         const form = e.target;
-        const number = form.mobileNumber.value;
-        const address = form.address.value;
-        const zipCode = form.zipCode.value;
-        const country = form.country.value;
-        const currency = form.currency.value;
-        const amount = form.amount.value;
+        const number = form?.mobileNumber?.value;
+        const address = form?.address?.value;
+        const zipCode = form?.zipCode?.value;
+        const country = form?.country?.value;
+        const currency = form?.currency?.value;
+        const amount = form?.amount?.value;
         // console.log(paymentPerson, number, address, postCode, currency);
         const payment = {
             number,
@@ -26,8 +27,8 @@ const DonationPage = () => {
             email: user?.email,
             name: user?.displayName
         };
-        console.log(payment);
-        fetch(`${process.env.REACT_APP_API_URL}payment`, {
+        
+        fetch(`${ process.env.REACT_APP_API_URL }payment`, {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -35,7 +36,8 @@ const DonationPage = () => {
             body: JSON.stringify(payment),
         })
             .then((res) => res.json())
-            .then((data) => {
+            .then((data) =>
+            {
                 window.location.replace(data.url);
                 console.log("rokek", data);
             });
@@ -43,13 +45,13 @@ const DonationPage = () => {
 
 
     return (
-        <div className='max-w-[1440px] mx-auto'>
-            <section className="p-6 dark:bg-gray-800 dark:text-gray-50">
-                <form onSubmit={handlePayment} className="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid">
-                    <div className='mx-auto'>
+        <div className='w-full mb-20 mt-16  '>
+            <section className="p-6  ">
+                <form onSubmit={handlePayment} className="  flex flex-col  ng-untouched ng-pristine ng-valid">
+                    <div className='mx-auto mb-3'>
                         <h1 className='text-2xl font-semibold'>Donate DaylightNews Team</h1>
                     </div>
-                    <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
+                    <div className="  max-w-[900px] mx-auto   gap-6 p-6 rounded-md shadow-sm  ">
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full sm:col-span-3">
                                 <label className=" text-xl">First name</label>
@@ -95,7 +97,7 @@ const DonationPage = () => {
                                 <input type="submit" className="w-full bg-black text-white rounded-md p-2 border  cursor-pointer" />
                             </div>
                         </div>
-                    </fieldset>
+                    </div>
 
                 </form>
             </section>

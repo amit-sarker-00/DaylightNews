@@ -11,7 +11,7 @@ const Menubar = ({ role }) => {
   const { logout } = useContext(AuthContext);
   return (
     <div className="px-2">
-      <div className="flex flex-col justify-between flex-1 mt-6">
+      <div className="flex flex-col justify-between flex-1 w-[230px] mt-6">
         <nav>
           {role === "admin" && <AdminMenu />}
           {role === "writer" && <WriterMenu />}
