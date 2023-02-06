@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { createContext } from "react";
 import
-  {
-    createUserWithEmailAndPassword,
-    getAuth,
-    GoogleAuthProvider,
-    onAuthStateChanged,
-    sendEmailVerification,
-    sendPasswordResetEmail,
-    signInWithEmailAndPassword,
-    signInWithPopup,
-    signOut,
-    updateProfile,
-  } from "firebase/auth";
+{
+  createUserWithEmailAndPassword,
+  getAuth,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 import app from "../../Firebase/Firebase.Config";
 
 export const AuthContext = createContext();
+export const DarkAndWhiteContext = createContext()
 const auth = getAuth(app);
 
 const googleProvider = new GoogleAuthProvider();
@@ -25,6 +26,8 @@ const AuthProvider = ({ children }) =>
   const [ user, setUser ] = useState(null);
   const [ loading, setLoading ] = useState(true);
   const [ searchContent, setSearchContent ] = useState(null);
+  const [ isDarkMode, setIsDarkMode ] = useState(false);
+
   // console.log(user);
   //1. Create User
   const createUser = (email, password) =>
@@ -110,7 +113,11 @@ const AuthProvider = ({ children }) =>
   };
 
   return (
-    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>
+      <DarkAndWhiteContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+        {children}
+      </DarkAndWhiteContext.Provider>
+    </AuthContext.Provider>
   );
 };
 

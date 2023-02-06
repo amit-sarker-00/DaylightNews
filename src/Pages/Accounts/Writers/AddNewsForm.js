@@ -10,7 +10,8 @@ const AddNewsForm = ({
   selectedImage,
   imageChange,
   uniqueCategory,
-}) => {
+}) =>
+{
   // unique category in option
   const uniqueCategoryOption = uniqueCategory.map((category, uxi) => (
     <option key={uxi} value={category}>
@@ -31,7 +32,7 @@ const AddNewsForm = ({
               </label>
 
               <input
-                className="w-full px-4 py-5 border rounded-md border-gray-300 focus:outline-green-500  text-gray-900"
+                className="w-full px-4 py-5 border rounded-md border-gray-200 dark:border-gray-700   focus:outline-green-500  text-gray-900"
                 name="title"
                 id="title"
                 type="text"
@@ -59,7 +60,7 @@ const AddNewsForm = ({
                   Description
                 </label>
                 <textarea
-                  className="w-full px-4 py-5 border rounded-md border-gray-300 focus:outline-green-500  text-gray-900"
+                  className="w-full px-4 py-5 border rounded-md border-gray-200 dark:border-gray-700   focus:outline-green-500  text-gray-900"
                   name="description"
                   id="description"
                   type="text"
@@ -98,7 +99,7 @@ const AddNewsForm = ({
               ) : (
                 <label
                   htmlFor="uploadImage"
-                  className="flex flex-col w-full border-4 border-dashed hover:bg-gray-100 hover:border-gray-300"
+                  className="flex flex-col w-full border-4 border-dashed hover:bg-gray-100 hover:border-gray-200 dark:border-gray-700  "
                 >
                   <div className="flex flex-col py-2 items-center justify-center h-60">
                     <ArrowUpTrayIcon className="w-8 h-8" />

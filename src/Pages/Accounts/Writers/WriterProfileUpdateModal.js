@@ -4,20 +4,23 @@ import PrimaryButton from "../../../Components/Button/PrimaryButton";
 import SmallSpinner from "../../../Components/Spinner/SmallSpinner";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
-const WriterProfileUpdateModal = ({ handelUpdateProfile }) => {
+const WriterProfileUpdateModal = ({ handelUpdateProfile }) =>
+{
   const { user } = useContext(AuthContext);
-  const [loading, setLoading] = useState(true);
-  const [profile, setProfile] = useState([]);
+  const [ loading, setLoading ] = useState(true);
+  const [ profile, setProfile ] = useState([]);
 
   const fetchProfile = () =>
-    getUser(user?.email).then((data) => {
+    getUser(user?.email).then((data) =>
+    {
       setProfile(data);
       setLoading(!loading);
     });
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetchProfile();
-  }, [user]);
+  }, [ user ]);
 
   return (
     <div>
@@ -56,7 +59,7 @@ const WriterProfileUpdateModal = ({ handelUpdateProfile }) => {
                 type="text"
                 name="since"
                 placeholder="Enter Since Year"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
                 defaultValue={profile?.since}
               />
             </div>
@@ -66,7 +69,7 @@ const WriterProfileUpdateModal = ({ handelUpdateProfile }) => {
                 type="text"
                 name="description"
                 placeholder="Enter Your Shop Description"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
                 defaultValue={profile?.description}
               />
             </div>
@@ -76,7 +79,7 @@ const WriterProfileUpdateModal = ({ handelUpdateProfile }) => {
                 type="text"
                 name="address"
                 placeholder="Enter Your Address"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
                 defaultValue={profile?.address}
               />
             </div>
@@ -86,7 +89,7 @@ const WriterProfileUpdateModal = ({ handelUpdateProfile }) => {
                 type="number"
                 name="phone"
                 placeholder="Enter Your Phone Number"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
                 defaultValue={profile?.phone}
               />
             </div>
@@ -98,7 +101,7 @@ const WriterProfileUpdateModal = ({ handelUpdateProfile }) => {
                   type="text"
                   name="twitter"
                   placeholder="Enter Your twitter link"
-                  className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                  className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
                   defaultValue={profile?.twitter}
                 />
               </div>
@@ -108,7 +111,7 @@ const WriterProfileUpdateModal = ({ handelUpdateProfile }) => {
                   type="text"
                   name="facebook"
                   placeholder="Enter Your facebook link"
-                  className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                  className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
                   defaultValue={profile?.facebook}
                 />
               </div>
@@ -120,7 +123,7 @@ const WriterProfileUpdateModal = ({ handelUpdateProfile }) => {
                   type="text"
                   name="instagram"
                   placeholder="Enter Your instagram link"
-                  className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                  className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
                   defaultValue={profile?.instagram}
                 />
               </div>
@@ -130,7 +133,7 @@ const WriterProfileUpdateModal = ({ handelUpdateProfile }) => {
                   type="text"
                   name="pinterest"
                   placeholder="Enter Your pinterest link"
-                  className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                  className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
                   defaultValue={profile?.pinterest}
                 />
               </div>

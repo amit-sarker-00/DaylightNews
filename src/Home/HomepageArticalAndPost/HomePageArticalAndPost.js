@@ -22,7 +22,7 @@ const HomePageArticalAndPost = () =>
 
 
   return (
-    <div className=" bg-white py-16 ">
+    <div className="   py-16 ">
       <div className=" items-center flex justify-between my-3">
         <div className="flex items-center ">
           <h1 className="font-bold text-xl lg:w-[860px] xl:w-[960px] sm:text-2xl text-red-500">

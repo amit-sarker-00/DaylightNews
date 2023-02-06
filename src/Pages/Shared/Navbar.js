@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AiOutlineBars } from "react-icons/ai";
 import { IoIosArrowDropdown } from "react-icons/io";
-import { FaFacebookF, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
@@ -50,7 +49,7 @@ const Navbar = () =>
   return (
     <main>
 
-      <section className="bg-[#f0f2f5] pb-5">
+      <section className=" pb-5">
         <div className="">
           <div className="max-w-[1440px] mx-auto flex  justify-between py-1">
             <div>
@@ -74,30 +73,7 @@ const Navbar = () =>
           </div>
 
           <div className="max-w-[1440px] mx-auto items-center sm:flex-row flex flex-col justify-between">
-            <div>
-              <ul className="flex gap-3">
-                <Link className="rounded-full" href="#">
-                  <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
-                    <FaFacebookF className="text-lg" />
-                  </li>
-                </Link>
-                <Link className="rounded-full" href="#">
-                  <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
-                    <FaGoogle className="text-lg" />
-                  </li>
-                </Link>
-                <Link className="rounded-full" href="#">
-                  <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
-                    <FaGithub className="text-lg" />
-                  </li>
-                </Link>
-                <Link className="rounded-full" href="#">
-                  <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
-                    <FaLinkedinIn className="text-lg" />
-                  </li>
-                </Link>
-              </ul>
-            </div>
+
             <div>
               <h1 className="text-xl select-none font-bold italic w-40 sm:w-52 md:w-72 h-8 sm:h-12">
                 <Link to="/">

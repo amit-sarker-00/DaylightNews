@@ -5,7 +5,7 @@ const HorizentalSection = ({ data }) =>
 {
   const { picture, title, _id } = data;
   return (
-    <div className=" mb-3 w-full  transition-all hover:border border hover:border-gray-200 border-white">
+    <div className=" mb-3 w-full  transition-all hover:border border border-gray-200 dark:border-gray-700   hover:border-gray-200  ">
       <Link to={`detail/${ _id }`} className="text-md font-bold hover:text-red-600 ">
         <div className="overflow-hidden xl:h-20">
           <img
