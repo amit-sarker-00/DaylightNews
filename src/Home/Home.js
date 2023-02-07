@@ -38,18 +38,17 @@ const Home = () => {
       ) : (
         <>
           <Banner />
-          <DragAndDrop></DragAndDrop>
-          {/* <BreakingNews /> */}
-          {/* <TrendingNews /> */}
-          {/* <HomePageDivisionData /> */}
-          {/* <HomePageLetestNews /> */}
-          {/* <HomePageArticalAndPost /> */}
-          {/* <OnlineVatingSection /> */}
-          {/* <SportsNews /> */}
+          <BreakingNews />
+          <TrendingNews />
+          {/* <HomePageDivisionData />
+          <HomePageLetestNews />
+          <HomePageArticalAndPost />
+          <OnlineVatingSection />
+          <SportsNews />
           <HomePageStorySection />
-          {/* <VideoSection /> */}
-          {/* <ViralNews />  */}
-          {/* <News/>  */}
+          <VideoSection />
+          <ViralNews />
+          <News /> */}
           {/* <EnvironmentNews /> */}
           {/* <Voices /> */}
         </>

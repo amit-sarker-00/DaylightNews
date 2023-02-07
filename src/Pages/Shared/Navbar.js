@@ -144,8 +144,11 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold">
-                  Travel
+                <NavLink
+                  to="/socialMedia"
+                  className="text-1xl hover:text-red-500 font-semibold"
+                >
+                  SocialMedia
                 </NavLink>
               </li>
               <li>
