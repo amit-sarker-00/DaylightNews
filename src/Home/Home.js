@@ -23,6 +23,7 @@ import EnvironmentNews from "./EnvironmentNews/EnvironmentNews";
 import HomePageDivisionData from "./DistricNews/HomePageDivisionData";
 import LiveStockMarketData from "./LiveStockMarketData/LiveStockMarketData";
 import SpacialNews from "../Components/SpacialNews/SpacialNews";
+import DragAndDrop from "./DragAndDrop/DragAndDrop";
 
 const Home = () => {
   useTitle("Home");
@@ -36,20 +37,21 @@ const Home = () => {
         <SearchData />
       ) : (
         <>
-            <Banner />
-          <BreakingNews />
-          <TrendingNews />
-          <HomePageDivisionData />
-          <HomePageLetestNews />
-          <HomePageArticalAndPost />
-          <OnlineVatingSection />
-          <SportsNews />
+          <Banner />
+          <DragAndDrop></DragAndDrop>
+          {/* <BreakingNews /> */}
+          {/* <TrendingNews /> */}
+          {/* <HomePageDivisionData /> */}
+          {/* <HomePageLetestNews /> */}
+          {/* <HomePageArticalAndPost /> */}
+          {/* <OnlineVatingSection /> */}
+          {/* <SportsNews /> */}
           <HomePageStorySection />
-          <VideoSection />
-          <ViralNews />
-            {/* <News/> */}
-          <EnvironmentNews />
-          <Voices />
+          {/* <VideoSection /> */}
+          {/* <ViralNews />  */}
+          {/* <News/>  */}
+          {/* <EnvironmentNews /> */}
+          {/* <Voices /> */}
         </>
       )}
     </div>
