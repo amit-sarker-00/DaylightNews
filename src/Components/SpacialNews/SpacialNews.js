@@ -2,18 +2,15 @@ import React, { useEffect, useState } from 'react';
 import "../SpacialNews/SpacialNews.css"
 import Marquee from "react-fast-marquee";
 
-const SpacialNews = () =>
-{
+const SpacialNews = () => {
 
 
-    const [ bannerData, setBannerData ] = useState([]);
-    const [ loading, setLoading ] = useState(true);
-    useEffect(() =>
-    {
+    const [bannerData, setBannerData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
         fetch(`sylet.json`)
             .then((res) => res.json())
-            .then((data) =>
-            {
+            .then((data) => {
                 setBannerData(data);
                 setLoading(false);
             });
@@ -27,7 +24,7 @@ const SpacialNews = () =>
                     <h1 className='text  '>Spacial News</h1>
                 </div>
 
-                <Marquee >
+                <Marquee pauseOnHover >
                     {bannerData?.map((item) => (
                         <> {item?.title} || </>
                     ))}
