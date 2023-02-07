@@ -43,9 +43,9 @@ const Home = () => {
           <HomePageLetestNews />
           <HomePageArticalAndPost />
           <OnlineVatingSection />
-          <SportsNews />
+          <SportsNews /> */}
           <HomePageStorySection />
-          <VideoSection />
+          {/* <VideoSection />
           <ViralNews /> */}
           {/* <News/> */}
           {/* <EnvironmentNews />

@@ -133,40 +133,39 @@ const TranslationPage = () => {
     return (
         <>
             <div className='flex items-center justify-center px-3 '>
-                <div className='h-[700px] p-5 w-full  shadow-md my-5'>
-                    <div className='rounded-md   h-[400px] p-5 flex  '>
-                        <textarea className='from-text w-full outline-none   resize-none border rounded-md p-3' spellCheck="false" placeholder='Enter Text' ></textarea>
-                        <textarea className='to-text  w-full outline-none  resize-none border rounded-md p-3 ' spellCheck="false" re placeholder='Enter Text' ></textarea>
+                <div className='h-[700px] md:p-5 w-full  shadow-md my-5'>
+                    <div className='rounded-md  h-[400px] p-5 flex md:flex-row flex-col '>
+                        <textarea className='from-text w-full h-[300px] outline-none   resize-none border md:rounded-l-lg p-3' spellCheck="false" placeholder='Enter Text' ></textarea>
+                        <textarea className='to-text h-[300px] w-full outline-none  resize-none border  md:rounded-r-lg p-3 ' spellCheck="false" readOnly re placeholder='Enter Text' ></textarea>
                     </div>
-                    <div className='flex items-center justify-between px-5'>
-                        <li className='row flex items-center gap-5 text-xl'>
-                            <div className="icons">
-                                <i id="from" className="fas fa-volume-up"></i>
-                                <i id="from" className="fas fa-copy"></i>
+                    <div className=' flex md:flex-row flex-col items-center justify-between px-5'>
+                        <li className='row from flex items-center gap-5 text-xl'>
+                            <div className="icons flex gap-5 text-gray-300">
+                                <i id="from" className="fas fa-volume-up cursor-pointer text-lg"></i>
+                                <i id="from" className="fas fa-copy cursor-pointer text-lg"></i>
                             </div>
                             <div>
-                                <select></select>
+                                <select ></select>
                             </div>
-
                         </li>
-                        <div className='text-xl'>
-                            <BiHorizontalCenter className='exchange' />
-                        </div>
-                        <li className='row flex items-center gap-3 text-xl'>
+
+                        <li className="exchange list-none">
+                            <i className="fas fa-exchange-alt exchange"></i>
+                        </li>
+                        <li className='row to flex items-center gap-3 text-xl'>
                             <div>
                                 <select></select>
                             </div>
-
-                            <div className="icons">
-                                <i id="to" className="fas fa-volume-up"></i>
-                                <i id="to" className="fas fa-copy"></i>
+                            <div className="icons flex gap-5 text-gray-300">
+                                <i id="to" className="fas fa-volume-up cursor-pointer text-lg"></i>
+                                <i id="to" className="fas fa-copy cursor-pointer text-lg"></i>
                             </div>
 
                         </li>
                     </div>
                     <div className='m-5'>
                         <button className='w-full bg-black text-white 
-                     py-2 cursor-pointer text-2xl font-bold'>Translate Text</button>
+                     py-2 cursor-pointer text-sm md:text-2xl font-bold'>Translate Text</button>
                     </div>
                 </div>
             </div>
