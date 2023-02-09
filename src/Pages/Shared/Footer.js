@@ -1,14 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import
-{
+import {
   HiChevronDoubleRight,
   HiEnvelope,
   HiHome,
   HiPhone,
 } from "react-icons/hi2";
-import
-{
+import {
   IoLogoFacebook,
   IoLogoGoogle,
   IoLogoInstagram,
@@ -19,30 +17,27 @@ import
 } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-import car1 from "../../assest/Footer img/car 2.jfif";
-
-
-const Footer = () =>
-{
-
-
+const Footer = () => {
   // categories
   const { data: allCategory = [] } = useQuery({
-    queryKey: [ 'categories' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }categories`)
-      .then((res) => res.json())
-  })
+    queryKey: ["categories"],
+    queryFn: () =>
+      fetch(`${process.env.REACT_APP_API_URL}categories`).then((res) =>
+        res.json()
+      ),
+  });
 
-  const categories = allCategory.filter(n => n !== undefined && n !== null && n !== false && n !== 0)
-
-
+  const categories = allCategory.filter(
+    (n) => n !== undefined && n !== null && n !== false && n !== 0
+  );
 
   const { data: footerTopPost } = useQuery({
-    queryKey: [ 'breakingNews' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }breakingNews`)
-      .then((res) => res.json())
-  })
-
+    queryKey: ["breakingNews"],
+    queryFn: () =>
+      fetch(`${process.env.REACT_APP_API_URL}breakingNews`).then((res) =>
+        res.json()
+      ),
+  });
 
   // const footerTopPost = [
   //   {
@@ -88,7 +83,9 @@ const Footer = () =>
       <footer className="footer pt-10 w-5/6 mx-auto flex px-3 lg:justify-between lg:flex-row flex-wrap justify-center  text-white ">
         {/* ---------------------about us --------------------  */}
         <div>
-          <h1 className=" font-bold md:text-start text-center w-full text-lg pb-6">ABOUT US</h1>
+          <h1 className=" font-bold md:text-start text-center w-full text-lg pb-6">
+            ABOUT US
+          </h1>
           <div className="">
             <h2>
               We believe that the news of our online newsportal website has the
@@ -136,51 +133,65 @@ const Footer = () =>
         <div>
           <h1 className="font-bold text-lg pb-6">POPULAR CATEGORIES</h1>
           <div className="w-full">
-            {
-              categories?.slice(0, 6)?.map(category =>
-                <div  >
-                  <Link to={`/category/${ category }`} className="py-2 block ">
-                    <div className="flex justify-between  hover:text-red-600">
-                      <div className="flex items-center gap-2">
-                        <HiChevronDoubleRight></HiChevronDoubleRight>
-                        <p> {category}</p>
-                      </div>
-                      <div>
-                        <p>(05)</p>
-                      </div>
+            {categories?.slice(0, 6)?.map((category) => (
+              <div>
+                <Link to={`/category/${category}`} className="py-2 block ">
+                  <div className="flex justify-between  hover:text-red-600">
+                    <div className="flex items-center gap-2">
+                      <HiChevronDoubleRight></HiChevronDoubleRight>
+                      <p> {category}</p>
                     </div>
-                  </Link>
-                </div>
-              )
-            }
-
+                    <div>
+                      <p>(05)</p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
         {/*--------------------------------popular post --------------------- */}
         <div>
-          <h1 className="font-bold text-lg pb-6 w-full text-center sm:text-start">POPULAR POST</h1>
+          <h1 className="font-bold text-lg pb-6 w-full text-center sm:text-start">
+            POPULAR POST
+          </h1>
           <div className="">
-            {
-              footerTopPost?.slice(0, 3).map(topPost =>
-                <Link to={`/detail/${ topPost?._id }`} key={topPost.id} className="flex gap-3 hover:text-red-500   p-2">
-                  <img src={topPost?.picture} alt="" className="w-16 rounded-lg" />
-                  <div>
-                    <h1 className=" transition-all">
-                      {topPost?.title?.length > 30 ? topPost?.title.slice(0, 30) + '...' : topPost?.title}
-                    </h1>
+            {footerTopPost?.slice(0, 3).map((topPost) => (
+              <Link
+                to={`/detail/${topPost?._id}`}
+                key={topPost.id}
+                className="flex gap-3 hover:text-red-500   p-2"
+              >
+                <img
+                  src={topPost?.picture}
+                  alt=""
+                  className="w-16 rounded-lg"
+                />
+                <div>
+                  <h1 className=" transition-all">
+                    {topPost?.title?.length > 30
+                      ? topPost?.title.slice(0, 30) + "..."
+                      : topPost?.title}
+                  </h1>
 
-                    <h2 className="p-2 items-center gap-2  flex rounded-full transition-all">
-                      <IoTimeSharp className="shadow-lg  text-lg bg-red-600 rounded-lg"></IoTimeSharp>
-                      {topPost?.author?.published_date}
-                    </h2>
-                  </div>
-                </Link>)
-            }
+                  <h2 className="p-2 items-center gap-2  flex rounded-full transition-all">
+                    <IoTimeSharp className="shadow-lg  text-lg bg-red-600 rounded-lg"></IoTimeSharp>
+                    {topPost?.author?.published_date}
+                  </h2>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </footer>
       <div className="text-center py-8 text-gray-300 border-t border-gray-800 ">
-        <p>Copyright © 2023 All Rights Reserved By <a href="#" className="text-red-500 font-bold italic">Programming-hero</a>-Students, Friendly Warriors Team</p>
+        <p>
+          Copyright © 2023 All Rights Reserved By{" "}
+          <a href="#" className="text-red-500 font-bold italic">
+            Programming-hero
+          </a>
+          -Students, Friendly Warriors Team
+        </p>
       </div>
     </div>
   );

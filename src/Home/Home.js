@@ -11,40 +11,69 @@ import { AuthContext } from "../Contexts/AuthProvider/AuthProvider";
 import SportsNews from "./SportsNews/SportsNews";
 
 import HomePageDivisionData from "./DistricNews/HomePageDivisionData";
+import LiveStockMarketData from "./LiveStockMarketData/LiveStockMarketData";
+import SpacialNews from "../Components/SpacialNews/SpacialNews";
+import DragAndDrop from "./DragAndDrop/DragAndDrop";
 
 import HomePageLetestNews from "./HomePageLetestNews/HomePageLetestNews";
 import HomePageStorySection from "./HomePageStorySection/HomePageStorySection";
 
 const Home = () => {
-	useTitle("Home");
-	const { searchContent } = useContext(AuthContext);
+  useTitle("Home");
+  const { searchContent } = useContext(AuthContext);
 
-	return (
-		<div className="max-w-[1440px] mx-auto">
-			{/* <Category /> */}
-			{/* <Spinner /> */}
-			{searchContent ? (
-				<SearchData />
-			) : (
-				<>
-					<Banner />
-					<BreakingNews />
-					<TrendingNews />
-					<HomePageDivisionData />
-					<HomePageLetestNews />
-					<HomePageArticalAndPost />
-					<OnlineVatingSection />
-					<SportsNews />
-					<HomePageStorySection />
-					{/* <VideoSection />
+  return (
+    <div className="max-w-[1440px] mx-auto">
+      {/* <Category /> */}
+      {/* <Spinner /> */}
+      {searchContent ? (
+        <SearchData />
+      ) : (
+        <>
+          <Banner />
+          <BreakingNews />
+          <TrendingNews />
+          <HomePageDivisionData />
+          <HomePageLetestNews />
+          <HomePageArticalAndPost />
+          <OnlineVatingSection />
+          <SportsNews />
+          <HomePageStorySection />
+          {/* <VideoSection />
           <ViralNews /> */}
-					{/* <News/> */}
-					{/* <EnvironmentNews />
+          {/* <News/> */}
+          {/* <EnvironmentNews />
           <Voices /> */}
-				</>
-			)}
-		</div>
-	);
+        </>
+      )}
+    </div>
+  );
+  return (
+    <div className="max-w-[1440px] mx-auto">
+      {/* <Category /> */}
+      {/* <Spinner /> */}
+      {searchContent ? (
+        <SearchData />
+      ) : (
+        <>
+          <Banner />
+          <BreakingNews />
+          <TrendingNews />
+          {/* <HomePageDivisionData />
+          <HomePageLetestNews />
+          <HomePageArticalAndPost />
+          <OnlineVatingSection />
+          <SportsNews />
+          <HomePageStorySection />
+          <VideoSection />
+          <ViralNews />
+          <News /> */}
+          {/* <EnvironmentNews /> */}
+          {/* <Voices /> */}
+        </>
+      )}
+    </div>
+  );
 };
 
 export default Home;
