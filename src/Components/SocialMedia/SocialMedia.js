@@ -5,23 +5,35 @@ import { MdDelete, MdOutlineAddReaction } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { getRole } from "../../api/auth";
+import { toast } from "react-hot-toast";
+import { useQuery } from "@tanstack/react-query";
 const SocialMedia = () => {
   const { user } = useContext(AuthContext);
   const [role, setRole] = useState("");
   console.log(role);
-  const [socialNews, setSocialNews] = useState([]);
-
   useEffect(() => {
     getRole(user?.email).then((data) => {
       setRole(data);
     });
   }, [user]);
-
-  useEffect(() => {
-    fetch("http://localhost:8000/socialNews")
+  const { data: allSocialNews, refetch } = useQuery({
+    queryKey: ["stories", user?.email],
+    queryFn: () =>
+      fetch("http://localhost:8000/socialNews").then((res) => res.json()),
+  });
+  const handelDelete = (e) => {
+    console.log(e);
+    fetch(`http://localhost:8000/socialNews/${e}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
-      .then((data) => setSocialNews(data));
-  }, []);
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          toast.success("Deleted successfully");
+          refetch();
+        }
+      });
+  };
   return (
     <div>
       <div className="">
@@ -31,7 +43,7 @@ const SocialMedia = () => {
           </h1>
         </Link>
       </div>
-      {socialNews?.map((news) => (
+      {allSocialNews?.map((news) => (
         <div
           key={news._id}
           className="w-full  max-w-lg mx-auto rounded overflow-hidden border shadow-sm m-4"
@@ -54,7 +66,7 @@ const SocialMedia = () => {
 
               <>
                 {role === "admin" ? (
-                  <button className="">
+                  <button onClick={() => handelDelete(news._id)} className="">
                     <MdDelete className="w-5 h-5"></MdDelete>
                   </button>
                 ) : (

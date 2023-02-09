@@ -17,7 +17,7 @@ const MyNews = () => {
 
   const handelDelete = (e) => {
     console.log(e);
-    fetch(`http://localhost:8000/myNews/${e}`, {
+    fetch(`http://localhost:8000/socialNews/${e}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
