@@ -26,18 +26,17 @@ const SocialDrawer = () => {
               </Link>
             </li>
             <li className="w-full ">
-              <Link className="block py-1 hover:bg-gray-200 duration-200 hover:pl-8 mt-1 shadow-sm  pl-2 ">
-                Message
+              <Link
+                to="/mySocialNews"
+                className="block py-1 hover:bg-gray-200 duration-200 hover:pl-8 mt-1 shadow-sm  pl-2 "
+              >
+                My News
               </Link>
             </li>
+
             <li className="w-full ">
               <Link className="block py-1 hover:bg-gray-200 duration-200 hover:pl-8 mt-1 shadow-sm  pl-2 ">
-                Notification
-              </Link>
-            </li>
-            <li className="w-full ">
-              <Link className="block py-1 hover:bg-gray-200 duration-200 hover:pl-8 mt-1 shadow-sm  pl-2 ">
-                Friends
+                Followers
               </Link>
             </li>
             <li className="w-full ">
@@ -50,19 +49,10 @@ const SocialDrawer = () => {
                 Live Chat
               </Link>
             </li>
-            <li className="w-full ">
-              <Link className="block py-1 hover:bg-gray-200 duration-200 hover:pl-8 mt-1 shadow-sm  pl-2 ">
-                Favorite
-              </Link>
-            </li>
+
             <li className="w-full ">
               <Link className="block py-1 hover:bg-gray-200 duration-200 hover:pl-8 mt-1 shadow-sm  pl-2 ">
                 Videos
-              </Link>
-            </li>
-            <li className="w-full ">
-              <Link className="block py-1 hover:bg-gray-200 duration-200 hover:pl-8 mt-1 shadow-sm  pl-2 ">
-                Event
               </Link>
             </li>
 

@@ -5,6 +5,7 @@ import BdOnlinePayment from "../Components/DonationPage/BdOnlinePayment";
 import DonationFail from "../Components/DonationPage/DonationFail";
 import DonationPage from "../Components/DonationPage/DonationPage";
 import AddSocialPost from "../Components/SocialMedia/AddSocialPost";
+import MyNews from "../Components/SocialMedia/MyNews";
 import SocialMedia from "../Components/SocialMedia/SocialMedia";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
@@ -69,6 +70,7 @@ export const router = createBrowserRouter([
         children: [{ path: "/socialMedia", element: <SocialMedia /> }],
       },
       { path: "/addSocialPost", element: <AddSocialPost /> },
+      { path: "/mySocialNews", element: <MyNews /> },
 
       {
         path: "/account",

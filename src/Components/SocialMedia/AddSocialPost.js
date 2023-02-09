@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const AddSocialPost = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  const navigate = useNavigate();
   const [files, setFiles] = useState([]);
   // const [selectedImage, setSelectedImage] = useState();
 
@@ -37,7 +39,8 @@ const AddSocialPost = () => {
             title: event.target.title.value,
             image: imageData.data.display_url,
             description: event.target.description.value,
-            email: event.target.email.value,
+            email: user?.email,
+            name: user?.displayName,
           };
           console.log(socialNews);
           fetch("http://localhost:8000/addSocialNews", {
@@ -48,7 +51,10 @@ const AddSocialPost = () => {
             body: JSON.stringify(socialNews),
           })
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+              toast.success("Post Added Successfully");
+              navigate("/socialMedia");
+            });
         }
       })
       .catch((err) => console.error(err));
@@ -101,17 +107,7 @@ const AddSocialPost = () => {
               ))}
             </div>
           </div>
-          <div>
-            <input
-              type="email"
-              name="email"
-              defaultValue={user?.email}
-              disabled
-              placeholder="Email"
-              className="w-full border py-3 rounded-sm  text-gray-700"
-              data-temp-mail-org="0"
-            />
-          </div>
+
           <div className="">
             <div className="">
               <textarea
