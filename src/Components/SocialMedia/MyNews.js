@@ -1,17 +1,34 @@
+import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { FaRegComment, FaShare } from "react-icons/fa";
-import { MdOutlineAddReaction } from "react-icons/md";
+import { MdDelete, MdOutlineAddReaction } from "react-icons/md";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const MyNews = () => {
   const { user } = useContext(AuthContext);
-  const [socialNews, setSocialNews] = useState([]);
-  useEffect(() => {
-    fetch(`http://localhost:8000/socialNews/${user?.email}`)
+  const { data: socialNews, refetch } = useQuery({
+    queryKey: ["stories", user?.email],
+    queryFn: () =>
+      fetch(`http://localhost:8000/socialNews/${user?.email}`).then((res) =>
+        res.json()
+      ),
+  });
+
+  const handelDelete = (e) => {
+    console.log(e);
+    fetch(`http://localhost:8000/myNews/${e}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
-      .then((data) => setSocialNews(data));
-  }, [user?.email]);
-  // const myNews = socialNews.filter(socialNews.email === user?.email);
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          toast.success("Deleted successfully");
+          refetch();
+        }
+      });
+  };
+
   return (
     <div>
       <div>
@@ -26,17 +43,25 @@ const MyNews = () => {
             className="w-full  max-w-lg mx-auto rounded overflow-hidden border shadow-sm m-4"
           >
             <div className="px-6 py-4">
-              <div className="flex items-center">
-                <img
-                  className="w-12 h-12 rounded-full mr-4"
-                  src="https://i.ibb.co/N2NPBn1/photo-1633332755192-727a05c4013d.jpg"
-                  alt=""
-                />
-                <div className="text-sm">
-                  <p className="text-gray-900 font-semibold leading-none">
-                    {news.name}
-                  </p>
-                  <p className="text-gray-600">Date</p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <img
+                    className="w-12 h-12 rounded-full mr-4"
+                    src="https://i.ibb.co/N2NPBn1/photo-1633332755192-727a05c4013d.jpg"
+                    alt=""
+                  />
+                  <div className="text-sm">
+                    <p className="text-gray-900 font-semibold leading-none">
+                      {news.name}
+                    </p>
+                    <p className="text-gray-600">Date</p>
+                  </div>
+                </div>
+
+                <div>
+                  <button onClick={() => handelDelete(news._id)} className="">
+                    <MdDelete className="w-5 h-5"></MdDelete>
+                  </button>
                 </div>
               </div>
               <img className="w-full h-64 mt-4" src={news?.image} alt="" />

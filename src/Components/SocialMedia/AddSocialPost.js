@@ -72,7 +72,8 @@ const AddSocialPost = () => {
               type="text"
               name="title"
               id="title"
-              placeholder="Write a title"
+              required
+              placeholder=" Heading"
               className="w-full border py-3 rounded-sm  text-gray-700"
               data-temp-mail-org="0"
             />
@@ -93,6 +94,7 @@ const AddSocialPost = () => {
                   <img
                     name="image"
                     accept="image/*"
+                    required
                     className="w-64 h-32 m-4 object-cover rounded-lg"
                     src={URL.createObjectURL(file)}
                     alt={file.name}
