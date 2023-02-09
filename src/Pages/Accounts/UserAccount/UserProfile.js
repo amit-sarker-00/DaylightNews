@@ -131,18 +131,18 @@ const UserProfile = () => {
               <h1 className="font-bold">Connect With Me</h1>
             </div>
             <div className="flex items-center gap-5 justify-center my-3">
-              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+              <a href="https://www.facebook.com/profile.php?id=100073434090411" className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
                 <FaFacebook className="w-7 h-7 "></FaFacebook>
-              </button>
-              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+              </a>
+              <a href="https://www.linkedin.com/in/md-abdul-quayum/" className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
                 <FaLinkedin className="w-7 h-7 "></FaLinkedin>
-              </button>
-              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+              </a>
+              <a href="https://www.instagram.com/quayumhp/" className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
                 <FaInstagram className="w-7 h-7 "></FaInstagram>
-              </button>
-              <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+              </a>
+              <a href="https://twitter.com/AbdulQu19463442" className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
                 <FaTwitter className="w-7 h-7 "></FaTwitter>
-              </button>
+              </a>
             </div>
           </div>
         </div>

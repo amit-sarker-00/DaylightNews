@@ -73,26 +73,26 @@ const Navbar = () => {
           <div className="max-w-[1440px] mx-auto items-center sm:flex-row flex flex-col justify-between">
             <div>
               <ul className="flex gap-3">
-                <Link className="rounded-full" href="#">
+                <a className="rounded-full" href="https://www.facebook.com/profile.php?id=100073434090411">
                   <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
                     <FaFacebookF className="text-lg" />
                   </li>
-                </Link>
-                <Link className="rounded-full" href="#">
+                </a>
+                <a className="rounded-full" href="https://mail.google.com/mail/u/0/#inbox">
                   <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
                     <FaGoogle className="text-lg" />
                   </li>
-                </Link>
-                <Link className="rounded-full" href="#">
+                </a>
+                <a className="rounded-full" href="https://github.com/JilluRahmanJibon/DayLight-News">
                   <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
                     <FaGithub className="text-lg" />
                   </li>
-                </Link>
-                <Link className="rounded-full" href="#">
+                </a>
+                <a className="rounded-full" href="https://www.linkedin.com/in/md-abdul-quayum/">
                   <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
                     <FaLinkedinIn className="text-lg" />
                   </li>
-                </Link>
+                </a>
               </ul>
             </div>
             <div>
