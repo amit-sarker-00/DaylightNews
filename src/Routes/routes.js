@@ -4,6 +4,7 @@ import CardDetailsPage from "../Components/CardDetailsPage/CardDetailsPage";
 import BdOnlinePayment from "../Components/DonationPage/BdOnlinePayment";
 import DonationFail from "../Components/DonationPage/DonationFail";
 import DonationPage from "../Components/DonationPage/DonationPage";
+import AddSocialPost from "../Components/SocialMedia/AddSocialPost";
 import SocialMedia from "../Components/SocialMedia/SocialMedia";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
@@ -65,10 +66,9 @@ export const router = createBrowserRouter([
             <SocialMediaLayout></SocialMediaLayout>
           </PrivateRoute>
         ),
-        children: [
-          { path: "/socialMedia", element: <SocialMedia></SocialMedia> },
-        ],
+        children: [{ path: "/socialMedia", element: <SocialMedia /> }],
       },
+      { path: "/addSocialPost", element: <AddSocialPost /> },
 
       {
         path: "/account",
