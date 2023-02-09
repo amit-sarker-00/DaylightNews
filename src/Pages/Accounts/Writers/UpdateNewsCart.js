@@ -3,7 +3,7 @@ import React from "react";
 
 const UpdateNewsCart = ({ news, handleUpdateProduct, handleDelet }) => {
   return (
-    <div className="shadow hover:shadow-2xl border hover:border-gray-300 ">
+    <div className="shadow hover:shadow-2xl border hover:border-gray-200 dark:border-gray-700   ">
       <div className="overflow-hidden">
         <img
           className="w-full h-44 ease-in-out duration-500 transform hover:scale-125"

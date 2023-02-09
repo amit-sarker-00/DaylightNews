@@ -64,14 +64,12 @@ export const router = createBrowserRouter([
 				path: "/payment/fail",
 				element: <DonationFail />,
 			},
-
-			{
-				path: "/gadgets",
-				element: <Gadgets />,
-			},
 			{
 				path: "/translation",
 				element: <TranslationPage />,
+			},
+			{
+				path: "gadgets", element: <Gadgets />
 			},
 			{
 				path: "/account",
@@ -121,6 +119,8 @@ export const router = createBrowserRouter([
 						path: "comments",
 						element: <Comments />,
 					},
+
+
 				],
 			},
 		],

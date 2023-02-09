@@ -1,12 +1,11 @@
 import React from "react";
-import
-{
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaWhatsapp,
-  FaYoutube,
+import {
+FaGithub,
+FaInstagram,
+FaLinkedin,
+FaTwitter,
+FaWhatsapp,
+FaYoutube,
 } from "react-icons/fa";
 import { RxCalendar } from "react-icons/rx";
 import { BsFacebook } from "react-icons/bs";
@@ -14,11 +13,10 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
-const ViralNews = () =>
-{
+const ViralNews = () => {
   const { data: viralNews, isLoading } = useQuery({
-    queryKey: [ 'viralNews' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }viralNews`)
+    queryKey: ['viralNews'],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}viralNews`)
       .then((res) => res.json())
   })
 
@@ -30,18 +28,18 @@ const ViralNews = () =>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         <div>
-          <div className="font-bold border text-red-500 text-center py-1">
+          <div className="font-bold border border-gray-200 dark:border-gray-700   text-red-500 text-center py-1">
             <h1>MOST POPULAR</h1>
           </div>
           <div>
             {isLoading && <SkeletonLoading />}
             {viralNews?.slice(0, 4).map((viral) => (
               <Link
-                to={`/detail/${ viral?._id }`}
+                to={`/detail/${viral?._id}`}
                 key={viral?._id}
                 className=" h-full hover:text-red-500 w-full  "
               >
-                <div className="flex w-full border h-full items-center">
+                <div className="flex w-full border border-gray-200 dark:border-gray-700   h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
                     <img
                       className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
@@ -70,18 +68,18 @@ const ViralNews = () =>
           </div>
         </div>
         <div className="">
-          <div className="font-bold border text-red-500 text-center py-1">
+          <div className="font-bold border border-gray-200 dark:border-gray-700   text-red-500 text-center py-1">
             <h1>TALKED ABOUT</h1>
           </div>
           <div>
             {isLoading && <SkeletonLoading />}
             {viralNews?.slice(4, 8).map((viral) => (
               <Link
-                to={`/detail/${ viral?._id }`}
+                to={`/detail/${viral?._id}`}
                 key={viral?._id}
                 className=" h-full hover:text-red-500 w-full  "
               >
-                <div className="flex w-full border h-full items-center">
+                <div className="flex w-full border border-gray-200 dark:border-gray-700   h-full items-center">
                   <div className="overflow-hidden  h-32 w-44">
                     <img
                       className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
@@ -110,10 +108,10 @@ const ViralNews = () =>
           </div>
         </div>
         <div className="">
-          <div className="font-bold border text-red-500 text-center py-1">
+          <div className="font-bold border  border-gray-200 dark:border-gray-700   text-red-500 text-center py-1">
             <h1>VIDEO OF THE DAY</h1>
           </div>
-          <div className="h-[50%] mb-6 border">
+          <div className="h-[50%] mb-6 border border-gray-200 dark:border-gray-700  ">
             <iframe
               className=""
               width="100%"
@@ -127,30 +125,30 @@ const ViralNews = () =>
             ></iframe>
           </div>
           <div>
-            <div className="text-center py-3  font-bold border-2 mb-3">
+            <div className="text-center py-3  font-bold border border-gray-200 dark:border-gray-700   mb-3">
               <h1>JOIN US</h1>
             </div>
             <div>
               <ul className="flex items-center gap-5 justify-center">
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <li className="bg-white dark:text-gray-500  rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
                   <FaGithub className="text-xl"></FaGithub>
                 </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <li className="bg-white dark:text-gray-500 rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
                   <BsFacebook className="text-lg"></BsFacebook>
                 </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <li className="bg-white dark:text-gray-500 rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
                   <FaTwitter className="text-lg"></FaTwitter>
                 </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <li className="bg-white dark:text-gray-500 rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
                   <FaInstagram className="text-lg"></FaInstagram>
                 </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <li className="bg-white dark:text-gray-500 rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
                   <FaLinkedin className="text-lg"></FaLinkedin>
                 </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
                   <FaYoutube className="text-lg"></FaYoutube>
                 </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border">
+                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
                   <FaWhatsapp className="text-lg"></FaWhatsapp>
                 </li>
               </ul>

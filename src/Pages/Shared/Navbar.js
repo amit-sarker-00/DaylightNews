@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AiOutlineBars } from "react-icons/ai";
 import { IoIosArrowDropdown } from "react-icons/io";
-import { FaFacebookF, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import SpacialNews from "../../Components/SpacialNews/SpacialNews";
 import DonateNotUser from "../../Components/DonationPage/DonateNotUser";
+import { FaFacebook, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -47,7 +47,7 @@ const Navbar = () => {
   return (
     <main>
 
-      <section className="bg-[#f0f2f5] pb-5">
+      <section className=" pb-5">
         <div className="">
           <div className="max-w-[1440px] mx-auto flex  justify-between py-1">
             <div>
@@ -75,7 +75,7 @@ const Navbar = () => {
               <ul className="flex gap-3">
                 <a className="rounded-full" href="https://www.facebook.com/profile.php?id=100073434090411">
                   <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
-                    <FaFacebookF className="text-lg" />
+                    <FaFacebook className="text-lg" />
                   </li>
                 </a>
                 <a className="rounded-full" href="https://mail.google.com/mail/u/0/#inbox">

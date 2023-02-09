@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { RxCalendar } from "react-icons/rx";
 import { useQuery } from "@tanstack/react-query";
-const SportsNews = () =>
-{
+const SportsNews = () => {
 
   const { data: sportsNews, isLoading } = useQuery({
-    queryKey: [ 'sportsNews' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }sportsNews`)
+    queryKey: ['sportsNews'],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}sportsNews`)
       .then((res) => res.json())
   })
 
@@ -35,11 +34,11 @@ const SportsNews = () =>
         <div className="">
           {sportsNews?.slice(0, 5).map((sports) => (
             <Link
-              to={`/detail/${ sports?._id }`}
+              to={`/detail/${sports?._id}`}
               key={sports._id}
               className=" h-full hover:text-red-500 w-full  "
             >
-              <div className="flex w-full border h-full items-center">
+              <div className="flex w-full border border-gray-200 dark:border-gray-700   h-full items-center">
                 <div className="overflow-hidden  h-32 w-44">
                   <img
                     className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
@@ -66,11 +65,11 @@ const SportsNews = () =>
         <div className="">
           {sportsNews?.slice(5, 10).map((sports) => (
             <Link
-              to={`/detail/${ sports?._id }`}
+              to={`/detail/${sports?._id}`}
               key={sports._id}
               className=" h-full w-full  "
             >
-              <div className="flex   w-full h-full border">
+              <div className="flex   w-full h-full border border-gray-200 dark:border-gray-700  ">
                 <div className="overflow-hidden h-32 w-44">
                   <img
                     className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"

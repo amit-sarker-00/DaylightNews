@@ -96,7 +96,7 @@ const TranslationPage = () => {
 						navigator.clipboard.writeText(toText.value);
 					}
 				} else {
-					let utterance: SpeechSynthesisUtterance;
+					let utterance;
 					if (target.id == "from") {
 						utterance = new SpeechSynthesisUtterance(fromText.value);
 						// utterance.lang = selectTag[0].value;

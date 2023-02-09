@@ -100,7 +100,7 @@ const UpdateNewsForm = ({ news, uniqueCategory }) => {
                 type="textarea"
                 name="description"
                 placeholder="Enter Your Shop Description"
-                className="w-full h-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                className="w-full h-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
                 defaultValue={news?.description}
               />
             </div>

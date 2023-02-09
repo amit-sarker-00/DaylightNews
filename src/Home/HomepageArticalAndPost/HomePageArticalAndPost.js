@@ -4,17 +4,16 @@ import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 import ReecntWorkForHomePageSlidebar from "../RecentWorkForHomePageSlidebar/ReecntWorkForHomePageSlidebar";
 import HomePageArticleAndPostCard from "./HomePageArticleAndPostCard";
 
-const HomePageArticalAndPost = () =>
-{
+const HomePageArticalAndPost = () => {
 
   const { data: articleData, isLoading } = useQuery({
-    queryKey: [ 'articleNews' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }articleNews`)
+    queryKey: ['articleNews'],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}articleNews`)
       .then((res) => res.json())
   })
   const { data: recentlyNews, isLoading: recentLoading } = useQuery({
-    queryKey: [ 'recentlyNews' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }recentlyNews`)
+    queryKey: ['recentlyNews'],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}recentlyNews`)
       .then((res) => res.json())
   })
 
@@ -22,7 +21,7 @@ const HomePageArticalAndPost = () =>
 
 
   return (
-    <div className=" bg-white py-16 ">
+    <div className="   py-16 ">
       <div className=" items-center flex justify-between my-3">
         <div className="flex items-center ">
           <h1 className="font-bold text-xl lg:w-[860px] xl:w-[960px] sm:text-2xl text-red-500">
