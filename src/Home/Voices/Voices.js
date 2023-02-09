@@ -6,8 +6,8 @@ import VoicesCard from "./VoicesCard";
 const Voices = () =>
 {
   const { data: voicesNews, isLoading } = useQuery({
-    queryKey: ['voicesNews'],
-    queryFn: () => fetch(`${process.env.REACT_APP_API_URL }voicesNews`)
+    queryKey: [ 'voicesNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }voicesNews`)
       .then((res) => res.json())
   })
 
@@ -22,12 +22,12 @@ const Voices = () =>
       <div className="flex md:flex-row flex-col gap-5">
         <div className="">
           <div className="flex justify-center">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg  border border-gray-200 dark:border-gray-700   max-w-sm">
               <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                 <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt="" />
               </a>
               <div className="p-2">
-                <h5 className="text-gray-900 text-xl font-medium mb-2">The enduring message my grandfather took</h5>
+                <h5 className="text-gray-900 dark:text-white text-xl font-medium mb-2">The enduring message my grandfather took</h5>
                 <p className="text-gray-700 text-base text-justify mb-4">
                   Air pollution control devices are a series of devices that work to prevent a variety of different pollutants, both gaseous and solid, from entering the atmosphere primarily out of industrial
                 </p>

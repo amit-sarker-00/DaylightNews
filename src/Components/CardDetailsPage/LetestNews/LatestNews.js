@@ -6,7 +6,7 @@ const LatestNews = ({ recent }) =>
   const { author, category, picture, title, _id } = recent;
   return (
     <Link to={`/detail/${ _id }`}>
-      <div className="p-0 lg:p-1 border-b-2 border-gray-300 hover:ml-5 transition-all bg-gray-200 flex gap-3 w-full ">
+      <div className="p-0 lg:p-1 border-b-2 border-gray-200 dark:border-gray-700   hover:ml-5 transition-all bg-gray-200 flex gap-3 w-full ">
         <div>
           <img className="w-32 md:h-32 object-cover" src={picture} alt="" />
         </div>

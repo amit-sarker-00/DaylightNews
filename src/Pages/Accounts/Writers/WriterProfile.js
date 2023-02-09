@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import {
+import
+{
   FaFacebook,
   FaInstagram,
   FaLinkedin,
@@ -14,7 +15,8 @@ import { IoMdPersonAdd } from "react-icons/io";
 import { MdOutlineAddReaction } from "react-icons/md";
 import { AiFillEye } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import {
+import
+{
   Area,
   AreaChart,
   CartesianGrid,
@@ -29,23 +31,27 @@ import { updateWriter } from "../../../api/services";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import WriterProfileUpdateModal from "./WriterProfileUpdateModal";
 
-const WriterProfile = () => {
+const WriterProfile = () =>
+{
   const { user } = useContext(AuthContext);
-  const [loading, setLoading] = useState(true);
-  const [profile, setProfile] = useState([]);
-  const [profileViews, setProfileViews] = useState([]);
+  const [ loading, setLoading ] = useState(true);
+  const [ profile, setProfile ] = useState([]);
+  const [ profileViews, setProfileViews ] = useState([]);
 
   const fetchProfile = () =>
-    getUser(user?.email).then((data) => {
+    getUser(user?.email).then((data) =>
+    {
       setProfile(data);
       setLoading(!loading);
     });
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetchProfile();
-  }, [user, loading]);
+  }, [ user, loading ]);
 
-  const handelUpdateProfile = (event) => {
+  const handelUpdateProfile = (event) =>
+  {
     event.preventDefault();
     const name = event.target.name.value;
 
@@ -54,7 +60,8 @@ const WriterProfile = () => {
     const shopimage = event.target.image.files[0];
 
     imageUpload(shopimage)
-      .then((res) => {
+      .then((res) =>
+      {
         const UpdateWriter = {
           name,
           image: res?.data?.display_url,
@@ -65,7 +72,7 @@ const WriterProfile = () => {
         //   console.log(data);
         // });
 
-        fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
+        fetch(`${ process.env.REACT_APP_API_URL }user/${ user?.email }`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -73,13 +80,15 @@ const WriterProfile = () => {
           body: JSON.stringify(UpdateWriter),
         })
           .then((res) => res.json())
-          .then((data) => {
+          .then((data) =>
+          {
             console.log(data);
             setLoading(false);
             toast.success("Update Successfuly !");
           });
       })
-      .catch((err) => {
+      .catch((err) =>
+      {
         console.log(err);
         setLoading(false);
       });
@@ -143,11 +152,11 @@ const WriterProfile = () => {
                     profile?.image
                   ) : (
                     <div className="relative flex-shrink-0">
-                      <span className="absolute bottom-0 right-0 w-4 h-4 dark:bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-900"></span>
+                      <span className="absolute bottom-0 right-0 w-4 h-4 dark:bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-700  "></span>
                       <img
                         src="https://source.unsplash.com/50x50/?portrait"
                         alt=""
-                        className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700"
+                        className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700  "
                       />
                     </div>
                   )
@@ -197,18 +206,18 @@ const WriterProfile = () => {
                 <h1 className="font-bold">Connect With Me</h1>
               </div>
               <div className="flex items-center gap-5 justify-center my-3">
-                <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+                <a href="https://www.facebook.com/profile.php?id=100073434090411" className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
                   <FaFacebook className="w-7 h-7 "></FaFacebook>
-                </button>
-                <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+                </a>
+                <a href="https://www.linkedin.com/in/md-abdul-quayum/" className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
                   <FaLinkedin className="w-7 h-7 "></FaLinkedin>
-                </button>
-                <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+                </a>
+                <a href="https://www.instagram.com/quayumhp/" className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
                   <FaInstagram className="w-7 h-7 "></FaInstagram>
-                </button>
-                <button className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
+                </a>
+                <a href="https://twitter.com/AbdulQu19463442" className="border p-1 rounded-sm hover:bg-gray-500 hover:text-white transition-all bg-gray-100">
                   <FaTwitter className="w-7 h-7 "></FaTwitter>
-                </button>
+                </a>
               </div>
             </div>
           </div>

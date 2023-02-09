@@ -12,7 +12,7 @@ const VoicesCard = ({ VoiceNews }) =>
         className="p-2 flex gap-4 hover:text-red-500 transition-all overflow-hidden shadow items-center"
       >
         <div className="flex justify-center">
-          <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+          <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg  shadow-lg">
             <div className=" relative">
               <img className=" w-full h-full object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src={picture} alt="" />
               <Link to={`/category/${ category }`} className="absolute top-0 bg-red-500 rounded-tl-lg inline-block px-1 py-1 text-white">{category}</Link>

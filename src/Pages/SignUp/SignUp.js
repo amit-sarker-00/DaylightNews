@@ -166,7 +166,7 @@ const SignUp = () =>
                 ) : (
                   <label
                     htmlFor="uploadImage"
-                    className="flex flex-col w-full border-4 border-dashed hover:bg-gray-100 hover:border-gray-300"
+                    className="flex flex-col w-full border-4 border-dashed hover:bg-gray-100 hover:border-gray-200 dark:border-gray-700  "
                   >
                     <div className="flex flex-col py-2 items-center justify-center">
                       <GrGallery className="w-8 h-8" />
