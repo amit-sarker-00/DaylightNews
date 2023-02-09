@@ -32,6 +32,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import SlickCarousel from "../Practice/SlickCarousel/SlickCarousel";
 import Welcome from "../Pages/Welcome/Welcome";
 import PrivateRoute from "./PrivateRoute";
+import GadgetsProfile from "../Gadgets/GadgetsProfile";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -115,6 +116,10 @@ export const router = createBrowserRouter([
             path: "comments",
             element: <Comments />,
           },
+          {
+            path: "/account/gadgets/profile",
+            element: <GadgetsProfile/>
+          }
 
 
         ],
