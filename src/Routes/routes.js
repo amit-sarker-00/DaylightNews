@@ -33,6 +33,7 @@ import SlickCarousel from "../Practice/SlickCarousel/SlickCarousel";
 import Welcome from "../Pages/Welcome/Welcome";
 import PrivateRoute from "./PrivateRoute";
 import TranslationPage from "../Components/Translation/TranslationPage";
+import GadgetsProfile from "../Gadgets/GadgetsProfile";
 export const router = createBrowserRouter([
 	{
 		path: "/",
@@ -63,6 +64,11 @@ export const router = createBrowserRouter([
 			{
 				path: "/payment/fail",
 				element: <DonationFail />,
+			},
+
+			{
+				path: "/gadgets",
+				element: <Gadgets />,
 			},
 			{
 				path: "/translation",
@@ -125,9 +131,73 @@ export const router = createBrowserRouter([
 			},
 		],
 	},
+	{
+		path: "gadgets", element: <Gadgets />
+	},
+	{
+		path: "/account",
+		element: (
+			<PrivateRoute>
+				<DashboardLayout />
+			</PrivateRoute>
+		),
+		children: [
+			{
+				path: "",
+				element: <Welcome />,
+			},
+			{
+				path: "admin/profile",
+				element: <AdminAccount />,
+			},
+			{
+				path: "writers",
+				element: <AllWriters />,
+			},
+			{
+				path: "readers",
+				element: <AllReaders />,
+			},
+			{
+				path: "writer/profile",
+				element: <WriterProfile />,
+			},
+			{
+				path: "addnews",
+				element: <AddNews />,
+			},
+			{
+				path: "updateNews",
+				element: <UpdateNews />,
+			},
+			{
+				path: "reader/profile",
+				element: <UserProfile />,
+			},
+			{
+				path: "wishlist",
+				element: <Wishlist />,
+			},
+			{
+				path: "comments",
+				element: <Comments />,
+			},
+			{
+				path: "/account/gadgets/profile",
+				element: <GadgetsProfile />
+			}
 
+
+		],
+	},
 	{ path: "signup", element: <SignUp /> },
 	{ path: "login", element: <SignIn /> },
-	{ path: "/SlickCarousel", element: <SlickCarousel /> },
-	{ path: "/entertainmentNews", element: <EntertainmentNews /> },
-]);
+	{ path: '/SlickCarousel', element: <SlickCarousel /> },
+	{ path: '/entertainmentNews', element: <EntertainmentNews /> },
+])
+
+
+
+
+
+
