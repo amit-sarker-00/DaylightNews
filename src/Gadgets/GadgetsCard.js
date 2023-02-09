@@ -9,10 +9,13 @@ import GadgetsModal from './GadgetsModal';
 const GadgetsCard = ({ banner }) => {
     const [loading, setLoading] = useState(true);
     const { user } = useContext(AuthContext);
+    const [quantity, setQuantity] = useState(1);
+    const [price, setPrice] = useState(500);
     const { picture, productName, title, } = banner;
 
 
     const handleGadgetsBuy = (e) => {
+        
 
         const gadgetsAllData = {
             picture,
@@ -35,6 +38,7 @@ const GadgetsCard = ({ banner }) => {
             .then((data) => {
                 console.log(data);
                 setLoading(false);
+                setQuantity(1)
                 toast.success("Update Successfuly !");
             });
 
@@ -76,7 +80,13 @@ const GadgetsCard = ({ banner }) => {
                                 <HiShoppingCart className='text-xl text-whit' />
                                 Buy Now
                             </label>
-                            <GadgetsModal handleGadgetsBuy={handleGadgetsBuy} />
+                            <GadgetsModal 
+                            handleGadgetsBuy={handleGadgetsBuy} 
+                            quantity={quantity}
+                            setQuantity={setQuantity}
+                            price = {price}
+                            setPrice={setPrice}
+                            />
 
                         </div>
                     </div>

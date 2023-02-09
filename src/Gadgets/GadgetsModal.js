@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { HiOutlineChevronDown, HiOutlineChevronUp, } from "react-icons/hi2";
 
-const GadgetsModal = ({ handleGadgetsBuy }) => {
-    const [quantity , setQuantity] = useState(1);
-    const [price, setPrice] = useState(500);
+const GadgetsModal = ({ handleGadgetsBuy,quantity,setQuantity,price,setPrice }) => {
+    
 
     const handleIncrement = () => {
         setQuantity(quantity + 1);
