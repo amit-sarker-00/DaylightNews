@@ -165,8 +165,11 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold">
-                  Travel
+                <NavLink
+                  to="/socialMedia"
+                  className="text-1xl hover:text-red-500 font-semibold"
+                >
+                  SocialMedia
                 </NavLink>
               </li>
               <li>
@@ -220,7 +223,6 @@ const Navbar = () => {
                 </NavLink>
               </li>
             </ul>
-            https://codeshare.io/register?saveCodeshare=r9AEmV
           </div>
 
           <div className="flex items-center">

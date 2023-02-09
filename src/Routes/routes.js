@@ -69,6 +69,17 @@ export const router = createBrowserRouter([
         path: "/payment/fail",
         element: <DonationFail />,
       },
+      {
+        path: "/socialMedia",
+        element: (
+          <PrivateRoute>
+            <SocialMediaLayout></SocialMediaLayout>
+          </PrivateRoute>
+        ),
+        children: [{ path: "/socialMedia", element: <SocialMedia /> }],
+      },
+      { path: "/addSocialPost", element: <AddSocialPost /> },
+      { path: "/mySocialNews", element: <MyNews /> },
 
       {
         path: "/gadgets",
