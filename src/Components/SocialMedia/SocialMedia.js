@@ -1,10 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { BiDotsVertical } from "react-icons/bi";
 import { FaRegComment, FaShare } from "react-icons/fa";
-import { MdOutlineAddReaction } from "react-icons/md";
+import { MdDelete, MdOutlineAddReaction } from "react-icons/md";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+import { getRole } from "../../api/auth";
 const SocialMedia = () => {
+  const { user } = useContext(AuthContext);
+  const [role, setRole] = useState("");
+  console.log(role);
   const [socialNews, setSocialNews] = useState([]);
+
+  useEffect(() => {
+    getRole(user?.email).then((data) => {
+      setRole(data);
+    });
+  }, [user]);
 
   useEffect(() => {
     fetch("http://localhost:8000/socialNews")
@@ -26,18 +37,32 @@ const SocialMedia = () => {
           className="w-full  max-w-lg mx-auto rounded overflow-hidden border shadow-sm m-4"
         >
           <div className="px-6 py-4">
-            <div className="flex items-center">
-              <img
-                className="w-12 h-12 rounded-full mr-4"
-                src="https://i.ibb.co/N2NPBn1/photo-1633332755192-727a05c4013d.jpg"
-                alt=""
-              />
-              <div className="text-sm">
-                <p className="text-gray-900 font-semibold leading-none">
-                  {news.name}
-                </p>
-                <p className="text-gray-600">Date</p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <img
+                  className="w-12 h-12 rounded-full mr-4"
+                  src="https://i.ibb.co/N2NPBn1/photo-1633332755192-727a05c4013d.jpg"
+                  alt=""
+                />
+                <div className="text-sm">
+                  <p className="text-gray-900 font-semibold leading-none">
+                    {news.name}
+                  </p>
+                  <p className="text-gray-600">Date</p>
+                </div>
               </div>
+
+              <>
+                {role === "admin" ? (
+                  <button className="">
+                    <MdDelete className="w-5 h-5"></MdDelete>
+                  </button>
+                ) : (
+                  <button>
+                    <BiDotsVertical></BiDotsVertical>
+                  </button>
+                )}
+              </>
             </div>
             <img className="w-full h-64 mt-4" src={news?.image} alt="" />
             <div className="px-6 py-2">
