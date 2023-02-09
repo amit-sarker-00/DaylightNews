@@ -47,69 +47,23 @@ const WriterProfile = () => {
 
   const handelUpdateProfile = (event) => {
     event.preventDefault();
-    const shopname = event.target.shopname.value;
-    const since = event.target.since.value;
-    const description = event.target.description.value;
-    const address = event.target.address.value;
-    const phone = event.target.phone.value;
-    const twitter = event.target.twitter.value;
-    const facebook = event.target.facebook.value;
-    const instagram = event.target.instagram.value;
-    const pinterest = event.target.pinterest.value;
+    const name = event.target.name.value;
+
 
     // Image Upload
     const shopimage = event.target.image.files[0];
-    if (!shopimage) {
-      const UpdateWriter = {
-        shopname,
-        since,
-        address,
-        phone,
-        twitter,
-        facebook,
-        instagram,
-        pinterest,
-        email: user?.email,
-        description,
-      };
-      console.log(UpdateWriter);
-      updateWriter(UpdateWriter).then((data) => {
-        console.log(data);
-      });
-      fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(UpdateWriter),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setLoading(false);
-          toast.success("Update Successfuly !");
-        });
-      return;
-    }
+
     imageUpload(shopimage)
       .then((res) => {
         const UpdateWriter = {
-          shopname,
-          since,
-          address,
-          phone,
-          twitter,
-          facebook,
-          instagram,
-          twitter,
-          pinterest,
-          shopimage: res.data.display_url,
-          email: user?.email,
-          description,
+          name,
+          image: res?.data?.display_url,
+
         };
-        updateWriter(UpdateWriter).then((data) => {
-          console.log(data);
-        });
+        console.log(UpdateWriter);
+        // updateWriter(UpdateWriter).then((data) => {
+        //   console.log(data);
+        // });
 
         fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
           method: "PATCH",
@@ -185,8 +139,8 @@ const WriterProfile = () => {
               <img
                 className=" w-[150px] mx-auto bg-black h-[150px] object-cover border rounded-full"
                 src={
-                  user.photoURL ? (
-                    user.photoURL
+                  profile?.image ? (
+                    profile?.image
                   ) : (
                     <div className="relative flex-shrink-0">
                       <span className="absolute bottom-0 right-0 w-4 h-4 dark:bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-900"></span>
@@ -204,15 +158,15 @@ const WriterProfile = () => {
           </div>
           <div className="mt-20">
             <h1 className="text-2xl text-center font-bold">
-              {user?.displayName}
-              <span>({profile.role})</span>
+              {profile?.name}
+              <span>({profile?.role})</span>
             </h1>
             <div className="flex items-center justify-center gap-1">
               <p className=" font-semibold">
                 <HiOutlineMail></HiOutlineMail>
               </p>
               <p className=" my-2 font-semibold text-gray-600">
-                {profile.email}
+                {profile?.email}
               </p>
             </div>
             <p className="flex text-yellow-400 mb-3 items-center justify-center gap-2">
@@ -231,11 +185,12 @@ const WriterProfile = () => {
             </p>
 
             <div className="text-center mt-3 mb-6 font-bold ">
-              <button className="p-2  bg-gray-300 rounded-sm">
+              <label htmlFor="update-modal" className="p-2  bg-gray-300 rounded-sm">
                 Update Profile
-              </button>
+              </label>
             </div>
 
+            <WriterProfileUpdateModal handelUpdateProfile={handelUpdateProfile} />
             <hr className="w-[80%] h-1 bg-gray-300 rounded-2xl mb-3 mx-auto" />
             <div>
               <div className=" text-center">
