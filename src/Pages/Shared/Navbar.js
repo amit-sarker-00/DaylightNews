@@ -167,9 +167,6 @@ const Navbar = () => {
                   </div>
                 </li>
                 <li>
-                  <NavLink className="text-1xl hover:text-red-500 font-semibold">
-                    Gadgets
-                  </NavLink>
                   <NavLink
                     className="text-1xl hover:text-red-500 font-semibold"
                     to={`/gadgets`}
