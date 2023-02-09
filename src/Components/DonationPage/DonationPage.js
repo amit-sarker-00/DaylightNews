@@ -4,19 +4,18 @@ import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 const DonationPage = () =>
 {
     const { user, } = useContext(AuthContext);
-    console.log(user)
-
+   
 
     const handlePayment = (e) =>
     {
         e.preventDefault();
         const form = e.target;
-        const number = form.mobileNumber.value;
-        const address = form.address.value;
-        const zipCode = form.zipCode.value;
-        const country = form.country.value;
-        const currency = form.currency.value;
-        const amount = form.amount.value;
+        const number = form?.mobileNumber?.value;
+        const address = form?.address?.value;
+        const zipCode = form?.zipCode?.value;
+        const country = form?.country?.value;
+        const currency = form?.currency?.value;
+        const amount = form?.amount?.value;
         // console.log(paymentPerson, number, address, postCode, currency);
         const payment = {
             number,
@@ -28,7 +27,7 @@ const DonationPage = () =>
             email: user?.email,
             name: user?.displayName
         };
-        console.log(payment);
+        
         fetch(`${ process.env.REACT_APP_API_URL }payment`, {
             method: "POST",
             headers: {

@@ -18,7 +18,7 @@ const EnvironmentNewsCard = ({ EnvNews }) =>
               <Link to={`/category/${ category }`} className="absolute w-full font-semibold bg-red-100 px-1 py-1 text-red-600  left-0 top-0">{category}</Link>
             </div>
 
-            <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-200 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div className="border-r border-b border-l border-gray-200 dark:border-gray-700   lg:border-l-0 lg:border-t lg:border-gray-200 dark:border-gray-700   rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <div className=" ">
 
                 <div className="  font-bold text-xl hover:link mb-2">{title}</div>

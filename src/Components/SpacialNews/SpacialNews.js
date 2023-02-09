@@ -24,7 +24,7 @@ const SpacialNews = () =>
         <div className='max-w-[1440px] mx-auto'>
             <div className='flex    max-w-[1440px]mx-auto'>
                 <div className=''>
-                    <h1 className='text  '>Spacial News</h1>
+                    <h1 className='text'>Spacial News</h1>
                 </div>
 
                 <Marquee >

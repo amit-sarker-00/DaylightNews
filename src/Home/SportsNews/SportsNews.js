@@ -35,11 +35,11 @@ const SportsNews = () =>
         <div className="">
           {sportsNews?.slice(0, 5).map((sports) => (
             <Link
-              to={`/detail/${sports?._id}`}
+              to={`/detail/${ sports?._id }`}
               key={sports._id}
               className=" h-full hover:text-red-500 w-full  "
             >
-              <div className="flex w-full border h-full items-center">
+              <div className="flex w-full border border-gray-200 dark:border-gray-700   h-full items-center">
                 <div className="overflow-hidden  h-32 w-44">
                   <img
                     className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"
@@ -66,11 +66,11 @@ const SportsNews = () =>
         <div className="">
           {sportsNews?.slice(5, 10).map((sports) => (
             <Link
-              to={`/detail/${sports?._id}`}
+              to={`/detail/${ sports?._id }`}
               key={sports._id}
               className=" h-full w-full  "
             >
-              <div className="flex   w-full h-full border">
+              <div className="flex   w-full h-full border border-gray-200 dark:border-gray-700  ">
                 <div className="overflow-hidden h-32 w-44">
                   <img
                     className=" h-full w-full ease-in-out duration-500 transform hover:scale-125 object-cover"

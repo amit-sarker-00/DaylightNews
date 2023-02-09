@@ -8,7 +8,7 @@ const LetestNewsCard = ({ news }) =>
   return (
     <section>
       <Link className="font-bold text-lg hover:text-red-500" to={`detail/${ _id }`}>
-        <div className="h-80 shadow hover:shadow-2xl border ease-in-out duration-300 hover:border-gray-300 ">
+        <div className="h-80 shadow hover:shadow-2xl border border-gray-200 dark:border-gray-700   ease-in-out duration-300 hover:border-gray-200 dark:border-gray-700   ">
           <div className="overflow-hidden h-44">
             <img
               className="transform ease-in-out duration-500 hover:scale-125 object-cover w-full  h-full"
@@ -29,9 +29,9 @@ const LetestNewsCard = ({ news }) =>
             </div>
           </div>
           <div className="mx-2">
-            {/* <h1 className="link-hover">
+            <h1 className="link-hover">
               {title?.length > 22 ? title.slice(0, 22) + "..." : title}
-            </h1> */}
+            </h1>
             <h1 className="link-hover  ">{title}</h1>
           </div>
         </div>

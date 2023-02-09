@@ -49,7 +49,7 @@ const TrendingNews = () =>
           {trendingNews?.map((trending) => (
             <SplideSlide key={trending?._id}>
 
-              <div className=" h-80 shadow hover:text-red-500 hover:shadow-2xl border   ease-in-out duration-300 hover:border-gray-300 ">
+              <div className=" h-80 shadow hover:text-red-500 hover:shadow-2xl border   ease-in-out duration-300 hover:border-gray-200 dark:border-gray-700   ">
                 <NavLink to={`/detail/${ trending?._id }`}>
                   <div className="overflow-hidden">
                     <img

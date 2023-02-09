@@ -25,7 +25,8 @@ import LiveStockMarketData from "./LiveStockMarketData/LiveStockMarketData";
 import SpacialNews from "../Components/SpacialNews/SpacialNews";
 import DragAndDrop from "./DragAndDrop/DragAndDrop";
 
-const Home = () => {
+const Home = () =>
+{
   useTitle("Home");
   const { searchContent } = useContext(AuthContext);
 

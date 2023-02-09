@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import {
+import
+{
   FaFacebook,
   FaInstagram,
   FaLinkedin,
@@ -14,7 +15,8 @@ import { IoMdPersonAdd } from "react-icons/io";
 import { MdOutlineAddReaction } from "react-icons/md";
 import { AiFillEye } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import {
+import
+{
   Area,
   AreaChart,
   CartesianGrid,
@@ -29,23 +31,27 @@ import { updateWriter } from "../../../api/services";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import WriterProfileUpdateModal from "./WriterProfileUpdateModal";
 
-const WriterProfile = () => {
+const WriterProfile = () =>
+{
   const { user } = useContext(AuthContext);
-  const [loading, setLoading] = useState(true);
-  const [profile, setProfile] = useState([]);
-  const [profileViews, setProfileViews] = useState([]);
+  const [ loading, setLoading ] = useState(true);
+  const [ profile, setProfile ] = useState([]);
+  const [ profileViews, setProfileViews ] = useState([]);
 
   const fetchProfile = () =>
-    getUser(user?.email).then((data) => {
+    getUser(user?.email).then((data) =>
+    {
       setProfile(data);
       setLoading(!loading);
     });
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetchProfile();
-  }, [user, loading]);
+  }, [ user, loading ]);
 
-  const handelUpdateProfile = (event) => {
+  const handelUpdateProfile = (event) =>
+  {
     event.preventDefault();
     const shopname = event.target.shopname.value;
     const since = event.target.since.value;
@@ -58,8 +64,9 @@ const WriterProfile = () => {
     const pinterest = event.target.pinterest.value;
 
     // Image Upload
-    const shopimage = event.target.image.files[0];
-    if (!shopimage) {
+    const shopimage = event.target.image.files[ 0 ];
+    if (!shopimage)
+    {
       const UpdateWriter = {
         shopname,
         since,
@@ -73,10 +80,11 @@ const WriterProfile = () => {
         description,
       };
       console.log(UpdateWriter);
-      updateWriter(UpdateWriter).then((data) => {
+      updateWriter(UpdateWriter).then((data) =>
+      {
         console.log(data);
       });
-      fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
+      fetch(`${ process.env.REACT_APP_API_URL }user/${ user?.email }`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -84,7 +92,8 @@ const WriterProfile = () => {
         body: JSON.stringify(UpdateWriter),
       })
         .then((res) => res.json())
-        .then((data) => {
+        .then((data) =>
+        {
           console.log(data);
           setLoading(false);
           toast.success("Update Successfuly !");
@@ -92,7 +101,8 @@ const WriterProfile = () => {
       return;
     }
     imageUpload(shopimage)
-      .then((res) => {
+      .then((res) =>
+      {
         const UpdateWriter = {
           shopname,
           since,
@@ -107,11 +117,12 @@ const WriterProfile = () => {
           email: user?.email,
           description,
         };
-        updateWriter(UpdateWriter).then((data) => {
+        updateWriter(UpdateWriter).then((data) =>
+        {
           console.log(data);
         });
 
-        fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
+        fetch(`${ process.env.REACT_APP_API_URL }user/${ user?.email }`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -119,13 +130,15 @@ const WriterProfile = () => {
           body: JSON.stringify(UpdateWriter),
         })
           .then((res) => res.json())
-          .then((data) => {
+          .then((data) =>
+          {
             console.log(data);
             setLoading(false);
             toast.success("Update Successfuly !");
           });
       })
-      .catch((err) => {
+      .catch((err) =>
+      {
         console.log(err);
         setLoading(false);
       });
@@ -189,11 +202,11 @@ const WriterProfile = () => {
                     user.photoURL
                   ) : (
                     <div className="relative flex-shrink-0">
-                      <span className="absolute bottom-0 right-0 w-4 h-4 dark:bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-900"></span>
+                      <span className="absolute bottom-0 right-0 w-4 h-4 dark:bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-700  "></span>
                       <img
                         src="https://source.unsplash.com/50x50/?portrait"
                         alt=""
-                        className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700"
+                        className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700  "
                       />
                     </div>
                   )
