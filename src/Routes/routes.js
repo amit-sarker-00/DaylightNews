@@ -8,6 +8,9 @@ import CardDetailsPage from "../Components/CardDetailsPage/CardDetailsPage";
 import BdOnlinePayment from "../Components/DonationPage/BdOnlinePayment";
 import DonationFail from "../Components/DonationPage/DonationFail";
 import DonationPage from "../Components/DonationPage/DonationPage";
+import AddSocialPost from "../Components/SocialMedia/AddSocialPost";
+import MyNews from "../Components/SocialMedia/MyNews";
+import SocialMedia from "../Components/SocialMedia/SocialMedia";
 import Gadgets from "../Gadgets/Gadgets";
 import GadgetsDetails from "../Gadgets/GadgetsDetails";
 import Home from "../Home/Home";
@@ -18,6 +21,7 @@ import Travel from "../Home/HomePageLetestNews/Travel";
 import LiveStockMarketData from "../Home/LiveStockMarketData/LiveStockMarketData";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Main from "../Layout/Main";
+import SocialMediaLayout from "../Layout/SocialMediaLayout";
 import AdminAccount from "../Pages/Accounts/Admin/AdminAccount";
 import AllReaders from "../Pages/Accounts/Admin/AllReaders";
 import AllWriters from "../Pages/Accounts/Admin/AllWriters";
@@ -35,169 +39,168 @@ import PrivateRoute from "./PrivateRoute";
 import TranslationPage from "../Components/Translation/TranslationPage";
 import GadgetsProfile from "../Gadgets/GadgetsProfile";
 export const router = createBrowserRouter([
-	{
-		path: "/",
-		errorElement: <ErrorPage />,
-		element: <Main />,
-		children: [
-			{
-				path: "/",
-				element: <Home />,
-				children: [
-					{ path: "/", element: <Travel /> },
-					{ path: "/domestic", element: <Domestic /> },
-					{ path: "/health", element: <Health /> },
-					{ path: "/natural", element: <Natural /> },
-				],
-			},
-			{ path: "detail/:id", element: <CardDetailsPage /> },
-			{ path: "/category/:id", element: <AllCategoryPage /> },
-			{ path: "/gadgets/:id", element: <Gadgets /> },
+  {
+    path: "/",
+    errorElement: <ErrorPage />,
+    element: <Main />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        children: [
+          { path: "/", element: <Travel /> },
+          { path: "/domestic", element: <Domestic /> },
+          { path: "/health", element: <Health /> },
+          { path: "/natural", element: <Natural /> },
+        ],
+      },
+      { path: "detail/:id", element: <CardDetailsPage /> },
+      { path: "/category/:id", element: <AllCategoryPage /> },
+      { path: "/gadgets/:id", element: <Gadgets /> },
 
-			{ path: "/stockMarket", element: <LiveStockMarketData /> },
-			{ path: "/donate", element: <DonationPage /> },
+      { path: "/stockMarket", element: <LiveStockMarketData /> },
+      { path: "/donate", element: <DonationPage /> },
 
-			{
-				path: "/bdPayment/success",
-				element: <BdOnlinePayment />,
-			},
-			{
-				path: "/payment/fail",
-				element: <DonationFail />,
-			},
+      {
+        path: "/bdPayment/success",
+        element: <BdOnlinePayment />,
+      },
+      {
+        path: "/payment/fail",
+        element: <DonationFail />,
+      },
+      {
+        path: "/socialMedia",
+        element: (
+          <PrivateRoute>
+            <SocialMediaLayout></SocialMediaLayout>
+          </PrivateRoute>
+        ),
+        children: [{ path: "/socialMedia", element: <SocialMedia /> }],
+      },
+      { path: "/addSocialPost", element: <AddSocialPost /> },
+      { path: "/mySocialNews", element: <MyNews /> },
 
-			{
-				path: "/gadgets",
-				element: <Gadgets />,
-			},
-			{
-				path: "/translation",
-				element: <TranslationPage />,
-			},
-			{
-				path: "gadgets", element: <Gadgets />
-			},
-			{
-				path: "/account",
-				element: (
-					<PrivateRoute>
-						<DashboardLayout />
-					</PrivateRoute>
-				),
-				children: [
-					{
-						path: "",
-						element: <Welcome />,
-					},
-					{
-						path: "admin/profile",
-						element: <AdminAccount />,
-					},
-					{
-						path: "writers",
-						element: <AllWriters />,
-					},
-					{
-						path: "readers",
-						element: <AllReaders />,
-					},
-					{
-						path: "writer/profile",
-						element: <WriterProfile />,
-					},
-					{
-						path: "addnews",
-						element: <AddNews />,
-					},
-					{
-						path: "updateNews",
-						element: <UpdateNews />,
-					},
-					{
-						path: "reader/profile",
-						element: <UserProfile />,
-					},
-					{
-						path: "wishlist",
-						element: <Wishlist />,
-					},
-					{
-						path: "comments",
-						element: <Comments />,
-					},
-
-
-				],
-			},
-		],
-	},
-	{
-		path: "gadgets", element: <Gadgets />
-	},
-	{
-		path: "/account",
-		element: (
-			<PrivateRoute>
-				<DashboardLayout />
-			</PrivateRoute>
-		),
-		children: [
-			{
-				path: "",
-				element: <Welcome />,
-			},
-			{
-				path: "admin/profile",
-				element: <AdminAccount />,
-			},
-			{
-				path: "writers",
-				element: <AllWriters />,
-			},
-			{
-				path: "readers",
-				element: <AllReaders />,
-			},
-			{
-				path: "writer/profile",
-				element: <WriterProfile />,
-			},
-			{
-				path: "addnews",
-				element: <AddNews />,
-			},
-			{
-				path: "updateNews",
-				element: <UpdateNews />,
-			},
-			{
-				path: "reader/profile",
-				element: <UserProfile />,
-			},
-			{
-				path: "wishlist",
-				element: <Wishlist />,
-			},
-			{
-				path: "comments",
-				element: <Comments />,
-			},
-			{
-				path: "/account/gadgets/profile",
-				element: <GadgetsProfile />
-			}
-
-
-		],
-	},
-	{ path: "signup", element: <SignUp /> },
-	{ path: "login", element: <SignIn /> },
-	{ path: '/SlickCarousel', element: <SlickCarousel /> },
-	{ path: '/entertainmentNews', element: <EntertainmentNews /> },
-])
-
-
-
-
-
-
+      {
+        path: "/gadgets",
+        element: <Gadgets />,
+      },
+      {
+        path: "/translation",
+        element: <TranslationPage />,
+      },
+      {
+        path: "/account",
+        element: (
+          <PrivateRoute>
+            <DashboardLayout />
+          </PrivateRoute>
+        ),
+        children: [
+          {
+            path: "",
+            element: <Welcome />,
+          },
+          {
+            path: "admin/profile",
+            element: <AdminAccount />,
+          },
+          {
+            path: "writers",
+            element: <AllWriters />,
+          },
+          {
+            path: "readers",
+            element: <AllReaders />,
+          },
+          {
+            path: "writer/profile",
+            element: <WriterProfile />,
+          },
+          {
+            path: "addnews",
+            element: <AddNews />,
+          },
+          {
+            path: "updateNews",
+            element: <UpdateNews />,
+          },
+          {
+            path: "reader/profile",
+            element: <UserProfile />,
+          },
+          {
+            path: "wishlist",
+            element: <Wishlist />,
+          },
+          {
+            path: "comments",
+            element: <Comments />,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: "gadgets",
+    element: <Gadgets />,
+  },
+  {
+    path: "/account",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "",
+        element: <Welcome />,
+      },
+      {
+        path: "admin/profile",
+        element: <AdminAccount />,
+      },
+      {
+        path: "writers",
+        element: <AllWriters />,
+      },
+      {
+        path: "readers",
+        element: <AllReaders />,
+      },
+      {
+        path: "writer/profile",
+        element: <WriterProfile />,
+      },
+      {
+        path: "addnews",
+        element: <AddNews />,
+      },
+      {
+        path: "updateNews",
+        element: <UpdateNews />,
+      },
+      {
+        path: "reader/profile",
+        element: <UserProfile />,
+      },
+      {
+        path: "wishlist",
+        element: <Wishlist />,
+      },
+      {
+        path: "comments",
+        element: <Comments />,
+      },
+      {
+        path: "/account/gadgets/profile",
+        element: <GadgetsProfile />,
+      },
+    ],
+  },
+  { path: "signup", element: <SignUp /> },
+  { path: "login", element: <SignIn /> },
+  { path: "/SlickCarousel", element: <SlickCarousel /> },
+  { path: "/entertainmentNews", element: <EntertainmentNews /> },
+]);

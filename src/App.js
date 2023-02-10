@@ -44,25 +44,25 @@ function App ()
             <CgDarkMode className="text-md" />
           </li>
 
-          <a href="#">
+          <a href="https://web.facebook.com/jillurahman.jibon.3" rel="noreferrer" target={'_blank'}>
 
             <li className=" rounded-full cursor-pointer hover:bg-red-500 flex justify-center items-center w-8 h-8 duration-150 ease-in-out  hover:text-white">
               <FaFacebookF className="text-md" />
             </li>
           </a>
-          <a href="#">
+          <a href="mailto:jillurahmanjibon@gmail.com" rel="noreferrer" target={'_blank'}>
 
             <li className=" rounded-full cursor-pointer hover:bg-red-500 flex justify-center items-center w-8 h-8 duration-150 ease-in-out  hover:text-white">
               <FaGoogle className="text-md" />
             </li>
           </a>
-          <a href="#">
+          <a href="https://github.com/JilluRahmanJibon" rel="noreferrer" target={'_blank'}>
 
             <li className=" rounded-full cursor-pointer hover:bg-red-500 flex justify-center items-center w-8 h-8 duration-150 ease-in-out  hover:text-white">
               <FaGithub className="text-md" />
             </li>
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/jillurahmanjibon/" rel="noreferrer" target={'_blank'}>
 
             <li className=" rounded-full cursor-pointer hover:bg-red-500 flex justify-center items-center w-8 h-8 duration-150 ease-in-out  hover:text-white">
               <FaLinkedinIn className="text-md" />

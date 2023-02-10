@@ -1,29 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import SearchCardData from './SearchCardData';
 
 const SearchData = () =>
 {
     const { searchContent } = useContext(AuthContext)
-    const [ searchDatas, setSearchDatas ] = useState([]);
 
-    const { data = [], isLoading } = useQuery({
-        queryKey: [ 'news' ],
-        queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }news`).then(res => res.json())
+    const { data: searchDatas, isLoading } = useQuery({
+        queryKey: [ 'searchNews', searchContent ],
+        queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }searchNews?search=${ searchContent }`).then(res => res.json())
     })
-
-
-
-    useEffect(() =>
-    {
-
-        const filterResult = data.filter(item => item?.title?.toLowerCase().includes(searchContent?.toLowerCase()) || item?.category?.toLowerCase().includes(searchContent?.toLowerCase()))
-        setSearchDatas(filterResult)
-
-    }, [ searchContent, searchDatas ,data]);
-
- 
 
 
     return (

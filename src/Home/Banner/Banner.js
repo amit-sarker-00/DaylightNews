@@ -16,6 +16,8 @@ const Banner = () =>
       .then((res) => res.json())
   })
 
+  console.log(bannerData)
+
 
   return (
     <div>

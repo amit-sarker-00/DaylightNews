@@ -8,18 +8,20 @@ import SpacialNews from "../../Components/SpacialNews/SpacialNews";
 import DonateNotUser from "../../Components/DonationPage/DonateNotUser";
 import { FaFacebook, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 
-
-const Navbar = () => {
+const Navbar = () =>
+{
   const { user, logout, setSearchContent } = useContext(AuthContext);
 
-  const [weather, setWeather] = useState({});
+  const [ weather, setWeather ] = useState({});
   // weather
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Dhaka&units=metric&APPID=${process.env.REACT_APP_Weather_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=Dhaka&units=metric&APPID=${ process.env.REACT_APP_Weather_API_KEY }`
     )
       .then((res) => res.json())
-      .then((result) => {
+      .then((result) =>
+      {
         setWeather(result);
       });
   }, []);
@@ -36,17 +38,19 @@ const Navbar = () => {
   const currentDate = date.toLocaleDateString("en-US", options);
   // categories
   const { data: allCategory = [] } = useQuery({
-    queryKey: ['categories'],
-    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}categories`)
-      .then((res) => res.json())
-  })
+    queryKey: [ "categories" ],
+    queryFn: () =>
+      fetch(`${ process.env.REACT_APP_API_URL }categories`).then((res) =>
+        res.json()
+      ),
+  });
 
-  const categories = allCategory.filter(n => n !== undefined && n !== null && n !== false && n !== 0)
-
+  const categories = allCategory.filter(
+    (n) => n !== undefined && n !== null && n !== false && n !== 0
+  );
 
   return (
     <main>
-
       <section className=" pb-5">
         <div className="">
           <div className="max-w-[1440px] mx-auto flex  justify-between py-1">
@@ -61,40 +65,31 @@ const Navbar = () => {
             </div>
 
             <div className="flex item-center">
-              {
-                user?.uid ? <Link to="/Donate" className="bg-black px-5 py-1 text-white rounded-sm mr-5">Donate us</Link> : <label htmlFor="my-modal-3" className="bg-black px-5 py-1 text-white rounded-sm mr-5">Donate us</label>
-              }
+              {user?.uid ? (
+                <Link
+                  to="/Donate"
+                  className="bg-black px-5 py-1 text-white rounded-sm mr-5"
+                >
+                  Donate us
+                </Link>
+              ) : (
+                <label
+                  htmlFor="my-modal-3"
+                  className="bg-black px-5 py-1 text-white rounded-sm mr-5"
+                >
+                  Donate us
+                </label>
+              )}
               <h1>
                 {temp?.toFixed(0)}°c <span>Tempareture</span>{" "}
               </h1>
             </div>
           </div>
-
           <div className="max-w-[1440px] mx-auto items-center sm:flex-row flex flex-col justify-between">
             <div>
-              <ul className="flex gap-3">
-                <a className="rounded-full" href="https://www.facebook.com/profile.php?id=100073434090411">
-                  <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
-                    <FaFacebook className="text-lg" />
-                  </li>
-                </a>
-                <a className="rounded-full" href="https://mail.google.com/mail/u/0/#inbox">
-                  <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
-                    <FaGoogle className="text-lg" />
-                  </li>
-                </a>
-                <a className="rounded-full" href="https://github.com/JilluRahmanJibon/DayLight-News">
-                  <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
-                    <FaGithub className="text-lg" />
-                  </li>
-                </a>
-                <a className="rounded-full" href="https://www.linkedin.com/in/md-abdul-quayum/">
-                  <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white">
-                    <FaLinkedinIn className="text-lg" />
-                  </li>
-                </a>
-              </ul>
+
             </div>
+
             <div>
               <h1 className="text-xl select-none font-bold italic w-40 sm:w-52 md:w-72 h-8 sm:h-12">
                 <Link to="/">
@@ -117,29 +112,58 @@ const Navbar = () => {
           <div>
             <ul className=" gap-5 hidden lg:flex">
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold" to='/'>Home</NavLink>
+                <NavLink
+                  className="text-1xl hover:text-red-500 font-semibold"
+                  to="/"
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold">News</NavLink>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">
+                  News
+                </NavLink>
               </li>
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold">Sports</NavLink>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">
+                  Sports
+                </NavLink>
               </li>
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold">Pages</NavLink>
+                <NavLink className="text-1xl hover:text-red-500 font-semibold">
+                  Pages
+                </NavLink>
               </li>
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold">Travel</NavLink>
+                <NavLink
+                  to="/socialMedia"
+                  className="text-1xl hover:text-red-500 font-semibold"
+                >
+                  SocialMedia
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/translation" className="text-1xl hover:text-red-500 font-semibold">Translate Your Language </NavLink>
+                <NavLink
+                  to="/translation"
+                  className="text-1xl hover:text-red-500 font-semibold"
+                >
+                  Translate Your Language{" "}
+                </NavLink>
               </li>
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold" to="/stockMarket">Live Stock Market </NavLink>
+                <NavLink
+                  className="text-1xl hover:text-red-500 font-semibold"
+                  to="/stockMarket"
+                >
+                  Live Stock Market{" "}
+                </NavLink>
               </li>
               <li>
                 <div className="dropdown dropdown-hover">
-                  <NavLink tabIndex={1} className="flex hover:text-red-500 items-center gap-1 ">
+                  <NavLink
+                    tabIndex={1}
+                    className="flex hover:text-red-500 items-center gap-1 "
+                  >
                     <span className="text-1xl font-semibold">Categories</span>{" "}
                     <IoIosArrowDropdown className="mt-1" />
                   </NavLink>
@@ -150,7 +174,7 @@ const Navbar = () => {
                     {categories?.map((category, i) => (
                       <li key={i} className="w-full">
                         <Link
-                          to={`/category/${category}`}
+                          to={`/category/${ category }`}
                           className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500"
                         >
                           {category}
@@ -161,7 +185,12 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold" to={`/gadgets`}>Gadgets</NavLink>
+                <NavLink
+                  className="text-1xl hover:text-red-500 font-semibold"
+                  to={`/gadgets`}
+                >
+                  Gadgets
+                </NavLink>
               </li>
             </ul>
           </div>
