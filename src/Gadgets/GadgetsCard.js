@@ -15,7 +15,7 @@ const GadgetsCard = ({ banner }) => {
 
 
     const handleGadgetsBuy = (e) => {
-        
+
 
         const gadgetsAllData = {
             picture,
@@ -80,12 +80,12 @@ const GadgetsCard = ({ banner }) => {
                                 <HiShoppingCart className='text-xl text-whit' />
                                 Buy Now
                             </label>
-                            <GadgetsModal 
-                            handleGadgetsBuy={handleGadgetsBuy} 
-                            quantity={quantity}
-                            setQuantity={setQuantity}
-                            price = {price}
-                            setPrice={setPrice}
+                            <GadgetsModal
+                                handleGadgetsBuy={handleGadgetsBuy}
+                                quantity={quantity}
+                                setQuantity={setQuantity}
+                                price={price}
+                                setPrice={setPrice}
                             />
 
                         </div>
