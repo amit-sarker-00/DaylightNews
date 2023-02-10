@@ -14,6 +14,7 @@ const HomePageStoryAllImage = () => {
 				res.json()
 			),
 	});
+	
 
 	return (
 		<div className="storyBg w-full h-screen bg-black flex items-center justify-center">

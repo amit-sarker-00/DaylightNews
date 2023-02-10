@@ -5,24 +5,28 @@ import { FaRegComment, FaShare } from "react-icons/fa";
 import { MdDelete, MdOutlineAddReaction } from "react-icons/md";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
-const MyNews = () => {
+const MyNews = () =>
+{
   const { user } = useContext(AuthContext);
   const { data: socialNews, refetch } = useQuery({
-    queryKey: ["stories", user?.email],
+    queryKey: [ "stories", user?.email ],
     queryFn: () =>
-      fetch(`http://localhost:8000/socialNews/${user?.email}`).then((res) =>
+      fetch(`${ process.env.REACT_APP_API_URL }socialNews/${ user?.email }`).then((res) =>
         res.json()
       ),
   });
 
-  const handelDelete = (e) => {
+  const handelDelete = (e) =>
+  {
     console.log(e);
-    fetch(`http://localhost:8000/socialNews/${e}`, {
+    fetch(`${ process.env.REACT_APP_API_URL }socialNews/${ e }`, {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
+      .then((data) =>
+      {
+        if (data.deletedCount > 0)
+        {
           toast.success("Deleted successfully");
           refetch();
         }

@@ -2,20 +2,21 @@ import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { HiShoppingCart } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
-import { updateWriter } from '../api/services';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 import GadgetsModal from './GadgetsModal';
 
-const GadgetsCard = ({ banner }) => {
-    const [loading, setLoading] = useState(true);
+const GadgetsCard = ({ banner }) =>
+{
+    const [ loading, setLoading ] = useState(true);
     const { user } = useContext(AuthContext);
-    const [quantity, setQuantity] = useState(1);
-    const [price, setPrice] = useState(500);
+    const [ quantity, setQuantity ] = useState(1);
+    const [ price, setPrice ] = useState(500);
     const { picture, productName, title, } = banner;
 
 
-    const handleGadgetsBuy = (e) => {
-        
+    const handleGadgetsBuy = (e) =>
+    {
+
 
         const gadgetsAllData = {
             picture,
@@ -27,7 +28,7 @@ const GadgetsCard = ({ banner }) => {
             userName: user?.displayName,
         }
 
-        fetch(`${process.env.REACT_APP_API_URL}gadgetsBuy`, {
+        fetch(`${ process.env.REACT_APP_API_URL }orders`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -35,7 +36,8 @@ const GadgetsCard = ({ banner }) => {
             body: JSON.stringify(gadgetsAllData),
         })
             .then((res) => res.json())
-            .then((data) => {
+            .then((data) =>
+            {
                 console.log(data);
                 setLoading(false);
                 setQuantity(1)
@@ -80,12 +82,12 @@ const GadgetsCard = ({ banner }) => {
                                 <HiShoppingCart className='text-xl text-whit' />
                                 Buy Now
                             </label>
-                            <GadgetsModal 
-                            handleGadgetsBuy={handleGadgetsBuy} 
-                            quantity={quantity}
-                            setQuantity={setQuantity}
-                            price = {price}
-                            setPrice={setPrice}
+                            <GadgetsModal
+                                handleGadgetsBuy={handleGadgetsBuy}
+                                quantity={quantity}
+                                setQuantity={setQuantity}
+                                price={price}
+                                setPrice={setPrice}
                             />
 
                         </div>

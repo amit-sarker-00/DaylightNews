@@ -13,7 +13,7 @@ function AllComment ({ comment })
                 />
                 <div className="flex flex-col space-y-1">
                     <div rel="noopener noreferrer" className="text-sm font-semibold">
-                        <h1 className="text-gray-500">   {name}</h1>
+                        <h1 className="text-gray-500 text-start">   {name}</h1>
                     </div>
                     <span className="text-xs text-gray-700 font-bold text-start">{message}</span>
                     <span className="text-xs dark:text-gray-400">

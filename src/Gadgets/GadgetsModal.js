@@ -20,7 +20,6 @@ const GadgetsModal = ({ handleGadgetsBuy,quantity,setQuantity,price,setPrice }) 
         quantity,
         price
     }
-    // console.log(gadgetsQuantity)
 
     return (
         <>
