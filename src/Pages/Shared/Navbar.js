@@ -96,7 +96,7 @@ const Navbar = () =>
           <div>
             <ul className=" gap-5 hidden lg:flex">
               <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold" to='/'>Home</NavLink>
+                <a className="text-1xl hover:text-red-500 font-semibold" to='/'>Home</a>
               </li>
               <li>
                 <NavLink className="text-1xl hover:text-red-500 font-semibold">News</NavLink>
