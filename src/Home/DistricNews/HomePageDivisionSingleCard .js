@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const HomePageDivisionSingleCard = ({ data }) => {
-  const { description, author, category, picture, title, _id } = data;
+  const { picture, title, _id } = data;
   return (
     <Link to={`/detail/${_id}`} className="py-4 ">
       <div className="w-full h-full lg:h-[300px] lg:w-[500px] relative ">

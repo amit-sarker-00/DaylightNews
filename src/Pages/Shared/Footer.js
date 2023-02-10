@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { FaGithub } from "react-icons/fa";
 import
   {
     HiChevronDoubleRight,
@@ -69,28 +70,22 @@ const Footer = () =>
             </p>
             <p className=" flex  items-center gap-2 py-3">
               <HiEnvelope className="text-lg text-red-600"></HiEnvelope>
-              <Link className="hover:link">jillurahmanjibon@gmail.com</Link>
+              <a href="mailto:jillurahmanjibon@gmail.com" target={'_blank'} rel="noreferrer" className="hover:link">jillurahmanjibon@gmail.com</a>
             </p>
             <div className="flex justify-center md:justify-start gap-3 py-2">
-              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600 ">
+              <a rel="noreferrer" target={'_blank'} href="https://web.facebook.com/jillurahman.jibon.3" className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600 ">
                 <IoLogoFacebook className=" sm:text-xl text-lg " />
-              </Link>
-              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
-                <IoLogoTwitter className="sm:text-xl text-lg " />
-              </Link>
-              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
+              </a>
+              <a rel="noreferrer" target={'_blank'} href="https://github.com/JilluRahmanJibon" className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
+                <FaGithub className="sm:text-xl text-lg " />
+              </a>
+              <a rel="noreferrer" target={'_blank'} href="mailto:jillurahmanjibon@gmail.com" className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
                 <IoLogoGoogle className="sm:text-xl text-lg  " />
-              </Link>
-              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
+              </a>
+              <a href="https://www.linkedin.com/in/jillurahmanjibon/" rel="noreferrer" target={'_blank'} className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
                 <IoLogoLinkedin className="sm:text-xl text-lg   " />
-              </Link>
-              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
-                <IoLogoInstagram className="sm:text-xl text-lg  " />
-              </Link>
-              <Link className="rounded-full transition-all bg-red-600 p-2 hover:bg-white hover:text-red-600">
-                {" "}
-                <IoLogoSkype className="sm:text-xl text-lg" />
-              </Link>
+              </a>
+
             </div>
           </div>
         </div>
