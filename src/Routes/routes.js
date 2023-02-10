@@ -38,6 +38,7 @@ import Welcome from "../Pages/Welcome/Welcome";
 import PrivateRoute from "./PrivateRoute";
 import TranslationPage from "../Components/Translation/TranslationPage";
 import GadgetsProfile from "../Gadgets/GadgetsProfile";
+import HomePageStoryAllImage from "../Home/HomePageStorySection/HomePageStoryAllImage";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -199,6 +200,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  { path: "stories/:id", element: <HomePageStoryAllImage /> },
   { path: "signup", element: <SignUp /> },
   { path: "login", element: <SignIn /> },
   { path: "/SlickCarousel", element: <SlickCarousel /> },

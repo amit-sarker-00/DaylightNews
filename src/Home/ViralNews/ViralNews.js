@@ -1,11 +1,11 @@
 import React from "react";
 import {
-FaGithub,
-FaInstagram,
-FaLinkedin,
-FaTwitter,
-FaWhatsapp,
-FaYoutube,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaWhatsapp,
+  FaYoutube,
 } from "react-icons/fa";
 import { RxCalendar } from "react-icons/rx";
 import { BsFacebook } from "react-icons/bs";
@@ -123,7 +123,7 @@ const ViralNews = () => {
               allowFullScreen={true}
 
             ></iframe>
-            
+
           </div>
           <div>
             <div className="text-center py-3  font-bold border border-gray-200 dark:border-gray-700   mb-3">

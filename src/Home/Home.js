@@ -17,6 +17,10 @@ import DragAndDrop from "./DragAndDrop/DragAndDrop";
 
 import HomePageLetestNews from "./HomePageLetestNews/HomePageLetestNews";
 import HomePageStorySection from "./HomePageStorySection/HomePageStorySection";
+import VideoSection from "./VideoSection/VideoSection";
+import ViralNews from "./ViralNews/ViralNews";
+import EnvironmentNews from "./EnvironmentNews/EnvironmentNews";
+import Voices from "./Voices/Voices";
 
 const Home = () => {
   useTitle("Home");
@@ -39,11 +43,11 @@ const Home = () => {
           <OnlineVatingSection />
           <SportsNews />
           <HomePageStorySection />
-          {/* <VideoSection />
-          <ViralNews /> */}
+          <VideoSection />
+          <ViralNews />
           {/* <News/> */}
-          {/* <EnvironmentNews />
-          <Voices /> */}
+          <EnvironmentNews />
+          <Voices />
         </>
       )}
     </div>

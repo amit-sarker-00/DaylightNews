@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const DivisionTitleData = ({ data }) => {
-  const {  title, _id } = data;
+  const { title, _id } = data;
   return (
     <>
       <div className="flex items-center gap-3 pb-2">
