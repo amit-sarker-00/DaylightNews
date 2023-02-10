@@ -25,7 +25,7 @@ const Gadgets = () => {
     return (
         <div className="max-w-[1440px] mx-auto ">
             <div >
-                {gadgets?.map((banner) =><GadgetsCard
+                {gadgets?.map((banner) => <GadgetsCard
                     key={banner._id}
                     banner={banner}
                 />

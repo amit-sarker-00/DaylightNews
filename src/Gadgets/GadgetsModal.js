@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { HiOutlineChevronDown, HiOutlineChevronUp, } from "react-icons/hi2";
 
-const GadgetsModal = ({ handleGadgetsBuy,quantity,setQuantity,price,setPrice }) => {
-    
+const GadgetsModal = ({ handleGadgetsBuy, quantity, setQuantity, price, setPrice }) => {
+
 
     const handleIncrement = () => {
         setQuantity(quantity + 1);
@@ -16,7 +16,7 @@ const GadgetsModal = ({ handleGadgetsBuy,quantity,setQuantity,price,setPrice }) 
         }
     };
 
-    const gadgetsQuantity ={
+    const gadgetsQuantity = {
         quantity,
         price
     }
@@ -25,36 +25,48 @@ const GadgetsModal = ({ handleGadgetsBuy,quantity,setQuantity,price,setPrice }) 
     return (
         <>
             <input type="checkbox" id="gadgetsModal" className="modal-toggle" />
-            <div className="modal">
-                <div className="modal-box relative">
-                    <label htmlFor="gadgetsModal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 className="text-lg font-bold">How much quantity you are need?</h3>
+            <div className="modal z-auto ">
+                <div className="modal-box md:w-full sm:w-80 w-64 relative">
+                    <label
+                        htmlFor="gadgetsModal"
+                        className=" mr-2 px-2 py-1 rounded-full absolute right-2 top-2 text-black text-bold bg-red-100 hover:bg-red-700 hover:text-white">
+                        ✕
+                    </label>
+                    <h3
+                        className="text-center md:mt-4 mt-2 md:text-lg text-md font-semibold font-serif text-black ">
+                        How much quantity you are need?
+                    </h3>
 
-                    <div className='flex items-center gap-5 pt-4'>
-
-                        <div>
-                            <h2>Quantity: {quantity}</h2>
-                        </div>
-                        <div>
+                    <div className='text-center text-black space-y-2'>
+                        <div className='flex items-center justify-center gap-5  md:text-xl text-lg md:mt-4 mt-2 sm:mb-4 mb-2'>
                             <div>
-                                <HiOutlineChevronUp onClick={handleIncrement} />
+                                <h2>Quantity: {quantity}</h2>
+                            </div>
+                            <div className='space-y-2'>
+                                <div>
+                                    <HiOutlineChevronUp
+                                        className='hover:text-red-700  rounded-full bg-red-100 '
+                                        onClick={handleIncrement}
+                                    />
+                                </div>
+                                <div>
+                                    <HiOutlineChevronDown 
+                                        className='hover:text-red-700  rounded-full bg-red-100'
+                                    onClick={handleDecrement} />
+                                </div>
                             </div>
                             <div>
-                                <HiOutlineChevronDown onClick={handleDecrement} />
+                                <h2>Price: ${price}</h2>
                             </div>
+
                         </div>
-                        <div>
-                            <h2>Price: ${price}</h2>
-                        </div>
-                        
-                    </div>
-                    <div>
-                        <button onClick={() => handleGadgetsBuy(gadgetsQuantity)}
-                        className=''>
+                        <button
+                            onClick={() => handleGadgetsBuy(gadgetsQuantity)}
+                            className='  px-4 py-2 rounded-lg text-semibold font-serif text-xl text-white hover:text-black bg-red-700 hover:bg-green-700'>
                             Confirm buy
                         </button>
                     </div>
-                    
+
                 </div>
             </div>
         </>
@@ -62,29 +74,3 @@ const GadgetsModal = ({ handleGadgetsBuy,quantity,setQuantity,price,setPrice }) 
 };
 
 export default GadgetsModal;
-
-// const App = () => {
-//     const [quantity, setQuantity] = useState(0);
-//     const [price, setPrice] = useState(10);
-
-//     const handleIncrement = () => {
-//         setQuantity(quantity + 1);
-//         setPrice(price + 10);
-//     };
-
-//     const handleDecrement = () => {
-//         if (quantity > 0) {
-//             setQuantity(quantity - 1);
-//             setPrice(price - 10);
-//         }
-//     };
-
-//     return (
-//         <div>
-//             <h2>Quantity: {quantity}</h2>
-//             <h2>Price: ${price}</h2>
-//             <button onClick={handleIncrement}>Increment</button>
-//             <button onClick={handleDecrement}>Decrement</button>
-//         </div>
-//     );
-// };

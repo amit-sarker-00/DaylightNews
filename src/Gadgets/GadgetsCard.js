@@ -13,9 +13,8 @@ const GadgetsCard = ({ banner }) => {
     const [price, setPrice] = useState(500);
     const { picture, productName, title, } = banner;
 
-
     const handleGadgetsBuy = (e) => {
-        
+
 
         const gadgetsAllData = {
             picture,
@@ -36,16 +35,13 @@ const GadgetsCard = ({ banner }) => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setLoading(false);
                 setQuantity(1)
-                toast.success("Update Successfuly !");
+                toast.success("Buy Successful !");
             });
 
     }
-
-
-
 
     return (
         <div>
@@ -55,7 +51,7 @@ const GadgetsCard = ({ banner }) => {
                     src={banner.picture}
                     alt=""
                 />
-                <Link className=" absolute top-4 left-5  font-semibold sm:text-xl text-sm  sm:px-8  sm:py-2 py-1 mb-2 px-4 bg-red-600 hover:bg-red-700 hover:text-black translate rounded-md text-white font-mono ">
+                <Link className=" absolute top-4 left-5  font-semibold sm:text-xl text-sm  sm:px-8  sm:py-2 py-1 mb-2 px-4 bg-green-600 hover:text-black translate rounded-md text-white font-mono ">
                     {banner?.productName}
                 </Link>
                 <div
@@ -74,18 +70,17 @@ const GadgetsCard = ({ banner }) => {
                         </ul>
                         <div className='sm:py-2 py-0'>
                             <label
-                                // onClick={() => handleGadgets()}
                                 htmlFor="gadgetsModal"
-                                className=' font-semibold sm:text-lg text-sm w-48 sm:px-8 px-2 sm:py-2 py-1   bg-red-600 hover:bg-green-700 hover:text-black translate rounded-md text-white flex items-center gap-3'>
+                                className=' font-semibold sm:text-lg text-sm md:w-44 w-32 sm:px-8 px-2 sm:py-2 py-1   bg-red-600 hover:bg-green-700 hover:text-black translate rounded-md text-white flex items-center gap-3'>
                                 <HiShoppingCart className='text-xl text-whit' />
                                 Buy Now
                             </label>
-                            <GadgetsModal 
-                            handleGadgetsBuy={handleGadgetsBuy} 
-                            quantity={quantity}
-                            setQuantity={setQuantity}
-                            price = {price}
-                            setPrice={setPrice}
+                            <GadgetsModal
+                                handleGadgetsBuy={handleGadgetsBuy}
+                                quantity={quantity}
+                                setQuantity={setQuantity}
+                                price={price}
+                                setPrice={setPrice}
                             />
 
                         </div>

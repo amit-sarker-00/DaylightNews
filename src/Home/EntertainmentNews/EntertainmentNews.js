@@ -15,7 +15,7 @@ const EntertainmentNews = () => {
             .then((result) => {
                 const fashionNews = result?.filter(fashion => fashion?.category === 'travel')
                 setEntertainment(fashionNews)
-                console.log(result);
+                // console.log(result);
             });
     }, []);
     
@@ -25,7 +25,7 @@ const EntertainmentNews = () => {
             .then((result) => {
                 const fashionNews = result?.filter(fashion => fashion?.category === 'travel')
                 setEntertainmentComment(fashionNews)
-                console.log(result);
+                // console.log(result);
             });
     }, []);
 
