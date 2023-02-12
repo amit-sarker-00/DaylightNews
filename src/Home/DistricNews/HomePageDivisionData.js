@@ -5,30 +5,35 @@ import DivisionHorizontalData from "./DivisionHorizontalData ";
 import DivisionTitleData from "./DivisionTitleData ";
 import HomePageDivisionSingleCard from "./HomePageDivisionSingleCard ";
 
-const HomePageDivisionData = () => {
-  const [datas, setDatas] = useState([]);
-  const [city, setCity] = useState({});
-  const [districtData, setDistrictData] = useState([]);
-  const [preData, setPreData] = useState([]);
-  const [dis, setDis] = useState("off");
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}news`)
+const HomePageDivisionData = () =>
+{
+  const [ datas, setDatas ] = useState([]);
+  const [ city, setCity ] = useState({});
+  const [ districtData, setDistrictData ] = useState([]);
+  const [ preData, setPreData ] = useState([]);
+  const [ dis, setDis ] = useState("off");
+  useEffect(() =>
+  {
+    fetch(`${ process.env.REACT_APP_API_URL }district`)
       .then((res) => res.json())
       .then((result) => {
         setDatas(result);
       });
   }, []);
   //unique district
-  const uniqueDistrict = [...new Set(datas?.map((data) => data?.district))];
+  const uniqueDistrict = [ ...new Set(datas?.map((data) => data?.district)) ];
+
+  console.log();
 
 
   const handleUpdateDistrict = (e) => {
     e.preventDefault();
     const form = e.target;
     const radio = document.querySelectorAll("input[type=radio]:checked");
-    const district = radio[0]?.id;
+    const district = radio[ 0 ]?.id;
 
-    if (dis === "on") {
+    if (dis === "on")
+    {
       setCity({ district: district });
     }
     fetch(
@@ -54,10 +59,6 @@ const HomePageDivisionData = () => {
       });
   }, []);
 
-
-  console.log(districtData)
-  console.log(datas)
-  console.log(preData)
 
   return (
     <div>

@@ -1,12 +1,6 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { RxCalendar } from 'react-icons/rx';
-import { Link } from 'react-router-dom';
 import "./gadgets.css"
-import { HiShoppingCart, IconName } from "react-icons/hi2";
 import { useQuery } from '@tanstack/react-query';
-import GadgetsModal from './GadgetsModal';
 import GadgetsCard from './GadgetsCard';
 
 const Gadgets = () => {

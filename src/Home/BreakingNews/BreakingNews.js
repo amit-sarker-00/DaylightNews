@@ -4,10 +4,11 @@ import { BiTime } from "react-icons/bi";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 import { useQuery } from "@tanstack/react-query";
 import Marquee from "react-fast-marquee";
-const BreakingNews = () => {
+const BreakingNews = () =>
+{
   const { data: breakingNews, isLoading } = useQuery({
-    queryKey: ['breakingNews'],
-    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}breakingNews`)
+    queryKey: [ 'breakingNews' ],
+    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }breakingNews`)
       .then((res) => res.json())
   })
 
@@ -24,12 +25,12 @@ const BreakingNews = () => {
       </div>
 
       <div>
-        <Marquee pauseOnHover className="overflow-hidden" speed={1}>
+        <Marquee className="overflow-hidden" speed={2}>
           {isLoading && <SkeletonLoading cards={6} />}
           {breakingNews?.map((breaking) => (
 
             <Link key={breaking?._id}
-              to={`/detail/${breaking?._id}`}
+              to={`/detail/${ breaking?._id }`}
               className=" h-32 hover:text-red-500 flex border-2"
             >
               <div className="overflow-hidden w-40 h-32">

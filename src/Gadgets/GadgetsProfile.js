@@ -1,17 +1,22 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
 import { updateWriter } from '../api/services';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 
-const GadgetsProfile = () => {
+const GadgetsProfile = () =>
+{
     const { user } = useContext(AuthContext);
-
-    fetch(`${process.env.REACT_APP_API_URL}gadgets/${user?.email}`,{
+    const { data: orders, isLoading } = useQuery({
+        queryKey: [ 'orders', user?.email ],
+        queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }orders?email=${ user?.email }`, {
         })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-          });
+            .then((res) => res.json())
+    })
+
+
+    console.log(orders);
+
 
     return (
         <div>

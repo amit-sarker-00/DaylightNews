@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { RiShareForwardLine } from "react-icons/ri";
-import { useLocation } from "react-router-dom";
-import {
+import { FaTimes } from 'react-icons/fa';
+import
+{
   EmailShareButton,
   FacebookShareButton,
   FacebookIcon,
@@ -16,24 +17,19 @@ import {
   TwitterShareButton,
   TwitterIcon,
 } from "react-share";
-const Share = () => {
-  const location = useLocation();
-  // const currentUrl = location.pathname;
-  const shareUrl = location.pathname;
-  const [hover, setHover] = useState(false);
-  const onHover = () => {
-    setHover(true);
-  };
+const Share = () =>
+{
 
-  const onLeave = () => {
-    setHover(false);
-  };
+  const shareUrl = `${ window.location.href }`;
+  const [ shareWith, setShareWith ] = useState(false);
   return (
     <div className="">
-      <div onMouseEnter={onHover} onMouseLeave={onLeave} tabIndex="-3">
-        {hover ? (
+      <div
+        tabIndex="-3"
+      >
+        {shareWith ? (
           <div
-            className="px-5 py-5"
+            className="px-5 py-5 flex justify-between"
             style={{
               background: "black",
               // height: "100vh",
@@ -41,9 +37,7 @@ const Share = () => {
             }}
           >
             <div className="flex gap-5 ">
-              <div>
-                <h1 className="text-xl text-white">Share</h1>
-              </div>
+
 
               <FacebookShareButton
                 url={shareUrl}
@@ -67,13 +61,13 @@ const Share = () => {
                 <LinkedinIcon size={40} round={true} />
               </LinkedinShareButton>
 
-              {/* //               <FacebookMessengerShareButton
-//                 url={shareUrl}
-//                 quote={"nijer mato title dibo"}
-//                 hashtag={"#portfolio..."}
-//               >
-//                 <FacebookMessengerIcon size={40} round={true} />
-//               </FacebookMessengerShareButton> */}
+              <FacebookMessengerShareButton
+                url={shareUrl}
+                quote={"nijer mato title dibo"}
+                hashtag={"#portfolio..."}
+              >
+                <FacebookMessengerIcon size={40} round={true} />
+              </FacebookMessengerShareButton>
 
               <EmailShareButton
                 url={shareUrl}
@@ -90,9 +84,14 @@ const Share = () => {
                 <WhatsappIcon size={40} round={true} />
               </WhatsappShareButton>
             </div>
+            <div className="btn text-white btn-outline" onClick={() => setShareWith(!shareWith)}>
+
+              Share <FaTimes />
+            </div>
           </div>
         ) : (
-          <div className="btn btn-outline">
+          <div className="btn btn-outline  " onClick={() => setShareWith(!shareWith)}>
+
             Share <RiShareForwardLine />
           </div>
         )}

@@ -77,7 +77,7 @@ export const router = createBrowserRouter([
             <SocialMediaLayout></SocialMediaLayout>
           </PrivateRoute>
         ),
-        children: [{ path: "/socialMedia", element: <SocialMedia /> }],
+        children: [ { path: "/socialMedia", element: <SocialMedia /> } ],
       },
       { path: "/addSocialPost", element: <AddSocialPost /> },
       { path: "/mySocialNews", element: <MyNews /> },
@@ -200,7 +200,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  { path: "stories/:id", element: <HomePageStoryAllImage /> },
+  { path: "story/:id", element: <HomePageStoryAllImage /> },
   { path: "signup", element: <SignUp /> },
   { path: "login", element: <SignIn /> },
   { path: "/SlickCarousel", element: <SlickCarousel /> },

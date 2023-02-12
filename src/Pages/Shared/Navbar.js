@@ -36,6 +36,7 @@ const Navbar = () =>
     day: "numeric",
   };
   const currentDate = date.toLocaleDateString("en-US", options);
+  
   // categories
   const { data: allCategory = [] } = useQuery({
     queryKey: [ "categories" ],

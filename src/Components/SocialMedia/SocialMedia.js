@@ -19,11 +19,11 @@ const SocialMedia = () => {
   const { data: allSocialNews, refetch } = useQuery({
     queryKey: ["stories", user?.email],
     queryFn: () =>
-      fetch("http://localhost:8000/socialNews").then((res) => res.json()),
+      fetch(`${process.env.REACT_APP_API_URL}socialNews`).then((res) => res.json()),
   });
   const handelDelete = (e) => {
     console.log(e);
-    fetch(`http://localhost:8000/socialNews/${e}`, {
+    fetch(`${process.env.REACT_APP_API_URL}socialNews/${e}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

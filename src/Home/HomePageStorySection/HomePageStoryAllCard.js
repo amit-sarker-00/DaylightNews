@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../HomePageStorySection/HomePageStory.css";
 
-const HomePageStoryAllCard = ({ data }) => {
-  // console.log("hello", data);
+const HomePageStoryAllCard = ({ data }) =>
+{
+
   return (
-    <Link to={`/stories/${data?._id}`} className="">
-      <div className="relative overflow-hidden w-full h-[200px] md:h-[600px] story bg-black">
+    <Link to={`/story/${ data?._id }`} className="">
+      <div className="relative overflow-hidden w-full h-[200px] md:h-[600px] story">
         <img
           className=" ease-in-out duration-500 transform hover:scale-125 h-full object-cover w-full"
           src={data?.pictureOne}
