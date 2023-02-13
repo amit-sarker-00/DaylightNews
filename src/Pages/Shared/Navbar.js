@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import SpacialNews from "../../Components/SpacialNews/SpacialNews";
 import DonateNotUser from "../../Components/DonationPage/DonateNotUser";
 import { FaFacebook, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
+import CurrencyConvertor from "../../Home/CurrencyConvertor/CurrencyConvertor";
 
 const Navbar = () => {
   const { user, logout, setSearchContent } = useContext(AuthContext);
@@ -60,9 +61,7 @@ const Navbar = () => {
                 {" "}
                 <AiOutlineBars />
               </label>
-              <div >
-                <h1>dddd</h1>
-              </div>
+
             </div>
 
             <div className="flex item-center">
@@ -88,7 +87,7 @@ const Navbar = () => {
           </div>
           <div className="max-w-[1440px] mx-auto items-center sm:flex-row flex flex-col justify-between">
             <div>
-
+              <CurrencyConvertor />
             </div>
 
             <div>
