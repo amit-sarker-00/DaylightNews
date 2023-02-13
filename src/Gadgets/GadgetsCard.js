@@ -68,7 +68,7 @@ const GadgetsCard = ({ banner }) => {
                             <li > {banner?.product_used?.third}</li>
                             <li> {banner?.product_used?.four}</li>
                         </ul>
-                        <div className='sm:py-2 py-0'>
+                        <div className='sm:py-2 py-0 z-10'>
                             <label
                                 htmlFor="gadgetsModal"
                                 className=' font-semibold sm:text-lg text-sm md:w-44 w-32 sm:px-8 px-2 sm:py-2 py-1   bg-red-600 hover:bg-green-700 hover:text-black translate rounded-md text-white flex items-center gap-3'>

@@ -1,9 +1,9 @@
 [
     {
-        "author": {
-            "name": "Jimmy Dane",
-            "published_date": "2022-08-24",
-            "author_img": "https://i.ibb.co/zPR387h/young-handsome-man-with-beard-wearing-casual-sweater-standing-over-picture-id1212702108-b-1-k-20-m-1.jpg"
+        "author":{
+            "name":"Jimmy Dane",
+            "published_date":"2022-08-24",
+            "author_img":"https://i.ibb.co/zPR387h/young-handsome-man-with-beard-wearing-casual-sweater-standing-over-picture-id1212702108-b-1-k-20-m-1.jpg"
         },
         "title": "Education has always been a crucial aspect of human development, shaping young minds into knowledgeable and responsible individuals.",
         "picture": "https://i.ibb.co/xFTC29g/hard-drive.jpg",

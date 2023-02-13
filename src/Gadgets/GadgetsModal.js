@@ -25,7 +25,7 @@ const GadgetsModal = ({ handleGadgetsBuy, quantity, setQuantity, price, setPrice
     return (
         <>
             <input type="checkbox" id="gadgetsModal" className="modal-toggle" />
-            <div className="modal z-auto ">
+            <div className="modal z-20 ">
                 <div className="modal-box md:w-full sm:w-80 w-64 relative">
                     <label
                         htmlFor="gadgetsModal"
