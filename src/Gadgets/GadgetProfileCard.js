@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { Link } from 'react-router-dom';
+import DonationPage from '../Components/DonationPage/DonationPage';
+import GadgetsDashboardDeleteModal from './GadgetsDashboardDeleteModal';
 
-const GadgetProfileCard = ({ gadget }) => {
-    const { title, picture, productName, product_used, author, quantity } = gadget;
-    // console.log(published_date)
+const GadgetProfileCard = ({ gadget, refetch }) => {
+     const [processOrder, setProcessOrder] = useState(null)
+    const { title, picture, productName, quantity, _id } = gadget;
+
+
     return (
-        <div className="card  w-full mx-auto bg-base-100 shadow-xl z-10">
+        <div className="card  w-full mx-auto bg-base-100 shadow-xl ">
             <figure><img src={picture} alt="Shoes" /></figure>
             <div className="card-body">
                 <div className='flex items-center justify-between gap-5'>
@@ -18,25 +23,32 @@ const GadgetProfileCard = ({ gadget }) => {
                         <p>Quantity:{quantity} </p>
                     </p>
                 </div>
-
-                <p className=''>{title.slice(0, 100)}</p>
+                <p className=''>{title?.slice(0, 100)}</p>
                 <div className='flex items-center justify-between'>
-                    <Link to={`/gadgets/payment`}
+                    <div
                         className="">
                         <button
-                            className='bg-red-700 md:px-4 px-1 py-2 rounded-lg text-semibold xl:text-xl text-lg font-serif text-white hover:bg-green-600 hover:text-black translate-all'>
+                            onClick={() => setProcessOrder(gadget)}
+                            className='bg-red-100 md:px-4 px-1 py-2 rounded-lg text-semibold xl:text-xl text-lg font-serif text-black hover:bg-green-600 hover:text-white translate-all'>
                             Confirm Buy
                         </button>
-                    </Link>
+                        
+                    </div>
                     <div>
-                        <button
-                            className='flex items-center gap-2 bg-red-700 md:px-4 px-1 py-2 rounded-lg text-semibold text-xl font-serif text-white hover:bg-green-600 hover:text-black translate-all'>
+                        <label
+                            htmlFor="deleteModal"
+                            className='flex items-center md:gap-2 gap-0 bg-red-100 md:px-4 px-1 py-2 rounded-lg text-semibold text-xl font-serif text-black hover:bg-green-600 hover:text-white translate-all'>
                             <RiDeleteBin2Line className='md:text-xl text-lg' />
                             Delete
-                        </button>
+                        </label>
                     </div>
                 </div>
             </div>
+            <GadgetsDashboardDeleteModal
+                _id={_id}
+                refetch={refetch}
+                title={productName}
+            />
         </div>
     );
 };

@@ -54,7 +54,7 @@ const DonationPage = () =>
                     <div className="  max-w-[900px] mx-auto   gap-6 p-6 rounded-md shadow-sm  ">
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full sm:col-span-3">
-                                <label className=" text-xl">First name</label>
+                                <label className=" text-xl"> Name</label>
                                 <input type="text" placeholder="First name" defaultValue={user?.displayName} className="w-full rounded-md border outline-none  p-2 " />
                             </div>
                             <div className="col-span-full sm:col-span-3">

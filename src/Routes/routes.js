@@ -33,6 +33,7 @@ import SlickCarousel from "../Practice/SlickCarousel/SlickCarousel";
 import Welcome from "../Pages/Welcome/Welcome";
 import PrivateRoute from "./PrivateRoute";
 import GadgetsProfile from "../Gadgets/GadgetsProfile";
+import GadgetPaymentForm from "../Gadgets/GadgetPaymentForm";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -129,6 +130,7 @@ export const router = createBrowserRouter([
 
   { path: "signup", element: <SignUp /> },
   { path: "login", element: <SignIn /> },
+  { path: "GadgetPaymentForm", element: <GadgetPaymentForm/> },
   { path: '/SlickCarousel', element: <SlickCarousel /> },
   { path: '/entertainmentNews', element: <EntertainmentNews /> },
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { RxCalendar } from 'react-icons/rx';
@@ -8,15 +8,54 @@ import { HiShoppingCart, IconName } from "react-icons/hi2";
 import { useQuery } from '@tanstack/react-query';
 import GadgetsModal from './GadgetsModal';
 import GadgetsCard from './GadgetsCard';
+import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
+import { toast } from 'react-hot-toast';
+import { set } from 'date-fns';
 
 const Gadgets = () => {
+    const [quantity, setQuantity] = useState(1);
+    const [price, setPrice] = useState(500);
+    const [loading, setLoading] = useState(true);
+    const { user } = useContext(AuthContext);
+    const [select, setSelect]=useState(null)
 
-    const { data: gadgets, isLoading } = useQuery({
+    const { data: gadgets, isLoading, refetch } = useQuery({
         queryKey: ['gadgets'],
         queryFn: () => fetch(`${process.env.REACT_APP_API_URL}gadgets`)
             .then((res) => res.json())
     })
     // console.log(gadgets)
+
+    const handleGadgetsBuy = () => {
+        const gadgetsAllData = {
+            picture:select?.picture,
+            productName: select?.productName,
+            title: select?.title,
+            quantity,
+            price,
+            userEmail: user?.email,
+            userName: user?.displayName,
+        }
+
+        fetch(`${process.env.REACT_APP_API_URL}gadgetsBuy`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(gadgetsAllData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                // console.log(data);
+                setLoading(false);
+                setQuantity(1)
+                setPrice(500)
+                setSelect(null)
+                toast.success("your product is buying is Successful!");
+            });
+
+    }
+
 
     if (isLoading) {
         return;
@@ -28,9 +67,23 @@ const Gadgets = () => {
                 {gadgets?.map((banner) => <GadgetsCard
                     key={banner._id}
                     banner={banner}
+                    refetch={refetch}
+                    setSelect={setSelect}
                 />
                 )}
             </div>
+            {
+                select && 
+                <GadgetsModal
+                    handleGadgetsBuy={handleGadgetsBuy}
+                    quantity={quantity}
+                    setQuantity={setQuantity}
+                    price={price}
+                    setPrice={setPrice}
+                    select={select}
+                    setSelect={setSelect}
+                />
+            }
         </div>
     );
 };

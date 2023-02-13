@@ -6,42 +6,9 @@ import { updateWriter } from '../api/services';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 import GadgetsModal from './GadgetsModal';
 
-const GadgetsCard = ({ banner }) => {
-    const [loading, setLoading] = useState(true);
-    const { user } = useContext(AuthContext);
-    const [quantity, setQuantity] = useState(1);
-    const [price, setPrice] = useState(500);
-    const { picture, productName, title, } = banner;
-
-    const handleGadgetsBuy = (e) => {
+const GadgetsCard = ({ banner, refetch, setSelect }) => {
 
 
-        const gadgetsAllData = {
-            picture,
-            productName,
-            title,
-            quantity: e.quantity,
-            price: e.price,
-            userEmail: user?.email,
-            userName: user?.displayName,
-        }
-
-        fetch(`${process.env.REACT_APP_API_URL}gadgetsBuy`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(gadgetsAllData),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                // console.log(data);
-                setLoading(false);
-                setQuantity(1)
-                toast.success("Buy Successful !");
-            });
-
-    }
 
     return (
         <div>
@@ -70,18 +37,13 @@ const GadgetsCard = ({ banner }) => {
                         </ul>
                         <div className='sm:py-2 py-0 z-10'>
                             <label
+                                onClick={() => setSelect(banner)}
                                 htmlFor="gadgetsModal"
                                 className=' font-semibold sm:text-lg text-sm md:w-44 w-32 sm:px-8 px-2 sm:py-2 py-1   bg-red-600 hover:bg-green-700 hover:text-black translate rounded-md text-white flex items-center gap-3'>
                                 <HiShoppingCart className='text-xl text-whit' />
                                 Buy Now
                             </label>
-                            <GadgetsModal
-                                handleGadgetsBuy={handleGadgetsBuy}
-                                quantity={quantity}
-                                setQuantity={setQuantity}
-                                price={price}
-                                setPrice={setPrice}
-                            />
+
 
                         </div>
                     </div>

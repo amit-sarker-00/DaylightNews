@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { HiOutlineChevronDown, HiOutlineChevronUp, } from "react-icons/hi2";
 
-const GadgetsModal = ({ handleGadgetsBuy, quantity, setQuantity, price, setPrice }) => {
+const GadgetsModal = ({ handleGadgetsBuy, quantity, setQuantity, price, setPrice, select, setSelect}) => {
 
 
     const handleIncrement = () => {
@@ -16,6 +16,13 @@ const GadgetsModal = ({ handleGadgetsBuy, quantity, setQuantity, price, setPrice
         }
     };
 
+    const closeModal =() =>{
+        setQuantity(1)
+        setPrice(500)
+        setSelect(null)
+
+    }
+
     const gadgetsQuantity = {
         quantity,
         price
@@ -25,9 +32,10 @@ const GadgetsModal = ({ handleGadgetsBuy, quantity, setQuantity, price, setPrice
     return (
         <>
             <input type="checkbox" id="gadgetsModal" className="modal-toggle" />
-            <div className="modal z-20 ">
+            <div className="modal z-50 ">
                 <div className="modal-box md:w-full sm:w-80 w-64 relative">
                     <label
+                        onClick={closeModal}
                         htmlFor="gadgetsModal"
                         className=" mr-2 px-2 py-1 rounded-full absolute right-2 top-2 text-black text-bold bg-red-100 hover:bg-red-700 hover:text-white">
                         ✕
