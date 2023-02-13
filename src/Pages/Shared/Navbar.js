@@ -8,20 +8,17 @@ import SpacialNews from "../../Components/SpacialNews/SpacialNews";
 import DonateNotUser from "../../Components/DonationPage/DonateNotUser";
 import { FaFacebook, FaGithub, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 
-const Navbar = () =>
-{
+const Navbar = () => {
   const { user, logout, setSearchContent } = useContext(AuthContext);
 
-  const [ weather, setWeather ] = useState({});
+  const [weather, setWeather] = useState({});
   // weather
-  useEffect(() =>
-  {
+  useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Dhaka&units=metric&APPID=${ process.env.REACT_APP_Weather_API_KEY }`
+      `https://api.openweathermap.org/data/2.5/weather?q=Dhaka&units=metric&APPID=${process.env.REACT_APP_Weather_API_KEY}`
     )
       .then((res) => res.json())
-      .then((result) =>
-      {
+      .then((result) => {
         setWeather(result);
       });
   }, []);
@@ -36,12 +33,12 @@ const Navbar = () =>
     day: "numeric",
   };
   const currentDate = date.toLocaleDateString("en-US", options);
-  
+
   // categories
   const { data: allCategory = [] } = useQuery({
-    queryKey: [ "categories" ],
+    queryKey: ["categories"],
     queryFn: () =>
-      fetch(`${ process.env.REACT_APP_API_URL }categories`).then((res) =>
+      fetch(`${process.env.REACT_APP_API_URL}categories`).then((res) =>
         res.json()
       ),
   });
@@ -63,6 +60,9 @@ const Navbar = () =>
                 {" "}
                 <AiOutlineBars />
               </label>
+              <div >
+                <h1>dddd</h1>
+              </div>
             </div>
 
             <div className="flex item-center">
@@ -130,11 +130,7 @@ const Navbar = () =>
                   Sports
                 </NavLink>
               </li>
-              <li>
-                <NavLink className="text-1xl hover:text-red-500 font-semibold">
-                  Pages
-                </NavLink>
-              </li>
+
               <li>
                 <NavLink
                   to="/socialMedia"
@@ -160,6 +156,11 @@ const Navbar = () =>
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/cryptoMarket" className="text-1xl hover:text-red-500 font-semibold">
+                  Crypto Currency Market
+                </NavLink>
+              </li>
+              <li>
                 <div className="dropdown dropdown-hover">
                   <NavLink
                     tabIndex={1}
@@ -175,7 +176,7 @@ const Navbar = () =>
                     {categories?.map((category, i) => (
                       <li key={i} className="w-full">
                         <Link
-                          to={`/category/${ category }`}
+                          to={`/category/${category}`}
                           className="block py-1 px-2 hover:pl-8 ease-in-out duration-300 hover:text-white  my-1 hover:bg-red-500"
                         >
                           {category}

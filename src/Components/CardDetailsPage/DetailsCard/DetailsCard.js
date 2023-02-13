@@ -9,8 +9,7 @@ const DetailsCard = ({
   reactions,
   refetch,
   singleNewsComment, isLoading
-}) =>
-{
+}) => {
   const { picture, title, category, description, author } = detail;
 
   return (
@@ -20,7 +19,7 @@ const DetailsCard = ({
           <img className="w-full lg:h-[500px]" src={picture} alt="" />
           <div className=" hero-overlay absolute top-0">
             <Link
-              to={`/category/${ category }`}
+              to={`/category/${category}`}
               className="absolute top-0 right-0 bg-red-700 py-1 px-5 text-white font-semibold"
             >
               {category}
