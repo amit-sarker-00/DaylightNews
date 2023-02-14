@@ -5,7 +5,7 @@ const CurrencyRow = ({ rates, selectedCurrency, onChangeCurrency, amount, onChan
 
     return (
         <div>
-            <input type="number" className='input' value={amount} onChange={onChangeAmount} />
+            <input type="number" className='input rounded-none' value={amount} onChange={onChangeAmount} />
             <select value={selectedCurrency} onChange={onChangeCurrency}>
                 {
                     rates.map(option => (
