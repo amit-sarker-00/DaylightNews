@@ -83,7 +83,7 @@ const GadgetPaymentForm = ({ gadget }) => {
                                             <input type="text" required name="zipCode" placeholder="" className="w-full rounded-md p-2 border hover:border-red-600 outline-none " />
                                         </div>
                                         <div>
-                                            <select className="select border hover:border-red-600 text-black w-full max-w-xs" name="currency">
+                                            <select className="select border hover:border-red-600 w-full max-w-xs" name="currency">
                                                 <option value="BDT" selected>
                                                     BDT
                                                 </option>
