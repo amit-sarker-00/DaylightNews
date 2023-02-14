@@ -1,12 +1,12 @@
 import React from 'react';
 import "../CurrencyConvertor/Currency.css"
 
-const CurrencyRow = ({ rates }) => {
+const CurrencyRow = ({ rates, selectedCurrency, onChangeCurrency, amount, onChangeAmount }) => {
 
     return (
         <div>
-            <input type="number" className='input' />
-            <select>
+            <input type="number" className='input' value={amount} onChange={onChangeAmount} />
+            <select value={selectedCurrency} onChange={onChangeCurrency}>
                 {
                     rates.map(option => (
                         <option key={option} value={option}>{option}</option>
