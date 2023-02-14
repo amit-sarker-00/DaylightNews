@@ -1,8 +1,4 @@
 .input {
-	border: 1px solid #cecccc96;
-	width: 100px;
+	width: 80px;
 	height: 35px;
-}
-select {
-	margin-left: 0.5rem;
 }

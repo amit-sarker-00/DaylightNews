@@ -4,12 +4,12 @@ import "../CurrencyConvertor/Currency.css"
 const CurrencyRow = ({ rates, selectedCurrency, onChangeCurrency, amount, onChangeAmount }) => {
 
     return (
-        <div>
-            <input type="number" className='input rounded-none' value={amount} onChange={onChangeAmount} />
+        <div className='border rounded'>
+            <input type="number" className='input ' value={amount} onChange={onChangeAmount} />
             <select value={selectedCurrency} onChange={onChangeCurrency}>
                 {
                     rates.map(option => (
-                        <option key={option} value={option}>{option}</option>
+                        <option className="w-16 " key={option} value={option}>{option}</option>
 
                     ))
 
