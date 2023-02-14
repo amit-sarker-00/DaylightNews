@@ -35,7 +35,7 @@ const GadgetPaymentForm = ({ gadget }) => {
             .then((res) => res.json())
             .then((data) => {
                 window.location.replace(data.url);
-                console.log("rokek", data);
+                // console.log("rokek", data);
             });
 
     }
