@@ -3,11 +3,10 @@ import React from "react";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 import EnvironmentNewsCard from "./EnvironmentNewsCard";
 
-const EnvironmentNews = () =>
-{
+const EnvironmentNews = () => {
   const { data: environmentNews, isLoading } = useQuery({
-    queryKey: [ 'environmentNews' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }environmentNews`)
+    queryKey: ['environmentNews'],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}environmentNews`)
       .then((res) => res.json())
   })
 

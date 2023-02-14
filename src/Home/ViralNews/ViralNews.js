@@ -1,6 +1,5 @@
 import React from "react";
-import
-{
+import {
   FaGithub,
   FaInstagram,
   FaLinkedin,
@@ -14,11 +13,10 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import SkeletonLoading from "../../Components/SkeletonLoading/SkeletonLoading";
 
-const ViralNews = () =>
-{
+const ViralNews = () => {
   const { data: viralNews, isLoading } = useQuery({
-    queryKey: [ 'viralNews' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }viralNews`)
+    queryKey: ['viralNews'],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}viralNews`)
       .then((res) => res.json())
   })
 
@@ -37,7 +35,7 @@ const ViralNews = () =>
             {isLoading && <SkeletonLoading />}
             {viralNews?.slice(0, 4).map((viral) => (
               <Link
-                to={`/detail/${ viral?._id }`}
+                to={`/detail/${viral?._id}`}
                 key={viral?._id}
                 className=" h-full hover:text-red-500 w-full  "
               >
@@ -77,7 +75,7 @@ const ViralNews = () =>
             {isLoading && <SkeletonLoading />}
             {viralNews?.slice(4, 8).map((viral) => (
               <Link
-                to={`/detail/${ viral?._id }`}
+                to={`/detail/${viral?._id}`}
                 key={viral?._id}
                 className=" h-full hover:text-red-500 w-full  "
               >
@@ -125,7 +123,7 @@ const ViralNews = () =>
               allowFullScreen={true}
 
             ></iframe>
-            
+
           </div>
           <div>
             <div className="text-center py-3  font-bold border border-gray-200 dark:border-gray-700   mb-3">

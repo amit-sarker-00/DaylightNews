@@ -2,12 +2,11 @@ import React from "react";
 import { FaCalendarDay } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const ReecntWorkForHomePageSlidebar = ({ data }) =>
-{
+const ReecntWorkForHomePageSlidebar = ({ data }) => {
   const { author, picture, _id, title } = data;
   return (
     <Link
-      to={`/detail/${ _id }`}
+      to={`/detail/${_id}`}
       className="flex items-center border border-gray-200 dark:border-gray-700   hover:text-red-500 justify-evenly lg:justify-start md:text-left transition-all mb-1 mx-1 shadow overflow-hidden object-cover hover:ml-5"
     >
       <div className="">

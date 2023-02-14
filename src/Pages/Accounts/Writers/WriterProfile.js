@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import
-{
+import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
@@ -15,8 +14,7 @@ import { IoMdPersonAdd } from "react-icons/io";
 import { MdOutlineAddReaction } from "react-icons/md";
 import { AiFillEye } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import
-{
+import {
   Area,
   AreaChart,
   CartesianGrid,
@@ -31,27 +29,23 @@ import { updateWriter } from "../../../api/services";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import WriterProfileUpdateModal from "./WriterProfileUpdateModal";
 
-const WriterProfile = () =>
-{
+const WriterProfile = () => {
   const { user } = useContext(AuthContext);
-  const [ loading, setLoading ] = useState(true);
-  const [ profile, setProfile ] = useState([]);
-  const [ profileViews, setProfileViews ] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [profile, setProfile] = useState([]);
+  const [profileViews, setProfileViews] = useState([]);
 
   const fetchProfile = () =>
-    getUser(user?.email).then((data) =>
-    {
+    getUser(user?.email).then((data) => {
       setProfile(data);
       setLoading(!loading);
     });
 
-  useEffect(() =>
-  {
+  useEffect(() => {
     fetchProfile();
-  }, [ user, loading ]);
+  }, [user, loading]);
 
-  const handelUpdateProfile = (event) =>
-  {
+  const handelUpdateProfile = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
 
@@ -60,8 +54,7 @@ const WriterProfile = () =>
     const shopimage = event.target.image.files[0];
 
     imageUpload(shopimage)
-      .then((res) =>
-      {
+      .then((res) => {
         const UpdateWriter = {
           name,
           image: res?.data?.display_url,
@@ -72,7 +65,7 @@ const WriterProfile = () =>
         //   console.log(data);
         // });
 
-        fetch(`${ process.env.REACT_APP_API_URL }user/${ user?.email }`, {
+        fetch(`${process.env.REACT_APP_API_URL}user/${user?.email}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -80,15 +73,13 @@ const WriterProfile = () =>
           body: JSON.stringify(UpdateWriter),
         })
           .then((res) => res.json())
-          .then((data) =>
-          {
+          .then((data) => {
             console.log(data);
             setLoading(false);
             toast.success("Update Successfuly !");
           });
       })
-      .catch((err) =>
-      {
+      .catch((err) => {
         console.log(err);
         setLoading(false);
       });

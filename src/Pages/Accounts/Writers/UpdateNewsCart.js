@@ -1,8 +1,7 @@
 import { ArrowPathIcon, TrashIcon } from "@heroicons/react/24/solid";
 import React from "react";
 
-const UpdateNewsCart = ({ news, handleUpdateProduct, handleDelet }) =>
-{
+const UpdateNewsCart = ({ news, handleUpdateProduct, handleDelet }) => {
   return (
     <div className="shadow hover:shadow-2xl border hover:border-gray-200 dark:border-gray-700   ">
       <div className="overflow-hidden">

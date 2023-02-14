@@ -4,23 +4,20 @@ import PrimaryButton from "../../../Components/Button/PrimaryButton";
 import SmallSpinner from "../../../Components/Spinner/SmallSpinner";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
-const WriterProfileUpdateModal = ({ handelUpdateProfile }) =>
-{
+const WriterProfileUpdateModal = ({ handelUpdateProfile }) => {
   const { user } = useContext(AuthContext);
-  const [ loading, setLoading ] = useState(true);
-  const [ profile, setProfile ] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [profile, setProfile] = useState([]);
 
   const fetchProfile = () =>
-    getUser(user?.email).then((data) =>
-    {
+    getUser(user?.email).then((data) => {
       setProfile(data);
       setLoading(!loading);
     });
 
-  useEffect(() =>
-  {
+  useEffect(() => {
     fetchProfile();
-  }, [ user ]);
+  }, [user]);
 
   return (
     <div>

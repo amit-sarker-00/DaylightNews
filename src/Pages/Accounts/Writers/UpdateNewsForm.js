@@ -3,26 +3,22 @@ import { toast } from "react-hot-toast";
 import { updateNews } from "../../../api/services";
 import PrimaryButton from "../../../Components/Button/PrimaryButton";
 
-const UpdateNewsForm = ({ news, uniqueCategory }) =>
-{
-  const handleUpdateProduct = (event) =>
-  {
+const UpdateNewsForm = ({ news, uniqueCategory }) => {
+  const handleUpdateProduct = (event) => {
     event.preventDefault();
     const from = event.target;
     const title = from.title.value;
     const category = from.option.value;
     const description = from.description.value;
-    const image = from.image.files[ 0 ];
-    if (!image)
-    {
+    const image = from.image.files[0];
+    if (!image) {
       const updateNewsData = {
         id: news._id,
         title,
         category,
         description,
       };
-      updateNews(updateNewsData).then((data) =>
-      {
+      updateNews(updateNewsData).then((data) => {
         console.log(data);
         toast.success("news Updated Successfully");
       });
@@ -30,14 +26,13 @@ const UpdateNewsForm = ({ news, uniqueCategory }) =>
     }
     const formData = new FormData();
     formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=${ process.env.REACT_APP_IMGBB_KEY }`;
+    const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_KEY}`;
     fetch(url, {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
-      .then((imageData) =>
-      {
+      .then((imageData) => {
         const updateNewsData = {
           id: news._id,
           title,
@@ -45,8 +40,7 @@ const UpdateNewsForm = ({ news, uniqueCategory }) =>
           description,
           image: imageData.data.display_url,
         };
-        updateNews(updateNewsData).then((data) =>
-        {
+        updateNews(updateNewsData).then((data) => {
           console.log(data);
           toast.success("news Updated Successfully");
         });

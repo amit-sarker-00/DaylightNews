@@ -17,8 +17,7 @@ import ViralNews from "./ViralNews/ViralNews";
 import VideoSection from "./VideoSection/VideoSection";
 import News from "./News/News";
 
-const Home = () =>
-{
+const Home = () => {
   useTitle("Home");
   const { searchContent } = useContext(AuthContext);
 
@@ -39,7 +38,7 @@ const Home = () =>
           <HomePageStorySection />
           <VideoSection />
           <ViralNews />
-          <News/>
+          <News />
           <EnvironmentNews />
           <Voices />
         </>

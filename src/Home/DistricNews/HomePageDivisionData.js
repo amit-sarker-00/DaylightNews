@@ -16,8 +16,7 @@ const HomePageDivisionData = () =>
   {
     fetch(`${ process.env.REACT_APP_API_URL }district`)
       .then((res) => res.json())
-      .then((result) =>
-      {
+      .then((result) => {
         setDatas(result);
       });
   }, []);
@@ -26,8 +25,8 @@ const HomePageDivisionData = () =>
 
   console.log();
 
-  const handleUpdateDistrict = (e) =>
-  {
+
+  const handleUpdateDistrict = (e) => {
     e.preventDefault();
     const form = e.target;
     const radio = document.querySelectorAll("input[type=radio]:checked");
@@ -38,27 +37,24 @@ const HomePageDivisionData = () =>
       setCity({ district: district });
     }
     fetch(
-      `${ process.env.REACT_APP_API_URL }district/${ city?.district ? city?.district : "Dhaka"
+      `${process.env.REACT_APP_API_URL}district/${city?.district ? city?.district : "Dhaka"
       }`
     )
       .then((res) => res.json())
-      .then((result) =>
-      {
+      .then((result) => {
         setDistrictData(result);
         form.reset();
         setDis("off");
       });
   };
 
-  useEffect(() =>
-  {
+  useEffect(() => {
     fetch(
-      `${ process.env.REACT_APP_API_URL }district/Dhaka
+      `${process.env.REACT_APP_API_URL}district/Dhaka
       `
     )
       .then((res) => res.json())
-      .then((result) =>
-      {
+      .then((result) => {
         setPreData(result);
       });
   }, []);

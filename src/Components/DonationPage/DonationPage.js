@@ -1,13 +1,11 @@
 import React, { useContext } from 'react';
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
-const DonationPage = () =>
-{
+const DonationPage = () => {
     const { user, } = useContext(AuthContext);
-   
 
-    const handlePayment = (e) =>
-    {
+
+    const handlePayment = (e) => {
         e.preventDefault();
         const form = e.target;
         const number = form?.mobileNumber?.value;
@@ -27,8 +25,8 @@ const DonationPage = () =>
             email: user?.email,
             name: user?.displayName
         };
-        
-        fetch(`${ process.env.REACT_APP_API_URL }payment`, {
+
+        fetch(`${process.env.REACT_APP_API_URL}payment`, {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -36,8 +34,7 @@ const DonationPage = () =>
             body: JSON.stringify(payment),
         })
             .then((res) => res.json())
-            .then((data) =>
-            {
+            .then((data) => {
                 window.location.replace(data.url);
                 console.log("rokek", data);
             });

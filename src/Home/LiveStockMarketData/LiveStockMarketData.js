@@ -40,6 +40,7 @@ const LiveStockMarketData = () => {
         fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${selectedOption}&outputsize=compact&apikey=${API_KEY}`)
             .then(res => res.json())
             .then(data => {
+                // console.log(data)
                 setAllValue(data["Time Series (Daily)"])
                 for (var key in data["Time Series (Daily)"]) {
                     // console.log(key)

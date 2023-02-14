@@ -3,13 +3,12 @@ import React from "react";
 import { RxCalendar } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
-const TravelCards = ({ data }) =>
-{
+const TravelCards = ({ data }) => {
   const { title, picture, author, _id } = data;
 
   return (
     <div className=" border-2 border-gray-200 dark:border-gray-700   hover:ml-5  transition-all">
-      <Link to={`detail/${ _id }`}>
+      <Link to={`detail/${_id}`}>
         <div className="flex sm:flex-row p-1 flex-col items-center h-24 gap-4 ">
           <figure>
             <img className="sm:w-32 h-20" src={picture} alt="Album" />

@@ -17,7 +17,7 @@ const HomePageStoryAllCard = ({ data }) =>
           <h1 className="text-white text-sm md:text-2xl  font-bold py-3">
             {data?.title}
           </h1>
-          <p className="text-white">{data?.category}</p>
+          <p className="text-white bg-black">{data?.category}</p>
         </div>
       </div>
     </Link>

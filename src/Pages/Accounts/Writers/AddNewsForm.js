@@ -10,8 +10,7 @@ const AddNewsForm = ({
   selectedImage,
   imageChange,
   uniqueCategory,
-}) =>
-{
+}) => {
   // unique category in option
   const uniqueCategoryOption = uniqueCategory.map((category, uxi) => (
     <option key={uxi} value={category}>

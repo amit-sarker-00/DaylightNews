@@ -11,43 +11,40 @@ import SearchData from '../SearchData/SearchData';
 
 
 
-const CardDetailsPage = () =>
-{
+const CardDetailsPage = () => {
   const { searchContent } = useContext(AuthContext)
 
 
   const params = useParams()
 
-  const [ detail, setDetail ] = useState({});
+  const [detail, setDetail] = useState({});
 
 
-  useEffect(() =>
-  {
-    fetch(`${ process.env.REACT_APP_API_URL }news/${ params?.id }`)
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}news/${params?.id}`)
       .then((res) => res.json())
-      .then((result) =>
-      {
+      .then((result) => {
         setDetail(result)
       });
-  }, [ params?.id ]);
+  }, [params?.id]);
 
 
 
 
   const { data: recentlyNews, isLoading: recentLoading } = useQuery({
-    queryKey: [ 'recentlyNews' ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }recentlyNews`)
+    queryKey: ['recentlyNews'],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}recentlyNews`)
       .then((res) => res.json())
   })
 
   const { data: reactions, isLoading, refetch: reCall } = useQuery({
-    queryKey: [ 'reactions', params?.id ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }reactions/${ params?.id }`).then(res => res.json())
+    queryKey: ['reactions', params?.id],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}reactions/${params?.id}`).then(res => res.json())
   })
 
   const { data: singleNewsComment = [], refetch } = useQuery({
-    queryKey: [ 'comment', params?.id ],
-    queryFn: () => fetch(`${ process.env.REACT_APP_API_URL }comment/${ params.id }`).then(res => res.json())
+    queryKey: ['comment', params?.id],
+    queryFn: () => fetch(`${process.env.REACT_APP_API_URL}comment/${params.id}`).then(res => res.json())
   })
 
 

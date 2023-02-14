@@ -1,7 +1,6 @@
 import React from 'react';
 import { IconName, IoBookmark } from "react-icons/io5";
-const EntertainmentNewsCard = ({ entertainment }) =>
-{
+const EntertainmentNewsCard = ({ entertainment }) => {
     // console.log(entertainment);
     const { picture, title, author, position } = entertainment;
 
