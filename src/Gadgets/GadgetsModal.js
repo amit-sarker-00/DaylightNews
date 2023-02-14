@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { HiOutlineChevronDown, HiOutlineChevronUp, } from "react-icons/hi2";
 
 const GadgetsModal = ({ handleGadgetsBuy, quantity, setQuantity, price, setPrice, select, setSelect}) => {
@@ -71,7 +70,7 @@ const GadgetsModal = ({ handleGadgetsBuy, quantity, setQuantity, price, setPrice
                         <button
                             onClick={() => handleGadgetsBuy(gadgetsQuantity)}
                             className='  px-4 py-2 rounded-lg text-semibold font-serif text-xl text-white hover:text-black bg-red-700 hover:bg-green-700'>
-                            Confirm buy
+                            Add to Dashboard
                         </button>
                     </div>
 

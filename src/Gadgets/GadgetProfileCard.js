@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { toast } from 'react-hot-toast';
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { Link } from 'react-router-dom';
-import DonationPage from '../Components/DonationPage/DonationPage';
+import GadgetPaymentForm from './GadgetPaymentForm';
 import GadgetsDashboardDeleteModal from './GadgetsDashboardDeleteModal';
 
 const GadgetProfileCard = ({ gadget, refetch }) => {
-     const [processOrder, setProcessOrder] = useState(null)
+    // const [processOrder, setProcessOrder] = useState(null)
     const { title, picture, productName, quantity, _id } = gadget;
 
 
@@ -27,12 +26,13 @@ const GadgetProfileCard = ({ gadget, refetch }) => {
                 <div className='flex items-center justify-between'>
                     <div
                         className="">
-                        <button
-                            onClick={() => setProcessOrder(gadget)}
+                        <label
+                            htmlFor="gadgetPaymentForm"
                             className='bg-red-100 md:px-4 px-1 py-2 rounded-lg text-semibold xl:text-xl text-lg font-serif text-black hover:bg-green-600 hover:text-white translate-all'>
                             Confirm Buy
-                        </button>
-                        
+                        </label >
+
+
                     </div>
                     <div>
                         <label
@@ -45,9 +45,13 @@ const GadgetProfileCard = ({ gadget, refetch }) => {
                 </div>
             </div>
             <GadgetsDashboardDeleteModal
+                gadget={gadget}
                 _id={_id}
                 refetch={refetch}
                 title={productName}
+            />
+            <GadgetPaymentForm
+                gadget={gadget}
             />
         </div>
     );

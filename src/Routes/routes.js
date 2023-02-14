@@ -53,6 +53,7 @@ export const router = createBrowserRouter([
       { path: "detail/:id", element: <CardDetailsPage /> },
       { path: "/category/:id", element: <AllCategoryPage /> },
       { path: "/gadgets/:id", element: <Gadgets /> },
+      { path: "/GadgetPaymentForm/gadget", element: <GadgetPaymentForm/> },
 
       { path: "/stockMarket", element: <LiveStockMarketData /> },
       { path: "/donate", element: <DonationPage /> },
@@ -130,7 +131,6 @@ export const router = createBrowserRouter([
 
   { path: "signup", element: <SignUp /> },
   { path: "login", element: <SignIn /> },
-  { path: "GadgetPaymentForm", element: <GadgetPaymentForm/> },
   { path: '/SlickCarousel', element: <SlickCarousel /> },
   { path: '/entertainmentNews', element: <EntertainmentNews /> },
 
