@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const DivisionHorizontalData = ({ data }) =>
 {
-  const { description, author, category, picture, title, _id } = data;
+  const {  picture, title, _id } = data;
   return (
     <Link to={`/detail/${ _id }`} className="w-full ">
       <img className="md:full w-full md:h-[175px] object-cover" src={picture} alt="" />

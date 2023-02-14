@@ -1,7 +1,8 @@
 import React from 'react';
 import { toast } from 'react-hot-toast';
 
-const GadgetsDashboardDeleteModal = ({ _id, title, refetch }) => {
+const GadgetsDashboardDeleteModal = ({  refetch, setStoreDelete,storeDelete, }) => {
+
 
 
     const deleteHandle = id => {
@@ -16,7 +17,8 @@ const GadgetsDashboardDeleteModal = ({ _id, title, refetch }) => {
             .then(data => {
                 if (data.deletedCount > 0) {
                     refetch();
-                    toast.success(`your ${title} delete is successful`)
+                    setStoreDelete(null)
+                    toast.success(`your ${storeDelete?.title} delete is successful`)
                 }
 
             })
@@ -37,12 +39,13 @@ const GadgetsDashboardDeleteModal = ({ _id, title, refetch }) => {
                     <div className=" flex items-center justify-around">
                         <button>
                             <button
-                                onClick={() => deleteHandle(_id)}
+                                onClick={() => deleteHandle(storeDelete?._id)}
                                 className='flex items-center md:gap-2 gap-0 bg-red-700 text-white  md:px-4 px-1 py-2 rounded-lg text-semibold md:text-xl text-md font-serif  hover:bg-green-600 hover:text-black translate-all'>
                                 Confirm Delete
                             </button>
                         </button>
                         <label
+                        onClick={()=>setStoreDelete(null) }
                             htmlFor="deleteModal"
                             className="className='flex items-center md:gap-2 gap-0 bg-red-700 text-white  md:px-4 px-1 py-2 rounded-lg text-semibold md:text-xl text-md font-serif  hover:bg-green-600 hover:text-black translate-all'>">
                             Cancel

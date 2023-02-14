@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { HiShoppingCart } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
-import { updateWriter } from '../api/services';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 import GadgetsModal from './GadgetsModal';
 
@@ -43,7 +42,6 @@ const GadgetsCard = ({ banner, refetch, setSelect }) => {
                                 <HiShoppingCart className='text-xl text-whit' />
                                 Buy Now
                             </label>
-
 
                         </div>
                     </div>

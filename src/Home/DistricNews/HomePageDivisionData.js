@@ -14,7 +14,7 @@ const HomePageDivisionData = () =>
   const [ dis, setDis ] = useState("off");
   useEffect(() =>
   {
-    fetch(`${ process.env.REACT_APP_API_URL }news`)
+    fetch(`${ process.env.REACT_APP_API_URL }district`)
       .then((res) => res.json())
       .then((result) =>
       {
@@ -23,7 +23,8 @@ const HomePageDivisionData = () =>
   }, []);
   //unique district
   const uniqueDistrict = [ ...new Set(datas?.map((data) => data?.district)) ];
-  // console.log(uniqueDistrict);
+
+  console.log();
 
   const handleUpdateDistrict = (e) =>
   {
@@ -31,7 +32,7 @@ const HomePageDivisionData = () =>
     const form = e.target;
     const radio = document.querySelectorAll("input[type=radio]:checked");
     const district = radio[ 0 ]?.id;
-    console.log(city?.district);
+
     if (dis === "on")
     {
       setCity({ district: district });
@@ -48,6 +49,7 @@ const HomePageDivisionData = () =>
         setDis("off");
       });
   };
+
   useEffect(() =>
   {
     fetch(
@@ -60,7 +62,8 @@ const HomePageDivisionData = () =>
         setPreData(result);
       });
   }, []);
-  // console.log(datas);
+
+
   return (
     <div>
       <div className="flex  flex-col-reverse xl:flex-row">

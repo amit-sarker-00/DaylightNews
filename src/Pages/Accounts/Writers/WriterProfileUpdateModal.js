@@ -49,95 +49,25 @@ const WriterProfileUpdateModal = ({ handelUpdateProfile }) =>
                 name="shopname"
                 placeholder="Enter Your Shop Name"
                 className="w-full px-4 py-3 rounded-md bg-gray-100  text-gray-900 "
-                defaultValue={profile?.shopname}
+                defaultValue={profile?.email}
+                disabled
               />
             </div>
 
             <div className="space-y-3 text-sm">
-              <label className="block text-sm">Since</label>
+              <label className="block text-sm">Name</label>
               <input
                 type="text"
-                name="since"
+                name="name"
                 placeholder="Enter Since Year"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                defaultValue={profile?.since}
-              />
-            </div>
-            <div className="space-y-3 text-sm">
-              <label className="block text-sm">Description</label>
-              <input
-                type="text"
-                name="description"
-                placeholder="Enter Your Shop Description"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                defaultValue={profile?.description}
-              />
-            </div>
-            <div className="space-y-3 text-sm">
-              <label className="block text-sm">Address</label>
-              <input
-                type="text"
-                name="address"
-                placeholder="Enter Your Address"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                defaultValue={profile?.address}
-              />
-            </div>
-            <div className="space-y-3 text-sm">
-              <label className="block text-sm">Phone</label>
-              <input
-                type="number"
-                name="phone"
-                placeholder="Enter Your Phone Number"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                defaultValue={profile?.phone}
+                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                defaultValue={profile?.name}
               />
             </div>
 
-            <div className="flex justify-between w-full">
-              <div className="space-y-3 text-sm w-full mr-10">
-                <label className="block text-sm">Twitter</label>
-                <input
-                  type="text"
-                  name="twitter"
-                  placeholder="Enter Your twitter link"
-                  className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                  defaultValue={profile?.twitter}
-                />
-              </div>
-              <div className="space-y-3 text-sm w-full">
-                <label className="block text-sm">Facebook</label>
-                <input
-                  type="text"
-                  name="facebook"
-                  placeholder="Enter Your facebook link"
-                  className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                  defaultValue={profile?.facebook}
-                />
-              </div>
-            </div>
-            <div className="flex justify-between w-full">
-              <div className="space-y-3 text-sm w-full mr-10">
-                <label className="block text-sm">Instagram</label>
-                <input
-                  type="text"
-                  name="instagram"
-                  placeholder="Enter Your instagram link"
-                  className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                  defaultValue={profile?.instagram}
-                />
-              </div>
-              <div className="space-y-3 text-sm w-full">
-                <label className="block text-sm">Pinterest</label>
-                <input
-                  type="text"
-                  name="pinterest"
-                  placeholder="Enter Your pinterest link"
-                  className="w-full px-4 py-3 rounded-md dark:border-gray-700   dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                  defaultValue={profile?.pinterest}
-                />
-              </div>
-            </div>
+
+
+
 
             <div className="py-2 w-full">
               <input

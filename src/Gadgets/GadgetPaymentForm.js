@@ -4,8 +4,8 @@ import { MdOutlineCancel } from 'react-icons/md'
 
 const GadgetPaymentForm = ({ gadget }) => {
 
-    const { title, picture, productName, quantity, _id, userEmail, userName, price } = gadget;
-    // console.log(gadget);
+    const { title, picture, productName, quantity, userEmail, userName, price } = gadget;
+    console.log(gadget);
 
     const handleGadgetPayment = (e) => {
         e.preventDefault();
@@ -73,15 +73,17 @@ const GadgetPaymentForm = ({ gadget }) => {
                                         </div>
 
                                         <div className="col-span-full sm:col-span-2">
-                                            <label className=" text-xl">Price</label>
-                                            <input type="text" required name="amount" defaultValue={price} disabled placeholder="$$" className="w-full rounded-md p-2 border hover:border-red-600 outline-none " />
+                                            <p>
+                                                price: {price}
+                                            </p>
+                                            {/* <input type="text" required name="amount" defaultValue={gadget?.price} disabled placeholder="$$" className="w-full rounded-md p-2 border hover:border-red-600 outline-none " /> */}
                                         </div>
                                         <div className="col-span-full sm:col-span-2">
                                             <label className=" text-xl">ZIP / Postal</label>
                                             <input type="text" required name="zipCode" placeholder="" className="w-full rounded-md p-2 border hover:border-red-600 outline-none " />
                                         </div>
                                         <div>
-                                            <select className="select border hover:border-red-600 w-full max-w-xs" name="currency">
+                                            <select className="select border hover:border-red-600 text-black w-full max-w-xs" name="currency">
                                                 <option value="BDT" selected>
                                                     BDT
                                                 </option>

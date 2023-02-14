@@ -125,36 +125,13 @@ const ViralNews = () =>
               allowFullScreen={true}
 
             ></iframe>
+            
           </div>
           <div>
             <div className="text-center py-3  font-bold border border-gray-200 dark:border-gray-700   mb-3">
               <h1>JOIN US</h1>
             </div>
-            <div>
-              <ul className="flex items-center gap-5 justify-center">
-                <li className="bg-white dark:text-gray-500  rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
-                  <FaGithub className="text-xl"></FaGithub>
-                </li>
-                <li className="bg-white dark:text-gray-500 rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
-                  <BsFacebook className="text-lg"></BsFacebook>
-                </li>
-                <li className="bg-white dark:text-gray-500 rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
-                  <FaTwitter className="text-lg"></FaTwitter>
-                </li>
-                <li className="bg-white dark:text-gray-500 rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
-                  <FaInstagram className="text-lg"></FaInstagram>
-                </li>
-                <li className="bg-white dark:text-gray-500 rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
-                  <FaLinkedin className="text-lg"></FaLinkedin>
-                </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
-                  <FaYoutube className="text-lg"></FaYoutube>
-                </li>
-                <li className="bg-white rounded-full hover:bg-red-500 transition-all p-2 hover:text-white border border-gray-200 dark:border-gray-700  ">
-                  <FaWhatsapp className="text-lg"></FaWhatsapp>
-                </li>
-              </ul>
-            </div>
+
           </div>
         </div>
       </div>

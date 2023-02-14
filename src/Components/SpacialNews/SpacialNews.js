@@ -27,9 +27,9 @@ const SpacialNews = () =>
                     <h1 className='text'>Spacial News</h1>
                 </div>
 
-                <Marquee >
-                    {bannerData?.map((item) => (
-                        <> {item?.title} || </>
+                <Marquee pauseOnHover >
+                    {bannerData?.map((item, i) => (
+                        <div key={i}> {item?.title} || </div>
                     ))}
                 </Marquee>
 

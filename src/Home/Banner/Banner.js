@@ -17,6 +17,7 @@ const Banner = () =>
   })
 
 
+
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-1  my-4 sm:my-10 md:my-10">

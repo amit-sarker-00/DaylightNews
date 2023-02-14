@@ -92,7 +92,7 @@ const Share = () =>
         ) : (
           <div className="btn btn-outline  " onClick={() => setShareWith(!shareWith)}>
 
-            Share <RiShareForwardLine  />
+            Share <RiShareForwardLine />
           </div>
         )}
       </div>

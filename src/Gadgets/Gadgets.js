@@ -4,13 +4,12 @@ import { useState } from 'react';
 import { RxCalendar } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import "./gadgets.css"
-import { HiShoppingCart, IconName } from "react-icons/hi2";
 import { useQuery } from '@tanstack/react-query';
-import GadgetsModal from './GadgetsModal';
 import GadgetsCard from './GadgetsCard';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { set } from 'date-fns';
+import GadgetsModal from './GadgetsModal';
 
 const Gadgets = () => {
     const [quantity, setQuantity] = useState(1);
